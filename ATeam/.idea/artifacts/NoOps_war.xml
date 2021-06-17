@@ -1,0 +1,14 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="NoOps:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <properties id="maven-jee-properties">
+      <options>
+        <module>NoOps</module>
+        <packaging>war</packaging>
+      </options>
+    </properties>
+    <root id="archive" name="controller-1.0.0-BUILD-SNAPSHOT.war">
+      <element id="artifact" artifact-name="NoOps:war exploded" />
+    </root>
+  </artifact>
+</component>
