@@ -76,10 +76,10 @@ public class CommonController {
 		log.info("error : " + error);
 		log.info("logout : " + logout);
 		if (error != null) {
-			model.addAttribute("error", "IDかパースワードが間違いました。");
+			model.addAttribute("error", "ID또는 PASSWORD가 잘못되었습니다.");
 		}
 		if (logout != null) {
-			model.addAttribute("logout", "ログアウトしました。");
+			model.addAttribute("logout", "로그아웃했습니다");
 		}
 	}
 	@PostMapping("/login")
