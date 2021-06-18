@@ -20,9 +20,6 @@
 }
 </style>
 <body>
-	<!-- header-start -->
-
-	<!-- header-end -->
 
 	<!-- slider_area_start -->
 	<div class="slider_area">
