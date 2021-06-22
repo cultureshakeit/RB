@@ -228,7 +228,7 @@
 										<p>" 윈도우 업데이트로 인해서 2~3주간 진행했던 프로젝트 파일을 날려서 복구를 겨우 했는데, 백업의
 											중요성을 알게 되었다."</p>
 										<div class="testmonial_author">
-											<h3>- 천누리</h3>
+											<h3>- ii</h3>
 										</div>
 									</div>
 								</div>
@@ -255,11 +255,11 @@
 								<div class="col-lg-8">
 									<div class="single_testmonial text-center">
 										<div class="author_thumb box">
-											<img src="upload/member/kim.jpg" class="profile" alt="">
+											<img src="upload/member/캡처.PNG" class="profile" alt="">
 										</div>
 										<p>"팀프로젝트를 통해 성장한거 같습니다. 다음에도 이런 기회가 있다면 참여 하고 싶습니다."</p>
 										<div class="testmonial_author">
-											<h3>- 낫병욱</h3>
+											<h3>- DD</h3>
 										</div>
 									</div>
 								</div>
