@@ -68,97 +68,99 @@
 
 
 	<!-- popular_destination_area_start  -->
-	<sec:authorize access="isAuthenticated()">
-		<div class="popular_destination_area  aa">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-6">
-						<div class="section_title text-center mb_70">
-							<h3>자전거대여</h3>
-						</div>
+	<%-- <sec:authorize access="isAuthenticated()"> --%>
+	<div class="popular_destination_area  aa">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="section_title text-center mb_70">
+						<h3>자전거대여</h3>
 					</div>
-				</div>
-				<div class="row">
-					<c:forEach items="${plist }" var="pro">
-						<div class="col-lg-4 col-md-6">자전거 대여
-							<div class="single_destination">
-								<div class="thumb">
-									<img src="/upload/product/${pro.goodsphoto }" alt=""
-										style="height: 250px;">
-								</div>
-								<div class="content">
-									<p class="d-flex align-items-center">
-										<span class="col-md-6">${pro.goods }</span><a
-											href="/product/view?num=${pro.num }&userid=<sec:authentication property='principal.member.userid'/>">
-											${pro.price }원</a>
-									</p>
-
-								</div>
-							</div>
-						</div>
-					</c:forEach>
 				</div>
 			</div>
-		</div>
-	</sec:authorize>
-	<!-- popular_destination_area_end  -->
+			<div class="row">
+				<c:forEach items="${plist }" var="pro">
+					<div class="col-lg-4 col-md-6">자전거 대여
+						<div class="single_destination">
+							<div class="thumb">
+								<img src="/upload/product/${pro.goodsphoto }" alt=""
+									style="height: 250px;">
+							</div>
+							<div class="content">
+								<p class="d-flex align-items-center">
+									<span class="col-md-6">${pro.goods }</span>
+									<a href="/product/view?num=${pro.num }"><%-- &userid=<sec:authentication property='principal.member.userid'/> --%>
+										${pro.price }원
+									</a>
+								</p>
 
-	<sec:authorize access="isAuthenticated()">
-		<div class="popular_places_area aa">
-			<div class="container">
-				<div class="row justify-content-center">
-					<div class="col-lg-6">
-						<div class="section_title text-center mb_70">
-							<h3>가이드 투어</h3>
-							<p>익스트림 자전거 여행을 위한 가이드 투어 상품을 안내해드립니다.</p>
+							</div>
 						</div>
 					</div>
+				</c:forEach>
+			</div>
+		</div>
+	</div>
+	<%-- </sec:authorize> --%>
+	<!-- popular_destination_area_end  -->
+
+	<%-- <sec:authorize access="isAuthenticated()"> --%>
+	<div class="popular_places_area aa">
+		<div class="container">
+			<div class="row justify-content-center">
+				<div class="col-lg-6">
+					<div class="section_title text-center mb_70">
+						<h3>가이드 투어</h3>
+						<p>익스트림 자전거 여행을 위한 가이드 투어 상품을 안내해드립니다.</p>
+					</div>
 				</div>
-				<div class="row">
-					<c:forEach var="course" items="${clist }">
-						<div class="col-lg-4 col-md-6">
-							<div class="single_place">
-								<div class="thumb">
-									<img src="/upload/course/${course.photo}" alt=""
-										style="max-width: 350px; max-height: 230px;"> <a
-										href="#" class="prise">${course.price}원</a>
-								</div>
-								<div class="place_info">
-									<a
-										href="/course/courseview?num=${course.num }&userid=<sec:authentication property='principal.member.userid'/>"><h3>${course.title }</h3></a>
-									<p>${course.content }</p>
-									<div class="rating_days d-flex justify-content-between">
-										<span class="d-flex justify-content-center align-items-center">
-											<i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <i class="fa fa-star"></i> <i
-											class="fa fa-star"></i> <a href="#">(${course.preview}
-												Review)</a>
-										</span>
-										<div class="days">
-											<i class="fa fa-clock-o"></i> <a href="#">${course.days}
-												Days</a>
-										</div>
+			</div>
+			<div class="row">
+				<c:forEach var="course" items="${clist }">
+					<div class="col-lg-4 col-md-6">
+						<div class="single_place">
+							<div class="thumb">
+								<img src="/upload/course/${course.photo}" alt="" style="max-width: 350px; max-height: 230px;"> 
+								<a href="#" class="prise">${course.price}원</a>
+							</div>
+							<div class="place_info">
+								<a href="/course/courseview?num=${course.num }"><%-- &userid=<sec:authentication property='principal.member.userid'/> --%>
+									<h3>${course.title }</h3>
+								</a>
+								<p>${course.content }</p>
+								<div class="rating_days d-flex justify-content-between">
+									<span class="d-flex justify-content-center align-items-center">
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i> 
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<i class="fa fa-star"></i>
+										<a href="#">(${course.preview} Review)</a>
+									</span>
+									<div class="days">
+										<i class="fa fa-clock-o"></i> 
+										<a href="#">${course.days} Days</a>
 									</div>
 								</div>
 							</div>
 						</div>
-					</c:forEach>
-				</div>
+					</div>
+				</c:forEach>
+			</div>
 
-				<div class="row">
-					<div class="col-lg-12">
-						<div class="more_place_btn text-center">
-							<a class="boxed-btn4"
-								href="/course/course?userid=<sec:authentication property='principal.member.userid'/>">더보기</a>
-						</div>
+			<div class="row">
+				<div class="col-lg-12">
+					<div class="more_place_btn text-center">
+						<a class="boxed-btn4" href="/course/course">더보기</a><%-- ?userid=<sec:authentication property='principal.member.userid'/> --%>
 					</div>
 				</div>
 			</div>
 		</div>
-	</sec:authorize>
+	</div>
+	<%-- </sec:authorize> --%>
 
 
-	<div class="travel_variation_area aa">
+	<!-- <div class="travel_variation_area aa">
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-4 col-md-6">
@@ -193,11 +195,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 
 
 	<!-- testimonial_area  -->
-	<div class="testimonial_area aa">
+	<!-- <div class="testimonial_area aa">
 		<div class="container">
 			<div class="row">
 				<div class="col-xl-12">
@@ -285,7 +287,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</div> -->
 	<!-- /testimonial_area  -->
 
 

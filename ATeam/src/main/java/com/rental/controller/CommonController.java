@@ -82,13 +82,14 @@ public class CommonController {
 			model.addAttribute("logout", "로그아웃했습니다");
 		}
 	}
+	
 	@PostMapping("/login")
 	public void loginPost(String error, String logout, Model model) {
 		log.info("error : " + error);
 		log.info("logout : " + logout);
 		System.out.println("hello world!");
 	}
-
+	
 	@GetMapping("/signup")
 	public void signup() {
 
@@ -289,13 +290,13 @@ public class CommonController {
 		return "/inquire/inquire";
 	}
 	
-	@PreAuthorize("hasAnyRole({'ROLE_USER','ROLE_ADMIN'})")
+	//@PreAuthorize("hasAnyRole({'ROLE_USER','ROLE_ADMIN'})")
 	@GetMapping("/course/course")
-	public void course(Model model,@ModelAttribute("cri") Criteria cri,@RequestParam("userid") String userid) {
+	public void course(Model model,@ModelAttribute("cri") Criteria cri) { //,@RequestParam("userid") String userid
 		log.info("productlist");
 		log.info(ps.getCList(cri));
 		int total = ps.Ccount();
-		model.addAttribute("userid",userid);
+//		model.addAttribute("userid",userid);
 		model.addAttribute("course", ps.getCList(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri, total));// total
 	}

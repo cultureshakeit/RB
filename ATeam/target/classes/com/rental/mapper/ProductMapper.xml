@@ -7,15 +7,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select count(*) as count from
 		product
 	</select>
-	<select id="getListWithPaging"
-		resultType="com.rental.domain.ProductVO">
-	<![CDATA[	
+	<select id="getListWithPaging" resultType="com.rental.domain.ProductVO">
+		<![CDATA[	
 		 select * from 
-       (
-       select/*+ index_desc (product product_pk )*/
-		rownum rn , num, userid, goods, content, price, regdate,startdate,lastdate, category, goodsphoto, status
-		 from product
-       where rownum <= #{pageNum} * #{amount}
+	     (
+	     	select/*+ index_desc (product product_pk )*/
+				rownum rn , num, userid, goods, content, price, regdate,startdate,lastdate, category, goodsphoto, status
+			from product 
+			where rownum <= #{pageNum} * #{amount}
        ]]>
 		<if test="keyword != null">
 			<choose>
@@ -177,13 +176,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</delete>
 <select id="getCmain" resultType="com.rental.domain.CourseVO">
 	<![CDATA[
-	select*from course where rownum <=3
+	select * from course where rownum <=3
 	]]>
 	</select>
 	
 	<select id="getPmain" resultType="com.rental.domain.ProductVO">
 	<![CDATA[
-	select*from product where rownum <=6
+	select * from product where rownum <=6
 	]]>
 	</select>
 

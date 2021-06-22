@@ -5,19 +5,19 @@
 		resultType="com.rental.domain.ReplyVO">
 		<![CDATA[	
 		 select * from 
-       (
-       select /*+index_asc(noticereply noticereply_pk)*/
-       rownum rn , n.* from noticereply n
-       where rownum <= #{pageNum} * #{amount} and n_num = #{n_num} order by regdate desc
-       ) 
-       where rn > (#{pageNum}-1)*#{amount}  
-	]]>
+	       (
+	       select /*+index_asc(noticereply noticereply_pk)*/
+	       rownum rn , n.* from noticereply n
+	       where rownum <= #{pageNum} * #{amount} and n_num = #{n_num} order by regdate desc
+	       ) 
+	       where rn > (#{pageNum}-1)*#{amount}  
+		]]>
 	</select>
 
 	<select id="Top6list" resultType="com.rental.domain.ReplyVO">
-	<![CDATA[	
-		select /*+index_desc (noticereply noticereply_pk)*/ * from noticereply where rownum <= 6 order by regdate desc
-	]]>
+		<![CDATA[	
+			select /*+index_desc (noticereply noticereply_pk)*/ * from noticereply where rownum <= 6 order by regdate desc
+		]]>
 	</select>
 	<select id="UserReply" resultType="com.rental.domain.ReplyVO">
 		<![CDATA[select * from noticereply

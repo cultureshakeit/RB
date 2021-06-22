@@ -4,60 +4,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<title>SignUp</title>
-<%@include file="header.jsp"%>
-<!--===============================================================================================-->
-<link rel="icon" type="image/png"
-	href="/resources/user/images/icons/favicon.ico" />
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/vendor/animate/animate.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/vendor/select2/select2.min.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/css/util.css">
-<link rel="stylesheet" type="text/css"
-	href="/resources/user/css/main.css">
-<link rel="stylesheet" type="text/css" href="/resources/popup.css">
-<!--===============================================================================================-->
-<meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
-<!-- default header name is X-CSRF-TOKEN -->
-<meta id="_csrf_header" name="_csrf_header"
-	th:content="${_csrf.headerName}" />
+	<title>SignUp</title>
+	<%@include file="header.jsp"%>
+	<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="/resources/user/images/icons/favicon.ico" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/vendor/bootstrap/css/bootstrap.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/fonts/font-awesome-4.7.0/css/font-awesome.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/vendor/animate/animate.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/vendor/css-hamburgers/hamburgers.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/vendor/animsition/css/animsition.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/vendor/select2/select2.min.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/vendor/daterangepicker/daterangepicker.css" />
+	<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="/resources/user/css/util.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/user/css/main.css" />
+	<link rel="stylesheet" type="text/css" href="/resources/popup.css" />
+	<!--===============================================================================================-->
+	<meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
+	<!-- default header name is X-CSRF-TOKEN -->
+	<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}" />
 </head>
 <style type="text/css">
-.slicknav_nav .slicknav_arrow {
-	margin: 0 0 0 0 !important;
-	font-size: 20px !important;
-}
 
-input[name='useremail']::after {
-	content: attr(data-content);
-}
-
-.container-login100 {
-	min-height: inherit;
-}
+	.slicknav_nav .slicknav_arrow {
+		margin: 0 0 0 0 !important;
+		font-size: 20px !important;
+	}
+	
+	input[name='useremail']::after {
+		content: attr(data-content);
+	}
+	
+	.container-login100 {
+		min-height: inherit;
+	}
+	
 </style>
 <body>
 
@@ -65,64 +55,76 @@ input[name='useremail']::after {
 		<div class="container-login100">
 			<div class="wrap-login100">
 				<form:form class="login100-form validate-form" action="/signup"
-					method="post" onsubmit="return checkAccount()" id="signform">
+						   method="post" onsubmit="return checkAccount()" id="signform">
 					<span class="login100-form-title p-b-34"> 회원가입페이지 </span>
 					<input type="hidden" name="userName" value="USER">
 					<div class="row" style="justify-content: center;">
+					
 						<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
-							data-validate="Type user name">
+							 data-validate="Type user name">
+						
 							<input id="first-name" class="input100" type="text" name="userid"
-								placeholder="ID를 입력해 주세요."> <span class="focus-input100"></span>
+								   placeholder="ID를 입력해 주세요.">
+							<span class="focus-input100"></span>
 
 						</div>
 						<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
-							data-validate="Type user NickName">
+							 data-validate="Type user NickName">
+							 
 							<input id="nickname" class="input100" type="text" name="nickname"
-								placeholder="닉네임을 입력해 주세요."> <span
-								class="focus-input100"></span>
+								placeholder="닉네임을 입력해 주세요.">
+							<span class="focus-input100"></span>
 
 						</div>
 						<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
-							data-validate="형식에 맞는 이메일 작성.">
+							 data-validate="형식에 맞는 이메일 작성.">
+							 
 							<input class="input100" type="email" name="useremail"
-								placeholder="이메일을 적어주세요."> <span class="focus-input100"></span>
+								   placeholder="이메일을 적어주세요.">
+							<span class="focus-input100"></span>
 
 						</div>
 						<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
-							data-validate="Type password">
+							 data-validate="Type password">
+							 
 							<input class="input100" type="password" name="userpw"
-								placeholder="패스워드를 입력해 주세요"> <span
-								class="focus-input100"></span>
+								   placeholder="패스워드를 입력해 주세요">
+							<span class="focus-input100"></span>
 
 						</div>
 
 						<div class="wrap-input100 rs1-wrap-input100 validate-input m-b-20"
-							data-validate="Type password">
+							 data-validate="Type password">
+							 
 							<input class="input100" type="password" name="userpw_confirm"
-								placeholder="비밀번호 확인"> <span class="focus-input100"></span>
+								placeholder="비밀번호 확인">
+							<span class="focus-input100"></span>
+							
 						</div>
 					</div>
 					<div class="form-group">
 						<div class="input-group">
-							<input type="checkbox" name="agree" id="chk1"><a
-								href="#layer1" class="btn-example"><label id="contents1">기본
-									약관 목적</label></a>
+							<input type="checkbox" name="agree" id="chk1">
+							<a href="#layer1" class="btn-example">
+								<label id="contents1">기본 약관 목적</label>
+							</a>
 						</div>
 						<div class="input-group">
-							<input type="checkbox" name="agree" id="chk2"><a
-								href="#layer2" class="btn-example"><label id="contents2">회원
-									가입 및 개인정보 보호에 관한 약관</label></a>
+							<input type="checkbox" name="agree" id="chk2">
+							<a href="#layer2" class="btn-example">
+								<label id="contents2">회원 가입 및 개인정보 보호에 관한 약관</label>
+							</a>
 						</div>
 					</div>
 
 					<div class="container-login100-form-btn">
-						<button class="btn btn-outline-success login100-form-btn"
-							style="font-size: 1rem;">회원가입</button>
+						<button class="btn btn-outline-success login100-form-btn" style="font-size: 1rem;">
+							회원가입
+						</button>
 					</div>
 				</form:form>
 
-				<div class="login100-more"
-					style="background-image: url('/resources/user/images/bg-01.jpg');"></div>
+				<div class="login100-more" style="background-image: url('/resources/user/images/bg-01.jpg');"></div>
 			</div>
 		</div>
 	</div>
@@ -209,7 +211,6 @@ input[name='useremail']::after {
 				<p>2) 본 약관에서 정하지 아니한 사항과 본 약관의 해석에 관하여는 「콘텐츠산업진흥법」, 「전자상거래 등에서의
 					소비자보호에 관한 법률」, 「약관의 규제에 관한 법률」, 문화체육관광부장관이 정하는 「콘텐츠 이용자 보호지침」 기타
 					관계법령에 따릅니다.</p>
-				</p>
 				<div class="btn-r">
 					<a href="#" class="btn-layerClose" id='agree'>동의하기</a>
 				</div>
