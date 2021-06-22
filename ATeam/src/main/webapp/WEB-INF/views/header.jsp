@@ -81,7 +81,9 @@
 									<nav>
 										<ul id="navigation">
 											<sec:authorize access="isAnonymous()">
-												<li><a class="active" href="/">HOME</a></li>
+												<li>
+													<a class="active" href="/">HOME</a>
+												</li>
 											</sec:authorize>
 											<sec:authorize access="isAuthenticated()">
 												<li>
@@ -103,29 +105,25 @@
 															<a href="/course/course?userid=<sec:authentication property='principal.member.userid'/>">가이드 투어 정보</a>
 														</li>
 													</sec:authorize>
-<<<<<<< HEAD
 												</ul>
 											</li>
 											<li>
 												<a href="#">COMMUNITY</a>
-=======
-												</ul></li>
-												
-												
-												
-												
-											<li><a href="#">COMMUNITY</a>
->>>>>>> refs/remotes/origin/master
 												<ul class="submenu">
 													<li><a href="/board/notice">공지사항</a></li>
 													<sec:authorize access="isAnonymous()">
-														<li><a href="/usernotice/Usernotice">게시판</a></li>
+														<li><a href="/usernotice/Usernotice">회사 정보</a></li>
 													</sec:authorize>
 													<sec:authorize access="isAuthenticated()">
-														<li><a href="/usernotice/Usernotice?userid=<sec:authentication property='principal.member.userid'/>">게시판</a></li>
+														<li>
+															<a href="/usernotice/Usernotice?userid=<sec:authentication property='principal.member.userid'/>">
+																게시판
+															</a>
+														</li>
 													</sec:authorize>
-													<li><a href="/review/photo">포토 리뷰</a></li>
-<<<<<<< HEAD
+													<li>
+														<a href="/review/photo">포토 리뷰</a>
+													</li>
 													<li>
 														<a href="/QnA/QnA">FAQ</a>
 													</li>
@@ -139,17 +137,8 @@
 													<a href="javascript:void(0)" onclick="onLogout();">Logout</a>
 												</sec:authorize>
 											</li>
-											<li>
-												<a href="#">#</a>
-=======
-													<li><a href="/QnA/QnA">FAQ</a></li>
-												</ul></li>
-												
-												
 											<li><a href="#">#</a>
->>>>>>> refs/remotes/origin/master
 												<ul class="submenu">
-<<<<<<< HEAD
 													<li><a href="/about">이용안내</a></li>
 													<sec:authorize access="isAnonymous()">
 														<li><a href="/signup#layer1">회원가입</a></li>
@@ -161,50 +150,13 @@
 														<li><a href="/admin/index?userid=<sec:authentication property='principal.member.userid'/>">관리자 페이지</a></li>
 													</sec:authorize>
 													<li>
+														<a href="/board/kakao">카카오상담</a>
+													</li>
+													<li>
 														<a href="/contact/contact">문의</a>
 													</li>
 												</ul>
 											</li>
-=======
-													<li><sec:authorize access="isAnonymous()">
-															<a href="/login">로그인</a>
-														</sec:authorize> <sec:authorize
-															access="isAuthenticated() and hasAnyRole({'ROLE_USER','ROLE_ADMIN'}) ">
-															<a href="javascript:void(0)" onclick="onLogout();">
-																로그아웃</a>
-														</sec:authorize></li>
-													<li><sec:authorize
-															access="isAuthenticated() and hasRole('ROLE_USER')">
-															<li><a
-																href="/users/index?userid=<sec:authentication property='principal.member.userid'/>">마이페이지</a></li>
-														</sec:authorize> <sec:authorize access="hasRole('ROLE_ADMIN')">
-															<li><a
-																href="/admin/index?userid=<sec:authentication property='principal.member.userid'/>">관리자 페이지
-															</a></li>
-														</sec:authorize></li>
-													<li><sec:authorize access="isAnonymous()">
-															<li><a href="/signup">회원가입</a>
-														</sec:authorize></li>
-													<li><a href="/contact/contact">문의</a></li>
-												</ul></li>
-												
-												
-												<li><a href="#"> 24시 상담</a>
-												<ul class="submenu">
-													<li><a href="/board/kakao">카카오상담</a></li>
-													<sec:authorize access="isAnonymous()">
-														<li><a href="/usernotice/Usernotice">회사 정보</a></li>
-													</sec:authorize>
-													<sec:authorize access="isAuthenticated()">
-														<li><a
-															href="/usernotice/Usernotice?userid=<sec:authentication property='principal.member.userid'/>">게시판</a>
-														</li>
-													</sec:authorize>
-												
-												</ul></li>
-												
-												
->>>>>>> refs/remotes/origin/master
 										</ul>
 									</nav>
 								</div>
