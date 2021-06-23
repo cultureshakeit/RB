@@ -87,7 +87,9 @@
 											</sec:authorize>
 											<sec:authorize access="isAuthenticated()">
 												<li>
-													<a class="active" href="/<sec:authentication property="principal.member.userid"/>">HOME</a>
+													<a class="active" href="/<sec:authentication property="principal.member.userid"/>">
+														HOME
+													</a>
 												</li>
 											</sec:authorize>
 											
@@ -182,9 +184,9 @@
 									</a>
 								</div>
 							</sec:authorize>
-							<div class="seach_icon">
+							<!-- <div class="seach_icon">
 								
-							</div>
+							</div> -->
 							<div class="col-12">
 								<div class="mobile_menu d-block d-lg-none">
 									

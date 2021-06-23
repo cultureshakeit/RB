@@ -6,13 +6,17 @@
 
 	<update id="UserLoginSuccess">
 		<![CDATA[
-	  		update inlog set login_count = login_count + 1 where userid = #{userid}
+	  		update inlog
+	  		set login_count = login_count + 1
+	  		where userid = #{userid}
 		]]>
 	</update>
 
 	<update id="UserLoginFail">
 		<![CDATA[
-			update inlog set fail_count = fail_count + 1 where userid = #{userid}
+			update inlog
+			set fail_count = fail_count + 1
+			where userid = #{userid}
 		]]>
 	</update>
 	
