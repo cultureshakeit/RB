@@ -24,25 +24,30 @@
 
 	<select id="read" resultMap="memberMap">
 		select
-		mem.userid, userpw, username,nickname,
-		ENABLED, regdate, updatedate, useremail, auth, ip
+			mem.userid, userpw, username,nickname,
+			ENABLED, regdate, updatedate, useremail, auth, ip
 		from
-		tbl_member mem left
-		outer join tbl_member_auth auth on mem.userid =
-		auth.userid
+			tbl_member mem left outer join tbl_member_auth auth on mem.userid = auth.userid
 		where
-		mem.userid = #{userid}
+			mem.userid = #{userid}
 	</select>
 
 	<insert id="insert">
-		insert into tbl_member (userid, userpw, username,nickname,
-		regdate, enabled, useremail, ip) values
-		(#{userid}, #{userpw}, '일반사용자', #{nickname}
-		,sysdate,0, #{useremail}, #{ip})
+		insert into tbl_member 
+		(
+			userid, userpw, username,nickname,
+			regdate, enabled, useremail, ip
+		)
+		values
+		(
+			#{userid}, #{userpw}, '일반사용자', #{nickname},
+			sysdate,0, #{useremail}, #{ip}
+		)
 	</insert>
+	
 	<insert id="insert_auth">
-		insert into tbl_member_auth (userid, auth ) values
-		(#{userid} , 'ROLE_USER' )
+		insert into tbl_member_auth (userid, auth ) 
+		values (#{userid} , 'ROLE_USER')
 	</insert>
 
 	<update id="Enabled">
@@ -51,18 +56,23 @@
 	</update>
 
 	<update id="DisEnabled">
-		update tbl_member set enabled = 0 where userid =
-		#{userid}
+		update tbl_member
+		set enabled = 0
+		where userid = #{userid}
 	</update>
 
 	<select id="EmailCheck" resultType="String">
-		select useremail from
-		tbl_member where useremail = #{useremail}
+		select useremail
+		from tbl_member
+		where useremail = #{useremail}
 	</select>
+	
 	<select id="IdCheck" resultType="String">
-		select userid from tbl_member
+		select userid
+		from tbl_member
 		where userid = #{userid}
 	</select>
+	
 	<resultMap type="com.rental.domain.MemberVO" id="DOA">
 		<id property="userid" column="userid" />
 		<result property="userid" column="userid" />
@@ -70,18 +80,31 @@
 	</resultMap>
 	
 	<delete id="IdDelete">
-		delete from tbl_member where userid = #{userid}
+		delete from tbl_member
+		where userid = #{userid}
 	</delete>
 	<update id="revitailze">
-		update tbl_member set enabled = #{enabled} where userid = #{userid}
+		update tbl_member
+		set enabled = #{enabled}
+		where userid = #{userid}
 	</update>
+	
 	<update id="Reset" parameterType="com.rental.domain.MemberVO" >
-	update tbl_member set userpw = #{userpw} where userid = #{userid}
+		update tbl_member
+		set userpw = #{userpw}
+		where userid = #{userid}
 	</update>
+	
 	<select id="FindId" resultType="com.rental.domain.MemberVO">
-	select userid from tbl_member where useremail = #{useremail}
+		select userid
+		from tbl_member
+		where useremail = #{useremail}
 	</select>
+	
 	<update id="updatedate">
-	update tbl_member set updatedate = sysdate where userid = #{userid}
+		update tbl_member
+		set updatedate = sysdate
+		where userid = #{userid}
 	</update>
+	
 </mapper>

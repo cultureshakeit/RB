@@ -35,6 +35,7 @@ public class ProductControll {
 
 	@Setter(onMethod_ = { @Autowired })
 	private ResTableService rs;
+	
 	@Setter(onMethod_ = { @Autowired })
 	private MemberService ms;
 
@@ -106,8 +107,8 @@ public class ProductControll {
 	}
 
 	@GetMapping("/view")
-	public void view(String userid, Model model, int num, @ModelAttribute("cri") Criteria cri) {
-		model.addAttribute("userid", userid);
+	public void view(Model model, int num, @ModelAttribute("cri") Criteria cri) {
+//		model.addAttribute("userid", userid); String userid, 
 		model.addAttribute("view", service.getPage(num));
 	}
 

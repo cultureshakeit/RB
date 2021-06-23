@@ -23,7 +23,7 @@
 		base-package="com.rental.service" />
 
 	<!-- Gmail 설정 -->
-	<bean id="mailSender"
+	<!-- <bean id="mailSender"
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
@@ -37,23 +37,8 @@
 				<prop key="mail.debug">true</prop>
 			</props>
 		</property>
-	</bean>
+	</bean> -->
 	
-	<!-- DB연결 Connection -->
-<!-- 	<bean id="hikariConfig" class="com.zaxxer.hikari.HikariConfig">
-		<property name="driverClassName"
-			value="net.sf.log4jdbc.sql.jdbcapi.DriverSpy"></property> oracle.jdbc.driver.OracleDriver
-		<property name="jdbcUrl"
-			value="jdbc:log4jdbc:oracle:thin:@localhost:1521:orcl"></property> jdbc:oracle:thin:@localhost:1521:orcl
-		<property name="username" value="scott"></property>
-		<property name="password" value="1234"></property>
-	</bean> -->
-
-	<!-- HikariCp Configuration -->
-<!-- 	<bean id="dataSource" class="com.zaxxer.hikari.HikariDataSource"
-		destroy-method="close">
-		<constructor-arg ref="hikariConfig" />
-	</bean> -->
 	<jee:jndi-lookup 
 			id="dataSource"
 			jndi-name="jdbc/testdb"

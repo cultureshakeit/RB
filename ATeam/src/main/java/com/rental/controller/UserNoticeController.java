@@ -39,6 +39,7 @@ public class UserNoticeController {
 
 	@Setter(onMethod_ = { @Autowired })
 	private ReplyService rs;
+	
 	@Setter(onMethod_ = { @Autowired })
 	private MemberService mem;
 

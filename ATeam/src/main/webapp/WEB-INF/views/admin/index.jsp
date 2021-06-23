@@ -8,56 +8,48 @@
 <!DOCTYPE html>
 <html lang="en">
 
+
+
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="">
-<meta name="author" content="">
-<meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
-<!-- default header name is X-CSRF-TOKEN -->
-<meta id="_csrf_header" name="_csrf_header"
-	th:content="${_csrf.headerName}" />
-<link rel="icon" type="image/png" sizes="16x16"
-	href="/resources/admin/plugins/images/favicon.png">
-<title>RENTAL BYCICLE COMPANY</title>
-<!-- Bootstrap Core CSS -->
-<link href="/resources/admin/bootstrap/dist/css/bootstrap.min.css"
-	rel="stylesheet">
-<!-- Menu CSS -->
-<link
-	href="/resources/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css"
-	rel="stylesheet">
-<!-- toast CSS -->
-<link
-	href="/resources/admin/plugins/bower_components/toast-master/css/jquery.toast.css"
-	rel="stylesheet">
-<!-- morris CSS -->
-<link
-	href="/resources/admin/plugins/bower_components/morrisjs/morris.css"
-	rel="stylesheet">
-<!-- animation CSS -->
-<link href="/resources/admin/css/animate.css" rel="stylesheet">
-<!-- Custom CSS -->
-<link href="/resources/admin/css/style.css" rel="stylesheet">
-<!-- color CSS -->
-<link href="/resources/admin/css/colors/blue-dark.css" id="theme"
-	rel="stylesheet">
-<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
-<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-<!--[if lt IE 9]>
-    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
-    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->
-<link href="/resources/admin/css/admin.index.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="">
+	<meta name="author" content="">
+	<meta id="_csrf" name="_csrf" th:content="${_csrf.token}" />
+	<!-- default header name is X-CSRF-TOKEN -->
+	<meta id="_csrf_header" name="_csrf_header" th:content="${_csrf.headerName}" />
+	<link rel="icon" type="image/png" sizes="16x16" href="/resources/admin/plugins/images/favicon.png">
+	<title>RENTAL BYCICLE COMPANY</title>
+	<!-- Bootstrap Core CSS -->
+	<link href="/resources/admin/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Menu CSS -->
+	<link href="/resources/admin/plugins/bower_components/sidebar-nav/dist/sidebar-nav.min.css" rel="stylesheet">
+	<!-- toast CSS -->
+	<link href="/resources/admin/plugins/bower_components/toast-master/css/jquery.toast.css" rel="stylesheet">
+	<!-- morris CSS -->
+	<link href="/resources/admin/plugins/bower_components/morrisjs/morris.css" rel="stylesheet">
+	<!-- animation CSS -->
+	<link href="/resources/admin/css/animate.css" rel="stylesheet">
+	<!-- Custom CSS -->
+	<link href="/resources/admin/css/style.css" rel="stylesheet">
+	<!-- color CSS -->
+	<link href="/resources/admin/css/colors/blue-dark.css" id="theme" rel="stylesheet">
+	<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+	    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	    <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+	<![endif]-->
+	<link href="/resources/admin/css/admin.index.css" rel="stylesheet">
 </head>
 <style>
-#intable th{
-padding: 0 !important;
-margin: 0 !important;
-border-left: 1px solid #eee;
-height: 30px;
-}
+	#intable th{
+		padding: 0 !important;
+		margin: 0 !important;
+		border-left: 1px solid #eee;
+		height: 30px;
+	}
 </style>
 <body>
 

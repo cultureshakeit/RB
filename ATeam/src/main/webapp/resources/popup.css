@@ -2,9 +2,11 @@
 .pop-layer .pop-container {
   padding: 20px 25px;
 }
- .pop-container{
+
+.pop-container{
  height: 800px;
- }
+}
+
 .pop-layer p.ctxt {
   color: #666;
   line-height: 25px;

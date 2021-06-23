@@ -22,7 +22,11 @@ public class CustomUser extends User {
 
 	public CustomUser(MemberVO vo) {
 		// TODO Auto-generated constructor stub
-		super(vo.getUserid(), vo.getUserpw(),vo.isEnabled(), true,true,true, vo.getAuthList().stream().map(auth -> new SimpleGrantedAuthority(auth.getAuth())).collect(Collectors.toList()));
+		super(vo.getUserid(), vo.getUserpw(), vo.isEnabled(), true, true, true,
+			  vo.getAuthList().stream()
+			  				  .map(auth -> new SimpleGrantedAuthority(auth.getAuth()))
+			  				  .collect(Collectors.toList())
+			 );
 		
 		this.member = vo;
 	}

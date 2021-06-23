@@ -1,41 +1,36 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://www.springframework.org/security/tags"
-	prefix="sec"%>
+<%@taglib uri="http://www.springframework.org/security/tags" prefix="sec"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<meta http-equiv="x-ua-compatible" content="ie=edge">
-<title>RENTAL BYCICLE COMPANY</title>
-<meta name="description" content="">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- <link rel="manifest" href="site.webmanifest"> -->
-<link rel="shortcut icon" type="image/x-icon"
-	href="/resources/img/favicon.png">
-<!-- Place favicon.ico in the root directory -->
-
-<!-- CSS here -->
-<link rel="stylesheet" href="/resources/css/bootstrap.min.css">
-<link rel="stylesheet" href="/resources/css/owl.carousel.min.css">
-<link rel="stylesheet" href="/resources/css/magnific-popup.css">
-<link rel="stylesheet" href="/resources/css/font-awesome.min.css">
-<link rel="stylesheet" href="/resources/css/themify-icons.css">
-<link rel="stylesheet" href="/resources/css/nice-select.css">
-<link rel="stylesheet" href="/resources/css/flaticon.css">
-<link rel="stylesheet" href="/resources/css/gijgo.css">
-<link rel="stylesheet" href="/resources/css/animate.css">
-<link rel="stylesheet" href="/resources/css/slick.css">
-<link rel="stylesheet" href="/resources/css/slicknav.css">
-<link rel="stylesheet"
-	href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css">
-
-<link rel="stylesheet" href="/resources/css/style.css">
-
-
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>RENTAL BYCICLE COMPANY</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- <link rel="manifest" href="site.webmanifest"> -->
+	<link rel="shortcut icon" type="image/x-icon" href="/resources/img/favicon.png" />
+	<!-- Place favicon.ico in the root directory -->
+	
+	<!-- CSS here -->
+	<link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/resources/css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="/resources/css/magnific-popup.css" />
+	<link rel="stylesheet" href="/resources/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/resources/css/themify-icons.css" />
+	<link rel="stylesheet" href="/resources/css/nice-select.css" />
+	<link rel="stylesheet" href="/resources/css/flaticon.css" />
+	<link rel="stylesheet" href="/resources/css/gijgo.css" />
+	<link rel="stylesheet" href="/resources/css/animate.css" />
+	<link rel="stylesheet" href="/resources/css/slick.css" />
+	<link rel="stylesheet" href="/resources/css/slicknav.css" />
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+	
+	<link rel="stylesheet" href="/resources/css/style.css" />
 </head>
 <style>
 .slicknav_btn {
@@ -81,73 +76,89 @@
 				<div class="container-fluid">
 					<div class="header_bottom_border">
 						<div class="row align-items-center">
-
-							<div class="col-xl-7 col-lg-7"
-								style="text-align: center; max-height: 75px; display: inline-block;">
+							<div class="col-xl-7 col-lg-7" style="text-align: center; max-height: 75px; display: inline-block;">
 								<div class="main-menu  d-none d-lg-block">
 									<nav>
 										<ul id="navigation">
 											<sec:authorize access="isAnonymous()">
-												<li><a class="active" href="/">MAIN PAGE</a></li>
+												<li>
+													<a class="active" href="/">HOME</a>
+												</li>
 											</sec:authorize>
 											<sec:authorize access="isAuthenticated()">
-												<li><a class="active"
-													href="/<sec:authentication property="principal.member.userid"/>">MAIN
-														PAGE</a></li>
+												<li>
+													<a class="active" href="/<sec:authentication property="principal.member.userid"/>">
+														HOME
+													</a>
+												</li>
 											</sec:authorize>
-
-											<li><a href="#">INFOMATION</a>
+											
+											<li>
+												<a href="#">PLACE</a>
 												<ul class="submenu">
-													<li><a href="/about">이용안내</a></li>
-													<li><a href="/tourist">관광명소</a></li>
-												</ul></li>
-											<li><a href="#">GOODS</a>
-												<ul class="submenu">
-													<li><a href="/product/product">자전거대여</a></li>
-
+													<li>
+														<a href="/tourist">관광명소</a>
+													</li>
+													<li>
+														<a href="/product/product">자전거대여</a>
+													</li>
 													<sec:authorize access="isAuthenticated()">
-														<li><a
-															href="/course/course?userid=<sec:authentication property='principal.member.userid'/>">가이드 투어 정보</a>
+														<li>
+															<a href="/course/course?userid=<sec:authentication property='principal.member.userid'/>">가이드 투어 정보</a>
 														</li>
 													</sec:authorize>
-												</ul></li>
-											<li><a href="#">COMMUNITY</a>
+												</ul>
+											</li>
+											<li>
+												<a href="#">COMMUNITY</a>
 												<ul class="submenu">
 													<li><a href="/board/notice">공지사항</a></li>
 													<sec:authorize access="isAnonymous()">
-														<li><a href="/usernotice/Usernotice">게시판</a></li>
+														<li><a href="/usernotice/Usernotice">회사 정보</a></li>
 													</sec:authorize>
 													<sec:authorize access="isAuthenticated()">
-														<li><a
-															href="/usernotice/Usernotice?userid=<sec:authentication property='principal.member.userid'/>">게시판</a>
+														<li>
+															<a href="/usernotice/Usernotice?userid=<sec:authentication property='principal.member.userid'/>">
+																게시판
+															</a>
 														</li>
 													</sec:authorize>
-													<li><a href="/review/photo">포토 리뷰</a></li>
-													<li><a href="/QnA/QnA">FAQ</a></li>
-												</ul></li>
+													<li>
+														<a href="/review/photo">포토 리뷰</a>
+													</li>
+													<li>
+														<a href="/QnA/QnA">FAQ</a>
+													</li>
+												</ul>
+											</li>
+											<li>
+												<sec:authorize access="isAnonymous()">
+													<a href="/login">Login</a>
+												</sec:authorize>
+												<sec:authorize access="isAuthenticated() and hasAnyRole({'ROLE_USER','ROLE_ADMIN'}) ">
+													<a href="javascript:void(0)" onclick="onLogout();">Logout</a>
+												</sec:authorize>
+											</li>
 											<li><a href="#">#</a>
 												<ul class="submenu">
-													<li><sec:authorize access="isAnonymous()">
-															<a href="/login">로그인</a>
-														</sec:authorize> <sec:authorize
-															access="isAuthenticated() and hasAnyRole({'ROLE_USER','ROLE_ADMIN'}) ">
-															<a href="javascript:void(0)" onclick="onLogout();">
-																로그아웃</a>
-														</sec:authorize></li>
-													<li><sec:authorize
-															access="isAuthenticated() and hasRole('ROLE_USER')">
-															<li><a
-																href="/users/index?userid=<sec:authentication property='principal.member.userid'/>">마이페이지</a></li>
-														</sec:authorize> <sec:authorize access="hasRole('ROLE_ADMIN')">
-															<li><a
-																href="/admin/index?userid=<sec:authentication property='principal.member.userid'/>">관리자 페이지
-															</a></li>
-														</sec:authorize></li>
-													<li><sec:authorize access="isAnonymous()">
-															<li><a href="/signup">회원가입</a>
-														</sec:authorize></li>
-													<li><a href="/contact/contact">문의</a></li>
-												</ul></li>
+													<li><a href="/about">이용안내</a></li>
+													<sec:authorize access="isAnonymous()">
+														<li><a href="/signup#layer1">회원가입</a></li>
+													</sec:authorize>
+													<sec:authorize access="isAuthenticated() and hasRole('ROLE_USER')">
+														<li><a href="/users/index?userid=<sec:authentication property='principal.member.userid'/>">마이페이지</a></li>
+													</sec:authorize> 
+													<sec:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
+														<li><a href="/admin/index?userid=<sec:authentication property='principal.member.userid'/>">관리자 페이지</a></li>
+													</sec:authorize>
+													<li>
+														<a href="/board/kakao">카카오상담</a>
+													</li>
+													<li>
+														<a href="/contact/contact">문의</a>
+													</li>
+												</ul>
+											</li>
 										</ul>
 									</nav>
 								</div>
@@ -158,28 +169,31 @@
 										<i class="fa fa-phone">+82 10-2345-6789</i>
 									</p>
 									<div class="social_links d-none d-xl-block">
-										<b><span id="nowTimes"></span></b>
+										<b>
+											<span id="nowTimes"></span>
+										</b>
 									</div>
 								</div>
 							</div>
-							<sec:authorize
-								access="isAuthenticated() and hasRole('ROLE_USER')">
+							<sec:authorize access="isAuthenticated() and hasRole('ROLE_USER')">
 								<div class="cart">
-									<a
-										href="/product/cart?userid=<sec:authentication property='principal.member.userid'/>">
-										<i id='cart' class="fa fa-shopping-cart fa-lg"
-										aria-hidden="true" data-count=${count-cart }
-										data-id='<sec:authentication property='principal.member.userid'/>'></i>
+									<a href="/product/cart?userid=<sec:authentication property='principal.member.userid'/>">
+										<i id='cart' class="fa fa-shopping-cart fa-lg" aria-hidden="true" data-count=${count-cart }
+											data-id='<sec:authentication property='principal.member.userid'/>'>
+										</i>
 									</a>
 								</div>
 							</sec:authorize>
-							<div class="seach_icon"></div>
+							<!-- <div class="seach_icon">
+								
+							</div> -->
 							<div class="col-12">
-								<div class="mobile_menu d-block d-lg-none"></div>
+								<div class="mobile_menu d-block d-lg-none">
+									
+								</div>
 							</div>
 						</div>
 					</div>
-
 				</div>
 			</div>
 		</div>
