@@ -1,380 +1,1436 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@include file="../header.jsp"%>
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="imagetoolbar" content="no">
+<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+
+<title>흐흐흐</title>
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/eyoom-form.min.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/common.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/fontawesome-all.min.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/style.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/custom.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/tab_scroll_category.css" type="text/css" media="screen">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/sweetalert.min.css" type="text/css" media="screen">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/style.css">
+
+<script type="text/javascript" src="/resources/tourist/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery.menu.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/common.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/wrest.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/placeholders.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery.bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery.sidebar.min.js"></script>
+</head>
+
+<body>
+
+<div class="wrapper">
+
+
+<div class="basic-body container page-padding ft-padding">
+ <div class="basic-body-page">
+                                             
+<div class="row">
+                                            
+            
 <style>
-.bg-light a {
-	position: relative;
-	right:-300px;
+.board-list .board-setup {position:relative;border:1px solid #d5d5d5;height:30px;margin-bottom:20px}
+.board-list .board-setup .select {position:absolute;top:-1px;left:-1px;display:inline-block;width:200px}
+.board-list .board-setup-btn-box {position:absolute;top:-1px;right:-1px;display:inline-block;width:420px}
+.board-list .board-setup-btn {float:left;width:25%;height:30px;line-height:30px;color:#fff;text-align:center;font-size:12px}
+.board-list .board-setup-btn:nth-child(odd) {background:#59595B}
+.board-list .board-setup-btn:nth-child(even) {background:#676769}
+.board-list .board-setup-btn:hover {opacity:0.8}
+.board-list .bo_current {color:#FF4848}
+.board-list .board-btn-adm li {float:left;margin-right:5px}
+.board-list .board-list-footer {margin-top:20px}
+.board-list .favorite-setup {display:inline-block;width:100px;margin-left:15px}
+.board-list .favorite-setup .toggle {padding-right:37px}
+.board-list .multi-btn-wrap {position:relative;height:40px;margin-bottom:20px}
+.multi-type-btn-wrap {position:absolute;top:0;right:0;margin-bottom:0;z-index:1}
+.multi-type-btn-wrap li {position:relative;float:left}
+.multi-type-btn-wrap button {position:relative;margin:0;padding:0;width:40px;height:40px;border:1px solid #d5d5d5;cursor:pointer;background:#fff;font-size:15px;color:#454545}
+.multi-type-btn-wrap button:hover {background:#f5f5f5}
+.multi-type-btn-wrap button .multi-type-on + i {color:#E52700}
+.multi-type-btn-wrap button.multi-type-list-btn {border-right:0}
+.multi-type-btn-wrap button.multi-type-webzine-btn {border-right:0}
+.multi-type-btn-wrap button.multi-type-gallery-btn {border-right:0}
+.board-multi .multi-item {position:relative;font-size:12px;margin-bottom:10px;border-top:1px solid #e5e5e5;background:#fff;width:100%}
+.board-multi .multi-item-in {position:relative;padding:20px 0;min-height:170px;box-sizing:border-box}
+.board-multi .multi-item-in .multi-img {position:absolute;top:20px;left:0;width:200px;z-index:1}
+.board-multi .multi-item-in .multi-desc {position:relative}
+.board-multi .multi-item-in .multi-noimg-desc {position:relative}
+.board-multi .multi-item-in .multi-img-box {position:relative;overflow:hidden;max-height:140px}
+.board-multi .multi-item-in .multi-img-box-in {position:relative;overflow:hidden;width:100%}
+.board-multi .multi-item-in .multi-img-box-in:after {content:"";text-align:center;position:absolute;display:block;left:0;top:0;opacity:0;-moz-transition:all 0.2s ease 0s;-webkit-transition:all 0.2s ease 0s;-ms-transition:all 0.2s ease 0s;-o-transition:all 0.2s ease 0s;transition:all 0.2s ease 0s;width:100%;height:100%;background:rgba(0,0,0,0.3)}
+.board-multi .multi-item-in .multi-img-box-in:before {content:"";display:block;padding-top:60%}
+.board-multi .multi-item-in .multi-img-box-in img {position:absolute;top:0;left:0;right:0;bottom:0}
+.board-multi .multi-item-in .multi-img-box-in .movie-icon {display:inline-block;position:absolute;top:50%;left:50%;width:40px;height:40px;line-height:40px;text-align:center;color:#fff;font-size:30px;margin-top:-20px;margin-left:-20px;z-index:1}
+.board-multi .multi-item:hover .multi-img-box-in:after {opacity:1}
+.board-multi .multi-item-in .multi-desc-ymd {position:absolute;top:0;left:215px;overflow:hidden;width:80px;height:80px;background:#fff;border:1px solid #d5d5d5;text-align:center;box-sizing:border-box}
+.board-multi .multi-item-in .multi-desc-ym {font-size:11px;color:#959595;margin:12px 0 6px;line-height:1}
+.board-multi .multi-item-in .multi-desc-d {font-size:40px;font-weight:bold;color:#656565;margin:0;line-height:1}
+.board-multi .multi-item-in .multi-subj-cont {position:relative;overflow:hidden;margin-left:310px}
+.board-multi .multi-item-in h4 {position:relative;overflow:hidden;font-size:15px;color:#000;height:37px;margin-top:2px;margin-bottom:5px}
+.board-multi .multi-item:hover .multi-item-in h4 {text-decoration:underline}
+.board-multi .multi-item-in .multi-checkbox {display:inline-block;position:absolute;top:-5px;right:-11px;z-index:1}
+.board-multi .multi-item-in .multi-cont {position:relative;overflow:hidden;height:36px;font-weight:300;color:#757575;margin-bottom:15px}
+.board-multi .multi-item-in .multi-info {position:relative;border-top:1px solid #f2f2f2;padding-top:7px;margin-left:215px}
+.board-multi .multi-item-in .multi-photo {display:inline-block;width:26px;height:26px;margin-right:2px;border:1px solid #e5e5e5;padding:1px;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-border-radius:50% !important;-moz-border-radius:50% !important;border-radius:50% !important}
+.board-multi .multi-item-in .multi-photo img {width:100%;height:auto;-webkit-border-radius:50% !important;-moz-border-radius:50% !important;border-radius:50% !important}
+.board-multi .multi-item-in .multi-photo .multi-user-icon {width:22px;height:22px;font-size:14px;line-height:22px;text-align:center;background:#959595;color:#fff;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;display:inline-block;white-space:nowrap;vertical-align:baseline;-webkit-border-radius:50% !important;-moz-border-radius:50% !important;border-radius:50% !important}
+.board-multi .multi-item-in .multi-photo .multi-user-icon i {margin-right:0 !important}
+.board-multi .multi-item-in .multi-nick {margin-right:5px}
+.board-multi .multi-item-in .multi-lv-icon {display:inline-block;margin-left:2px}
+.board-multi .multi-item-in .multi-info > span {color:#959595;font-size:11px}
+.board-multi .multi-item-in .multi-info > span i {margin-right:5px}
+.board-multi .multi-item-in .multi-info > span > strong {font-weight:normal;margin-right:10px}
+.board-multi .multi-item-in .multi-noimg-desc .multi-desc-ymd {left:0}
+.board-multi .multi-item-in .multi-noimg-desc .multi-subj-cont {margin-left:95px}
+.board-multi .multi-item-in .multi-noimg-desc .multi-info {margin-left:0}
+.board-multi .multi-item:hover .multi-desc-ymd {background:#FF4948;border:1px solid #FF4948}
+.board-multi .multi-item:hover .multi-desc-ym {color:#fff}
+.board-multi .multi-item:hover .multi-desc-d {color:#fff}
+.board-multi .multi-ratings .star-ratings-list {position:absolute;top:10px;right:0;width:60px;height:18px;background:#fff}
+.board-multi .multi-ratings .star-ratings-list li {padding:0;float:left;margin-right:0}
+.board-multi .multi-ratings .star-ratings-list li .rating {color:#a5a5a5;font-size:10px;line-height:normal}
+.board-multi .multi-ratings .star-ratings-list li .rating-selected {color:#FF4848;font-size:10px}
+.board-multi .multi-item-notice {position:relative;overflow:hidden;border:1px solid #e5e5e5;background:#fff;padding:8px 10px;margin-bottom:30px;-webkit-border-radius:2px !important;-moz-border-radius:2px !important;border-radius:2px !important}
+.board-multi .multi-type-list .multi-item-in {min-height:80px}
+.board-multi .multi-type-list .multi-item-in .multi-img {display:none}
+.board-multi .multi-type-list .multi-item-in .multi-desc-ymd {left:0}
+.board-multi .multi-type-list .multi-item-in .multi-subj-cont {margin-left:95px}
+.board-multi .multi-type-list .multi-item-in .multi-subj-cont .multi-cont {display:none}
+.board-multi .multi-type-list .multi-item-in .multi-info {margin-left:95px}
+.board-multi .multi-type-gallery {margin-left:-5px;margin-right:-5px}
+.board-multi .multi-type-gallery:after {content:"";display:block;clear:both}
+.board-multi .multi-type-gallery .multi-item {margin:0;border:0;padding:5px;background:#fff;width:50%;float:left;box-sizing:border-box}
+.board-multi .multi-type-gallery .multi-item-in {position:relative;border:1px solid #e5e5e5;padding:10px;min-height:inherit}
+.board-multi .multi-type-gallery .multi-item-in .multi-img {position:relative;top:inherit;left:inherit;width:inherit;margin-bottom:15px}
+.board-multi .multi-type-gallery .multi-item-in .multi-img-box {max-height:inherit}
+.board-multi .multi-type-gallery .multi-item-in .multi-desc-ymd {left:0}
+.board-multi .multi-type-gallery .multi-item-in .multi-subj-cont {margin-left:95px}
+.board-multi .multi-type-gallery .multi-item-in .multi-info {margin-left:0}
+.board-multi .multi-type-gallery .multi-item-in .multi-info-rating {min-height:43px}
+.board-multi .multi-type-gallery .multi-ratings .star-ratings-list {top:32px}
+.board-multi .multi-type-gallery .multi-noimg-desc .multi-ratings .star-ratings-list {top:32px}
+.board-multi .multi-type-wide .multi-item {margin:0;border:0;padding:10px 0;background:#fff;width:100%;float:left;box-sizing:border-box}
+.board-multi .multi-type-wide .multi-item-in {position:relative;border:1px solid #e5e5e5;padding:15px;min-height:inherit}
+.board-multi .multi-type-wide .multi-item-in .multi-img {position:relative;top:inherit;left:inherit;width:inherit;margin-bottom:15px}
+.board-multi .multi-type-wide .multi-item-in .multi-img-box {max-height:inherit}
+.board-multi .multi-type-wide .multi-item-in .multi-desc-ymd {left:0}
+.board-multi .multi-type-wide .multi-item-in .multi-subj-cont {margin-left:95px}
+.board-multi .multi-type-wide .multi-item-in .multi-info {margin-left:0}
+.board-multi .multi-type-wide .multi-item-in .multi-info-rating {min-height:43px}
+.board-multi .multi-type-wide .multi-ratings .star-ratings-list {top:32px}
+.board-multi .multi-type-wide .multi-noimg-desc .multi-ratings .star-ratings-list {top:32px}
+.board-multi .multi-item-notice .label {font-size:11px;font-weight:normal;margin-bottom:0}
+.board-list .view-infinite-more {margin-top:30px;margin-bottom:40px}
+.board-list .view-infinite-more .btn-e-xlg {position:relative;height:40px;line-height:40px;padding:0 100px;font-size:16px !important;border:1px solid #b5b5b5;background:#fff;color:#757575}
+.board-list .view-infinite-more .btn-e-xlg i {position:absolute;top:5px;right:5px;font-size:30px;color:#fff;transition:all 0.2s ease-in-out}
+.board-list .view-infinite-more .btn-e-xlg:hover {border:1px solid #959595;background:#f5f5f5;color:#000}
+.board-list .view-infinite-more .btn-e-xlg:hover i {color:#b5b5b5}
+#infscr-loading {text-align:center;z-index:100;position:absolute;left:50%;bottom:0;width:200px;margin-left:-100px;padding:8px 0;background:#000;opacity:0.8;color:#fff}
+@media (max-width: 650px) {
+    .board-list .multi-btn-wrap {position:relative;height:70px;margin-bottom:20px}
+    .multi-type-btn-wrap {top:30px}
+    .multi-type-btn-wrap button.multi-type-gallery-btn {border-right:1px solid #d5d5d5}
+    .multi-type-btn-wrap button.multi-type-wide-btn {display:none}
+        .board-multi .multi-item-in .multi-img {top:110px;left:0;width:80px}
+    .board-multi .multi-item-in .multi-img-box {max-height:60px}
+    .board-multi .multi-item-in .multi-desc-ymd {left:0}
+    .board-multi .multi-item-in .multi-subj-cont {margin-left:95px}
+    .board-multi .multi-item-in .multi-info {margin-left:95px}
+    .board-multi .multi-ratings .star-ratings-list {top:30px}
+    .board-multi .multi-noimg-desc .multi-ratings .star-ratings-list {top:10px}
+        .board-multi .multi-type-list .multi-item-in h4 {font-size:13px;line-height:1.5;height:36px;margin-bottom:10px}
+    .board-multi .multi-type-list .multi-noimg-desc .multi-ratings .star-ratings-list {top:30px}
+        .board-multi .multi-type-gallery .multi-item {padding:10px 5px;width:100%}
+        .board-multi .multi-type-wide .multi-item-in {padding:10px}
 }
-
-.bg-light span {
-	position: relative;
-	right: -20%;
-	color: black;
+@media (min-width: 768px) {
+    .board-view-modal {width:720px;margin:10px auto}
+    .board-view-modal .modal-header, .board-view-modal .modal-body, .board-view-modal .modal-footer {padding:10px 20px}
 }
-
-p.bg-light {
-	width: 80%;
-	margin: auto;
+@media (min-width: 992px) {
+    .board-view-modal {width:940px}
 }
-
-.bg-light {
-	background-color: #dff0d8;
-}
-
-.well {
-	margin: 0 auto;
+@media (min-width: 1200px) {
+    .board-view-modal {width:1140px}
 }
 </style>
-<div class="container">
-<hr>
-	<h2 class="heading-primary" style="text-align: center;">자전거 투어 명소 소개</h2>
-	<hr>
-	<p class="bg-light">
-		<span>「1 박 2 일」제주 자전거 코스 아침 11시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample" aria-expanded="false"
-			aria-controls="collapseExample"> 자세히 보기 </a>
-	</p>
 
+<div id="fakeloader"></div>
 
+<div class="board-list">
+    
+        <div class="board-info margin-bottom-20">
+        <div class="pull-left margin-top-5 font-size-12 color-grey">
+            <u>전체 11 건 - 1 페이지</u>
+                    </div>
+                <div class="clearfix"></div>
+    </div>
+    
+            
+        <div class="multi-btn-wrap">
+                <span class="pull-left">
+                        <a class="btn-e btn-e-dark" type="button" data-toggle="modal" data-target=".search-modal"><i class="fas fa-search"></i></a>
+        </span>
+        <ul class="list-unstyled multi-type-btn-wrap pull-right">
+            <li><button type="button" class="multi-type-btn multi-type-list-btn" title="리스트뷰"><span class="sound_only">리스트뷰</span><i class="fas fa-align-justify" aria-hidden="true"></i></button></li>
+            <li><button type="button" class="multi-type-btn multi-type-webzine-btn" title="웹진뷰"><span class="sound_only">웹진뷰</span><i class="fas fa-th-list" aria-hidden="true"></i></button></li>
+            <li><button type="button" class="multi-type-btn multi-type-gallery-btn" title="갤러리뷰"><span class="sound_only">갤러리뷰</span><i class="fas fa-th-large" aria-hidden="true"></i></button></li>
+            <li><button type="button" class="multi-type-btn multi-type-wide-btn" title="와이드뷰"><span class="sound_only">와이드뷰</span><i class="fas fa-square-full" aria-hidden="true"></i></button></li>
+            <div class="clearfix"></div>
+        </ul>
+        <div class="clearfix"></div>
+    </div>
+        <div class="board-multi">
+        <div id="multi_item_type" class="multi-type-webzine">
+                                <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="touristview.jsp" ><!-- 첫번째 사진 연결 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/2001/thumb-8058c5b7909a3d8f117b29962822dfe2_1579077072_9269_1000x0.jpg" alt=""> <!-- 첫번째 사진 -->                                                                   </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2020.01                            </div>
+                            <div class="multi-desc-d">
+                                15                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="touristview.jsp" ><!-- 첫번째 글 연결 -->
+                                                                                                            <strong>'디포'의 차세대 메모리와 렌즈 출시</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 
+관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형과 …                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/admin.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=admin" data-toggle="dropdown" title="최고관리자 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 최고관리자</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?admin"><strong>최고관리자</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=admin">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=admin">아이디로 검색</a></li>
+</ul>
 
-	<div class="collapse" id="collapseExample">
-		<div class="well">
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?admin"><strong>최고관리자</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=admin">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=admin">아이디로 검색</a></li>
+</ul> 
+</noscript>--></span></span> 
+                             <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/admin.gif" alt="레벨"></span><!--레벨 아이콘-->
+                                                        <span>
+                             <i class="far fa-clock"></i><strong class="color-black">17시 31분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">2,491</strong></span>
+                                                                                    <span><i class="far fa-thumbs-up"></i><strong class="color-green">1</strong></span>
+                                                                                                                <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!-- 두번쨰사진링크 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1901/thumb-3076932664_1547688722.37205_1000x0.jpg" alt="">    <!-- 두번째 사진 -->                                                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2019.01                            </div>
+                            <div class="multi-desc-d">
+                                17                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!--두번째 글 링크  -->
+                                 <strong>AI 덕분에 카메라도 전문가 DSLR 수준 진화</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-			<div class="media" id="one">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151207480.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px"># 1일째&nbsp;<br>- 함덕 ~
-						성산&nbsp;<br>- 거리 : 36.9km&nbsp;<br>- 소요시간 : 초보/5.5시간,
-						일반,중수/5시간, 고수/2.5시간&nbsp;<br>- 볼거리 : 성산일출봉, 종달해안도로, 석다원,
-						문주란섬, 비자림(선택), 월정해안도로, 월정해변, 풍차마을, 만장굴(선택), 김녕해변, 너븐숭이(4.3),
-						함덕서우봉해변&nbsp;<br> <br> <br> <br># 2일째&nbsp;<br>-
-						성산 ~ 서귀포&nbsp;<br>- 거리 : 52.4km&nbsp;<br>- 소요시간 :
-						초보/7시간, 일반,중수/5.5시간, 고수/4시간&nbsp;<br>- 볼거리 : 쇠소깍(테우체험),
-						남원올레길, 큰엉해안경승지, 남원해안도로, 표선해안도로, 제주민속촌박물관, 김영갑갤러리, 신산해안도로, 섭지코지,
-						성산일출봉&nbsp;<br></td>
-				</div>
-			</div>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/dddd.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=dddd" data-toggle="dropdown" title="아름다운별 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 아름다운별</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?dddd"><strong>아름다운별</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=dddd">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=dddd">아이디로 검색</a></li>
+</ul>
 
-		</div>
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?dddd"><strong>아름다운별</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=dddd">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=dddd">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/2.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">10시 32분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">3,219</strong></span>
+                                                                                    <span><i class="far fa-thumbs-up"></i><strong class="color-green">1</strong></span>
+                                                                                                                <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating-selected fas fa-star"></i></li>
+                                    <li><i class="rating-selected fas fa-star"></i></li>
+                                    <li><i class="rating-selected fas fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!-- 세번째그림 링크 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534827893.1962_1000x0.jpg" alt=""> <!-- 세번째 그림 -->                                                                   </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!-- 3글 링크  -->
+                                                                                                            <strong>디지털 TV의 혁명, 7세대 '브랑' 출시</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-	</div>
-	<br>
-	<p class="bg-light">
-		<span>「1 박 2 일」제주 자전거 코스 아침 11시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample1" aria-expanded="false"
-			aria-controls="collapseExample1"> 자세히보기 </a>
-	</p>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/iiii.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=iiii" data-toggle="dropdown" title="백마탄환자 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 백마탄환자</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?iiii"><strong>백마탄환자</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=iiii">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=iiii">아이디로 검색</a></li>
+</ul>
 
-	<div class="collapse" id="collapseExample1">
-		<div class="well">
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?iiii"><strong>백마탄환자</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=iiii">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=iiii">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">14시 05분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">3,759</strong></span>
+                                                        <span><i class="far fa-comment-dots"></i><strong class="color-red">+1</strong></span>
+                                                                                    <span><i class="far fa-thumbs-up"></i><strong class="color-green">4</strong></span>
+                                                                                                                <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating-selected fas fa-star"></i></li>
+                                    <li><i class="rating-selected fas fa-star"></i></li>
+                                    <li><i class="rating-selected fas fa-star"></i></li>
+                                    <li><i class="rating-selected fas fa-star-half"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" >   			<!-- 4사진 링크 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534827757.25351_1000x0.jpg" alt="">                                                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" >		<!--4글링크  -->
+                                                                                                            <strong>'디포'의 차세대 메모리와 렌즈 출시</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-			<div class="media" id="two">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151208228.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px"># 1일째&nbsp;<br>- 제주시 ~
-						세화&nbsp;<br>- 거리 : 39.6km&nbsp;<br>- 소요시간 : 초보/6시간,
-						일반,중수/4.5시간, 고수/3시간&nbsp;<br>- 볼거리 : 월정해안도로, 월정해변, 풍차마을,
-						만장굴(선택), 김녕해변, 너븐숭이(4.3), 함덕서우봉해변, 항일기념관, 사라봉, 별도봉, 동문재래시장&nbsp;<br>
-						<br> <br># 2일째&nbsp;<br>- 세화 ~ 성산(우도)&nbsp;<br>-
-						거리 : 15.7km(17.5km)&nbsp;<br>- 소요시간 : 초보/2시간(4시간),
-						일반,중수/1.5시간(4시간), 고수/1시간(3시간)&nbsp;<br>- 볼거리 : 동안경굴, 서빈백사,
-						우도봉, 종달해안도로, 석다원, 문주란섬, 비자림(선택)&nbsp;<br></td>
-				</div>
-			</div>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/hhhh.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=hhhh" data-toggle="dropdown" title="시베리안허숙희 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 시베리안허숙희</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?hhhh"><strong>시베리안허숙희</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=hhhh">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=hhhh">아이디로 검색</a></li>
+</ul>
 
-		</div>
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?hhhh"><strong>시베리안허숙희</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=hhhh">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=hhhh">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">14시 02분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">2,465</strong></span>
+                                                                                                                                            <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!-- 5사진 링크 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534827687.61782_1000x0.jpg" alt="">                                                                        <span class="movie-icon"><i class="far fa-play-circle"></i></span>
+                                                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!-- 5글링크 -->
+                                                                                                            <strong>드론의 활성화와 규제</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-	</div>
-	<br>
-	<p class="bg-light">
-		<span>「1 박 2 일」제주 자전거 코스 아침 11시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample2" aria-expanded="false"
-			aria-controls="collapseExample2"> 자세히보기 </a>
-	</p>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/gggg.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=gggg" data-toggle="dropdown" title="레인보우 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 레인보우</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?gggg"><strong>레인보우</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=gggg">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=gggg">아이디로 검색</a></li>
+</ul>
 
-	<div class="collapse" id="collapseExample2">
-		<div class="well">
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?gggg"><strong>레인보우</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=gggg">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=gggg">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">14시 01분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">4,404</strong></span>
+                                                        <span><i class="far fa-comment-dots"></i><strong class="color-red">+1</strong></span>
+                                                                                    <span><i class="far fa-thumbs-up"></i><strong class="color-green">1</strong></span>
+                                                                                                                <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!-- 6그림링크 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534827602.31748_1000x0.jpg" alt="">                                                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!-- 6글링크 -->
+                                                                                                            <strong>전자기기의 통합은 가까이 왔다.</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-			<div class="media" id="two">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151209601.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px"># 1일째&nbsp;<br>- 제주시 ~
-						세화&nbsp;<br>- 거리 : 39.6km&nbsp;<br>- 소요시간 : 초보/6시간,
-						일반,중수/4.5시간, 고수/3시간&nbsp;<br>- 볼거리 : 월정해안도로, 월정해변, 풍차마을,
-						만장굴(선택), 김녕해변, 너븐숭이(4.3), 함덕서우봉해변, 항일기념관, 사라봉, 별도봉, 동문재래시장&nbsp;<br>
-						<br> <br> <br># 2일째&nbsp;<br>- 세화 ~ 서귀포&nbsp;<br>-
-						거리 : 73.4km&nbsp;<br>- 소요시간 : 초보/9시간, 일반,중수/7.5시간,
-						고수/5시간&nbsp;<br>- 볼거리 : 성산일출봉, 종달해안도로, 석다원, 문주란섬, 비자림(선택),
-						김영갑갤러리, 신산해안도로, 섭지코지, 남원해안도로, 표선해안도로, 제주민속촌박물관, 쇠소깍(테우체험), 남원올레길,
-						큰엉해안경승지&nbsp;<br></td>
-				</div>
-			</div>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/ffff.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 할인의추억</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
+</ul>
 
-		</div>
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">14시 00분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">2,295</strong></span>
+                                                                                    <span><i class="far fa-thumbs-up"></i><strong class="color-green">1</strong></span>
+                                                                                                                <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!-- 7그림 링크 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534827502.03306_1000x0.jpg" alt="">                                                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!--7글 링크  -->
+                                                                                                            <strong>보급형 테블릿의 혁명 'R2D2'</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-	</div>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/eeee.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=eeee" data-toggle="dropdown" title="피에이치피 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 피에이치피</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?eeee"><strong>피에이치피</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=eeee">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=eeee">아이디로 검색</a></li>
+</ul>
 
-	<br>
-	<p class="bg-light">
-		<span>「1 박 2 일」제주 자전거 코스 아침 11시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample3" aria-expanded="false"
-			aria-controls="collapseExample3"> 자세히보기 </a>
-	</p>
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?eeee"><strong>피에이치피</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=eeee">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=eeee">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">13시 58분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">1,261</strong></span>
+                                                                                                                                            <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!-- 8그림링크 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534827408.24494_1000x0.jpg" alt="">                                                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!-- 8글링크 -->
+                                                                                                            <strong>비디오 게임 시장의 몰락은 오는가</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-	<div class="collapse" id="collapseExample3">
-		<div class="well">
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/dddd.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=dddd" data-toggle="dropdown" title="아름다운별 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 아름다운별</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?dddd"><strong>아름다운별</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=dddd">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=dddd">아이디로 검색</a></li>
+</ul>
 
-			<div class="media" id="two">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151210183.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px"># 1일째&nbsp;<br>- 제주시 ~
-						성산&nbsp;<br>- 거리 : 55.3km&nbsp;<br>- 소요시간 : 초보/8시간,
-						일반,중수/6시간, 고수/4시간&nbsp;<br>- 볼거리 : 종달해안도로, 석다원, 문주란섬,
-						비자림(선택), 월정해안도로, 월정해변, 풍차마을, 만장굴(선택), 김녕해변, 너븐숭이(4.3), 함덕서우봉해변,
-						항일기념관, 사라봉, 별도봉, 동문재래시장&nbsp;<br>
-					<br>
-					<br>
-					<br># 2일째&nbsp;<br>- 성산 ~ 서귀포&nbsp;<br>- 거리 :
-						52.4km&nbsp;<br>- 소요시간 : 초보/7시간, 일반,중수/5.5시간, 고수/4시간&nbsp;<br>-
-						볼거리 : 쇠소깍(테우체험), 남원올레길, 큰엉해안경승지, 남원해안도로, 표선해안도로, 제주민속촌박물관, 김영갑갤러리,
-						신산해안도로, 섭지코지, 성산일출봉&nbsp;<br></td>
-				</div>
-			</div>
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?dddd"><strong>아름다운별</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=dddd">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=dddd">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">13시 57분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">1,060</strong></span>
+                                                                                                                                            <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!-- 9그림 링크 -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534827325.98586_1000x0.jpg" alt="">                                                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!--9 글링크  -->
+                                                                                                            <strong>디자인 작업의 혁명 '디오아'</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-		</div>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/cccc.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=cccc" data-toggle="dropdown" title="안졸리나졸리나 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 안졸리나졸리나</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?cccc"><strong>안졸리나졸리나</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=cccc">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=cccc">아이디로 검색</a></li>
+</ul>
 
-	</div>
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?cccc"><strong>안졸리나졸리나</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=cccc">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=cccc">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">13시 55분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">1,088</strong></span>
+                                                                                                                                            <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!--10 그릶링크  -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534827248.8151_1000x0.jpg" alt="">                                                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!--10글링크  -->
+                                                                                                            <strong>사무실에서 꼭 필요한 전자기기</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-	<br>
-	<p class="bg-light">
-		<span> 「2박3일」제주 자전거 코스 아침 12시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample4" aria-expanded="false"
-			aria-controls="collapseExample4"> 자세히보기 </a>
-	</p>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/bbbb.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=bbbb" data-toggle="dropdown" title="가을의전설 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 가을의전설</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?bbbb"><strong>가을의전설</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=bbbb">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=bbbb">아이디로 검색</a></li>
+</ul>
 
-	<div class="collapse" id="collapseExample4">
-		<div class="well">
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?bbbb"><strong>가을의전설</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=bbbb">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=bbbb">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">13시 54분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">976</strong></span>
+                                                                                                                                            <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                            <div class="multi-item">
+                <div class="multi-item-in">
+                                        <div class="multi-img">
+                        <a href="#" ><!-- 11그림 링크  -->
+                            <div class="multi-img-box">
+                                <div class="multi-img-box-in">
+                                    <img class="img-responsive" src="http://theme4.eyoom.net/data/editor/1808/thumb-3076932664_1534818374.9635_1000x0.jpg" alt="">                                                                    </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="multi-desc">
+                                            <div class="multi-desc-ymd">
+                            <div class="multi-desc-ym">
+                                2018.08                            </div>
+                            <div class="multi-desc-d">
+                                21                            </div>
+                        </div>
+                        <div class="multi-subj-cont">
+                            <h4>
+                                <a href="#" ><!-- 11글 링크  -->
+                                                                                                            <strong>전선의 종말을 선언한다.</strong>
+                                                                    </a>
+                                                            </h4>
+                            <p class="multi-cont">
+                                                                &nbsp;
 
-			<div class="media" id="two">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151210756.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px">&nbsp; # 1일째&nbsp;<br>-
-						제주시 ~ 함덕&nbsp;<br>- 거리 : 18.4km&nbsp;<br>- 소요시간 :
-						초보/2.5시간, 일반,중수/2시간, 고수/1.5시간&nbsp;<br>- 볼거리 : 항일기념관, 사라봉,
-						별도봉, 동문재래시장&nbsp;<br>
-					<br>
-					<br>
-					<br># 2일째&nbsp;<br>- 함덕 ~ 표선&nbsp;<br>- 거리 :
-						61.4km&nbsp;<br>- 소요시간 : 초보/8시간, 일반,중수/6시간, 고수/4시간&nbsp;<br>-
-						볼거리 : 김영갑갤러리, 신산해안도로, 섭지코지, 성산일출봉, 종달해안도로, 석다원, 문주란섬, 비자림(선택),
-						월정해안도로, 월정해변, 풍차마을, 만장굴(선택), 김녕해변, 너븐숭이(4.3), 함덕서우봉해변&nbsp;<br>
-					<br>
-					<br>
-					<br># 3일째&nbsp;<br>- 표선 ~ 서귀포&nbsp;<br>- 거리 :
-						33.2km&nbsp;<br>- 소요시간 : 초보/4.5시간, 일반,중수/3.5시간,
-						고수/2.5시간&nbsp;<br>- 볼거리 : 남원해안도로, 표선해안도로, 제주민속촌박물관,
-						쇠소깍(테우체험), 남원올레길, 큰엉해안경승지&nbsp;<br></td>
-				</div>
-			</div>
+모집자와 제공자간 거래&nbsp;크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통을 바탕으로 한 관계 지향적이고 집단 기능적 속성을 가진 소셜펀딩이다. 자금제공자의 이익추구 목적에 따라 투자형…                                                            </p>
+                        </div>
+                        <div class="multi-info multi-info-rating">
+                                                        <span class="multi-photo">
+                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/aaaa.png" alt="회원사진">                                                            </span>
+                                                        <span class="multi-nick"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=aaaa" data-toggle="dropdown" title="겨울비 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 겨울비</a>
+<!-- <ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?aaaa"><strong>겨울비</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=aaaa">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=aaaa">아이디로 검색</a></li>
+</ul>
 
-		</div>
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?aaaa"><strong>겨울비</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=aaaa">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=aaaa">아이디로 검색</a></li>
+</ul>
+</noscript> --></span></span>
+                                                                                    <span class="multi-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" alt="레벨"></span>
+                                                        <span>
+                                <i class="far fa-clock"></i><strong class="color-black">11시 26분</strong>
+                            </span>
+                            <span><i class="fas fa-eye"></i><strong class="color-black">983</strong></span>
+                                                                                                                                            <div class="multi-ratings">
+                                <ul class="list-unstyled star-ratings-list">
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                    <li><i class="rating far fa-star"></i></li>
+                                </ul>
+                            </div>
+                                                    </div>
+                    </div>
+                </div>
+            </div>
+                                    </div>
+    </div>
+        <div class="board-list-footer">
+        <div class="pull-left">
+                        <span class="pull-left">
+                                <a class="btn-e btn-e-dark" type="button" data-toggle="modal" data-target=".search-modal"><i class="fas fa-search"></i></a>
+            </span>
+        </div>
+        <div class="pull-right">
+                    </div>
+        <div class="clearfix"></div>
+    </div>
+    </div>
 
-	</div>
-
-	<br>
-	<p class="bg-light">
-		<span> 「2박3일」제주 자전거 코스 아침 10시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample5" aria-expanded="false"
-			aria-controls="collapseExample5"> 자세히보기 </a>
-	</p>
-
-	<div class="collapse" id="collapseExample5">
-		<div class="well">
-
-			<div class="media" id="two">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151211279.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px"># 1일째&nbsp;<br>- 제주시 ~
-						세화&nbsp;<br>- 거리 : 39.6km&nbsp;<br>- 소요시간 : 초보/6시간,
-						일반,중수/4.5시간, 고수/3시간&nbsp;<br>- 볼거리 : 월정해안도로, 월정해변, 풍차마을,
-						만장굴(선택), 김녕해변, 너븐숭이(4.3), 함덕서우봉해변, 항일기념관, 사라봉, 별도봉, 동문재래시장&nbsp;<br>
-					<br>
-					<br>
-					<br># 2일째&nbsp;<br>- 세화 ~ 남원&nbsp;<br>- 거리 :
-						56.0km&nbsp;<br>- 소요시간 : 초보/6.5시간, 일반,중수/5시간, 고수/3.5시간&nbsp;<br>-
-						볼거리 : 남원해안도로, 표선해안도로, 제주민속촌박물관, 김영갑갤러리, 신산해안도로, 섭지코지, 성산일출봉,
-						종달해안도로, 석다원, 문주란섬, 비자림(선택)&nbsp;<br>
-					<br>
-					<br>
-					<br># 3일째&nbsp;<br>- 남원 ~ 서귀포&nbsp;<br>- 거리 :
-						17.4km&nbsp;<br>- 소요시간 : 초보/2.5시간, 일반,중수/1.5시간, 고수/1시간&nbsp;<br>-
-						볼거리 : 새섬(새연교), 정방폭포, 올레시장, 이중섭거리&nbsp;<br></td>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
-	<br>
-	<p class="bg-light">
-		<span> 「2박3일」제주 자전거 코스 아침 10시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample6" aria-expanded="false"
-			aria-controls="collapseExample6"> 자세히보기 </a>
-	</p>
-
-
-	<div class="collapse" id="collapseExample6">
-		<div class="well">
-
-			<div class="media" id="two">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151211794.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px"><br># 1일째&nbsp;<br>-
-						제주시 ~ 김녕&nbsp;<br>- 거리 : 27.2km&nbsp;<br>- 소요시간 :
-						초보/4시간, 일반,중수/3시간, 고수/2시간&nbsp;<br>- 볼거리 : 항일기념관, 사라봉, 별도봉,
-						동문재래시장, 김녕해변, 너븐숭이(4.3), 함덕서우봉해변&nbsp;<br>
-					<br>
-					<br>
-					<br># 2일째&nbsp;<br>- 김녕 ~ 성산(우도)&nbsp;<br>- 거리 :
-						45.6km&nbsp;<br>- 소요시간 : 초보/8시간, 일반,중수/7시간, 고수/5시간&nbsp;<br>-
-						볼거리 : 성산일출봉, 종달해안도로, 석다원, 문주란섬, 비자림(선택), 월정해안도로, 월정해변, 풍차마을,
-						만장굴(선택), 동안경굴, 서빈백사, 우도봉&nbsp;<br>
-					<br>
-					<br>
-					<br>
-					<br># 3일째&nbsp;<br>- 성산 ~ 서귀포&nbsp;<br>- 거리 :
-						52.4km&nbsp;<br>- 소요시간 : 초보/9시간, 일반,중수/7시간, 고수/5시간&nbsp;<br>-
-						볼거리 : 쇠소깍(테우체험), 남원올레길, 큰엉해안경승지, 남원해안도로, 표선해안도로, 제주민속촌박물관, 김영갑갤러리,
-						신산해안도로, 섭지코지, 성산일출봉</td>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
-	<br>
-	<p class="bg-light">
-		<span> 「2박3일」제주 자전거 코스 아침 10시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample7" aria-expanded="false"
-			aria-controls="collapseExample7"> 자세히보기 </a>
-	</p>
-
-
-	<div class="collapse" id="collapseExample7">
-		<div class="well">
-
-			<div class="media" id="two">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151212293.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px"><br># 1일째&nbsp;<br>-
-						제주시 ~ 김녕(월정)&nbsp;<br>- 거리 : 35.7km&nbsp;<br>- 소요시간 :
-						초보/6시간, 일반,중수/5시간, 고수/3시간&nbsp;<br>- 볼거리 : 항일기념관, 사라봉, 별도봉,
-						동문재래시장, 김녕해변, 너븐숭이(4.3), 함덕서우봉해변, 월정해변&nbsp;<br>
-					<br>
-					<br>
-					<br># 2일째&nbsp;<br>- 김녕(월정) ~ 성산(온평)&nbsp;<br>- 거리 :
-						48.5km&nbsp;<br>- 소요시간 : 초보/8시간, 일반,중수/6.5시간, 고수/5.5시간&nbsp;<br>-
-						볼거리 : 성산일출봉, 종달해안도로, 석다원, 문주란섬, 비자림(선택), 김영갑갤러리, 신산해안도로,
-						섭지코지&nbsp;<br>
-					<br>
-					<br>
-					<br># 3일째&nbsp;<br>- 성산(온평) ~ 서귀포&nbsp;<br>- 거리 :
-						37.2km&nbsp;<br>- 소요시간 : 초보/6.5시간, 일반,중수/5시간, 고수/3.5시간&nbsp;<br>-
-						볼거리 : 남원해안도로, 표선해안도로, 제주민속촌박물관, 쇠소깍(테우체험), 남원올레길, 큰엉해안경승지&nbsp;<br></td>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
-	<br>
-	<p class="bg-light">
-		<span> 「2박3일」제주 자전거 코스 아침 10시 전에 출발 추천</span><a class="btn btn-info"
-			data-toggle="collapse" href="#collapseExample8" aria-expanded="false"
-			aria-controls="collapseExample8"> 자세히 보기 </a>
-	</p>
-
-	<div class="collapse" id="collapseExample8">
-		<div class="well">
-
-			<div class="media" id="two">
-				<div class="media-left media-middle">
-					<a href="#"> <img class="media-object"
-						src="resources/img/20200701_151212859.jpg">
-					</a>
-				</div>
-				<div class="media-body" style="font-size: small;">
-					<h4 class="media-heading">하프 자전거 여행코스</h4>
-					<td style="line-height: 19.2px"><br># 1일째&nbsp;<br>-
-						제주시 ~ 성산&nbsp;<br>- 거리 : 55.3km&nbsp;<br>- 소요시간 :
-						초보/8시간, 일반,중수/6시간, 고수/4시간&nbsp;<br>- 볼거리 : 항일기념관, 사라봉, 별도봉,
-						동문재래시장, 김녕해변, 너븐숭이(4.3), 함덕서우봉해변, 월정해안도로, 월정해변, 풍차마을, 만장굴(선택),
-						종달해안도로, 석다원, 문주란섬, 비자림(선택&nbsp;<br>
-					<br>
-					<br>
-					<br># 2일째&nbsp;<br>- 성산 ~ 표선(우도)&nbsp;<br>- 거리 :
-						42km&nbsp;<br>- 소요시간 : 초보/6.5시간, 일반,중수/6시간, 고수/4.5시간&nbsp;<br>-
-						볼거리 : 성산일출봉, 동안경굴, 서빈백사, 우도봉, 김영갑갤러리, 신산해안도로, 섭지코지&nbsp;<br>
-					<br>
-					<br>
-					<br># 3일째&nbsp;<br>- 표선 ~ 중문&nbsp;<br>- 거리 :
-						48.9km&nbsp;<br>- 소요시간 : 초보/7.5시간, 일반,중수/5.5시간, 고수/4시간&nbsp;<br>-
-						볼거리 : 표선해안도로, 큰엉해안경승지, 쇠소깍(테우체험), 정방폭포, 올레시장, 이중섭거리, 새섬(새연교),
-						월드컵경기장&nbsp;<br></td>
-				</div>
-			</div>
-
-		</div>
-
-	</div>
-
-	<br>
+<div class="modal fade search-modal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h5 class="modal-title"><i class="fas fa-search color-grey"></i> <strong>IT 검색</strong></h5>
+            </div>
+            <div class="modal-body">
+                                <fieldset id="bo_sch" class="eyoom-form">
+                    <form name="fsearch" method="get">
+                    <input type="hidden" name="bo_table" value="magazine_it">
+                    <input type="hidden" name="sca" value="">
+                    <input type="hidden" name="sop" value="and">
+                    <label for="sfl" class="sound_only">검색대상</label>
+                    <section class="margin-top-10">
+                        <label class="select">
+                            <select name="sfl" id="sfl" class="form-control">
+                                <option value="wr_subject">제목</option>
+                                <option value="wr_content">내용</option>
+                                <option value="wr_subject||wr_content">제목+내용</option>
+                                <option value="mb_id,1">회원아이디</option>
+                                <option value="mb_id,0">회원아이디(코)</option>
+                                <option value="wr_name,1">글쓴이</option>
+                                <option value="wr_name,0">글쓴이(코)</option>
+                                                            </select>
+                            <i></i>
+                        </label>
+                    </section>
+                    <section>
+                        <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+                        <div class="input input-button">
+                            <input type="text" name="stx" value="" required id="stx">
+                            <div class="button"><input type="submit" value="검색">검색</div>
+                        </div>
+                    </section>
+                    </form>
+                </fieldset>
+                            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
+            </div>
+        </div>
+    </div>
 </div>
-<br>
-<br>
-<br>
-<%@include file="../footer.jsp"%>
+<iframe name="photoframe" id="photoframe" style="display:none;"></iframe>
+
+
+
+<div class="board-pagination">
+            
+<style>
+.eb-pagination-wrap {position:relative;text-align:center;padding:7px;margin-top:30px}
+.eb-pagination {position:relative;list-style:none;display:inline-block;padding:0;margin:0}
+.eb-pagination li {display:inline}
+.eb-pagination a {display:inline-block;font-size:12px;text-decoration:none;min-width:28px;height:28px;padding:0 5px;color:#fff;border:1px solid transparent;line-height:26px;text-align:center;color:#757575;position:relative;z-index:1}
+.eb-pagination a:active {outline:none}
+.eb-pagination a:hover {color:#000;background:#e5e5e5}
+.eb-pagination a.active {cursor:default;background:#4B4B4D;color:#fff}
+.eb-pagination a.active:hover {color:#fff;background:#4B4B4D}
+.eb-pagination a.next,.eb-pagination a.prev {color:#959595}
+.eb-pagination a.next:hover,.eb-pagination a.prev:hover {color:#000}
+</style>
+
+<div class="eb-pagination-wrap">
+    <ul class="eb-pagination">
+        <li><a href="#"><i class="fas fa-angle-double-left"></i></a></li><!-- 첫페이지로 가기 -->
+        <li><a href="#" class="prev"><i class="fas fa-angle-left"></i></a></li><!-- 이전페이지 -->
+                        <li><a href="#" class="active">1<span class="sound_only">페이지</span></a></li>
+                <li><a href="#" class="next"><i class="fas fa-angle-right"></i></a></li><!-- 다음페이지 -->
+        <li><a href="#"><i class="fas fa-angle-double-right"></i></a></li><!-- 끝페이지 -->
+    </ul>
+</div>    </div>
+
+<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/fakeLoader/fakeLoader.min.js"></script>
+<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sweetalert/sweetalert.min.js"></script>
+<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
+
+<script>
+$('#fakeloader').fakeLoader({
+    timeToHide:3000,
+    zIndex:"11",
+    spinner:"spinner6",
+    bgColor:"#fff",
+});
+
+$(window).load(function(){
+    $('#fakeloader').fadeOut(300);
+});
+
+var multi_bo_table = "magazine_it";
+
+$.fn.listType = function(type) {
+    var $el = this.find(".multi-item");
+    var count = $el.size();
+    if(count < 1)
+        return;
+
+    var cl = this.attr("class");
+    if(cl && !this.data("class")) {
+        this.data("class", cl);
+    }
+
+    $("button.multi-type-btn span").removeClass("multi-type-on").html("");
+
+    if(type == "webzine") {
+        this.removeClass("multi-type-webzine");
+        if(this.data("class")) {
+            this.attr("class", this.data("class"));
+        }
+
+        $("button.multi-type-webzine-btn span").addClass("multi-type-on").html("<b class=\"sound_only\"> 선택됨</b>");
+    } else if(type == "gallery") {
+        if(this.data("class")) {
+            this.removeAttr("class");
+        }
+        this.addClass("multi-type-gallery");
+
+        $("button.multi-type-gallery-btn span").addClass("multi-type-on").html("<b class=\"sound_only\"> 선택됨</b>");
+    } else if(type == "wide") {
+        if(this.data("class")) {
+            this.removeAttr("class");
+        }
+        this.addClass("multi-type-wide");
+
+        $("button.multi-type-wide-btn span").addClass("multi-type-on").html("<b class=\"sound_only\"> 선택됨</b>");
+    } else if(type == "list") {
+        if(this.data("class")) {
+            this.removeAttr("class");
+        }
+        this.addClass("multi-type-list");
+
+        $("button.multi-type-list-btn span").addClass("multi-type-on").html("<b class=\"sound_only\"> 선택됨</b>");
+    }
+
+    set_cookie("ck_itemlist"+multi_bo_table+"_type", type, 1, g5_cookie_domain);
+}
+
+$(function() {
+    if(itemlist_type = get_cookie("ck_itemlist"+multi_bo_table+"_type")) {
+        $("#multi_item_type").listType(itemlist_type);
+    }
+
+    $("button.multi-type-btn").on("click", function() {
+        if($(this).hasClass("multi-type-webzine-btn")) {
+            $("#multi_item_type").listType("webzine");
+        } else if($(this).hasClass("multi-type-gallery-btn")) {
+            $("#multi_item_type").listType("gallery");
+        } else if($(this).hasClass("multi-type-wide-btn")) {
+            $("#multi_item_type").listType("wide");
+        } else if($(this).hasClass("multi-type-list-btn")) {
+            $("#multi_item_type").listType("list");
+        }
+    });
+});
+
+</script>
+                </section>
+                                    
+
+  
+                            
+            
+<style>
+.ol-before {position:relative;display:block;font-size:12px;background:#fff;border:1px solid #e5e5e5;padding:15px 10px 10px;margin-bottom:25px}
+.ol-account {font-size:12px;margin-bottom:5px;font-weight:bold}
+.ol-account a:hover {text-decoration:underline}
+</style>
+
+
+        
+<style>
+.ol-social-icons {margin-top:15px}
+.ol-social-icons h6 {text-align:center;margin:0 0 10px;padding:0;font-size:12px;color:#757575}
+</style>
+        <script>
+        jQuery(function($){
+            $(".sns-wrap").on("click", "a.social_link", function(e){
+                e.preventDefault();
+
+                var pop_url = $(this).attr("href");
+                var newWin = window.open(
+                    pop_url,
+                    "social_sing_on",
+                    "location=0,status=0,scrollbars=1,width=600,height=500"
+                );
+
+                if(!newWin || newWin.closed || typeof newWin.closed=='undefined')
+                     alert('브라우저에서 팝업이 차단되어 있습니다. 팝업 활성화 후 다시 시도해 주세요.');
+
+                return false;
+            });
+        });
+    </script>
+    </div>   
+</div>
+
+
+<script>
+$omi = $('#ol_id');
+$omp = $('#ol_pw');
+$omi_label = $('#ol_idlabel');
+$omi_label.addClass('ol_idlabel');
+$omp_label = $('#ol_pwlabel');
+$omp_label.addClass('ol_pwlabel');
+
+$(function() {
+    $omi.focus(function() {
+        $omi_label.css('visibility','hidden');
+    });
+    $omp.focus(function() {
+        $omp_label.css('visibility','hidden');
+    });
+    $omi.blur(function() {
+        $this = $(this);
+        if ($this.attr('id') == "ol_id" && $this.attr('value') == "") $omi_label.css('visibility','visible');
+    });
+    $omp.blur(function() {
+        $this = $(this);
+        if ($this.attr('id') == "ol_pw" && $this.attr('value') == "") $omp_label.css('visibility','visible');
+    });
+
+    $("#auto_login").click(function(){
+        if ($(this).is(":checked")) {
+            swal({
+                html: true,
+                title: "알림",
+                text: "<div class='alert alert-warning text-left font-size-12'>자동로그인을 사용하시면 다음부터 회원아이디와 비밀번호를 입력하실 필요가 없습니다.<br>공공장소에서는 개인정보가 유출될 수 있으니 사용을 자제하여 주십시오.</div><strong>자동로그인을 사용하시겠습니까?</strong>",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#FDAB29",
+                confirmButtonText: "확인",
+                cancelButtonText: "취소",
+                closeOnConfirm: true,
+                closeOnCancel: true
+            },
+            function(isConfirm){
+                if (isConfirm) {
+                    $("#auto_login").attr("checked");
+                } else {
+                    $("#auto_login").removeAttr("checked");
+                }
+            });
+        }
+    });
+});
+
+function fhead_submit(f) {
+    if (f.mb_id.value == '' || f.mb_id.value == $("#ol_id").attr("placeholder")) {
+        alert("아이디를 입력해 주세요.");
+        f.mb_id.select();
+        f.mb_id.focus();
+        return false;
+    }
+    if (f.mb_password.value == '' || f.mb_password.value == $("#ol_pw").attr("placeholder")) {
+        alert("비밀번호를 입력해 주세요.");
+        f.mb_password.select();
+        f.mb_password.focus();
+        return false;
+    }
+    return true;
+}
+</script>                
+                    
+
+<script>
+$(document).ready(function() {
+    $('.eblatest-newpost-tabs li a').hover(function (e) {
+        e.preventDefault()
+        $(this).tab('show');
+    });
+
+    $('.eblatest-newpost-tabs li a').click(function (e) {
+        return true;
+    });
+
+    $('.eblatest-newpost-tabs li a').on("click",function (e) {
+        if ($(this).attr("data-href")) {
+            window.location.href = $(this).attr("data-href");
+        }
+    });
+});
+</script>
+                          
+
+<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sly/vendor_plugins.min.js"></script>
+<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sly/sly.min.js"></script>
+<script>
+$(function() {
+    var $frame = $('#tab-page-category');
+    var $wrap  = $frame.parent();
+    $frame.sly({
+        horizontal: 1,
+        itemNav: 'centered',
+        smart: 1,
+        activateOn: 'click',
+        mouseDragging: 1,
+        touchDragging: 1,
+        releaseSwing: 1,
+        scrollBar: $wrap.find('.scrollbar'),
+        scrollBy: 1,
+        startAt: $frame.find('.active'),
+        speed: 300,
+        elasticBounds: 1,
+        easing: 'easeOutExpo',
+        dragHandle: 1,
+        dynamicHandle: 1,
+        clickBar: 1,
+        prev: $wrap.find('.prev'),
+        next: $wrap.find('.next')
+    });
+    var tabWidth = $('#tab-page-category').width();
+    var categoryWidth = $('.page-category-list').width();
+    if (tabWidth < categoryWidth) {
+        $('.controls').show();
+    }
+});
+</script>                                <div class="clearfix"></div>
+       
+               
+            
+    <div class="back-to-top">
+        <i class="fas fa-angle-up"></i>
+    </div>
+
+<div class="sidebar-left-mask sidebar-left-trigger" data-action="toggle" data-side="left"></div>
+<div class="sidebar-right-mask sidebar-right-trigger" data-action="toggle" data-side="right"></div>
+
+
+<div class="modal fade all-search-modal eb-search-modal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">×</button>
+                <h4 class="modal-title"><i class="fas fa-search color-grey"></i> <strong>전체 게시판 검색</strong></h4>
+            </div>
+            <div class="modal-body margin-bottom-20">
+                <form name="fsearchbox" method="get" action="http://theme4.eyoom.net/bbs/search.php" onsubmit="return fsearchbox_submit(this);" class="eyoom-form">
+                <input type="hidden" name="sfl" value="wr_subject||wr_content">
+                <input type="hidden" name="sop" value="and">
+                <label for="modal_sch_stx" class="sound_only"><strong>검색어 입력 필수</strong></label>
+                <div class="input input-button">
+                    <input type="text" name="stx" id="modal_sch_stx" class="sch_stx" maxlength="20" placeholder="검색어 입력">
+                    <div class="button"><input type="submit">검색</div>
+                </div>
+                </form>
+                <script>
+                function fsearchbox_submit(f) {
+                    if (f.stx.value.length < 2 || f.stx.value == $(".sch_stx").attr("placeholder")) {
+                        alert("검색어는 두글자 이상 입력하십시오.");
+                        f.stx.select();
+                        f.stx.focus();
+                        return false;
+                    }
+                    var cnt = 0;
+                    for (var i=0; i<f.stx.value.length; i++) {
+                        if (f.stx.value.charAt(i) == ' ') cnt++;
+                    }
+                    if (cnt > 1) {
+                        alert("빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다.");
+                        f.stx.select();
+                        f.stx.focus();
+                        return false;
+                    }
+                    return true;
+                }
+                </script>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade itemuse-iframe-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><i class="fas fa-edit color-grey"></i> <strong>사용후기 작성하기</strong></h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="itemuse-iframe" width="100%" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade itemqa-iframe-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><i class="fas fa-question-circle color-grey"></i> <strong>상품문의 작성하기</strong></h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="itemqa-iframe" width="100%" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade coupon-iframe-modal" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h4 class="modal-title"><i class="fas fa-ticket-alt color-grey"></i> <strong>쿠폰 내역</strong></h4>
+            </div>
+            <div class="modal-body">
+                <iframe id="coupon-iframe" width="100%" frameborder="0"></iframe>
+            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+function itemuse_modal(href) {
+    $('.itemuse-iframe-modal').modal('show').on('hidden.bs.modal', function() {
+        $("#itemuse-iframe").attr("src", "");
+        $('html').css({overflow: ''});
+    });
+    $('.itemuse-iframe-modal').modal('show').on('shown.bs.modal', function() {
+        $("#itemuse-iframe").attr("src", href);
+        $('#itemuse-iframe').height(parseInt($(window).height() * 0.7));
+        $('html').css({overflow: 'hidden'});
+    });
+    return false;
+}
+
+function itemqa_modal(href) {
+    $('.itemqa-iframe-modal').modal('show').on('hidden.bs.modal', function() {
+        $("#itemqa-iframe").attr("src", "");
+        $('html').css({overflow: ''});
+    });
+    $('.itemqa-iframe-modal').modal('show').on('shown.bs.modal', function() {
+        $("#itemqa-iframe").attr("src", href);
+        $('#itemqa-iframe').height(parseInt($(window).height() * 0.7));
+        $('html').css({overflow: 'hidden'});
+    });
+    return false;
+}
+
+function coupon_modal(href) {
+    $('.coupon-iframe-modal').modal('show').on('hidden.bs.modal', function() {
+        $("#coupon-iframe").attr("src", "");
+        $('html').css({overflow: ''});
+    });
+    $('.coupon-iframe-modal').modal('show').on('shown.bs.modal', function() {
+        $("#coupon-iframe").attr("src", "http://theme4.eyoom.net/shop/coupon.php");
+        $('#coupon-iframe').height(parseInt($(window).height() * 0.7));
+        $('html').css({overflow: 'hidden'});
+    });
+    return false;
+}
+
+// 모달창을 닫은 후 리로드
+function close_modal_and_reload() {
+    close_modal();
+    document.location.reload();
+}
+function close_modal() {
+    $('.modal').modal('hide');
+}
+</script>
+
+<script>
+function poll_result(url) {
+        $('.poll-result-iframe-modal').modal('show').on('hidden.bs.modal', function () {
+        $("#poll-result-iframe").attr("src", "");
+        $('html').css({overflow: ''});
+    });
+    $('.poll-result-iframe-modal').modal('show').on('shown.bs.modal', function () {
+        $("#poll-result-iframe").attr("src", url);
+        $('#poll-result-iframe').height(parseInt($(window).height() * 0.7));
+        $('html').css({overflow: 'hidden'});
+    });
+    return false;
+}
+</script>
+
+
+
+<script src="http://theme4.eyoom.net/theme/eb4_basic/js/app.js?ver=191202"></script>
+<script>
+$(document).ready(function() {
+    App.init();
+});
+
+</script>
+
+
+<script>
+$(function() {
+    // 폰트 리사이즈 쿠키있으면 실행
+    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+});
+</script>
+
+<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+<!--[if lte IE 7]>
+<script>
+$(function() {
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
+});
+</script>
+<![endif]-->
+
+</body>
+</html>
+<!-- 사용스킨 : basic -->
