@@ -16,16 +16,20 @@
        where sequence > (#{pageNum}-1)*#{amount}  
 	]]>
 	</select>
+	
 	<select id="NoticeCount" resultType="int">
 		select count(*) as count from noticewrite where rownum > 0
 	</select>
+	
 	<select id="viewer" resultType="com.rental.domain.NoticeVO">
 		select * from noticewrite where sequence = #{sequence}
 	</select>
+	
 	<update id="modify">
 		update noticewrite set title = #{title}, content = #{content} where sequence
 		= #{sequence}
 	</update>
+	
 	<delete id="delete">
 		delete from noticewrite where userid= #{userid} and sequence = #{sequence}
 	</delete>

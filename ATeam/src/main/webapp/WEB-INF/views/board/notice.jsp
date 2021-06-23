@@ -64,7 +64,9 @@
 								<th style="text-align: center;"><i class="fa fa-eye fa-lg" aria-hidden="true"></i></th>
 							</tr>
 						</thead>
+						
 						<tbody class="customtable">
+						
 							<c:set
 								value="${pageMaker.total - (pageMaker.cri.pageNum - 1) * pageMaker.cri.amount}"
 								var="bno"></c:set>

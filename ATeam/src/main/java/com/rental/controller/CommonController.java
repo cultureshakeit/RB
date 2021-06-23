@@ -341,7 +341,7 @@ public class CommonController {
 	}
 	
 	@GetMapping("/course/courseview")
-	public void view(String userid, Model model, int num,@ModelAttribute("cri") Criteria cri) {
+	public void view(String userid, Model model, int num, @ModelAttribute("cri") Criteria cri) {
 		ps.viewcount(num);
 		model.addAttribute("userid", userid);
 		model.addAttribute("Cview", ps.getCPage(num));
