@@ -393,9 +393,19 @@ public class CommonController {
 		ps.courseDelete(num);
 		return "redirect:/course/course";
 	}
+	
 	@GetMapping("/tourist")
 	public String tourist() {
+		
 		return "tourist/tourist";
+		
+	}
+	
+	@GetMapping("/tourist_view")
+	public String touristview() {
+		
+		return "tourist/tourist_view";
+		
 	}
 
 }
