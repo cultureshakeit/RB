@@ -102,6 +102,7 @@
 													<li>
 														<a href="/product/product">자전거대여</a>
 													</li>
+													<li><a href="/tourbi">자전거 코스</a></li>
 													<sec:authorize access="isAuthenticated()">
 														<li>
 															<a href="/course/course?userid=<sec:authentication property='principal.member.userid'/>">가이드 투어 정보</a>

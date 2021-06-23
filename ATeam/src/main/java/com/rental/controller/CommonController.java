@@ -394,11 +394,13 @@ public class CommonController {
 		return "redirect:/course/course";
 	}
 	
+	@GetMapping("/tourbi")
+	public String tourbi() {
+		return "tourist/bicycle_course";
+	}
 	@GetMapping("/tourist")
 	public String tourist() {
-		
 		return "tourist/tourist";
-		
 	}
 	
 	@GetMapping("/tourist_view")
