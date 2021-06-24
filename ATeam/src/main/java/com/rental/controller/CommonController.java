@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.UnsupportedEncodingException;
 import java.sql.SQLException;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.UUID;
 
@@ -23,6 +24,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import com.fasterxml.jackson.core.JsonParser;
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.jayway.jsonpath.Configuration;
+import com.jayway.jsonpath.DocumentContext;
+import com.jayway.jsonpath.JsonPath;
 import com.rental.domain.ConTactVO;
 import com.rental.domain.CourseVO;
 import com.rental.domain.Criteria;
@@ -34,6 +41,7 @@ import com.rental.domain.PageDTO_c;
 import com.rental.domain.QnAVO;
 import com.rental.domain.ReplyVO;
 import com.rental.domain.ReviewVO;
+import com.rental.domain.TouristVO;
 import com.rental.service.ConTactService;
 import com.rental.service.MemberService;
 import com.rental.service.NoticeService;
@@ -41,10 +49,12 @@ import com.rental.service.ProductService;
 import com.rental.service.QNAService;
 import com.rental.service.ReplyService;
 import com.rental.service.ReviewService;
+import com.rental.service.TouristService;
 import com.rental.util.Utility;
 
 import lombok.Setter;
 import lombok.extern.log4j.Log4j;
+import net.minidev.json.JSONArray;
 
 @Controller
 @Log4j
@@ -381,7 +391,7 @@ public class CommonController {
 
 		try {
 			multipartFile.transferTo(saveFile);
-			// ����� ����
+			
 		} catch (Exception e) {
 			log.error(e.getMessage());
 		}
@@ -398,9 +408,19 @@ public class CommonController {
 		return "redirect:/course/course";
 	}
 	
+	@Setter(onMethod_ = { @Autowired })
+	private TouristService tourService;
+	
 	@GetMapping("/tourist")
-	public String tourist() {
+	public String tourist(Model model,Criteria cri) {
 		
+		List<TouristVO> tlist = tourService.List(cri);
+		
+		DocumentContext document = JsonPath.parse(tlist.get(0).getPhoto());
+//		int ilen = (int)document.read("$.length()");
+		String img_title = document.read("$['descseo']", String.class); 
+		String imgpath = document.read("$['photoid']['imgpath']", String.class); 
+		model.addAttribute("tlist",tlist);
 		return "tourist/tourist";
 		
 	}
