@@ -1,5 +1,5 @@
 $(".media #delete").on("click",function(){
-	var confirms = confirm("コメントを削除しますか？"); 
+	var confirms = confirm("댓글을 삭제 하시겠습니까？"); 
 	var userid= $(this).parent().parent().parent().parent().find("input[name='userid']").val();
 	var n_num = $(this).parent().parent().parent().find("#number").val();
 	$(document).ajaxSend(function(e, xhr, options) {
