@@ -32,4 +32,6 @@
             global="jdbc/testdb"
             type="javax.sql.DataSource" />
     
+    <Resources cachingAllowed="true" cacheMaxSize="100000"/>
+    
 </Context>

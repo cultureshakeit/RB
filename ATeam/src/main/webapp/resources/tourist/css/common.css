@@ -639,20 +639,20 @@ span.label-pink,span.badge-pink {background:#ED407A}
 .social-icons li {list-style:none;margin-right:3px;margin-bottom:3px;text-indent:-9999px;display:inline-block}
 .social-icons li a {width:30px;height:30px;display:block;background-position:0 0;background-repeat:no-repeat;opacity:1}
 .social-icons li a:hover {opacity:0.7}
-.social_facebook {background:url("../image/social/facebook.png") no-repeat;background-size:30px 30px}
-.social_twitter {background:url("../image/social/twitter.png") no-repeat;background-size:30px 30px}
-.social_google {background:url("../image/social/google.png") no-repeat;background-size:30px 30px}
-.social_youtube {background:url("../image/social/youtube.png") no-repeat;background-size:30px 30px}
-.social_kakao {background:url("../image/social/kakao.png") no-repeat;background-size:30px 30px}
-.social_kakaostory {background:url("../image/social/kakaostory.png") no-repeat;background-size:30px 30px}
-.social_naver {background:url("../image/social/naver.png") no-repeat;background-size:30px 30px}
-.social_payco {background:url("../image/social/payco.png") no-repeat;background-size:30px 30px}
-.social_band {background:url("../image/social/band.png") no-repeat;background-size:30px 30px}
-.social_rss {background:url("../image/social/rss.png") no-repeat;background-size:30px 30px}
-.social_pinterest {background:url("../image/social/pinterest.png") no-repeat;background-size:30px 30px}
-.social_tumblr {background:url("../image/social/tumblr.png") no-repeat;background-size:30px 30px}
-.social_instagram {background:url("../image/social/instagram.png") no-repeat;background-size:30px 30px}
-.social_behance {background:url("../image/social/behance.png") no-repeat;background-size:30px 30px}
+.social_facebook {background:url("../image/facebook.png") no-repeat;background-size:30px 30px}
+.social_twitter {background:url("../image/twitter.png") no-repeat;background-size:30px 30px}
+.social_google {background:url("../image/google.png") no-repeat;background-size:30px 30px}
+.social_youtube {background:url("../image/youtube.png") no-repeat;background-size:30px 30px}
+.social_kakao {background:url("../image/kakao.png") no-repeat;background-size:30px 30px}
+.social_kakaostory {background:url("../image/kakaostory.png") no-repeat;background-size:30px 30px}
+.social_naver {background:url("../image/naver.png") no-repeat;background-size:30px 30px}
+.social_payco {background:url("../image/payco.png") no-repeat;background-size:30px 30px}
+.social_band {background:url("../image/band.png") no-repeat;background-size:30px 30px}
+.social_rss {background:url("../image/rss.png") no-repeat;background-size:30px 30px}
+.social_pinterest {background:url("../image/pinterest.png") no-repeat;background-size:30px 30px}
+.social_tumblr {background:url("../image/tumblr.png") no-repeat;background-size:30px 30px}
+.social_instagram {background:url("../image/instagram.png") no-repeat;background-size:30px 30px}
+.social_behance {background:url("../image/behance.png") no-repeat;background-size:30px 30px}
 
 /*---------- Progress Bar ----------*/
 .progress {box-shadow:none;margin-bottom:10px}
