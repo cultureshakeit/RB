@@ -129,7 +129,7 @@
 	$(".pagination li  a").on("click", function(e) {
 		e.preventDefault();
 		var numh = $(this).attr("href");
-		var amount = <c:out value="${amount}" />
+		var amount = <c:out value="${pageMaker.cri.amount}" />
 		console.log(numh);
 		var form = $("#actionForm");
 		form.append("<input name='pageNum' value='"+numh+"'>");

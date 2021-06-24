@@ -189,10 +189,12 @@ public class CommonController {
 	public String board( Model model, @ModelAttribute("cri") Criteria cri) {
 		
 		int countAll = noticeservice.NoticeCount();
-		model.addAttribute("amount",10);
+		
+		cri.setAmount(5);
+		PageDTO pd = new PageDTO(cri, countAll);
 		model.addAttribute("count", countAll);
 		model.addAttribute("list", noticeservice.List(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, countAll));
+		model.addAttribute("pageMaker", pd);
 		return "board/notice";
 	}
 
