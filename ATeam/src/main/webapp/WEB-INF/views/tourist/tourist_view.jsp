@@ -91,7 +91,7 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
                     </li>
                                         <li class="hidden-xs">
                         
-<a href="http://theme4.eyoom.net/bbs/current_connect.php"><i class="fas fa-male margin-right-5"></i>접속자 6 </a>                    </li>
+<a href="http://theme4.eyoom.net/bbs/current_connect.php"><i class="fas fa-male margin-right-5"></i>접속자 8 </a>                    </li>
                 </ul>
             </div>
 
@@ -546,7 +546,7 @@ button.mfp-close {position:fixed;color:#fff !important}
                                                         </div>
                 <div class="info-box-bottom">
                                         <span class="color-black"><i class="fas fa-clock"></i>17시 52분</span>
-                                        <span><i class="fas fa-eye"></i>1,406</span>
+                                        <span><i class="fas fa-eye"></i>1,405</span>
                     <span class="color-red"><i class="fas fa-comment-alt"></i>0</span>
                 </div>
             </div>
@@ -2508,17 +2508,8 @@ function fpoll_submit(f) {
         <div class="tab-pane active in" id="rank-1">
             <div class="ranking-content">
                 <ul class="list-unstyled">
-                                        <li>
-                        <div class="width-60 pull-left ellipsis">
-                            <span class="ranking-num ranking-num-1">1</span>
-                            <span class="ranking-photo">
-                                                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/admin.png" alt="회원사진">                                                            </span>
-                            최고관리자                                                    </div>
-                        <div class="width-40 pull-right">
-                            100                        </div>
-                        <div class="clearfix"></div>
-                    </li>
-                                                        </ul>
+                                                            <p class="text-center color-light-grey font-size-11 margin-top-10"><i class="fas fa-exclamation-circle"></i> 출력할 랭킹이 없습니다.</p>
+                                    </ul>
             </div>
         </div>
         <div class="tab-pane in" id="rank-2">
@@ -2887,11 +2878,11 @@ $(document).ready(function() {
     </div>
     <ul class="list-unstyled statistics-list">
         <li>
-<a href="http://theme4.eyoom.net/bbs/current_connect.php">현재접속자 : <strong>6</strong></a></li>
-        <li>오늘방문자 : <strong>315</strong></li>
+<a href="http://theme4.eyoom.net/bbs/current_connect.php">현재접속자 : <strong>8</strong></a></li>
+        <li>오늘방문자 : <strong>219</strong></li>
         <li>어제방문자 : <strong>447</strong></li>
         <li>최대방문자 : <strong>1,176</strong></li>
-        <li>전체방문자 : <strong>443,751</strong></li>
+        <li>전체방문자 : <strong>443,655</strong></li>
         <li>신규회원수 : <strong>0</strong></li>
         <li>전체회원수 : <strong>285</strong></li>
         <li>전체게시물 : <strong>362</strong></li>
