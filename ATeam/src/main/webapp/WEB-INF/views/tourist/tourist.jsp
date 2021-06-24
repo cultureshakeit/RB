@@ -353,7 +353,6 @@
 </div>    </div>
 
 <form id="actionForm" action="/tourist" method="get"></form>
-<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script type="text/javascript">
 	$(".eb-pagination li  a").on("click", function(e) {
 		e.preventDefault();
