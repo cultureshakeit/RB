@@ -7,7 +7,12 @@
 	return imgpath;
 }
 	%>
-
+<%! public String getRegion(String json){
+	DocumentContext document = JsonPath.parse(json);
+	String str = document.read("$['label']", String.class); 
+	return str;
+}
+	%>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -224,13 +229,16 @@
                             </div>
                         </a>
                     </div>
+                    <c:set var="region1" value="${place.region1}" />
+                    <c:set var="region2" value="${place.region2}" />
                     <div class="multi-desc">
 						<div class="multi-desc-ymd">
                             <div class="multi-desc-ym">
-                                2020.01
+                                <%= getRegion((String)(pageContext.getAttribute("region1"))) %>
                            	</div>
-                            <div class="multi-desc-d">
-                                15
+                           	<br>
+                            <div class="multi-desc-md">
+                                <%= getRegion((String)(pageContext.getAttribute("region2"))) %>
                             </div>
 						</div>
                         <div class="multi-subj-cont">
@@ -267,15 +275,15 @@
 							</span><!--레벨 아이콘-->
 							<span>
 								<i class="far fa-clock"></i>
-								<strong class="color-black">17시 31분</strong>
+<!-- 								<strong class="color-black">17시 31분</strong> -->
 							</span>
 							<span>
 								<i class="fas fa-eye"></i>
-								<strong class="color-black">2,491</strong>
+								<strong class="color-black">조회수 미구현</strong>
 							</span>
 							<span>
 								<i class="far fa-thumbs-up"></i>
-								<strong class="color-green">1</strong>
+								<strong class="color-green">좋아요 junction</strong>
 							</span>
 							<div class="multi-ratings">
 								<ul class="list-unstyled star-ratings-list">
