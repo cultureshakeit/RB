@@ -10,16 +10,10 @@
 		insert into ipbanlist (userid, ip, bandate)
 		values (#{userid}, #{ip} , sysdate)
 	</insert>
-	
 	<delete id="ipdelete">
-		delete from ipbanlist
-		where userid = #{userid} and ip = #{ip}
+		delete from ipbanlist where userid = #{userid} and ip = #{ip}
 	</delete>
-	
 	<select id="isBlock" parameterType="map"  resultType="com.rental.domain.IPBanList">
-		select *
-		from ipbanlist
-		where ip = #{ip} and userid = #{userid}
+		select * from ipbanlist where ip = #{ip} and userid = #{userid}
 	</select>
-	
 </mapper>

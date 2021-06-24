@@ -6,16 +6,13 @@
 	</select>
 
 	<insert id="insert">
-		insert into apply_user 
-			(num, username, userid, useremail, addr, applydate, phonenum, enabled)
-		values 
-			(seq_apply.nextval,	#{username}, #{userid},
-			#{useremail}, #{addr}, sysdate, #{phonenum}, 0)
+		insert into apply_user (num, username, userid, useremail, addr, applydate,
+		phonenum, enabled)
+		values (seq_apply.nextval,
+		#{username},#{userid},#{useremail},#{addr},sysdate, #{phonenum},0)
 	</insert>
 	
 	<select id="confirm" resultType="int">
-		select count(*) as count
-		from apply_user
-		where userid = #{userid}
+	select count(*) as count from apply_user where userid=#{userid}
 	</select>
 </mapper>

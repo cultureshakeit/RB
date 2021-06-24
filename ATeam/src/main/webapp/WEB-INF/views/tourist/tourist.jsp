@@ -8,7 +8,7 @@
 <title>흐흐흐</title>
 
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/default.css">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/bootstrap.min.css">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/eyoom-form.min.css">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/common.css">
@@ -981,7 +981,6 @@
 	</div>
 </div>
 
-
 </div>
 <iframe name="photoframe" id="photoframe" style="display:none;"></iframe>
 
@@ -1361,7 +1360,50 @@ $(function() {
         </div>
     </div>
 </div>
-
+<div class="modal fade search-modal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h5 class="modal-title"><i class="fas fa-search color-grey"></i> <strong>IT 검색</strong></h5>
+            </div>
+            <div class="modal-body">
+                                <fieldset id="bo_sch" class="eyoom-form">
+                    <form name="fsearch" method="get">
+                    <input type="hidden" name="bo_table" value="magazine_it">
+                    <input type="hidden" name="sca" value="">
+                    <input type="hidden" name="sop" value="and">
+                    <label for="sfl" class="sound_only">검색대상</label>
+                    <section class="margin-top-10">
+                        <label class="select">
+                            <select name="sfl" id="sfl" class="form-control">
+                                <option value="wr_subject">제목</option>
+                                <option value="wr_content">내용</option>
+                                <option value="wr_subject||wr_content">제목+내용</option>
+                                <option value="mb_id,1">회원아이디</option>
+                                <option value="mb_id,0">회원아이디(코)</option>
+                                <option value="wr_name,1">글쓴이</option>
+                                <option value="wr_name,0">글쓴이(코)</option>
+                                                            </select>
+                            <i></i>
+                        </label>
+                    </section>
+                    <section>
+                        <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+                        <div class="input input-button">
+                            <input type="text" name="stx" value="" required id="stx">
+                            <div class="button"><input type="submit" value="검색">검색</div>
+                        </div>
+                    </section>
+                    </form>
+                </fieldset>
+                            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
 function itemuse_modal(href) {
     $('.itemuse-iframe-modal').modal('show').on('hidden.bs.modal', function() {

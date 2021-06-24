@@ -4,32 +4,23 @@
 <meta charset="utf-8">
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
-
-<meta property="og:id" content="http://theme4.eyoom.net" />
-<meta property="og:url" content="http://theme4.eyoom.net/dmap/9" />
-<meta property="og:type" content="article" />
-<meta property="og:title" content="[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물 >  | 이윰빌더" />
-<meta property="og:site_name" content="이윰빌더" />
-<meta property="og:description" content="50여 년 전 제주에서 개업한 이래, 감수북길에서 2대에 걸쳐 명맥을 이어온 유명 해산물 전문점이다. 제철 식재료로 만든 정갈하고 깔끔한 해산물 코스와 일품요리를 제공한다.&nbsp;"/>
-<meta property="og:image" content="http://theme4.eyoom.net/data/file/dmap/thumb-1218034632_Gt9I2lqh_02dc3b6cbd6e98dfa77534f326267eb1daff5f3a_600x0.jpg" />
-<meta property="og:image:width" content="600" />
-<meta property="og:image:height" content="600" />
         
 <title>[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물 > 다음맵멀티마커 | 이윰빌더</title>
-<link rel="stylesheet" href="http://theme4.eyoom.net/css/default.css?ver=191202">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/bootstrap/css/bootstrap.min.css?ver=191202">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/eyoom-form/css/eyoom-form.min.css?ver=191202">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/css/common.css?ver=191202">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/fontawesome5/css/fontawesome-all.min.css?ver=191202">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/css/style.css?ver=191202">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/css/custom.css?ver=191202">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/sweetalert/sweetalert.min.css" type="text/css" media="screen">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/magnific-popup/magnific-popup.min.css" type="text/css" media="screen">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/prism/prism.min.css" type="text/css" media="screen">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/fotorama/fotorama.css" type="text/css" media="screen">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/venobox/venobox.css" type="text/css" media="screen">
-<link rel="stylesheet" href="http://theme4.eyoom.net/theme/eb4_basic/plugins/sly/tab_scroll_category.css" type="text/css" media="screen">
-<link rel="stylesheet" href="http://theme4.eyoom.net/skin/social/style.css?ver=191202">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/default.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/bootstrap.min.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/eyoom-form.min.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/common.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/fontawesome-all.min.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/style.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/custom.css">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/sweetalert.min.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/resources/tourist/css/magnific-popup.min.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/resources/tourist/css/prism.min.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/resources/tourist/css/fotorama.css" type="text/css" media="screen">
+<link rel="stylesheet" href="/resources/tourist/css/venobox.css" type="text/css" media="screen">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/tab_scroll_category.css" type="text/css" media="screen">
+<link type="text/css" rel="stylesheet" href="/resources/tourist/css/style.css">
 <!--[if lte IE 8]>
 <script src="http://theme4.eyoom.net/js/html5.js"></script>
 <![endif]-->
@@ -46,15 +37,15 @@ var g5_editor    = "smarteditor2";
 var g5_cookie_domain = "";
 var g5_shop_url  = "http://theme4.eyoom.net/shop";
 </script>
-<script src="http://theme4.eyoom.net/js/jquery-1.12.4.min.js?ver=191202"></script>
-<script src="http://theme4.eyoom.net/js/jquery-migrate-1.4.1.min.js?ver=191202"></script>
-<script src="http://theme4.eyoom.net/js/jquery.menu.js?ver=191202"></script>
-<script src="http://theme4.eyoom.net/js/common.js?ver=191202"></script>
-<script src="http://theme4.eyoom.net/js/wrest.js?ver=191202"></script>
-<script src="http://theme4.eyoom.net/js/placeholders.min.js?ver=191202"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/bootstrap/js/bootstrap.min.js?ver=191202"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/jquery.bootstrap-hover-dropdown.min.js?ver=191202"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sidebar/jquery.sidebar.min.js?ver=191202"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery-1.12.4.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery.menu.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/common.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/wrest.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/placeholders.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery.bootstrap-hover-dropdown.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/jquery.sidebar.min.js"></script>
 <!--[if lt IE 9]>
 <script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/respond.min.js"></script>
 <script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/eyoom-form/js/eyoom-form-ie8.js"></script>
@@ -65,6 +56,7 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 <body>
 
 <div class="wrapper">
+<<<<<<< HEAD
     
         <header class="header-topbar">
         <div class="container position-relative">
@@ -126,259 +118,35 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
                                         <a href="http://theme4.eyoom.net">
                                                                                             <img src="http://theme4.eyoom.net/theme/eb4_basic/image/site_logo.png" class="title-image-center" alt="이윰빌더">
                                                                                         </a>
+=======
+	<div class="basic-body container page-padding ft-padding">
+		<div class="basic-body-page">
+        	<div class="category-mobile-area">
+            	<div class="tab-scroll-page-category">
+                	<div class="scrollbar">
+                    	<div class="handle">
+                        	<div class="mousearea"></div>
+                        </div>
+                    </div>
+                    <div id="tab-page-category">
+	                    <div class="page-category-list">
+	                      <span ><a href="#" target="_self">공유자료실</a></span>
+	                      <span ><a href="#" target="_self">이벤트</a></span>
+	                      <span class="fake-span"></span>
+	                    </div>
+	                    <div class="controls">
+	                        <button class="btn prev"><i class="fas fa-caret-left"></i></button>
+	                        <button class="btn next"><i class="fas fa-caret-right"></i></button>
+	                    </div>
+                    </div>
+                    <div class="tab-page-category-divider"></div>
+>>>>>>> branch 'master' of https://github.com/cultureshakeit/RB.git
                 </div>
             </div>
-        </div>
-        
-                <div class="header-nav header-sticky">
-            <div class="navbar" role="navigation">
-                <div class="container">
-                                        <div class="nav-center hidden-md hidden-lg">
-                        
-
+			<div class="row">
+			
 <style>
-.notice-roll-header-wrap {position:relative;padding:0 10px;border:1px solid #e5e5e5;background:#fff;margin:0 15px}
-.notice-roll-header {position:relative;overflow:hidden;height:35px}
-.notice-roll-header .label {position:absolute;top:10px;left:0}
-.notice-roll-header .label-red {background:#FF4948}
-.notice-roll-header ul {position:absolute;width:100%;list-style:none;margin:0;padding:0}
-.notice-roll-header ul li {position:relative;height:35px;box-sizing:content-box}
-.notice-roll-header ul li a {line-height:36px;font-size:12px;margin-left:43px}
-.notice-roll-header ul li span {line-height:36px;font-size:12px;margin-left:43px}
-</style>
-
-<div class="notice-roll-header-wrap">
-        <div class="notice-roll-header">
-        <span class="label label-red">공지</span>
-        <ul>
-                        <li>
-                <a href="http://theme4.eyoom.net/business_notice/21" class="ellipsis">
-                                        공지사항                </a>
-            </li>
-                        <li>
-                <a href="http://theme4.eyoom.net/business_notice/6" class="ellipsis">
-                                        데이터 발전의 속도와 크라우드 펀딩은 자금의 모집자와 제공자간 거래가 온라인상에서 소셜미디어에 의한 쌍방향 소통                </a>
-            </li>
-                        <li>
-                <a href="http://theme4.eyoom.net/business_notice/5" class="ellipsis">
-                                        드론의 발전과 활용 방안 온라인상에서 소셜미디어에 의한 쌍방향 소통                </a>
-            </li>
-                        <li>
-                <a href="http://theme4.eyoom.net/business_notice/4" class="ellipsis">
-                                        직장생활과 미래의 꿈 온라인상에서 소셜미디어에 의한 쌍방향 소통                </a>
-            </li>
-                        <li>
-                <a href="http://theme4.eyoom.net/business_notice/3" class="ellipsis">
-                                        은퇴와 노년의 지원방안                </a>
-            </li>
-                    </ul>
-    </div>
-        
-    </div>
-
-<script>
-$(function() {
-    var noticeRollUl = $('.notice-roll-header ul'),
-        noticeRollLi = noticeRollUl.append(noticeRollUl.html()).children(),
-        noticeRollHeight = $('.notice-roll-header').height() * -1,
-        scrollSpeed = 600,
-        timer,
-        speed = 3000 + scrollSpeed;
-
-    if (noticeRollLi.length > 2) {
-        function sliderText() {
-            var noticeRollFoucs = noticeRollUl.position().top / noticeRollHeight;
-
-            noticeRollFoucs = (noticeRollFoucs + 1) % noticeRollLi.length;
-            noticeRollUl.animate({
-                top: noticeRollFoucs * noticeRollHeight
-            }, scrollSpeed, function() {
-                if (noticeRollFoucs == noticeRollLi.length / 2) {
-                    noticeRollUl.css('top', 0);
-                }
-            });
-            timer = setTimeout(sliderText, speed);
-        }
-
-        noticeRollLi.hover(function() {
-            clearTimeout(timer);
-        }, function() {
-            timer = setTimeout(sliderText, speed);
-        });
-
-        timer = setTimeout(sliderText, speed);
-    }
-});
-</script>
-                    </div>
-                    
-                    <nav class="sidebar left">
-                        <div class="sidebar-left-content">
-                                                        <div class="sidebar-member-menu">
-                                <form name="fsearchbox" method="get" action="http://theme4.eyoom.net/bbs/search.php" onsubmit="return fsearchbox_submit(this);" class="eyoom-form margin-bottom-20">
-                                <input type="hidden" name="sfl" value="wr_subject||wr_content">
-                                <input type="hidden" name="sop" value="and">
-                                <label for="sch_stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
-                                <div class="input input-button">
-                                    <input type="text" name="stx" id="sch_stx" maxlength="20" placeholder="전체검색">
-                                    <div class="button"><input type="submit">검색</div>
-                                </div>
-                                </form>
-                                                                <a href="http://theme4.eyoom.net/shop" class="sidebar-lg-btn btn-e btn-e-lg btn-e-red btn-e-block">
-                                    쇼핑몰 메인
-                                </a>
-                                                                                                                                <a href="http://theme4.eyoom.net/bbs/register.php" class="sidebar-member-btn-box">
-                                    <div class="sidebar-member-btn">회원가입</div>
-                                </a>
-                                <a href="http://theme4.eyoom.net/bbs/login.php" class="sidebar-member-btn-box">
-                                    <div class="sidebar-member-btn pull-right">로그인</div>
-                                </a>
-                                                                <div class="clearfix"></div>
-                            </div>
-                            
-                            <ul class="nav navbar-nav">
-                                                                <li class="navbar-nav-home">
-                                    <a href="http://theme4.eyoom.net"><i class="fas fa-navicon nav-icon-pre hidden-xs hidden-sm"></i>HOME</a>
-                                </li>
-                                <li class="nav-li-divider"></li>
-                                                                                                <li class="active dropdown">
-                                    <a href="" target="_self" class="dropdown-toggle disabled" data-hover="dropdown">
-                                                                                게시판 스킨                                    </a>
-                                                                        <a href="#" class="cate-dropdown-open dorpdown-toggle hidden-lg hidden-md" data-toggle="dropdown"></a>
-                                                                                                                                                                                                                        <ul class="dropdown-menu">
-                                                                            <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/share" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                공유자료실                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/event" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                이벤트                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/adopt" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                질문과 답변 (채택게시판)                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/blog" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                블로그                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/pdfview" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                PDF 뷰어                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/project" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                프로젝트                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/linear" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                한줄게시판                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/gmap" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                구글맵멀티마커                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu active">
-                                            <a href="http://theme4.eyoom.net/dmap" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                다음맵멀티마커                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/magazine_it" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                멀티 타입                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/magazine_review" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                제품 리뷰                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                                                                                                    <li class="dropdown-submenu ">
-                                            <a href="http://theme4.eyoom.net/calendar" target="_self">
-                                                <span class="submenu-marker"></span>
-                                                                                                캘린더 베이직                                                                                                                                            </a>
-                                                                                                                                </li>
-                                                                        </ul>
-                                                                                                                                            </li>
-                                                                <li class=" ">
-                                    <a href="http://theme4.eyoom.net/page/overview" target="_self" class="dropdown-toggle disabled" data-hover="dropdown">
-                                                                                회사소개                                    </a>
-                                                                                                                                            </li>
-                                                                <li class=" ">
-                                    <a href="http://theme4.eyoom.net/page/business_1" target="_self" class="dropdown-toggle disabled" data-hover="dropdown">
-                                                                                사업소개                                    </a>
-                                                                                                                                            </li>
-                                                                                                <li class="hidden-xs hidden-sm"><a href="#" data-toggle="modal" data-target=".all-search-modal"><i class="fas fa-search"></i></a></li>
-
-                                                                <li class="visible-xs visible-sm nav-li-space"></li>
-                                <li class="visible-xs visible-sm nav-mo-half"><a href="http://theme4.eyoom.net/bbs/new.php">새글</a></li>
-                                <li class="visible-xs visible-sm nav-mo-half board-right-none"><a href="http://theme4.eyoom.net/bbs/faq.php">FAQ</a></li>
-                                <div class="clearfix"></div>
-                                <li class="visible-xs visible-sm"><a href="http://theme4.eyoom.net/bbs/qalist.php">1:1문의</a></li>
-                                                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-                    </div>
-        
-        <div class="header-sticky-space"></div>
-
-                <div class="page-title-wrap">
-            <div class="container">
-                            <h2 class="pull-left">
-                                        <i class="fas fa-map-marker-alt"></i> 다음맵멀티마커                                    </h2>
-                                <ul class="breadcrumb pull-right hidden-xs">
-                    <li><a href='http://theme4.eyoom.net'>Home</a></li><li >게시판 스킨</li><li class='active'>다음맵멀티마커</li>                </ul>
-                                <div class="clearfix"></div>
-                        </div>
-        </div>
-        
-                <div class="basic-body container page-padding ft-padding">
-                        <div class="basic-body-page">
-                                                <div class="category-mobile-area">
-                                        <div class="tab-scroll-page-category">
-                        <div class="scrollbar">
-                            <div class="handle">
-                                <div class="mousearea"></div>
-                            </div>
-                        </div>
-                        <div id="tab-page-category">
-                            <div class="page-category-list">
-                                                                <span ><a href="http://theme4.eyoom.net/share" target="_self">공유자료실</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/event" target="_self">이벤트</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/adopt" target="_self">질문과 답변 (채택게시판)</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/blog" target="_self">블로그</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/pdfview" target="_self">PDF 뷰어</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/project" target="_self">프로젝트</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/linear" target="_self">한줄게시판</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/gmap" target="_self">구글맵멀티마커</a></span>
-                                                                <span active><a href="http://theme4.eyoom.net/dmap" target="_self">다음맵멀티마커</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/magazine_it" target="_self">멀티 타입</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/magazine_review" target="_self">제품 리뷰</a></span>
-                                                                <span ><a href="http://theme4.eyoom.net/calendar" target="_self">캘린더 베이직</a></span>
-                                                                <span class="fake-span"></span>
-                            </div>
-                            <div class="controls">
-                                <button class="btn prev"><i class="fas fa-caret-left"></i></button>
-                                <button class="btn next"><i class="fas fa-caret-right"></i></button>
-                            </div>
-                        </div>
-                        <div class="tab-page-category-divider"></div>
-                    </div>
-                                    </div>
-                                                        <div class="row">
-                                            <section class="basic-body-main page-padding left-main col-md-9">
-            
-<style>
+.board-view{margin: auto auto; padding:10px;}
 .board-view .board-setup {position:relative;border:1px solid #d5d5d5;height:30px;margin-bottom:20px}
 .board-view .board-setup .select {position:absolute;top:-1px;left:-1px;display:inline-block;width:200px}
 .board-view .board-setup-btn-box {position:absolute;top:-1px;right:-1px;display:inline-block;width:420px}
@@ -386,7 +154,7 @@ $(function() {
 .board-view .board-setup-btn:nth-child(odd) {background:#59595B}
 .board-view .board-setup-btn:nth-child(even) {background:#676769}
 .board-view .board-setup-btn:hover {opacity:0.8}
-.board-view .board-view-info {position:relative;padding:5px 0;margin-top:15px;background:#fff;border-top:2px solid #757575;border-bottom:2px solid #757575;height:118px}
+.board-view .board-view-info {position:relative;padding:5px auto;margin-top:15px;background:#fff;border-top:2px solid #757575;border-bottom:2px solid #757575;height:118px}
 .board-view .board-view-info .view-post-info {position:relative;border-bottom:1px dotted #e5e5e5;padding-bottom:13px}
 .board-view .board-view-info .view-photo-box {position:absolute;top:0;left:0}
 .board-view .board-view-info .view-info-box {position:relative;margin-left:56px}
@@ -466,7 +234,7 @@ $(function() {
 .board-view .board-view-atc {min-height:200px}
 .board-view .board-view-atc-title {position:absolute;font-size:0;line-height:0;overflow:hidden}
 .board-view .board-view-file-conts {position:relative;overflow:hidden;margin-top:20px;margin-bottom:40px;background:#f8f8f8;padding:5px 5px 3px;border:1px solid #c5c5c5}
-.board-view .board-view-file-conts #bo_v_img img {display:block;width:100% \9;max-width:100%;height:auto;margin-bottom:10px}
+.board-view .board-view-file-conts #bo_v_img img {display:block;width:100%;max-width:100%;height:auto;margin-bottom:10px}
 .board-view .board-view-con {position:relative;overflow:hidden;margin-bottom:30px;width:100%;word-break:break-all}
 .board-view .board-view-con img {max-width:100%;height:auto}
 .board-view .board-view-bot {zoom:1}
@@ -513,369 +281,109 @@ button.mfp-close {position:fixed;color:#fff !important}
 <div id="fakeloader"></div>
 
 <article class="board-view">
-    
     <h4>
-                <span class="color-grey margin-right-5">[제주]</span>
-                <strong>[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물</strong>
+		<span class="color-grey margin-right-5">[제주]</span>
+		<strong>[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물</strong>
     </h4>
-
     <div class="board-view-info">
         <div class="view-post-info">
-                        <div class="view-photo-box">
-                                <span class="view-photo margin-right-5"><img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/ffff.png" alt="회원사진"></span>
-                            </div>
-            
+        	<div class="view-photo-box">
+            	<span class="view-photo margin-right-5"><img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/ffff.png" alt="회원사진"></span>
+            </div>
             <div class="view-info-box">
                 <div class="info-box-top">
                     <span class="view-nick">
                         <span class="sv_wrap">
-<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 할인의추억</a>
-<ul class="sv dropdown-menu" role="menu">
-<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
-<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
-<li><a href="http://theme4.eyoom.net/dmap?sca=제주&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
-</ul>
+							<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 할인의추억</a>
+							<!-- <ul class="sv dropdown-menu" role="menu">
+							<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
+							<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
+							<li><a href="http://theme4.eyoom.net/dmap?sca=제주&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
+							</ul>
 
-<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
-<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
-<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
-<li><a href="http://theme4.eyoom.net/dmap?sca=제주&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
-</ul>
-</noscript></span>                    </span>
-                                                            <span class="view-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/2.gif" align="absmiddle" alt="레벨"></span>
-                                                        </div>
+								<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+							 	<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
+								<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
+								<li><a href="http://theme4.eyoom.net/dmap?sca=제주&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
+								</ul>
+								</noscript>-->
+								
+						</span>
+					</span>
+                    <span class="view-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/2.gif" align="absmiddle" alt="레벨"></span>
+                </div>
                 <div class="info-box-bottom">
+<<<<<<< HEAD
                                         <span class="color-black"><i class="fas fa-clock"></i>17시 52분</span>
                                         <span><i class="fas fa-eye"></i>1,405</span>
+=======
+                	<span class="color-black"><i class="fas fa-clock"></i>17시 52분</span>
+                    <span><i class="fas fa-eye"></i>1,406</span>
+>>>>>>> branch 'master' of https://github.com/cultureshakeit/RB.git
                     <span class="color-red"><i class="fas fa-comment-alt"></i>0</span>
                 </div>
             </div>
-
-                        <div class="view-member-progress hidden-xs">
+			<div class="view-member-progress hidden-xs">
                 <span class="progress-info-left"><small>LV.<strong>2</strong></small></span>
                 <span class="progress-info-right"><small>28%</small></span>
                 <div class="progress progress-e progress-xs rounded progress-striped active">
-                    <div class="progress-bar progress-bar-indigo" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width:28%">
-                    </div>
+                    <div class="progress-bar progress-bar-indigo" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width:28%"></div>
                 </div>
             </div>
-                    </div>
-
+		</div>
         <div class="view-post-info-rating">
-                                    
             <div class="board-view-info-label">
-                                                                        <div class="board-view-good-nogood">
-                                                <div class="board-view-good no-member-gng" title="추천">
+            	<div class="board-view-good-nogood">
+                	<div class="board-view-good no-member-gng" title="추천">
                             <span><i class="far fa-thumbs-up"></i></span>
                             <strong>0</strong>
-                        </div>
-                                                                        <div class="board-view-nogood no-member-gng" title="비추천">
-                            <span><i class="far fa-thumbs-down"></i></span>
-                            <strong>0</strong>
-                        </div>
-                                            </div>
-                                                                </div>
+                    </div>
+                    <div class="board-view-nogood no-member-gng" title="비추천">
+                    	<span><i class="far fa-thumbs-down"></i></span>
+                        <strong>0</strong>
+                    </div>
+                </div>
+			</div>
         </div>
     </div>
-
-        <div class="board-view-good-view">
-                                                                    <span class="color-grey font-size-11 margin-left-5"><i class="fas fa-exclamation-circle"></i> 로그인 후 추천 / 비추천 가능</span>
-                    
-                    </div>
-    
-    
-    
-            
-        <div class="view-top-btn">
-        
+    <div class="board-view-good-view">
+    	<span class="color-grey font-size-11 margin-left-5"><i class="fas fa-exclamation-circle"></i> 로그인 후 추천 / 비추천 가능</span>
+    </div>   
+    <div class="view-top-btn">
         <ul class="top-btn-right list-unstyled pull-right">
-                        <li><a href="http://theme4.eyoom.net/dmap?page=&amp;sca=%EC%A0%9C%EC%A3%BC" class="btn-e btn-e-dark" type="button">검색</a></li>
-                                                            <li><a href="http://theme4.eyoom.net/dmap?sca=%EC%A0%9C%EC%A3%BC" class="btn-e btn-e-dark" type="button">목록</a></li>
-                                                    </ul>
+       		 
+        	<li><a class="btn-e btn-e-dark" type="button" data-toggle="modal" data-target=".search-modal">
+				<i class="fas fa-search"></i>
+			</a></li><!-- 검색기능 -->
+            <li><a href="/tourist" class="btn-e btn-e-dark" type="button">목록</a></li>
+        </ul>
         <div class="clearfix"></div>
     </div>
-    
     <div class="board-view-atc">
         <h2 class="board-view-atc-title">본문</h2>
-
-                <div class="board-view-file-conts">
-            <div class="fotorama" data-nav="thumbs" data-max-width="100%" data-loop="true" data-allowfullscreen="true" data-thumbwidth="120" data-thumbheight="70">
-                                <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_Gt9I2lqh_02dc3b6cbd6e98dfa77534f326267eb1daff5f3a.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_Gt9I2lqh_02dc3b6cbd6e98dfa77534f326267eb1daff5f3a.jpg" data-caption="">
-                                <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_iVo9nuOe_41d8867af7c0b5e79c782231869409f2cd9f3569.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_iVo9nuOe_41d8867af7c0b5e79c782231869409f2cd9f3569.jpg" data-caption="">
-                                <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_Vdngq5pW_d48ed61e805f75cdbb3cef73b9e80bd20418fa39.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_Vdngq5pW_d48ed61e805f75cdbb3cef73b9e80bd20418fa39.jpg" data-caption="">
-                                <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_1pZ4ONz9_81360149c270ddef8649104b9f7a891c89dcda6d.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_1pZ4ONz9_81360149c270ddef8649104b9f7a891c89dcda6d.jpg" data-caption="">
-                                <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_2eyYsQWg_d87a3db0e7ad22141f7f29576800524324cdc071.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_2eyYsQWg_d87a3db0e7ad22141f7f29576800524324cdc071.jpg" data-caption="">
-                                <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_8Fs5nCbU_b3e5a6af46cee9f7263e46529704d759c265dc63.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_8Fs5nCbU_b3e5a6af46cee9f7263e46529704d759c265dc63.jpg" data-caption="">
-                                <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_1SAML3ym_d1393648451d1a90b776a2be55717eb0184de19b.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_1SAML3ym_d1393648451d1a90b776a2be55717eb0184de19b.jpg" data-caption="">
-                                <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_MNLsnUk0_54edd1fe7f8bc82292a7626b9d887787853361e1.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_MNLsnUk0_54edd1fe7f8bc82292a7626b9d887787853361e1.jpg" data-caption="">
-                            </div>
+        
+        <div class="board-view-file-conts">
+            <div class="fotorama" data-nav="thumbs" data-max-width="100%" data-loop="true" data-allowfullscreen="true" data-thumbwidth="170" data-thumbheight="100" data-width = "1200">
+	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_Gt9I2lqh_02dc3b6cbd6e98dfa77534f326267eb1daff5f3a.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_Gt9I2lqh_02dc3b6cbd6e98dfa77534f326267eb1daff5f3a.jpg" data-caption="">
+	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_iVo9nuOe_41d8867af7c0b5e79c782231869409f2cd9f3569.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_iVo9nuOe_41d8867af7c0b5e79c782231869409f2cd9f3569.jpg" data-caption="">
+	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_Vdngq5pW_d48ed61e805f75cdbb3cef73b9e80bd20418fa39.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_Vdngq5pW_d48ed61e805f75cdbb3cef73b9e80bd20418fa39.jpg" data-caption="">
+	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_1pZ4ONz9_81360149c270ddef8649104b9f7a891c89dcda6d.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_1pZ4ONz9_81360149c270ddef8649104b9f7a891c89dcda6d.jpg" data-caption="">
+	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_2eyYsQWg_d87a3db0e7ad22141f7f29576800524324cdc071.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_2eyYsQWg_d87a3db0e7ad22141f7f29576800524324cdc071.jpg" data-caption="">
+	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_8Fs5nCbU_b3e5a6af46cee9f7263e46529704d759c265dc63.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_8Fs5nCbU_b3e5a6af46cee9f7263e46529704d759c265dc63.jpg" data-caption="">
+	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_1SAML3ym_d1393648451d1a90b776a2be55717eb0184de19b.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_1SAML3ym_d1393648451d1a90b776a2be55717eb0184de19b.jpg" data-caption="">
+	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_MNLsnUk0_54edd1fe7f8bc82292a7626b9d887787853361e1.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_MNLsnUk0_54edd1fe7f8bc82292a7626b9d887787853361e1.jpg" data-caption="">
+            </div>
         </div>
         
-                <div class="view-dmap-container">
+		<div class="view-dmap-container">
             <div class="dmap-view-canvas-wrap">
                 <div id="dmap_view_canvas"></div>
             </div>
         </div>
-        
-                        <div class="board-view-con view-content"><p>50여 년 전 제주에서 개업한 이래, 감수북길에서 2대에 걸쳐 명맥을 이어온 유명 해산물 전문점이다. 제철 식재료로 만든 정갈하고 깔끔한 해산물 코스와 일품요리를 제공한다.</p>
-
-<p> </p></div>
-        
-                            
-<style>
-.member-signature {position:relative;margin:30px 0;border:1px solid #e5e5e5;border-top:3px solid #e5e5e5;font-size:12px;height:300px;box-sizing:content-box}
-.member-signature .member-signature-profile {position:absolute;top:0;left:0;width:300px;height:300px;padding:10px;border-right:1px solid #e5e5e5}
-.member-signature .color-light-grey {color:#b5b5b5}
-.member-signature .signature-photo {position:relative;height:56px;width:56px;padding:2px;box-shadow:0 0 0 1px rgba(0, 0, 0, 0.1);background:#fff;border-radius:50% !important}
-.member-signature .signature-photo img {height:52px;width:52px;background-color:#fff;background-size:cover;border-radius:50% !important}
-.member-signature .signature-photo .signature-user-icon {height:52px;width:52px;text-align:center;line-height:52px;background:#757575;color:#fff;font-size:26px;text-align:center;display:inline-block;border-radius:50% !important}
-.member-signature .signature-info {position:relative;padding-left:15px;border-left:1px dotted #ddd;}
-.member-signature .signature-info .signature-lv-icon {display:inline-block;margin-left:2px}
-.member-signature .signature-statistics {position:relative;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;margin:10px -10px;padding:10px;background:#fafafa}
-.member-signature .signature-statistics .progress {background:#d5d5d5}
-.member-signature .signature-profile .signature-profile-box {position:relative}
-.member-signature .signature-profile .profile-title {position:absolute;top:0;left:0;width:60px}
-.member-signature .signature-profile .profile-cont {position:relative;overflow:hidden;margin-left:65px;color:#757575}
-.member-signature .signature-profile .profile-cont.cont-fixed {height:36px}
-.member-signature .member-signature-latest {position:relative;margin-left:300px;height:300px}
-.member-signature-latest .nav-tabs {border-bottom:0}
-.member-signature-latest .nav-tabs li {width:50%;margin-bottom:15px}
-.member-signature-latest .nav-tabs li a {text-align:center;margin-right:0;margin-left:-1px;background:#f5f5f5;color:#959595;border:1px solid #e5e5e5;padding:7px 5px;font-size:13px;border-top:0}
-.member-signature-latest .nav-tabs li:first-child a {margin-left:0;border-left:0}
-.member-signature-latest .nav-tabs li:last-child a {border-right:0}
-.member-signature-latest .nav-tabs li a:hover {background:#fff;border-bottom:1px solid #e5e5e5}
-.member-signature-latest .nav-tabs li.active a {z-index:1;background:#fff;font-weight:bold;color:#353535;border-bottom:0;border-top:0;padding:7px 5px 8px}
-.member-signature-latest .tab-content ul {margin:0;font-size:12px;padding:0 20px}
-.member-signature-latest .tab-content ul li {position:relative;margin:5px 0 0;padding:0 0 5px;border-bottom:1px dotted #e5e5e5}
-.member-signature-latest .tab-content ul li:last-child {border-bottom:0}
-.member-signature-latest .tab-content ul li.active .signature-latest-subj {text-decoration:underline;color:#FF4848}
-.member-signature-latest .signature-latest-li {position:relative;margin-right:100px}
-.member-signature-latest .signature-latest-boname {color:#959595;margin-right:3px}
-.member-signature-latest .signature-latest-subj {color:#252525}
-.member-signature-latest .signature-latest-li:hover .signature-latest-subj {text-decoration:underline}
-.member-signature-latest .signature-latest-date {position:absolute;top:0;right:0;width:90px;text-align:right;color:#757575}
-@media (max-width:650px) {
-    .member-signature {height:auto}
-    .member-signature .member-signature-profile {width:100%;border-right:0;border-bottom:1px solid #e5e5e5}
-    .member-signature .member-signature-latest {margin-left:0;margin-top:300px}
-    .member-signature .member-signature-latest .tab-content {margin-bottom:15px}
-}
-</style>
-
-<div class="member-signature">
-    <div class="member-signature-profile">
-                <div class="width-30 pull-left">
-            <div class="signature-member">
-                <div class="signature-photo">
-                    <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/ffff.png" alt="회원사진">                </div>
-            </div>
-        </div>
-        <div class="width-70 pull-right">
-                    <div class="signature-info">
-                <span class="font-size-13">- <span class="sv_wrap">
-<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 할인의추억</a>
-<ul class="sv dropdown-menu" role="menu">
-<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
-<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
-<li><a href="http://theme4.eyoom.net/dmap?sca=제주&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
-</ul>
-
-<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
-<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
-<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
-<li><a href="http://theme4.eyoom.net/dmap?sca=제주&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
-</ul>
-</noscript></span></span>
-                                                                <span class="signature-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/2.gif" alt="레벨"></span>
-                                <span class="display-block">- 회원등급 : 지하계 / Level 2</span>
-                            </div>
-        </div>
-        <div class="clearfix"></div>
-        <div class="signature-statistics">
-            <div class="pull-left">
-                <span>포인트</span> <strong>1,544</strong>
-            </div>
-                        <div class="pull-right text-right">
-                <span>경험치</span> <strong>309</strong>
-            </div>
-                        <div class="clearfix"></div>
-                        <div class="margin-top-5">
-                <span class="progress-info-left"><span class="font-size-11">[레벨 <strong>2</strong>] - 진행률</span></span>
-                <span class="progress-info-right"><span class="font-size-11">28%</span></span>
-                <div class="progress progress-e progress-xxs progress-striped active margin-top-5">
-                    <div class="progress-bar progress-bar-indigo" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width: 28%">
-                    </div>
-                </div>
-            </div>
-                    </div>
-        <div class="signature-profile">
-            <div class="signature-profile-box">
-                <div class="profile-title"><strong>가입일</strong> :</div>
-                <div class="profile-cont"><i class="far fa-clock color-grey"></i> 2018-08-10 14:37:02</div>
-            </div>
-                                </div>
-    </div>
-    <div class="member-signature-latest">
-        <ul class="nav nav-tabs eb-signature-tabs">
-            <li class="active"><a href="#signature-tlb-1" data-toggle="tab">글쓴이의 최신글</a></li>
-            <li><a href="#signature-tlb-2" data-toggle="tab">글쓴이의 최신댓글</a></li>
-        </ul>
-        <div class="tab-content">
-            <div class="tab-pane in active" id="signature-tlb-1">
-                                <ul class="list-unstyled">
-                                        <li class="active">
-                        <a href="http://theme4.eyoom.net/dmap/9">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">다음맵멀티마커 -</span>
-                                <span class="signature-latest-subj">[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2019-02-15</div>
-                        </a>
-                    </li>
-                                        <li >
-                        <a href="http://theme4.eyoom.net/gmap/15">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">구글맵멀티마커 -</span>
-                                <span class="signature-latest-subj">[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-09-21</div>
-                        </a>
-                    </li>
-                                        <li >
-                        <a href="http://theme4.eyoom.net/linear/32">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">한줄게시판 -</span>
-                                <span class="signature-latest-subj">할인의추억님의 한줄토크입니다. - 2018-08-29 19:27:56</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-29</div>
-                        </a>
-                    </li>
-                                        <li >
-                        <a href="http://theme4.eyoom.net/community_humor/10">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">유머게시판 -</span>
-                                <span class="signature-latest-subj">남편이 외박했을 때 아내의 연령별 대처법</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li >
-                        <a href="http://theme4.eyoom.net/community_humor/6">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">유머게시판 -</span>
-                                <span class="signature-latest-subj">머리, 가슴, 발바닥. 손가락으로 어디를 눌러도 까무라치게 아픕니다.</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li >
-                        <a href="http://theme4.eyoom.net/community_qna/6">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">질문과 답변 -</span>
-                                <span class="signature-latest-subj">특정 결제 이벤트에 대한 어떠한 알림을 받게 되나요?</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li >
-                        <a href="http://theme4.eyoom.net/community_gallery/19">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">회원갤러리 -</span>
-                                <span class="signature-latest-subj">섬의 비밀</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-21</div>
-                        </a>
-                    </li>
-                                        <li >
-                        <a href="http://theme4.eyoom.net/community_gallery/9">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">회원갤러리 -</span>
-                                <span class="signature-latest-subj">겨울 호수</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-21</div>
-                        </a>
-                    </li>
-                                    </ul>
-                            </div>
-            <div class="tab-pane in" id="signature-tlb-2">
-                                <ul class="list-unstyled">
-                                        <li>
-                        <a href="http://theme4.eyoom.net/magazine_society/6?#c_7">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">사회 -</span>
-                                <span class="signature-latest-subj">세계는 한 권의 책이다.여행하지 않는 자는 그 책의 단 한페이지만 읽은 것이다.</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-09-12</div>
-                        </a>
-                    </li>
-                                        <li>
-                        <a href="http://theme4.eyoom.net/community_humor/3?#c_12">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">유머게시판 -</span>
-                                <span class="signature-latest-subj">김을 너무 오래 굽고 있으면 (김태우냐). 김을 너무 오래 굽다가 흔히 하는 탄식 (김태원네). 김 붙은 이빨은 (김치). 김 말린 것은 (김포).</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li>
-                        <a href="http://theme4.eyoom.net/community_humor/1?#c_11">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">유머게시판 -</span>
-                                <span class="signature-latest-subj">우산 들고온 의미가 사라졌다!!그래도 퇴근길에 비 안오는게 좋죠~</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li>
-                        <a href="http://theme4.eyoom.net/community_qna/25?#c_27">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">질문과 답변 -</span>
-                                <span class="signature-latest-subj">신고된 게시물은 관리자가 검토 후 조치합니다.</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li>
-                        <a href="http://theme4.eyoom.net/community_qna/9?#c_16">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">질문과 답변 -</span>
-                                <span class="signature-latest-subj">최근 은행 합병으로 은행 코드가 변경된 경우</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li>
-                        <a href="http://theme4.eyoom.net/community_qna/7?#c_15">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">질문과 답변 -</span>
-                                <span class="signature-latest-subj">결제 프로필에 입력한 국가에 해당 은행이 없음</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li>
-                        <a href="http://theme4.eyoom.net/community_qna/5?#c_14">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">질문과 답변 -</span>
-                                <span class="signature-latest-subj">이 메시지가 표시되면 입력한 은행 정보에 오타가 있을 수 있으니 은행 정보를 다시 입력하시기 바랍니다.</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-22</div>
-                        </a>
-                    </li>
-                                        <li>
-                        <a href="http://theme4.eyoom.net/community_freeboard/31?#c_34">
-                            <div class="signature-latest-li ellipsis">
-                                <span class="signature-latest-boname">자유게시판 -</span>
-                                <span class="signature-latest-subj">저도 1년 개근을 하기위해 매일매일 잊지않고 출첵을 ^^</span>
-                            </div>
-                            <div class="signature-latest-date"><i class="far fa-clock color-grey margin-right-5"></i>2018-08-21</div>
-                        </a>
-                    </li>
-                                    </ul>
-                            </div>
-        </div>
-    </div>
-</div>
+		
+		<div class="board-view-con view-content">
+			<p>50여 년 전 제주에서 개업한 이래, 감수북길에서 2대에 걸쳐 명맥을 이어온 유명 해산물 전문점이다. 제철 식재료로 만든 정갈하고 깔끔한 해산물 코스와 일품요리를 제공한다.</p>
+		</div>
 <div class="clearfix"></div>
 
 <script>
@@ -885,17 +393,16 @@ $(document).ready(function() {
         $(this).tab('show');
     });
 });
-</script>                    </div>
-
-                
-
-<ul class="board-view-sns social-icons social-icons-color">
-    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=facebook" target="_blank" title="Facebook" class="social_facebook"></a></li>
-    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=twitter" target="_blank" title="Twitter" class="social_twitter"></a></li>
-    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=gplus" target="_blank" title="Google Plus" class="social_google"></a></li>
-        <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=kakaostory" target="_blank" title="Kakao Story" class="social_kakaostory"></a></li>
-    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=band" target="_blank" title="Band" class="social_band"></a></li>
-</ul>        
+</script>                    
+	</div>
+<!-- 소셜버튼  -->
+	<ul class="board-view-sns social-icons social-icons-color">
+	    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=facebook" target="_blank" title="Facebook" class="social_facebook"></a></li>
+	    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=twitter" target="_blank" title="Twitter" class="social_twitter"></a></li>
+	    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=gplus" target="_blank" title="Google Plus" class="social_google"></a></li>
+	    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=kakaostory" target="_blank" title="Kakao Story" class="social_kakaostory"></a></li>
+	    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=band" target="_blank" title="Band" class="social_band"></a></li>
+	</ul>        
     <div class="view-area-divider"><span class="divider-circle"></span></div>
 
         
@@ -998,22 +505,22 @@ var char_min = parseInt(0); // 최소
 var char_max = parseInt(0); // 최대
 </script>
 
-<div class="comment-area">
+	<div class="comment-area">
         <div class="view-comment">
-        <h4 class="view-comment-heading"><strong>댓글목록 <span class="color-red">0</span></strong></h4>
-                        <div class="view-comment-no-item">
-            <span id="bo_vc_empty" class="no-comment"><i class="fas fa-exclamation-circle"></i> 등록된 댓글이 없습니다.</span>
-        </div>
-            </div>
-        
-            </div>
+        	<h4 class="view-comment-heading"><strong>댓글목록 <span class="color-red">0</span></strong></h4>
+            <div class="view-comment-no-item">
+            	<span id="bo_vc_empty" class="no-comment"><i class="fas fa-exclamation-circle"></i> 등록된 댓글이 없습니다.</span>
+        	</div>
+		</div>
+	</div>
 
-<div class="comment-area-divider"><span class="divider-circle"></span></div>
-<div id="map_canvas"></div>
+	<div class="comment-area-divider"><span class="divider-circle"></span></div>
+	<div id="map_canvas"></div>
 
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/venobox/venobox.min.js"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/magnific-popup/magnific-popup.min.js"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sweetalert/sweetalert.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/venobox.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/magnific-popup.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/sweetalert.min.js"></script>
+
 <script>
 $(function() {
     });
@@ -1416,21 +923,20 @@ $(document).ready(function() {
     });
 });
 </script>
-<script src="http://theme4.eyoom.net/js/md5.js"></script>
-    
-        <div class="board-view-bot">
-            </div>
-    </article>
+<script type="text/javascript" src="/resources/tourist/js/md5.js"></script>
+	<div class="board-view-bot"></div>
+</article>
 
 
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/fakeLoader/fakeLoader.min.js"></script>
-<script src="http://theme4.eyoom.net/js/viewimageresize.js"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sweetalert/sweetalert.min.js"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/clipboard/clipboard.min.js"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/magnific-popup/magnific-popup.min.js"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/fotorama/fotorama.js"></script>
-<script src="//dapi.kakao.com/v2/maps/sdk.js?appkey=b7f082698d6c0e86bf9dc9543d184dad&libraries=services"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/js/eyoom.map.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/fakeLoader.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/viewimageresize.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/sweetalert.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/clipboard.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/magnific-popup.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/fotorama.js"></script>
+<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=361d11eeebfc10bc75aef84ccc1dd06b"></script>
+
 <script>
 var mapContainer = document.getElementById('dmap_view_canvas'),
     mapOption = {
@@ -1479,6 +985,7 @@ $(function(){
         loading_daum_map(id, x, y, name, address);    });
 });
 </script>
+
 <script>
 $('#fakeloader').fakeLoader({
     timeToHide:3000,
@@ -1680,9 +1187,10 @@ function excute_good(href, $el, $tx, $good) {
 }
 
 </script>
-                </section>
+            
                                     
 <aside class="basic-body-side right-side col-md-3">
+<<<<<<< HEAD
     <div class="side-pc-area">
                             
             
@@ -2889,10 +2397,13 @@ $(document).ready(function() {
         <li>전체코멘트 : <strong>171</strong></li>
     </ul>
 </div>                    </div>
+=======
+   
+>>>>>>> branch 'master' of https://github.com/cultureshakeit/RB.git
 </aside>
 
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sly/vendor_plugins.min.js"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sly/sly.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/vendor_plugins.min.js"></script>
+<script type="text/javascript" src="/resources/tourist/js/sly.min.js"></script>
 <script>
 $(function() {
     var $frame = $('#tab-page-category');
@@ -2923,67 +2434,16 @@ $(function() {
         $('.controls').show();
     }
 });
-</script>                                <div class="clearfix"></div>
-            </div>                        </div>
-                    </div>        
-                        <div class="footer-top">
-            <div class="container">
-                <div class="footer-top-content">
-                    <div class="footer-top-logo">
-                                                <a href="http://theme4.eyoom.net">
-                                                                                                                            <img src="http://theme4.eyoom.net/theme/eb4_basic/image/site_logo.png" class="img-responsive" alt="이윰빌더">
-                                                                                                                    </a>
-                    </div>
-                    <div class="footer-top-info">
-                                                <strong>주식회사 OOOO</strong>
-                        <span class="info-divider">|</span>
-                        <span>대표 : 홍길동</span>
-                        <span class="info-divider">|</span>
-                        <span>사업자등록번호 : OOO-OO-OOOOO</span>
-                        <span class="info-divider">|</span>
-                        <span>주소 :    <a href="http://theme4.eyoom.net/page/?pid=contactus" class="btn-e btn-e-xs btn-e-default margin-left-5">상세지도</a></span>
-                        <span class="info-divider">|</span>
-                        <span>E-mail : <a href="mailto:webmaster@domain.com">webmaster@domain.com</a></span><br>
-                        <span>T. 012-3456-7890</span>
-                        <span class="info-divider">|</span>
-                        <span>F. 000-0000-0000</span>
-                    </div>
-                </div>
-            </div>
+</script>
+<div class="clearfix"></div>
+            </div><!--class row end  -->
         </div>
-                
-                <footer class="footer">
-            <div class="container position-relative">
-                <div class="footer-left">
-                    <ul class="list-unstyled list-inline">
-                        <li>
-                            <span class="footer-site-name hidden-xs">이윰빌더</span>
-                            <div class="btn-group dropup visible-xs">
-                                <span data-toggle="dropdown" class="footer-info-btn dropdown-toggle">이윰빌더 정보<i class="fas fa-caret-up margin-left-5"></i></span>
-                                <ul role="menu" class="dropdown-menu">
-                                    <li><a href="http://theme4.eyoom.net/page/aboutus">회사소개</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="http://theme4.eyoom.net/page/provision">이용약관</a></li>
-                                    <li><a href="http://theme4.eyoom.net/page/privacy">개인정보처리방침</a></li>
-                                    <li><a href="http://theme4.eyoom.net/page/noemail">이메일무단수집거부</a></li>
-                                    <li class="divider"></li>
-                                    <li><a href="http://theme4.eyoom.net/?device=mobile">모바일버전</a></li>
-                                </ul>
-                            </div>
-                        </li>
-                        <li class="hidden-xs"><a href="http://theme4.eyoom.net/page/aboutus">회사소개</a><a href="http://theme4.eyoom.net/page/provision">이용약관</a><a href="http://theme4.eyoom.net/page/privacy">개인정보처리방침</a><a href="http://theme4.eyoom.net/page/noemail">이메일무단수집거부</a><a href="http://theme4.eyoom.net/?device=mobile" class="btn-e btn-e-xs btn-e-default color-white margin-left-5">모바일버전</a></li>
-                    </ul>
-                </div>
-                <div class="footer-right">
-                    <p><span class="hidden-xs">Copyright </span>&copy; 이윰빌더. All Rights Reserved.</p>
-                </div>
-            </div>
-        </footer>
-            </div>
+	</div>        
+</div>
     <div class="back-to-top">
         <i class="fas fa-angle-up"></i>
     </div>
-</div>
+
 <div class="sidebar-left-mask sidebar-left-trigger" data-action="toggle" data-side="left"></div>
 <div class="sidebar-right-mask sidebar-right-trigger" data-action="toggle" data-side="right"></div>
 
@@ -3082,7 +2542,50 @@ $(function() {
         </div>
     </div>
 </div>
-
+<div class="modal fade search-modal" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
+                <h5 class="modal-title"><i class="fas fa-search color-grey"></i> <strong>IT 검색</strong></h5>
+            </div>
+            <div class="modal-body">
+                                <fieldset id="bo_sch" class="eyoom-form">
+                    <form name="fsearch" method="get">
+                    <input type="hidden" name="bo_table" value="magazine_it">
+                    <input type="hidden" name="sca" value="">
+                    <input type="hidden" name="sop" value="and">
+                    <label for="sfl" class="sound_only">검색대상</label>
+                    <section class="margin-top-10">
+                        <label class="select">
+                            <select name="sfl" id="sfl" class="form-control">
+                                <option value="wr_subject">제목</option>
+                                <option value="wr_content">내용</option>
+                                <option value="wr_subject||wr_content">제목+내용</option>
+                                <option value="mb_id,1">회원아이디</option>
+                                <option value="mb_id,0">회원아이디(코)</option>
+                                <option value="wr_name,1">글쓴이</option>
+                                <option value="wr_name,0">글쓴이(코)</option>
+                                                            </select>
+                            <i></i>
+                        </label>
+                    </section>
+                    <section>
+                        <label for="stx" class="sound_only">검색어<strong class="sound_only"> 필수</strong></label>
+                        <div class="input input-button">
+                            <input type="text" name="stx" value="" required id="stx">
+                            <div class="button"><input type="submit" value="검색">검색</div>
+                        </div>
+                    </section>
+                    </form>
+                </fieldset>
+                            </div>
+            <div class="modal-footer">
+                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
+            </div>
+        </div>
+    </div>
+</div>
 <script>
 function itemuse_modal(href) {
     $('.itemuse-iframe-modal').modal('show').on('hidden.bs.modal', function() {
