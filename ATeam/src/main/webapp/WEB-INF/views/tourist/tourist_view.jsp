@@ -2,12 +2,14 @@
 <%@page import="com.jayway.jsonpath.DocumentContext"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%! public String getPhoto(String json){
+	if (json == null)return "";
 	DocumentContext document = JsonPath.parse(json);
 	String imgpath = document.read("$['photoid']['imgpath']", String.class); 
 	return imgpath;
 }
 	%>
 <%! public String getRegion(String json){
+	if (json == null)return "";
 	DocumentContext document = JsonPath.parse(json);
 	String str = document.read("$['label']", String.class); 
 	return str;

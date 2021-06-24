@@ -3,10 +3,14 @@
 <mapper namespace="com.rental.mapper.TouristMapper">
 
 <select id ="List"  resultType="com.rental.domain.TouristVO">
-select * from test_api OFFSET 0 ROWS FETCH NEXT 10 ROWS ONLY
+select * from test_api OFFSET (#{pageNum}-1)*#{amount} ROWS FETCH NEXT #{amount} ROWS ONLY
 </select>
 
 <select id ="getOne"  resultType="com.rental.domain.TouristVO">
 select * from test_api where contentsid = #{sid}
+</select>
+
+<select id ="countAll"  resultType="int">
+select count(*) from test_api
 </select>
 </mapper>

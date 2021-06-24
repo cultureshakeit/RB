@@ -18,7 +18,7 @@ public class PageDTO {
 	private int total; //총 레코드 개수
 	
 	private Criteria cri; // 페이지 넘버, 1블록당 보여줄 개수
-	
+	private int lastPage;
 	public PageDTO(Criteria cri, int total) {
 		this.cri = cri;
 		this.total = total;
@@ -30,5 +30,6 @@ public class PageDTO {
 		}
 		this.prev = this.startPage > 1;
 		this.next = this.endPage < realEnd;
+		this.lastPage = (int)Math.ceil(total / cri.getAmount());
 	}
 }

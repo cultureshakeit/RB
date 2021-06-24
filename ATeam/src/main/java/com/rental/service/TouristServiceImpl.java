@@ -35,5 +35,13 @@ public class TouristServiceImpl implements TouristService {
 		return mapper.getOne(sid);
 	}
 
+
+
+	@Override
+	public int countAll() {
+		// TODO Auto-generated method stub
+		return mapper.countAll();
+	}
+
 	
 }

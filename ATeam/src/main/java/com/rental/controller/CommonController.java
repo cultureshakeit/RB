@@ -413,14 +413,13 @@ public class CommonController {
 	private TouristService tourService;
 	
 	@GetMapping("/tourist")
-	public String tourist(Model model,Criteria cri) {
+	public String tourist(Model model,@ModelAttribute("cri") Criteria cri) {
 		
+		int countall = tourService.countAll();
 		List<TouristVO> tlist = tourService.List(cri);
-		
-		DocumentContext document = JsonPath.parse(tlist.get(0).getPhoto());
+		PageDTO pd = new PageDTO(cri, countall);
 //		int ilen = (int)document.read("$.length()");
-		String img_title = document.read("$['descseo']", String.class); 
-		String imgpath = document.read("$['photoid']['imgpath']", String.class); 
+		model.addAttribute("pageMaker",pd);
 		model.addAttribute("tlist",tlist);
 		return "tourist/tourist";
 		

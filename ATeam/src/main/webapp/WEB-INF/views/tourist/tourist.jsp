@@ -2,12 +2,14 @@
 <%@page import="com.jayway.jsonpath.DocumentContext"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%! public String getPhoto(String json){
+	if (json == null)return "";
 	DocumentContext document = JsonPath.parse(json);
 	String imgpath = document.read("$['photoid']['imgpath']", String.class); 
 	return imgpath;
 }
 	%>
 <%! public String getRegion(String json){
+	if (json == null)return "";
 	DocumentContext document = JsonPath.parse(json);
 	String str = document.read("$['label']", String.class); 
 	return str;
@@ -188,7 +190,7 @@
 <div class="board-list">
 	<div class="board-info margin-bottom-20">
         <div class="pull-left margin-top-5 font-size-12 color-grey">
-			<u>전체 11 건 - 1 페이지</u>
+			<u>전체 ${pageMaker.total} 건 - ${pageMaker.cri.pageNum} 페이지</u>
 		</div>
                 <div class="clearfix"></div>
     </div>
@@ -337,14 +339,35 @@
 
 <div class="eb-pagination-wrap">
     <ul class="eb-pagination">
-        <li><a href="#"><i class="fas fa-angle-double-left"></i></a></li><!-- 첫페이지로 가기 -->
-        <li><a href="#" class="prev"><i class="fas fa-angle-left"></i></a></li><!-- 이전페이지 -->
-                        <li><a href="#" class="active">1<span class="sound_only">페이지</span></a></li>
-                <li><a href="#" class="next"><i class="fas fa-angle-right"></i></a></li><!-- 다음페이지 -->
-        <li><a href="#"><i class="fas fa-angle-double-right"></i></a></li><!-- 끝페이지 -->
+    <c:if test="${pageMaker.prev }">
+        <li><a href="1"><i class="fas fa-angle-double-left"></i></a></li><!-- 첫페이지로 가기 -->
+        <li><a href="${pageMaker.cri.pageNum - 1 }" class="prev"><i class="fas fa-angle-left"></i></a></li><!-- 이전페이지 -->
+        </c:if>
+        <c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+              <li><a href="${num}" class="${pageMaker.cri.pageNum == num ? 'active':''  }" > ${num}<span class="sound_only">페이지</span></a></li>
+                        </c:forEach>
+                        <c:if test="${pageMaker.next }">
+                <li><a href="${pageMaker.cri.pageNum + 1 }" class="next"><i class="fas fa-angle-right"></i></a></li><!-- 다음페이지 -->
+        <li><a href="${pageMaker.lastPage}"><i class="fas fa-angle-double-right"></i></a></li><!-- 끝페이지 --></c:if>
     </ul>
 </div>    </div>
 
+<form id="actionForm" action="/tourist" method="get"></form>
+<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+<script type="text/javascript">
+	$(".eb-pagination li  a").on("click", function(e) {
+		e.preventDefault();
+		var numh = $(this).attr("href");
+		var amount = <c:out value="${pageMaker.cri.amount}" />
+		console.log(numh);
+		var form = $("#actionForm");
+		form.append("<input name='pageNum' value='"+numh+"'>");
+		form.append("<input name='amount' value='"+ amount +"'>");
+
+		form.submit();
+
+	})
+</script>
 <script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/fakeLoader/fakeLoader.min.js"></script>
 <script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/sweetalert/sweetalert.min.js"></script>
 <script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/imagesloaded/imagesloaded.pkgd.min.js"></script>
