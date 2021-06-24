@@ -6,15 +6,7 @@
 		values( SEQ_NOTICEWRITE.nextval , #{userid} ,'관리자', #{title} , #{content} )
 	</insert>
 	<select id="List" resultType="com.rental.domain.NoticeVO">
- 	<![CDATA[	
-		 select * from 
-       (
-       select/*+ index_desc (noticewrite noticewrite_pk )*/
-       sequence,userid,title, content,viewer,recommend,disrecommend from noticewrite
-       where rownum <= #{pageNum} * #{amount}
-       ) 
-       where sequence > (#{pageNum}-1)*#{amount}  
-	]]>
+ 	select * from noticewrite order by sequence desc OFFSET (#{pageNum}-1)*10 ROWS FETCH NEXT 10 ROWS ONLY
 	</select>
 	<select id="NoticeCount" resultType="int">
 		select count(*) as count from noticewrite where rownum > 0

@@ -128,11 +128,12 @@
 <script type="text/javascript">
 	$(".pagination li  a").on("click", function(e) {
 		e.preventDefault();
-		var num = $(this).attr("href");
-		console.log(num);
+		var numh = $(this).attr("href");
+		var amount = <c:out value="${amount}" />
+		console.log(numh);
 		var form = $("#actionForm");
-		form.append("<input name='pageNum' value='"+num+"'>");
-		form.append("<input name='amount' value='"+6+"'>");
+		form.append("<input name='pageNum' value='"+numh+"'>");
+		form.append("<input name='amount' value='"+ amount +"'>");
 
 		form.submit();
 

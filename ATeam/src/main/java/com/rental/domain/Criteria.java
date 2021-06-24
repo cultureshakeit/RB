@@ -12,7 +12,7 @@ public class Criteria {
 	private int pageNum; // page number
 
 	private int amount; // 한 페이지에 출력할 레코드 개수
-
+	
 	private String type;
 	
 	private String keyword;

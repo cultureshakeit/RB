@@ -186,11 +186,13 @@ public class CommonController {
 	private NoticeService noticeservice;
 
 	@GetMapping("/board/notice")
-	public String board(String userid, Model model, @ModelAttribute("cri") Criteria cri) {
-		model.addAttribute("userid", userid);
-		model.addAttribute("count", noticeservice.NoticeCount());
+	public String board( Model model, @ModelAttribute("cri") Criteria cri) {
+		
+		int countAll = noticeservice.NoticeCount();
+		model.addAttribute("amount",10);
+		model.addAttribute("count", countAll);
 		model.addAttribute("list", noticeservice.List(cri));
-		model.addAttribute("pageMaker", new PageDTO(cri, noticeservice.NoticeCount()));
+		model.addAttribute("pageMaker", new PageDTO(cri, countAll));
 		return "board/notice";
 	}
 
