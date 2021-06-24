@@ -18,6 +18,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -423,6 +424,13 @@ public class CommonController {
 		model.addAttribute("tlist",tlist);
 		return "tourist/tourist";
 		
+	}
+	@GetMapping("/tourist/{sid}")
+	public String tourist_detail(Model model,@PathVariable("sid") String sid) {
+		TouristVO tourInfo = tourService.getOne(sid);
+//		System.out.println(tourInfo.toString());
+		model.addAttribute("tourInfo",tourInfo);
+		return "tourist/tourist_view";
 	}
 	
 	@GetMapping("/tourist_view")

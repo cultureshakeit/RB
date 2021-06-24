@@ -211,7 +211,8 @@
     </div>
 	<div class="board-multi">
         <div id="multi_item_type" class="multi-type-webzine">
-        
+        <c:set var="uri"><%=request.getAttribute("javax.servlet.forward.request_uri") %></c:set>
+
 				<!-- FOR Start -->
 			<c:forEach items="${tlist}" var="place" >
 			
@@ -219,7 +220,7 @@
 			<div class="multi-item">
                 <div class="multi-item-in">
 					<div class="multi-img">
-                        <a href="/tourist_view" ><!-- 첫번째 사진 연결 -->
+                        <a href="${uri}/${place.contentsid}" ><!-- 첫번째 사진 연결 -->
                             <div class="multi-img-box">
                                 <div class="multi-img-box-in">
 <!--                                 	getPhoto(place.photo) -->
@@ -243,7 +244,7 @@
 						</div>
                         <div class="multi-subj-cont">
                             <h4>
-								<a href="/tourist_view" ><!-- 첫번째 글 연결 -->
+								<a href="${uri}/${place.contentsid}" ><!-- 첫번째 글 연결 -->
 									<strong>${place.title}</strong>
 								</a>
 							</h4>

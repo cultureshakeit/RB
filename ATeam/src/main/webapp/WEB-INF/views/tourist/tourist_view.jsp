@@ -1,3 +1,19 @@
+<%@page import="com.jayway.jsonpath.JsonPath"%>
+<%@page import="com.jayway.jsonpath.DocumentContext"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%! public String getPhoto(String json){
+	DocumentContext document = JsonPath.parse(json);
+	String imgpath = document.read("$['photoid']['imgpath']", String.class); 
+	return imgpath;
+}
+	%>
+<%! public String getRegion(String json){
+	DocumentContext document = JsonPath.parse(json);
+	String str = document.read("$['label']", String.class); 
+	return str;
+}
+	%>
+
 <!doctype html>
 <html lang="ko">
 <head>
@@ -5,7 +21,7 @@
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         
-<title>[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물 > 다음맵멀티마커 | 이윰빌더</title>
+<title>${tourInfo.title}</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/default.css">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/bootstrap.min.css">
@@ -215,11 +231,12 @@ button.mfp-close {position:fixed;color:#fff !important}
 </style>
 
 <div id="fakeloader"></div>
-
+<c:set var="region1" value="${tourInfo.region1}" />
+<c:set var="region2" value="${tourInfo.region2}" />
 <article class="board-view">
     <h4>
-		<span class="color-grey margin-right-5">[제주]</span>
-		<strong>[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물</strong>
+		<span class="color-grey margin-right-5">[<%= getRegion((String)(pageContext.getAttribute("region2"))) %>]</span>
+		<strong>${tourInfo.title}</strong>
     </h4>
     <div class="board-view-info">
         <div class="view-post-info">
@@ -230,7 +247,7 @@ button.mfp-close {position:fixed;color:#fff !important}
                 <div class="info-box-top">
                     <span class="view-nick">
                         <span class="sv_wrap">
-							<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 할인의추억</a>
+							<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 유저이름 </a>
 							<!-- <ul class="sv dropdown-menu" role="menu">
 							<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
 							<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
@@ -250,8 +267,8 @@ button.mfp-close {position:fixed;color:#fff !important}
                 </div>
                 <div class="info-box-bottom">
                 	<span class="color-black"><i class="fas fa-clock"></i>17시 52분</span>
-                    <span><i class="fas fa-eye"></i>1,406</span>
-                    <span class="color-red"><i class="fas fa-comment-alt"></i>0</span>
+                    <span><i class="fas fa-eye"></i>조회수 미구현</span>
+                    <span class="color-red"><i class="fas fa-comment-alt"></i>댓글 미구현</span>
                 </div>
             </div>
 			<div class="view-member-progress hidden-xs">
@@ -292,10 +309,10 @@ button.mfp-close {position:fixed;color:#fff !important}
     </div>
     <div class="board-view-atc">
         <h2 class="board-view-atc-title">본문</h2>
-        
+        <c:set var="photo" value="${tourInfo.photo}" />
         <div class="board-view-file-conts">
             <div class="fotorama" data-nav="thumbs" data-max-width="100%" data-loop="true" data-allowfullscreen="true" data-thumbwidth="170" data-thumbheight="100" data-width = "1200">
-	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_Gt9I2lqh_02dc3b6cbd6e98dfa77534f326267eb1daff5f3a.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_Gt9I2lqh_02dc3b6cbd6e98dfa77534f326267eb1daff5f3a.jpg" data-caption="">
+	            <img src="<%=getPhoto((String)(pageContext.getAttribute("photo"))) %>" data-full="<%=getPhoto((String)(pageContext.getAttribute("photo"))) %>" data-caption="">
 	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_iVo9nuOe_41d8867af7c0b5e79c782231869409f2cd9f3569.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_iVo9nuOe_41d8867af7c0b5e79c782231869409f2cd9f3569.jpg" data-caption="">
 	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_Vdngq5pW_d48ed61e805f75cdbb3cef73b9e80bd20418fa39.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_Vdngq5pW_d48ed61e805f75cdbb3cef73b9e80bd20418fa39.jpg" data-caption="">
 	            <img src="http://theme4.eyoom.net/data/file/dmap/1218034632_1pZ4ONz9_81360149c270ddef8649104b9f7a891c89dcda6d.jpg" data-full="http://theme4.eyoom.net/data/file/dmap/1218034632_1pZ4ONz9_81360149c270ddef8649104b9f7a891c89dcda6d.jpg" data-caption="">
@@ -313,7 +330,7 @@ button.mfp-close {position:fixed;color:#fff !important}
         </div>
 		
 		<div class="board-view-con view-content">
-			<p>50여 년 전 제주에서 개업한 이래, 감수북길에서 2대에 걸쳐 명맥을 이어온 유명 해산물 전문점이다. 제철 식재료로 만든 정갈하고 깔끔한 해산물 코스와 일품요리를 제공한다.</p>
+			<p>${tourInfo.introduction}</p>
 		</div>
 <div class="clearfix"></div>
 
@@ -866,12 +883,15 @@ $(document).ready(function() {
 <script type="text/javascript" src="/resources/tourist/js/magnific-popup.min.js"></script>
 <script type="text/javascript" src="/resources/tourist/js/fotorama.js"></script>
 <script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
-<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=361d11eeebfc10bc75aef84ccc1dd06b"></script>
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=0d721fd94b9d5e3dbe29b561271f021f"></script>
 
 <script>
+
+var [lat, lng] = [<c:out value="${tourInfo.latitude}" />,<c:out value="${tourInfo.longitude}" />]
+console.log(lat,lng)
 var mapContainer = document.getElementById('dmap_view_canvas'),
     mapOption = {
-        center: new daum.maps.LatLng(33.524981807697095, 126.58289774788012),
+        center: new daum.maps.LatLng(lat, lng),
         level: 4
     };
 
@@ -885,10 +905,10 @@ map.addControl(zoomControl, daum.maps.ControlPosition.RIGHT);
 
 var marker = new daum.maps.Marker({
     map: map,
-    position: new daum.maps.LatLng(33.524981807697095, 126.58289774788012)
+    position: new daum.maps.LatLng(lat, lng)
 });
 
-var content = "<div class=\"dmap-overlay-wrap\"><div class=\"dmap-overlay\"><div class=\"dmap-overlay-title\">[샘플] 50년 전통의 해산물 전문점, 제주 감수 해산물</div><div class=\"dmap-overlay-desc\"><p><strong>위치명</strong> : 제주 감수 해산물</p><p><strong>연락처</strong> : 000-0000-0000</p><p><strong>주소</strong> : 제주특별자치도 제주시 감수북길</p><div class=\"dmap-overlay-close\" onclick=\"closeOverlay()\" title=\"닫기\"><i class=\"fas fa-times\"></i></div></div></div><div class=\"after\"></div></div>";
+var content = "<div class=\"dmap-overlay-wrap\"><div class=\"dmap-overlay\"><div class=\"dmap-overlay-title\">${tourInfo.title}</div><div class=\"dmap-overlay-desc\"><p><strong>POST</strong> : ${tourInfo.postcode}</p><p><strong>연락처</strong> : ${tourInfo.phoneno}</p><p><strong>주소</strong> : ${tourInfo.roadaddress}</p><div class=\"dmap-overlay-close\" onclick=\"closeOverlay()\" title=\"닫기\"><i class=\"fas fa-times\"></i></div></div></div><div class=\"after\"></div></div>";
 
 var overlay = new daum.maps.CustomOverlay({
     content: content,

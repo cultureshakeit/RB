@@ -27,5 +27,13 @@ public class TouristServiceImpl implements TouristService {
 		return mapper.List(cri);
 	}
 
+
+
+	@Override
+	public TouristVO getOne(String sid) {
+		// TODO Auto-generated method stub
+		return mapper.getOne(sid);
+	}
+
 	
 }

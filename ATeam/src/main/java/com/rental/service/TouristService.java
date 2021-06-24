@@ -10,6 +10,6 @@ public interface TouristService {
 
 	
 	public List<TouristVO> List(Criteria cri);
-
+	public TouristVO getOne(String sid);
 
 }

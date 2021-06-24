@@ -9,5 +9,6 @@ import com.rental.domain.TouristVO;
 public interface TouristMapper {
 	
 	public List<TouristVO> List(Criteria cri);
+	public TouristVO getOne(String sid);
 	
 }
