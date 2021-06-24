@@ -3,6 +3,7 @@
 	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
 	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.rental.mapper.MemberMapper">
+
 	<resultMap type="com.rental.domain.MemberVO" id="memberMap">
 		<id property="userid" column="userid" />
 		<result property="userid" column="userid" />
@@ -51,7 +52,8 @@
 	</insert>
 
 	<update id="Enabled">
-		update tbl_member set enabled = #{enabled} where
+		update tbl_member
+		set enabled = #{enabled} where
 		userid = #{userid}
 	</update>
 
@@ -83,6 +85,7 @@
 		delete from tbl_member
 		where userid = #{userid}
 	</delete>
+	
 	<update id="revitailze">
 		update tbl_member
 		set enabled = #{enabled}

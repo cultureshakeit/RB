@@ -141,19 +141,19 @@
 	<div class="footer_top">
 		<div class="container">
 			<div class="row" style="justify-content: center;">
-				<div class="col-xl-4 col-md-6 col-lg-4 ">
+				<div class="col-xl-6 col-md-6 col-lg-6 ">
 					<div class="col-xl-offset-2 col-xl-2" style="height: 50px;">
 					</div>
 					<div class="footer_widget">
 						<h3 style="text-align: center; margin-bottom: 10px;">Address</h3>
 						<p style="font-size: 12px; color: black;">
-							대전 광역시 중구  <br>용두동 &nbsp;35-17 <br>
-							히욘비루 JSL 인재 개발원 5 층<br> <a href="#">+10 367 826 2567</a> <br>
-							<a href="#">abc@rental.com</a>
+							서울특별시 구로구 <br>디지털로 34-27 <br>
+							대륭포스트타워3차 1106-7호<br> <i class="fa fa-phone">+82 10-826-2567</i> <br>
+							Contact <i class="fa fa-mail-forward">abc@jeju.com</i>
 						</p>
 					</div>
 				</div>
-				<div class="col-xl-3 col-md-6 col-lg-3">
+				<!-- <div class="col-xl-3 col-md-6 col-lg-3">
 					<div class="footer_widget">
 						<h3 class="footer_title" style="color: black; text-align: center;">PHOTO
 							VIEW</h3>
@@ -190,8 +190,8 @@
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="col-xl-4 col-md-6 col-lg-4 ">
+				</div> -->
+				<div class="col-xl-6 col-md-6 col-lg-6 ">
 					<h4
 						style="margin-top: 50px; text-align: center; border-bottom: 1px solid #eee; margin-bottom: 10px;">Quick
 						Move</h4>
@@ -228,9 +228,9 @@
 						<script>
 							document.write(new Date().getFullYear());
 						</script>
-						All rights reserved | This template is made with <i
-							class="fa fa-heart-o" aria-hidden="true"></i> by <a
-							href="https://colorlib.com" target="_blank">RENTAL</a>
+						All rights reserved | This template is made with
+						<i class="fa fa-heart" aria-hidden="true"></i> by
+						<a href="https://colorlib.com" target="_blank">COLORLIB.com</a>
 						<!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
 					</p>
 				</div>
