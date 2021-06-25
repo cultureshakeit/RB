@@ -78,7 +78,7 @@
 		<div class="basic-body container page-padding ft-padding">
 			<div class="basic-body-page">
 
-				<div class="row">
+				<div class="row1">
 
 
 					<style>
@@ -833,6 +833,9 @@ span#nowTimes {
     font-size: 16px;
     line-height: 24px;
 
+}
+.fa-search{
+color: #FFF;
 }
 </style>
 					<div id="fakeloader"></div>
