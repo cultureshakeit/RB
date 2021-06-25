@@ -282,7 +282,7 @@
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	width: 40px;
+	width: 10px;
 	height: 40px;
 	line-height: 40px;
 	text-align: center;
@@ -1171,8 +1171,8 @@ span#nowTimes {
 						<ul class="eb-pagination">
 							<c:if test="${pageMaker.prev }">
 								<li><a href="1"><i class="fas fa-angle-double-left"></i></a></li>
-								<!-- 첫페이지로 가기 -->
-								<li><a href="${pageMaker.cri.pageNum - 1 }" class="prev"><i
+								<!--  -->
+								<li><a href="${pageMaker.startPage - 1 }" class="prev"><i
 										class="fas fa-angle-left"></i></a></li>
 								<!-- 이전페이지 -->
 							</c:if>
@@ -1184,7 +1184,7 @@ span#nowTimes {
 								</a></li>
 							</c:forEach>
 							<c:if test="${pageMaker.next }">
-								<li><a href="${pageMaker.cri.pageNum + 1 }" class="next"><i
+								<li><a href="${pageMaker.endPage + 1 }" class="next"><i
 										class="fas fa-angle-right"></i></a></li>
 								<!-- 다음페이지 -->
 								<li><a href="${pageMaker.lastPage}"><i
