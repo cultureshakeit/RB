@@ -1,5 +1,6 @@
 <%@page import="com.jayway.jsonpath.JsonPath"%>
 <%@page import="com.jayway.jsonpath.DocumentContext"%>
+<%@include file="../header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%!public String getPhoto(String json) {
 		if (json == null)
@@ -22,7 +23,7 @@
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-<title>흐흐흐</title>
+<title> 관광지 </title>
 
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
@@ -784,12 +785,10 @@
 					<div id="fakeloader"></div>
 
 					<div class="board-list">
-						<div class="board-info margin-bottom-20">
-							<div class="pull-left margin-top-5 font-size-12 color-grey">
-								<u>전체 ${pageMaker.total} 건 - ${pageMaker.cri.pageNum} 페이지</u>
-							</div>
+<!-- 						<div class="board-info margin-bottom-20"></div> -->
+							
 							<div class="clearfix"></div>
-						</div>
+						
 
 
 						<div class="multi-btn-wrap">
@@ -798,7 +797,9 @@
 									<i class="fas fa-search"></i>
 							</a>
 							</span>
+							
 							<ul class="list-unstyled multi-type-btn-wrap pull-right">
+							
 								<li><button type="button"
 										class="multi-type-btn multi-type-list-btn" title="리스트뷰">
 										<span class="sound_only">리스트뷰</span><i
@@ -821,8 +822,96 @@
 									</button></li>
 								<div class="clearfix"></div>
 							</ul>
+							<script>var multi_bo_table = "magazine_it";
+
+							$.fn.listType = function(type) {
+								var $el = this.find(".multi-item");
+								var count = $el.size();
+								if (count < 1)
+									return;
+
+								var cl = this.attr("class");
+								if (cl && !this.data("class")) {
+									this.data("class", cl);
+								}
+
+								$("button.multi-type-btn span").removeClass(
+										"multi-type-on").html("");
+
+								if (type == "webzine") {
+									this.removeClass("multi-type-webzine");
+									if (this.data("class")) {
+										this.attr("class", this.data("class"));
+									}
+
+									$("button.multi-type-webzine-btn span").addClass(
+											"multi-type-on").html(
+											"<b class=\"sound_only\"> 선택됨</b>");
+								} else if (type == "gallery") {
+									if (this.data("class")) {
+										this.removeAttr("class");
+									}
+									this.addClass("multi-type-gallery");
+
+									$("button.multi-type-gallery-btn span").addClass(
+											"multi-type-on").html(
+											"<b class=\"sound_only\"> 선택됨</b>");
+								} else if (type == "wide") {
+									if (this.data("class")) {
+										this.removeAttr("class");
+									}
+									this.addClass("multi-type-wide");
+
+									$("button.multi-type-wide-btn span").addClass(
+											"multi-type-on").html(
+											"<b class=\"sound_only\"> 선택됨</b>");
+								} else if (type == "list") {
+									if (this.data("class")) {
+										this.removeAttr("class");
+									}
+									this.addClass("multi-type-list");
+
+									$("button.multi-type-list-btn span").addClass(
+											"multi-type-on").html(
+											"<b class=\"sound_only\"> 선택됨</b>");
+								}
+
+								set_cookie("ck_itemlist" + multi_bo_table + "_type",
+										type, 1, g5_cookie_domain);
+							}
+
+							$(function() {
+								if (itemlist_type = get_cookie("ck_itemlist"
+										+ multi_bo_table + "_type")) {
+									$("#multi_item_type").listType(itemlist_type);
+								}
+
+								$("button.multi-type-btn").on(
+										"click",
+										function() {
+											if ($(this).hasClass(
+													"multi-type-webzine-btn")) {
+												$("#multi_item_type").listType(
+														"webzine");
+											} else if ($(this).hasClass(
+													"multi-type-gallery-btn")) {
+												$("#multi_item_type").listType(
+														"gallery");
+											} else if ($(this).hasClass(
+													"multi-type-wide-btn")) {
+												$("#multi_item_type").listType("wide");
+											} else if ($(this).hasClass(
+													"multi-type-list-btn")) {
+												$("#multi_item_type").listType("list");
+											}
+										});
+							});</script>
+							<div class="pull-left margin-top-5 font-size-12 color-grey">
+								<u>전체 ${pageMaker.total} 건 - ${pageMaker.cri.pageNum} 페이지</u>
+							</div>
 							<div class="clearfix"></div>
 						</div>
+						
 						<div class="board-multi">
 							<div id="multi_item_type" class="multi-type-webzine">
 								<c:set var="uri"><%=request.getAttribute("javax.servlet.forward.request_uri")%></c:set>
@@ -1072,90 +1161,7 @@
 						$('#fakeloader').fadeOut(300);
 					});
 
-					var multi_bo_table = "magazine_it";
-
-					$.fn.listType = function(type) {
-						var $el = this.find(".multi-item");
-						var count = $el.size();
-						if (count < 1)
-							return;
-
-						var cl = this.attr("class");
-						if (cl && !this.data("class")) {
-							this.data("class", cl);
-						}
-
-						$("button.multi-type-btn span").removeClass(
-								"multi-type-on").html("");
-
-						if (type == "webzine") {
-							this.removeClass("multi-type-webzine");
-							if (this.data("class")) {
-								this.attr("class", this.data("class"));
-							}
-
-							$("button.multi-type-webzine-btn span").addClass(
-									"multi-type-on").html(
-									"<b class=\"sound_only\"> 선택됨</b>");
-						} else if (type == "gallery") {
-							if (this.data("class")) {
-								this.removeAttr("class");
-							}
-							this.addClass("multi-type-gallery");
-
-							$("button.multi-type-gallery-btn span").addClass(
-									"multi-type-on").html(
-									"<b class=\"sound_only\"> 선택됨</b>");
-						} else if (type == "wide") {
-							if (this.data("class")) {
-								this.removeAttr("class");
-							}
-							this.addClass("multi-type-wide");
-
-							$("button.multi-type-wide-btn span").addClass(
-									"multi-type-on").html(
-									"<b class=\"sound_only\"> 선택됨</b>");
-						} else if (type == "list") {
-							if (this.data("class")) {
-								this.removeAttr("class");
-							}
-							this.addClass("multi-type-list");
-
-							$("button.multi-type-list-btn span").addClass(
-									"multi-type-on").html(
-									"<b class=\"sound_only\"> 선택됨</b>");
-						}
-
-						set_cookie("ck_itemlist" + multi_bo_table + "_type",
-								type, 1, g5_cookie_domain);
-					}
-
-					$(function() {
-						if (itemlist_type = get_cookie("ck_itemlist"
-								+ multi_bo_table + "_type")) {
-							$("#multi_item_type").listType(itemlist_type);
-						}
-
-						$("button.multi-type-btn").on(
-								"click",
-								function() {
-									if ($(this).hasClass(
-											"multi-type-webzine-btn")) {
-										$("#multi_item_type").listType(
-												"webzine");
-									} else if ($(this).hasClass(
-											"multi-type-gallery-btn")) {
-										$("#multi_item_type").listType(
-												"gallery");
-									} else if ($(this).hasClass(
-											"multi-type-wide-btn")) {
-										$("#multi_item_type").listType("wide");
-									} else if ($(this).hasClass(
-											"multi-type-list-btn")) {
-										$("#multi_item_type").listType("list");
-									}
-								});
-					});
+					
 				</script>
 				</section>
 
