@@ -781,7 +781,60 @@
 	}
 }
 </style>
+<style>
+.board-multi .multi-item-in{
+    position: relative;
+    padding: 10px 0;
+    min-height: 144px;
+    box-sizing: border-box;
+}
 
+.board-multi .multi-item {
+    position: relative;
+    font-size: 14px;
+}
+body {
+    color: #353535;
+/*     font-size: 13px; */
+/*     line-height: 1.2; */
+/*     font-family: "Roboto",Dotum,Arial,sans-serif; */}
+.board-multi .multi-item-in h4 {
+    position: relative;
+    overflow: hidden;
+    font-size: 18px;
+    color: #000;
+    height: 28px;
+    margin-top: 12px;
+    margin-bottom: 5px;
+}
+/* header.css */
+.fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+p {
+/*     font-size: 16px; */
+/*     font-weight: 400; */
+/*     line-height: 28px; */
+    color: #7A838B;
+    margin-bottom: 0px;
+/*     font-family: "Rubik", sans-serif; */
+}
+b, sup, sub, u, del {
+    color: #ff5e13;
+}
+span#nowTimes {
+
+    font-family: 'Roboto', sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+
+}
+</style>
 					<div id="fakeloader"></div>
 
 					<div class="board-list">

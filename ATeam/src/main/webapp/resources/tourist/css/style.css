@@ -185,7 +185,7 @@
 }
 
 /*---------- Basic Body ----------*/
-.basic-body.page-padding {padding-top:25px;padding-bottom:60px}
+.basic-body.page-padding {padding-top:0px;padding-bottom:60px}
 .basic-body.ft-padding {padding-bottom:25px}
 .basic-body .basic-body-page {position:relative;background:#fff;padding:0 15px;border:1px solid #e5e5e5}
 .basic-body .basic-body-page .category-mobile-area {display:none}
