@@ -833,9 +833,7 @@ span#nowTimes {
     line-height: 24px;
 
 }
-.fa-search{
-color: #FFF;
-}
+
 .modal-header {
     min-height: 16.43px;
     padding: 60px 0px 0px 12px;
@@ -852,7 +850,7 @@ color: #FFF;
 							<script>"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"</script>
 							<script>"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</script>
 						<script>"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"</script>
-
+						
 
 						<div class="multi-btn-wrap">
 							<span class="pull-left"> <a class="btn-e btn-e-dark"
@@ -978,10 +976,15 @@ color: #FFF;
 						<div class="board-multi">
 							<div id="multi_item_type" class="multi-type-webzine">
 								<c:set var="uri"><%=request.getAttribute("javax.servlet.forward.request_uri")%></c:set>
-
+								<!-- sequnce no -->
+								<c:set var="pnum" value="${pageMaker.cri.pageNum}" />
+								<c:set var="pnum" value="${pnum<1? 1 :pnum}" />
+								<c:set var="amount" value="${pageMaker.cri.amount}" />
+								<c:set var="seq_no" value="${(pnum-1)*amount}" />
+								
 								<!-- FOR Start -->
 								<c:forEach items="${tlist}" var="place">
-
+								<c:set var="seq_no" value="${seq_no+1}" />
 
 									<div class="multi-item">
 										<div class="multi-item-in">
@@ -1004,8 +1007,17 @@ color: #FFF;
 											<c:set var="region2" value="${place.region2}" />
 											<div class="multi-desc">
 												<div class="multi-desc-ymd">
+								<%-- 	<%=getRegion((String) (pageContext.getAttribute("region1")))%>	--%>		
+								<style>
+								.board-multi .multi-item-in .multi-desc-ym {
+										    font-size: 16px;
+										    color: #959595;
+										    margin: 12px 0 0px;
+										    line-height: 1;
+										}
+								</style>		
 													<div class="multi-desc-ym">
-														<%=getRegion((String) (pageContext.getAttribute("region1")))%>
+																${seq_no}
 													</div>
 													<br>
 													<div class="multi-desc-md">
@@ -1041,10 +1053,11 @@ color: #FFF;
 								</ul> 
 								</noscript>-->
 													</span>
-													</span> <span class="multi-lv-icon"> <img
-														src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/admin.gif"
-														alt="레벨">
-													</span>
+													</span> 
+<!-- 													<span class="multi-lv-icon"> <img -->
+<!-- 														src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/admin.gif" -->
+<!-- 														alt="레벨"> -->
+<!-- 													</span> -->
 													<!--레벨 아이콘-->
 													<span> <i class="far fa-clock"></i> <!-- 								<strong class="color-black">17시 31분</strong> -->
 													</span> <span> <i class="fas fa-eye"></i> <strong
@@ -1110,19 +1123,19 @@ color: #FFF;
 }
 
 .eb-pagination a {
-	display: inline-block;
-	font-size: 12px;
-	text-decoration: none;
-	min-width: 28px;
-	height: 28px;
-	padding: 0 5px;
-	color: #fff;
-	border: 1px solid transparent;
-	line-height: 26px;
-	text-align: center;
-	color: #757575;
-	position: relative;
-	z-index: 1
+    display: inline-block;
+    font-size: 18px;
+    text-decoration: none;
+    min-width: 28px;
+    height: 30px;
+    padding: 0 8px;
+    color: #fff;
+    border: 1px solid transparent;
+    line-height: 24px;
+    text-align: center;
+    color: #757575;
+    position: relative;
+    z-index: 1;
 }
 
 .eb-pagination a:active {
@@ -1213,6 +1226,7 @@ color: #FFF;
 				!function(e,t){"function"==typeof define&&define.amd?define("ev-emitter/ev-emitter",t):"object"==typeof module&&module.exports?module.exports=t():e.EvEmitter=t()}("undefined"!=typeof window?window:this,function(){function e(){}var t=e.prototype;return t.on=function(e,t){if(e&&t){var i=this._events=this._events||{},n=i[e]=i[e]||[];return n.indexOf(t)==-1&&n.push(t),this}},t.once=function(e,t){if(e&&t){this.on(e,t);var i=this._onceEvents=this._onceEvents||{},n=i[e]=i[e]||{};return n[t]=!0,this}},t.off=function(e,t){var i=this._events&&this._events[e];if(i&&i.length){var n=i.indexOf(t);return n!=-1&&i.splice(n,1),this}},t.emitEvent=function(e,t){var i=this._events&&this._events[e];if(i&&i.length){i=i.slice(0),t=t||[];for(var n=this._onceEvents&&this._onceEvents[e],o=0;o<i.length;o++){var r=i[o],s=n&&n[r];s&&(this.off(e,r),delete n[r]),r.apply(this,t)}return this}},t.allOff=function(){delete this._events,delete this._onceEvents},e}),function(e,t){"use strict";"function"==typeof define&&define.amd?define(["ev-emitter/ev-emitter"],function(i){return t(e,i)}):"object"==typeof module&&module.exports?module.exports=t(e,require("ev-emitter")):e.imagesLoaded=t(e,e.EvEmitter)}("undefined"!=typeof window?window:this,function(e,t){function i(e,t){for(var i in t)e[i]=t[i];return e}function n(e){if(Array.isArray(e))return e;var t="object"==typeof e&&"number"==typeof e.length;return t?d.call(e):[e]}function o(e,t,r){if(!(this instanceof o))return new o(e,t,r);var s=e;return"string"==typeof e&&(s=document.querySelectorAll(e)),s?(this.elements=n(s),this.options=i({},this.options),"function"==typeof t?r=t:i(this.options,t),r&&this.on("always",r),this.getImages(),h&&(this.jqDeferred=new h.Deferred),void setTimeout(this.check.bind(this))):void a.error("Bad element for imagesLoaded "+(s||e))}function r(e){this.img=e}function s(e,t){this.url=e,this.element=t,this.img=new Image}var h=e.jQuery,a=e.console,d=Array.prototype.slice;o.prototype=Object.create(t.prototype),o.prototype.options={},o.prototype.getImages=function(){this.images=[],this.elements.forEach(this.addElementImages,this)},o.prototype.addElementImages=function(e){"IMG"==e.nodeName&&this.addImage(e),this.options.background===!0&&this.addElementBackgroundImages(e);var t=e.nodeType;if(t&&u[t]){for(var i=e.querySelectorAll("img"),n=0;n<i.length;n++){var o=i[n];this.addImage(o)}if("string"==typeof this.options.background){var r=e.querySelectorAll(this.options.background);for(n=0;n<r.length;n++){var s=r[n];this.addElementBackgroundImages(s)}}}};var u={1:!0,9:!0,11:!0};return o.prototype.addElementBackgroundImages=function(e){var t=getComputedStyle(e);if(t)for(var i=/url\((['"])?(.*?)\1\)/gi,n=i.exec(t.backgroundImage);null!==n;){var o=n&&n[2];o&&this.addBackground(o,e),n=i.exec(t.backgroundImage)}},o.prototype.addImage=function(e){var t=new r(e);this.images.push(t)},o.prototype.addBackground=function(e,t){var i=new s(e,t);this.images.push(i)},o.prototype.check=function(){function e(e,i,n){setTimeout(function(){t.progress(e,i,n)})}var t=this;return this.progressedCount=0,this.hasAnyBroken=!1,this.images.length?void this.images.forEach(function(t){t.once("progress",e),t.check()}):void this.complete()},o.prototype.progress=function(e,t,i){this.progressedCount++,this.hasAnyBroken=this.hasAnyBroken||!e.isLoaded,this.emitEvent("progress",[this,e,t]),this.jqDeferred&&this.jqDeferred.notify&&this.jqDeferred.notify(this,e),this.progressedCount==this.images.length&&this.complete(),this.options.debug&&a&&a.log("progress: "+i,e,t)},o.prototype.complete=function(){var e=this.hasAnyBroken?"fail":"done";if(this.isComplete=!0,this.emitEvent(e,[this]),this.emitEvent("always",[this]),this.jqDeferred){var t=this.hasAnyBroken?"reject":"resolve";this.jqDeferred[t](this)}},r.prototype=Object.create(t.prototype),r.prototype.check=function(){var e=this.getIsImageComplete();return e?void this.confirm(0!==this.img.naturalWidth,"naturalWidth"):(this.proxyImage=new Image,this.proxyImage.addEventListener("load",this),this.proxyImage.addEventListener("error",this),this.img.addEventListener("load",this),this.img.addEventListener("error",this),void(this.proxyImage.src=this.img.src))},r.prototype.getIsImageComplete=function(){return this.img.complete&&this.img.naturalWidth},r.prototype.confirm=function(e,t){this.isLoaded=e,this.emitEvent("progress",[this,this.img,t])},r.prototype.handleEvent=function(e){var t="on"+e.type;this[t]&&this[t](e)},r.prototype.onload=function(){this.confirm(!0,"onload"),this.unbindEvents()},r.prototype.onerror=function(){this.confirm(!1,"onerror"),this.unbindEvents()},r.prototype.unbindEvents=function(){this.proxyImage.removeEventListener("load",this),this.proxyImage.removeEventListener("error",this),this.img.removeEventListener("load",this),this.img.removeEventListener("error",this)},s.prototype=Object.create(r.prototype),s.prototype.check=function(){this.img.addEventListener("load",this),this.img.addEventListener("error",this),this.img.src=this.url;var e=this.getIsImageComplete();e&&(this.confirm(0!==this.img.naturalWidth,"naturalWidth"),this.unbindEvents())},s.prototype.unbindEvents=function(){this.img.removeEventListener("load",this),this.img.removeEventListener("error",this)},s.prototype.confirm=function(e,t){this.isLoaded=e,this.emitEvent("progress",[this,this.element,t])},o.makeJQueryPlugin=function(t){t=t||e.jQuery,t&&(h=t,h.fn.imagesLoaded=function(e,t){var i=new o(this,e,t);return i.jqDeferred.promise(h(this))})},o.makeJQueryPlugin(),o});</script>
 
 				<script>
+				var target_view = document.querySelector('button[title="와이드뷰"]')
 					$('#fakeloader').fakeLoader({
 						timeToHide : 3000,
 						zIndex : "11",
@@ -1222,6 +1236,12 @@ color: #FFF;
 
 					$(window).load(function() {
 						$('#fakeloader').fadeOut(300);
+						var window_width = $(window).width();
+						if(window_width < 600) {
+							console.log(target_view)
+							target_view.click()
+							} 
+							
 					});
 
 					
@@ -1582,8 +1602,12 @@ color: #FFF;
 					<div class="modal-header">
 						<button aria-hidden="true" data-dismiss="modal" class="close"
 							type="button">×</button>
+							<style>
+							.modal-title {line-height: 1.82857143;}
+							h5.modal-title {font-size: 18px;}
+							</style>
 						<h5 class="modal-title">
-							<i class="fas fa-search color-grey"></i> <strong>IT 검색</strong>
+							<i class="fas fa-search color-grey"></i> <strong> 검색 </strong>
 						</h5>
 					</div>
 					<div class="modal-body">

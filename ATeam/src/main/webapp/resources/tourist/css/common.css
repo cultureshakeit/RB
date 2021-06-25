@@ -463,7 +463,7 @@ button {vertical-align:inherit}
 .btn-danger {font-size:12px;cursor:pointer;padding:3px 12px}
 .btn-link {color:#4B4B4D}
 .btn-link:hover {color:#000}
-.btn-e {display:inline-block;margin-bottom:0;font-weight:normal;text-align:center;cursor:pointer;background-image:none;border:1px solid transparent;border-color:rgba(0, 0, 0, 0);white-space:nowrap;padding:4px 12px;color:#FFF;font-size:12px;line-height:1;border-radius:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
+.btn-e {display:inline-block;margin-bottom:0;font-weight:normal;text-align:center;cursor:pointer;background-image:none;border:1px solid transparent;border-color:rgba(0, 0, 0, 0);white-space:nowrap;padding:6px 9px;color:#FFF;font-size:16px;line-height:1;border-radius:0;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}
 .btn-e.active:focus,.btn-e:active:focus,.btn-e:focus {outline:0;outline-offset:-2px}
 .btn-e:focus,.btn-e:hover {color:#FFF;text-decoration:none;-webkit-transition:all 0.2s ease-in-out;-moz-transition:all 0.2s ease-in-out;-o-transition:all 0.2s ease-in-out;transition:all 0.2s ease-in-out}
 .btn-e.active,.btn-e:active {outline:0;background-image:none;-webkit-box-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125);box-shadow:inset 0 3px 5px rgba(0, 0, 0, 0.125)}
