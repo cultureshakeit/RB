@@ -202,7 +202,7 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 .board-view .board-view-tag span {display:inline-block;padding:2px 8px;line-height:1;margin:2px;background:#e5e5e5;font-size:11px;border-radius:2px !important}
 .board-view .board-view-tag a:hover span {background:#757575;color:#fff}
 .board-view .board-view-tag .fa-tags {width:22px;height:16px;line-height:16px;text-align:center;font-size:12px;color:#353535;margin-right:5px;box-sizing:content-box}
-.board-view .view-area-divider {position:relative;height:1px;border-top:1px solid #d5d5d5;margin:30px 0}
+.board-view .view-area-divider {position:relative;height:1px;border-top:1px solid #d5d5d5;margin: 5px 0 30px 0px;}
 .board-view .view-area-divider .divider-circle {position:absolute;top:-7px;left:50%;margin-left:-7px;width:14px;height:14px;border:2px solid #d5d5d5;background:#fff;z-index:1px;-webkit-border-radius:50% !important;-moz-border-radius:50% !important;border-radius:50% !important}
 .board-view pre {font-size:12px}
 .board-view .caption-overflow span {left:0;right:0}
@@ -353,7 +353,14 @@ $(document).ready(function() {
 	    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=kakaostory" target="_blank" title="Kakao Story" class="social_kakaostory"></a></li>
 	    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=band" target="_blank" title="Band" class="social_band"></a></li>
 	</ul>        
-    <div class="view-area-divider"><span class="divider-circle"></span></div>
+<!-- 	태그 -->
+	<h1> TAG : 
+	<c:forEach items="${tags}" var="tag">
+	  ${tag},   
+	</c:forEach></h1>
+    <div class="view-area-divider">
+    
+    <span class="divider-circle"></span></div>
 
         
 <style>

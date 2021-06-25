@@ -427,7 +427,9 @@ public class CommonController {
 	@GetMapping("/tourist/{sid}")
 	public String tourist_detail(Model model,@PathVariable("sid") String sid) {
 		TouristVO tourInfo = tourService.getOne(sid);
+		String[] tags = tourService.getTags(sid);
 //		System.out.println(tourInfo.toString());
+		model.addAttribute("tags", tags);
 		model.addAttribute("tourInfo",tourInfo);
 		return "tourist/tourist_view";
 	}

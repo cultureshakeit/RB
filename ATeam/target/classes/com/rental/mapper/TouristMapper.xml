@@ -13,4 +13,7 @@ select * from test_api where contentsid = #{sid}
 <select id ="countAll"  resultType="int">
 select count(*) from test_api
 </select>
+<select id ="getTags"  resultType="String">
+select name from contenttag c join test_tag t on c.tag_id = t.id where content_id = #{sid}
+</select>
 </mapper>
