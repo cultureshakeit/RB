@@ -2,6 +2,7 @@
 <%@page import="com.jayway.jsonpath.DocumentContext"%>
 <%@include file="../header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <%!public String getPhoto(String json) {
 		if (json == null)
 			return "";
@@ -355,11 +356,11 @@
 
 .board-multi .multi-item-in .multi-cont {
 	position: relative;
-	overflow: hidden;
+/* 	overflow: hidden;  introduction 2번째 줄도 보이게*/
 	height: 36px;
 	font-weight: 300;
 	color: #757575;
-	margin-bottom: 15px
+	margin-bottom: 22px
 }
 
 .board-multi .multi-item-in .multi-info {
@@ -803,7 +804,7 @@ body {
     font-size: 18px;
     color: #000;
     height: 28px;
-    margin-top: 12px;
+/*     margin-top: 12px; */
     margin-bottom: 5px;
 }
 /* header.css */
@@ -1028,8 +1029,11 @@ span#nowTimes {
 													<h4>
 														<a href="${uri}/${place.contentsid}">
 															<!-- 첫번째 글 연결 --> <strong>${place.title}</strong>
-														</a>
+														</a><a href="" style='float:right'>
+														<i class="fas fa-star" style="color:#ffd700"></i>
+														<i class="far fa-star" style="color:gray"></i></a>
 													</h4>
+													
 													<p class="multi-cont">${place.introduction}</p>
 												</div>
 												<div class="multi-info multi-info-rating">
@@ -1065,6 +1069,9 @@ span#nowTimes {
 													</span> <span> <i class="far fa-thumbs-up"></i> <strong
 														class="color-green">좋아요 junction</strong>
 													</span>
+													<i class="fas fa-tags" style="color:gray"></i>
+													<span>${fn:length(place.tag.split(","))}.</span>
+													<span>${fn:substring(place.tag,0,45)}${ place.tag.length() > 45 ? "...":""}</span>
 													<div class="multi-ratings">
 														<ul class="list-unstyled star-ratings-list">
 															<li><i class="rating far fa-star"></i></li>
@@ -1073,6 +1080,7 @@ span#nowTimes {
 															<li><i class="rating far fa-star"></i></li>
 															<li><i class="rating far fa-star"></i></li>
 														</ul>
+														
 													</div>
 												</div>
 											</div>
