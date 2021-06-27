@@ -1235,6 +1235,7 @@ span#nowTimes {
 
 				<script>
 				var target_view = document.querySelector('button[title="와이드뷰"]')
+				var a = document.querySelectorAll('.eb-pagination > li')
 					$('#fakeloader').fakeLoader({
 						timeToHide : 3000,
 						zIndex : "11",
@@ -1248,6 +1249,12 @@ span#nowTimes {
 						if(window_width < 600) {
 							console.log(target_view)
 							target_view.click()
+							
+							a.forEach((i,idx)=>
+					          {console.log(idx,i);
+							if(a.length/2 -1==idx){
+							var br = document.createElement("br");
+							i.appendChild(br)}})
 							} 
 							
 					});
