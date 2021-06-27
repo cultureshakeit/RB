@@ -300,7 +300,7 @@
 
 .board-multi .multi-item-in .multi-desc-ymd {
 	position: absolute;
-	top: 0;
+	top: 6px;
 	left: 215px;
 	overflow: hidden;
 	width: 80px;
@@ -338,7 +338,7 @@
 	font-size: 15px;
 	color: #000;
 	height: 37px;
-	margin-top: 2px;
+	margin-top: 8px;
 	margin-bottom: 5px
 }
 
