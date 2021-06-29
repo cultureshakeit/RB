@@ -5,97 +5,54 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	<title> LOVE JEJU # </title>
-	<meta name="description" content="">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<!-- <link rel="manifest" href="site.webmanifest"> -->
-	<link rel="shortcut icon" type="image/x-icon" href="/resources/img/favicon.png" />
-	<!-- Place favicon.ico in the root directory -->
-	
-	<!-- CSS here -->
-	<link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
-	<link rel="stylesheet" href="/resources/css/owl.carousel.min.css" />
-	<link rel="stylesheet" href="/resources/css/magnific-popup.css" />
-	<link rel="stylesheet" href="/resources/css/font-awesome.min.css" />
-	<link rel="stylesheet" href="/resources/css/themify-icons.css" />
-	<link rel="stylesheet" href="/resources/css/nice-select.css" />
-	<link rel="stylesheet" href="/resources/css/flaticon.css" />
-	<link rel="stylesheet" href="/resources/css/gijgo.css" />
-	<link rel="stylesheet" href="/resources/css/animate.css" />
-	<link rel="stylesheet" href="/resources/css/slick.css" />
-	<link rel="stylesheet" href="/resources/css/slicknav.css" />
-	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
-	
-	<link rel="stylesheet" href="/resources/css/style.css" />
-</head>
-<style>
-.slicknav_btn {
-	top: -15px !important;
-	right: -15px !important;
+<style type="text/css">
+.box {
+	width: 150px;
+	height: 150px;
+	border-radius: 70%;
 }
 
-@media ( max-width : 991px) and (min-width: 768px) {
-	.header-area .main-header-area {
-		padding: 30px 20px !important;
-	}
+.profile {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
 }
 
-@media ( min-width : 993px) {
-	.col-lg-4 {
-		display: inline-block !important;
-	}
-}
-
-.fa-shopping-cart {
-	position: relative;
-}
-
-.fa-shopping-cart::after {
-	content: attr(data-count);
-	color: #ff4757;
-	position: absolute;
-	font-size: 12px;
-	top: -20px;
-	right: 5px;
-}
-
-@media ( min-width : 992px) {
-	.d-lg-block {
-		display: inline-block !important;
-	}
+.aa {
+	padding-top: 60px;
+	padding-bottom: 60px;
 }
 </style>
-<body>
-	<header>
-		<div class="header-area ">
-			<div id="sticky-header" class="main-header-area">
-				<div class="container-fluid">
-					<div class="header_bottom_border">
-						<div class="row align-items-center">
-							<div class="col-xl-7 col-lg-7" style="text-align: center; max-height: 75px; display: inline-block;">
-								<div class="main-menu  d-none d-lg-block">
-									<nav>
-										<ul id="navigation">
-											<sec:authorize access="isAnonymous()">
-												<li>
-													<a class="active" href="/">HOME</a>
-												</li>
-											</sec:authorize>
-											<sec:authorize access="isAuthenticated()">
-												<li>
-													<a class="active" href="/<sec:authentication property="principal.member.userid"/>">
-														HOME
-													</a>
-												</li>
-											</sec:authorize>
-											
-											<li>
-												<a href="#">PLACE</a>
-												<ul class="submenu">
+	
+	<html lang="kor">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Travel to Jeju - travel with me </title>
+        <link rel="icon" type="image/x-icon" href="/resources/assets/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="/resources/css/styles.css" rel="stylesheet" />
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <a class="navbar-brand" href="#page-top">HOME</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    Menu
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto">
+                        <li class="nav-item"><a class="nav-link" href="/tourist">About</a>
+                    <!--      <ul class="submenu">
 													<li>
 														<a href="/tourist">관광명소</a>
 													</li>
@@ -108,148 +65,57 @@
 														</li>
 													</sec:authorize>
 												</ul>
-											</li>
-											<li>
-												<a href="#">COMMUNITY</a>
-												<ul class="submenu">
-													<li><a href="/board/notice">공지사항</a></li>
-													<sec:authorize access="isAnonymous()">
-														<li><a href="/usernotice/Usernotice">회사 정보</a></li>
-													</sec:authorize>
-													<sec:authorize access="isAuthenticated()">
-														<li>
-															<a href="/usernotice/Usernotice?userid=<sec:authentication property='principal.member.userid'/>">
-																게시판
-															</a>
-														</li>
-													</sec:authorize>
-													<li>
-														<a href="/review/photo">포토 리뷰</a>
-													</li>
-													<li>
-														<a href="/QnA/QnA">FAQ</a>
-													</li>
-												</ul>
-											</li>
-											<li>
-												<sec:authorize access="isAnonymous()">
-													<a href="/login">Login</a>
-												</sec:authorize>
-												<sec:authorize access="isAuthenticated() and hasAnyRole({'ROLE_USER','ROLE_ADMIN'}) ">
-													<a href="javascript:void(0)" onclick="onLogout();">Logout</a>
-												</sec:authorize>
-											</li>
-											<li><a href="#">#</a>
-												<ul class="submenu">
-													<li><a href="/about">이용안내</a></li>
-													<sec:authorize access="isAnonymous()">
-														<li><a href="/signup#layer1">회원가입</a></li>
-													</sec:authorize>
-													<sec:authorize access="isAuthenticated() and hasRole('ROLE_USER')">
-														<li><a href="/users/index?userid=<sec:authentication property='principal.member.userid'/>">마이페이지</a></li>
-													</sec:authorize> 
-													<sec:authorize access="isAuthenticated() and hasRole('ROLE_ADMIN')">
-														<li><a href="/admin/index?userid=<sec:authentication property='principal.member.userid'/>">관리자 페이지</a></li>
-													</sec:authorize>
-													<li>
-														<a href="/board/kakao">카카오상담</a>
-													</li>
-													<li>
-														<a href="/contact/contact">문의</a>
-													</li>
-												</ul>
-											</li>
-										</ul>
-									</nav>
-								</div>
-							</div>
-							<div class="col-xl-3 col-lg-3 d-none d-lg-block logmenu">
-								<div class="number">
-									<p style="display: inline-block; padding-right: 40px;">
-										<i class="fa fa-phone">+82 10-2345-6789</i>
-									</p>
-									<div class="social_links d-none d-xl-block">
-										<b>
-											<span id="nowTimes"></span>
-										</b>
-									</div>
-								</div>
-							</div>
-							<sec:authorize access="isAuthenticated() and hasRole('ROLE_USER')">
-								<div class="cart">
-									<a href="/product/cart?userid=<sec:authentication property='principal.member.userid'/>">
-										<i id='cart' class="fa fa-shopping-cart fa-lg" aria-hidden="true" data-count=${count-cart }
-											data-id='<sec:authentication property='principal.member.userid'/>'>
-										</i>
-									</a>
-								</div>
-							</sec:authorize>
-							<!-- <div class="seach_icon">
-								
-							</div> -->
-							<div class="col-12">
-								<div class="mobile_menu d-block d-lg-none">
-									
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-	</header>
-	<script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-	<script type="text/javascript">
-		document.addEventListener("DOMContentLoaded", function() {
-			// 시간을 딜레이 없이 나타내기위한 선 실행
-			realTimer();
-			// 이후 0.5초에 한번씩 시간을 갱신한다.
-			setInterval(realTimer, 500);
-		});
-		// 시간을 출력
-		function realTimer() {
-			const nowDate = new Date();
-			const year = nowDate.getFullYear();
-			const month = nowDate.getMonth() + 1;
-			const date = nowDate.getDate();
-			const hour = nowDate.getHours();
-			const min = nowDate.getMinutes();
-			const sec = nowDate.getSeconds();
-			document.getElementById("nowTimes").innerHTML = year + "/"
-					+ addzero(month) + "/" + addzero(date) + "&nbsp;" + hour
-					+ ":" + addzero(min) + ":" + addzero(sec);
-		}
-		// 1자리수의 숫자인 경우 앞에 0을 붙여준다.
-		function addzero(num) {
-			if (num < 10) {
-				num = "0" + num;
-			}
-			return num;
-		}
-	</script>
-	<script type="text/javascript">
-		$(function() {
-			var id = $("#cart").attr("data-id");
-			var csrfHeaderName = "${_csrf.headerName}";
-			var csrfTokenValue = "${_csrf.token}";
-			$(document).ajaxSend(function(e, xhr, options) {
-				xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
-			})
-			$.ajax({
-				url : "/cart_counter",
-				type : 'post',
-				data : JSON.stringify({
-					"userid" : id
-				}),
-				contentType : "application/json; charset=UTF-8",
-				processData : false,
-				success : function(result) {
-					$("#cart").attr("data-count", result);
+                        --> 
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="#projects">SingUp</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Info</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Site</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Service</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#signup">Contact</a></li>
+                    </ul>
+                    
+                    <!-- 카카오 플러스 친구 서비스  -->
+                    <script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+					<div id="plusfriend-addfriend-button"></div>
 
-				},
-				error : function(req, status, error) {
-					console.log(error);
-				}
-			})
-		})
-	</script>
+					<script type='text/javascript'>
+   					 // 사용할 앱의 JavaScript 키를 설정해 주세요.
+    				Kakao.init('c2faf6bb57ca7f49c1afc97ca920bbb1');
+    				// 플러스친구 친구추가 버튼을 생성합니다.
+   					 Kakao.PlusFriend.createAddFriendButton({
+    				  container: '#plusfriend-addfriend-button',
+      				plusFriendId: '_xbFhns' // 플러스친구 홈 URL에 명시된 id로 설정합니다.
+   					 });
+						</script>
+                    
+                <!--    <iframe width="100%" height="245" 
+                    src="https://forecast.io/embed/#lat=33.5&lon=126.5309&name=Jeju&color=&font=arial&units=si"
+                     frameborder="3"></iframe> --> 
+                    
+                    &nbsp &nbsp &nbsp
+                    
+                    <!-- weather widget start --><div id="m-booked-prime-14033"> 
+                    <div class="booked-wzsp-prime-in">
+                     <div class="booked-wzsp-prime-data"> 
+                     <div class="booked-wzsp-prime-img wt18">
+                     </div> <div class="booked-wzsp-day-val">
+                      <div class="booked-wzsp-day-number">
+                      <span class="plus">+</span>26</div> <div class="booked-wzsp-day-dergee">
+                       <div class="booked-wzsp-day-dergee-val">&deg;</div> 
+                       <div class="booked-wzsp-day-dergee-name">C</div> </div>
+                        </div> </div> </div> </a> </div><script type="text/javascript">
+                        var css_file=document.createElement("link"); 
+                        var widgetUrl = location.href; css_file.setAttribute("rel","stylesheet"); 
+                        css_file.setAttribute("type","text/css");
+                        css_file.setAttribute("href",'https://s.bookcdn.com/css/w/booked-wzs-widget-prime.css?v=0.0.1'); document.getElementsByTagName("head")[0].appendChild(css_file);
+                        function setWidgetData_14033(data) { if(typeof(data) != 'undefined' && data.results.length > 0)
+                        { for(var i = 0; i < data.results.length; ++i) { var objMainBlock = document.getElementById('m-booked-prime-14033'); if(objMainBlock !== null)
+                        { var copyBlock = document.getElementById('m-bookew-weather-copy-'+data.results[i].widget_type); objMainBlock.innerHTML = data.results[i].html_code; if(copyBlock !== null) 
+                        	objMainBlock.appendChild(copyBlock); } } } else { alert('data=undefined||data.results is empty'); } } var widgetSrc = "https://widgets.booked.net/weather/info?action=get_weather_info;ver=7;cityID=32868;type=5;scode=124;ltid=3457;domid=w209;anc_id=6454;countday=undefined;cmetric=1;wlangID=1;color=137AE9;wwidth=250;header_color=ffffff;text_color=333333;link_color=08488D;border_form=1;footer_color=ffffff;footer_text_color=333333;transparent=0;v=0.0.1";widgetSrc += ';ref=' + widgetUrl;widgetSrc += ';rand_id=14033';var weatherBookedScript = document.createElement("script"); weatherBookedScript.setAttribute("type", "text/javascript"); weatherBookedScript.src = widgetSrc; document.body.appendChild(weatherBookedScript) </script><!-- weather widget end -->
+                    
+                    
+                    
+                    
+                </div>
+            </div>
+        </nav>
