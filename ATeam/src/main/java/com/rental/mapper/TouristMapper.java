@@ -12,4 +12,5 @@ public interface TouristMapper {
 	public TouristVO getOne(String sid);
 	public int countAll();
 	public String[] getTags(String sid);
+	public void addViews(String sid);
 }

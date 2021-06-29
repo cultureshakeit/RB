@@ -30,4 +30,10 @@
 		where content_id = #{sid}
 	</select>
 	
+	<update id="addViews">
+		UPDATE place
+		SET views = views + 1
+		WHERE contentsid = #{sid}
+	</update>
+	
 </mapper>

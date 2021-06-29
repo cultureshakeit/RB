@@ -9,6 +9,7 @@ import java.util.Map;
 import java.util.UUID;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 import org.apache.ibatis.transaction.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -51,6 +52,7 @@ import com.rental.service.QNAService;
 import com.rental.service.ReplyService;
 import com.rental.service.ReviewService;
 import com.rental.service.TouristService;
+import com.rental.util.BoardCookie;
 import com.rental.util.Utility;
 
 import lombok.Setter;
@@ -425,12 +427,21 @@ public class CommonController {
 		
 	}
 	@GetMapping("/tourist/{sid}")
-	public String tourist_detail(Model model,@PathVariable("sid") String sid) {
+	public String tourist_detail(Model model,@PathVariable("sid") String sid, HttpServletRequest request, HttpServletResponse response) {
 		TouristVO tourInfo = tourService.getOne(sid);
 		String[] tags = tourService.getTags(sid);
 //		System.out.println(tourInfo.toString());
 		model.addAttribute("tags", tags);
 		model.addAttribute("tourInfo",tourInfo);
+		
+		//cookie 추가
+		BoardCookie addCookie = new BoardCookie();
+		boolean cookie_result = addCookie.check_cookie("placeviews", sid, request, response);
+		
+		if(!cookie_result) {
+			tourService.addViews(sid);
+		}
+		
 		return "tourist/tourist_view";
 	}
 	

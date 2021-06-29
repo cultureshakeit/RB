@@ -51,5 +51,13 @@ public class TouristServiceImpl implements TouristService {
 		return mapper.getTags(sid);
 	}
 
+
+
+	@Override
+	public void addViews(String sid) {
+		// TODO Auto-generated method stub
+		mapper.addViews(sid);
+	}
+
 	
 }
