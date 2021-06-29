@@ -2,19 +2,32 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.rental.mapper.TouristMapper">
 
-<select id ="List"  resultType="com.rental.domain.TouristVO">
-select contentsid,title,introduction,(select listagg(t.name,',') from contenttag c join test_tag t on c.tag_id = t.id where content_id = contentsid) as tag,
-region1,region2,address,roadaddress,latitude,longitude,postcode,phoneno,photo from test_api OFFSET (#{pageNum}-1)*#{amount} ROWS FETCH NEXT #{amount} ROWS ONLY
-</select>
-
-<select id ="getOne"  resultType="com.rental.domain.TouristVO">
-select * from test_api where contentsid = #{sid}
-</select>
-
-<select id ="countAll"  resultType="int">
-select count(*) from test_api
-</select>
-<select id ="getTags"  resultType="String">
-select name from contenttag c join test_tag t on c.tag_id = t.id where content_id = #{sid}
-</select>
+	<select id ="List"  resultType="com.rental.domain.TouristVO">
+		select
+			contentsid,title,introduction,
+			(select listagg(t.name,',') from place_tag_table c join tag t on c.tag_id = t.id where content_id = contentsid) as tag,
+			region1, region2, address, roadaddress, latitude, longitude, postcode, phoneno, photo, views
+		from place
+		OFFSET (#{pageNum} - 1) * #{amount}
+		ROWS FETCH NEXT #{amount} ROWS ONLY
+	</select>
+	
+	<select id ="getOne"  resultType="com.rental.domain.TouristVO">
+		select *
+		from place
+		where contentsid = #{sid}
+	</select>
+	
+	<select id ="countAll"  resultType="int">
+		select count(*)
+		from place
+	</select>
+	
+	<select id ="getTags"  resultType="String">
+		select name
+		from place_tag_table c
+		join tag t on c.tag_id = t.id
+		where content_id = #{sid}
+	</select>
+	
 </mapper>

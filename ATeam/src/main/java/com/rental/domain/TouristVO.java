@@ -11,7 +11,8 @@ import lombok.ToString;
 @ToString
 public class TouristVO {
 	
-	private String contentsid,title,tag,address,roadaddress,postcode,phoneno,introduction,region1,region2,photo;
-	private float latitude,longitude;
+	private String contentsid, title, tag, address, roadaddress, postcode, phoneno, introduction, region1, region2, photo;
+	private float latitude, longitude;
+	private int views;
 	
 }
