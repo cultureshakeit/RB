@@ -6154,7 +6154,7 @@ textarea.form-control-lg {
 }
 
 .fixed-top {
-  position: sticky;
+  position: fixed;
   top: 0;
   right: 0;
   left: 0;

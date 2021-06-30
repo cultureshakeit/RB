@@ -72,7 +72,7 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 </head>
 
 <body>
-
+<div class=headerempty></div>
 <div class="wrapper">
 	<div class="basic-body container page-padding ft-padding">
 		<div class="basic-body-page">
@@ -100,6 +100,10 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 			<div class="row1">
 			
 <style>
+.headerempty{
+ position: relative;
+ height: 150px;
+}
 .board-view{margin: auto auto; padding:10px;}
 .board-view .board-setup {position:relative;border:1px solid #d5d5d5;height:30px;margin-bottom:20px}
 .board-view .board-setup .select {position:absolute;top:-1px;left:-1px;display:inline-block;width:200px}

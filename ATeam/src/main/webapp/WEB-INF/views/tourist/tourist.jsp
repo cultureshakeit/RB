@@ -69,7 +69,7 @@
 </head>
 
 <body>
-
+	<div class=headerempty></div>
 	<div class="wrapper">
 
 
@@ -80,6 +80,10 @@
 
 
 					<style>
+.headerempty{
+ position: relative;
+ height: 150px;
+}
 .board-list .board-setup {
 	position: relative;
 	border: 1px solid #d5d5d5;
@@ -1664,6 +1668,7 @@ span#nowTimes {
 					</div>
 				</div>
 			</div>
+		</div>
 		</div>
 		<script>
 			function itemuse_modal(href) {
