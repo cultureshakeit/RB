@@ -5,42 +5,77 @@
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
 <!DOCTYPE html>
-<style type="text/css">
-.box {
-	width: 150px;
-	height: 150px;
-	border-radius: 70%;
-}
-
-.profile {
-	width: 100%;
-	height: 100%;
-	object-fit: cover;
-}
-
-.aa {
-	padding-top: 60px;
-	padding-bottom: 60px;
-}
-</style>
-	
-	<html lang="kor">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Travel to Jeju - travel with me </title>
-        <link rel="icon" type="image/x-icon" href="/resources/assets/favicon.ico" />
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title> LOVE JEJU # </title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" type="image/x-icon" href="/resources/assets/favicon.ico" />
         <!-- Font Awesome icons (free version)-->
         <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Varela+Round" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="/resources/css/styles.css" rel="stylesheet" />
-    </head>
-    <body id="page-top">
+	<!-- <link rel="manifest" href="site.webmanifest"> -->
+	<link rel="shortcut icon" type="image/x-icon" href="/resources/img/favicon.png" />
+	<!-- Place favicon.ico in the root directory -->
+	
+	<!-- CSS here -->
+	<link rel="stylesheet" href="/resources/css/bootstrap.min.css" />
+	<link rel="stylesheet" href="/resources/css/owl.carousel.min.css" />
+	<link rel="stylesheet" href="/resources/css/magnific-popup.css" />
+	<link rel="stylesheet" href="/resources/css/font-awesome.min.css" />
+	<link rel="stylesheet" href="/resources/css/themify-icons.css" />
+	<link rel="stylesheet" href="/resources/css/nice-select.css" />
+	<link rel="stylesheet" href="/resources/css/flaticon.css" />
+	<link rel="stylesheet" href="/resources/css/gijgo.css" />
+	<link rel="stylesheet" href="/resources/css/animate.css" />
+	<link rel="stylesheet" href="/resources/css/slick.css" />
+	<link rel="stylesheet" href="/resources/css/slicknav.css" />
+	<link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.2/themes/smoothness/jquery-ui.css" />
+	
+	<link rel="stylesheet" href="/resources/css/style.css" />
+</head>
+<style>
+.slicknav_btn {
+	top: -15px !important;
+	right: -15px !important;
+}
+
+@media ( max-width : 991px) and (min-width: 768px) {
+	.header-area .main-header-area {
+		padding: 30px 20px !important;
+	}
+}
+
+@media ( min-width : 993px) {
+	.col-lg-4 {
+		display: inline-block !important;
+	}
+}
+
+.fa-shopping-cart {
+	position: relative;
+}
+
+.fa-shopping-cart::after {
+	content: attr(data-count);
+	color: #ff4757;
+	position: absolute;
+	font-size: 12px;
+	top: -20px;
+	right: 5px;
+}
+
+@media ( min-width : 992px) {
+	.d-lg-block {
+		display: inline-block !important;
+	}
+}
+</style>
+<body id="page-top">
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
             <div class="container px-4 px-lg-5">

@@ -39,18 +39,16 @@
 	href="/resources/tourist/css/common.css">
 <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/fontawesome-all.min.css">
-<link type="text/css" rel="stylesheet"
+ <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/style.css">
-<link type="text/css" rel="stylesheet"
-	href="/resources/tourist/css/custom.css">
 <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/tab_scroll_category.css" type="text/css"
 	media="screen">
 <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/sweetalert.min.css" type="text/css"
 	media="screen">
-<link type="text/css" rel="stylesheet"
-	href="/resources/tourist/css/style.css">
+<!-- <link type="text/css" rel="stylesheet"
+	href="/resources/tourist/css/style.css"> -->
 
 <script type="text/javascript"
 	src="/resources/tourist/js/jquery-1.12.4.min.js"></script>
@@ -835,11 +833,11 @@ span#nowTimes {
 
 }
 
-.modal-header {
+/* .modal-header {
     min-height: 16.43px;
     padding: 60px 0px 0px 12px;
     border-bottom: 1px solid #e5e5e5;
-}
+} */
 </style>
 					<div id="fakeloader"></div>
 
@@ -1065,7 +1063,7 @@ span#nowTimes {
 													<!--레벨 아이콘-->
 													<span> <i class="far fa-clock"></i> <!-- 								<strong class="color-black">17시 31분</strong> -->
 													</span> <span> <i class="fas fa-eye"></i> <strong
-														class="color-black">조회수 미구현</strong>
+														class="color-black">${place.views }</strong>
 													</span> <span> <i class="far fa-thumbs-up"></i> <strong
 														class="color-green">좋아요 junction</strong>
 													</span>
@@ -1955,17 +1953,17 @@ span#nowTimes {
 		            });
 
 		            $('.back-to-top').click(function() {
-		                $('body,html').animate({scrollTop:0}, 1200);
+		                $('body,html').animate({scrollTop:0}, 500);
 		                return false;
 		            });
 
 		            $('.quick-scroll-btn.top-btn').click(function() {
-		                $('body,html').animate({scrollTop:0}, 1200);
+		                $('body,html').animate({scrollTop:0}, 500);
 		                return false;
 		            });
 
 		            $('.quick-scroll-btn.down-btn').click(function() {
-		                $('body,html').animate({scrollTop:$(document).height()}, 1200);
+		                $('body,html').animate({scrollTop:$(document).height()}, 500);
 		                return false;
 		            });
 		        });
@@ -2018,4 +2016,5 @@ $(function() {
 <![endif]-->
 </body>
 </html>
+<%@include file="../footer.jsp"%>
 <!-- 사용스킨 : basic -->
