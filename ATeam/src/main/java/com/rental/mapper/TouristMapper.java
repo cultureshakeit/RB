@@ -11,7 +11,7 @@ public interface TouristMapper {
 	
 	
 	public List<TouristVO> List(Criteria cri);
-	public TouristVO getOne(String sid);
+	public TouristVO getOne(@Param("sid") String sid,@Param("userid") String userid);
 	public int countAll();
 	public String[] getTags(String sid);
 	public void addViews(String sid);

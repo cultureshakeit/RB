@@ -21,9 +21,18 @@
 	</select>
 
 	<select id ="getOne"  resultType="com.rental.domain.TouristVO">
-		select *
-		from place
-		where contentsid = #{sid}
+		select contentsid,title,introduction,region1,region2,address,roadaddress,latitude,longitude,postcode,phoneno,photo,views
+		,(select count(*) from content_like where content_id = #{sid} ) as likes
+		
+		<choose>
+        	<when test="userid != null">,(select count(*) from content_like where content_id = #{sid} and user_id = #{userid}) as like_true
+        	,(select count(*) from content_favor where content_id = contentsid and user_id = #{userid}) as favor_true
+        	</when>
+        	<otherwise></otherwise>
+        </choose>
+        from place
+        where contentsid = #{sid}
+   		
 	</select>
 
 	<select id ="countAll"  resultType="int">

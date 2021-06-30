@@ -440,7 +440,7 @@ public class CommonController {
 		String userid = null;
 		if (prin !=null) {userid = prin.getName();}
 		
-		TouristVO tourInfo = tourService.getOne(sid);
+		TouristVO tourInfo = tourService.getOne(sid,userid);
 		String[] tags = tourService.getTags(sid);
 //		System.out.println(tourInfo.toString());
 		model.addAttribute("tags", tags);

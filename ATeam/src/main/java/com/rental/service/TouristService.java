@@ -10,7 +10,7 @@ public interface TouristService {
 
 	
 	public List<TouristVO> List(Criteria cri);
-	public TouristVO getOne(String sid);
+	public TouristVO getOne(String sid, String userid);
 	public int countAll();
 	public String[] getTags(String sid);
 	public void addViews(String sid);

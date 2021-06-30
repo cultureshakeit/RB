@@ -85,8 +85,9 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
                     </div>
                     <div id="tab-page-category">
 	                    <div class="page-category-list">
-	                      <span ><a href="#" target="_self">공유자료실</a></span>
-	                      <span ><a href="#" target="_self">이벤트</a></span>
+<!-- 	                      <span ><a href="#" target="_self">공유자료실</a></span> -->
+<!-- 	                      <span ><a href="#" target="_self">이벤트</a></span> -->
+<span>관광명소</span>
 	                      <span class="fake-span"></span>
 	                    </div>
 	                    <div class="controls">
@@ -247,13 +248,13 @@ button.mfp-close {position:fixed;color:#fff !important}
     <div class="board-view-info">
         <div class="view-post-info">
         	<div class="view-photo-box">
-            	<span class="view-photo margin-right-5"><img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/ffff.png" alt="회원사진"></span>
+            	<span class="view-photo margin-right-5"><img class="user-photo" src="/resources/tourist/image/admin.png" alt="회원사진"></span>
             </div>
             <div class="view-info-box">
                 <div class="info-box-top">
                     <span class="view-nick">
                         <span class="sv_wrap">
-							<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 유저이름 </a>
+							<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 최고관리자 </a>
 							<!-- <ul class="sv dropdown-menu" role="menu">
 							<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
 							<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
@@ -269,11 +270,11 @@ button.mfp-close {position:fixed;color:#fff !important}
 								
 						</span>
 					</span>
-                    <span class="view-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/2.gif" align="absmiddle" alt="레벨"></span>
+<!--                     <span class="view-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/2.gif" align="absmiddle" alt="레벨"></span> -->
                 </div>
                 <div class="info-box-bottom">
-                	<span class="color-black"><i class="fas fa-clock"></i>17시 52분</span>
-                    <span><i class="fas fa-eye"></i>조회수 미구현</span>
+                	<span class="color-black"><i class="fas fa-clock"></i>CreatedAt</span>
+                    <span><i class="fas fa-eye"></i>조회수 ${tourInfo.views}</span>
                     <span class="color-red"><i class="fas fa-comment-alt"></i>댓글 미구현</span>
                 </div>
             </div>
@@ -282,14 +283,105 @@ button.mfp-close {position:fixed;color:#fff !important}
         <div class="view-post-info-rating">
             <div class="board-view-info-label">
             	<div class="board-view-good-nogood">
-                	<div class="board-view-good no-member-gng" title="추천">
-                            <span><i class="far fa-thumbs-up"></i></span>
-                            <strong>0</strong>
+                	<div class="board-view-good no-member-gng" title="좋\n아\n요">
+                            <span id='handleLike'><i class="fa${tourInfo.like_true ? '': 'r'} fa-heart" style="color:red"></i>
+                            <strong>${tourInfo.likes}</strong></span>
                     </div>
-                    <div class="board-view-nogood no-member-gng" title="비추천">
-                    	<span><i class="far fa-thumbs-down"></i></span>
-                        <strong>0</strong>
+                    <div class="board-view-good no-member-gng" title="즐겨찾기"><!-- #ffd700 -->
+                    <span><i id='favorStar' class="fa${tourInfo.favor_true ? '':'r'} fa-star" style='color:${tourInfo.favor_true ? "yellow":"white"}'></i></span>
+                    
                     </div>
+                   <script>
+                   var content_id = '<c:out value="${tourInfo.contentsid}" />'
+                   
+                   $(document).on('click','#handleLike',function(){
+//        				var content_id = $(this).attr('content_id')
+       				var flag = $(this).children('i')
+       				var self = $(this)
+       				var target = 'class'
+       				if(flag.attr(target).includes('far')){
+       					$.ajax({
+       						url : '/tourist/like/' + content_id,
+       						type: 'post',
+       					})
+       					.done(function(result){
+       						
+       			            flag.attr(target,'fa fa-heart')
+       			            var count = parseInt(self.children('strong').text());
+       			            self.children('strong').text(count+1);
+       			            
+       					})
+       					.fail(function(){
+       						console.log("에러 발생!")
+       					})
+       				
+       			}else{
+       				
+       					$.ajax({
+       						url : '/tourist/like/' + content_id,
+       						type: 'delete',
+       					})
+       					.done(function(){
+       					flag.attr(target,'far fa-heart')
+       			        var count = parseInt(self.children('strong').text());
+       			        self.children('strong').text( ( (count==1) ? 0 : count-1 ) );
+       					})
+       					.fail(function(){
+       						console.log("에러 발생!")
+       					})
+       			}
+       				})
+       				
+       			
+       		    $(document).on('click','#favorStar',function(){
+//        				var content_id = $(this).attr('content_id')
+       				var flag = $(this)
+       				var target = 'class'
+       				if(flag.attr(target).includes('far')){
+       					
+       					$.ajax({
+       						url : '/tourist/favor/' + content_id,
+       						type: 'post',
+       					})
+       					.done(function(result){
+       						flag.css('color','yellow')
+       						flag.attr(target,'fa fa-star')
+       				          
+       					})
+       					.fail(function(){
+       						console.log("에러 발생!")
+       					})
+       				
+       				
+       			}else{
+       				console.log('hello else')
+       					$.ajax({
+       						url : '/tourist/favor/' + content_id,
+       						type: 'delete',
+       					})
+       					.done(function(result){
+       						flag.css('color','white')
+       						flag.attr(target,'far fa-star')
+       					})
+       					.fail(function(){
+       						console.log("에러 발생!")
+       					})
+       			}
+       				})
+       				
+       				$(document).on('click','#Like',function(){
+       				let True =  confirm('로그인을 해주세요~!')
+       				if(True){
+       					window.location.href ='/login'
+       				}
+       			})
+       			$(document).on('click','#favor',function(){
+       				let True =  confirm('로그인을 해주세요~!')
+       				if(True){
+       					window.location.href ='/login'
+       				}
+       			})
+                   </script>
                 </div>
 			</div>
         </div>

@@ -30,11 +30,10 @@ public class TouristServiceImpl implements TouristService {
 
 
 	@Override
-	public TouristVO getOne(String sid) {
-		// TODO Auto-generated method stub
-		return mapper.getOne(sid);
+	public TouristVO getOne(String sid, String userid) {
+		
+		return mapper.getOne(sid,userid);
 	}
-
 
 
 	@Override
@@ -90,6 +89,10 @@ public class TouristServiceImpl implements TouristService {
 		// TODO Auto-generated method stub
 		mapper.rmFavor(userid,sid);
 	}
+
+
+
+	
 
 	
 }
