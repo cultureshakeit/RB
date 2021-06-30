@@ -25,13 +25,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
 <title> 관광지 </title>
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
 	integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
 	crossorigin="anonymous">
-<link type="text/css" rel="stylesheet"
-	href="/resources/tourist/css/default.css">
+<!-- <link type="text/css" rel="stylesheet"
+	href="/resources/tourist/css/default.css"> -->
 
 <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/eyoom-form.min.css">
@@ -47,8 +47,8 @@
 <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/sweetalert.min.css" type="text/css"
 	media="screen">
-<!-- <link type="text/css" rel="stylesheet"
-	href="/resources/tourist/css/style.css"> -->
+<link type="text/css" rel="stylesheet"
+	href="/resources/tourist/css/style.css">
 
 <script type="text/javascript"
 	src="/resources/tourist/js/jquery-1.12.4.min.js"></script>

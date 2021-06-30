@@ -1,5 +1,6 @@
 <%@page import="com.jayway.jsonpath.JsonPath"%>
 <%@page import="com.jayway.jsonpath.DocumentContext"%>
+<%@include file="../header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%! public String getPhoto(String json){
 	if (json == null)return "";
@@ -25,20 +26,19 @@
         
 <title>${tourInfo.title}</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-<link type="text/css" rel="stylesheet" href="/resources/tourist/css/default.css">
-<link type="text/css" rel="stylesheet" href="/resources/tourist/css/bootstrap.min.css">
+<!-- <link type="text/css" rel="stylesheet" href="/resources/tourist/css/default.css"> -->
+<!-- <link type="text/css" rel="stylesheet" href="/resources/css/bootstrap.min.css"> -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/eyoom-form.min.css">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/common.css">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/fontawesome-all.min.css">
-<link type="text/css" rel="stylesheet" href="/resources/tourist/css/style.css">
-<link type="text/css" rel="stylesheet" href="/resources/tourist/css/custom.css">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/sweetalert.min.css" type="text/css" media="screen">
 <link rel="stylesheet" href="/resources/tourist/css/magnific-popup.min.css" type="text/css" media="screen">
 <link rel="stylesheet" href="/resources/tourist/css/prism.min.css" type="text/css" media="screen">
 <link rel="stylesheet" href="/resources/tourist/css/fotorama.css" type="text/css" media="screen">
 <link rel="stylesheet" href="/resources/tourist/css/venobox.css" type="text/css" media="screen">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/tab_scroll_category.css" type="text/css" media="screen">
-<link type="text/css" rel="stylesheet" href="/resources/tourist/css/style.css">
+<!-- <link type="text/css" rel="stylesheet" href="/resources/tourist/css/style.css"> -->
 <!--[if lte IE 8]>
 <script src="http://theme4.eyoom.net/js/html5.js"></script>
 <![endif]-->
@@ -97,7 +97,7 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
                     <div class="tab-page-category-divider"></div>
                 </div>
             </div>
-			<div class="row">
+			<div class="row1">
 			
 <style>
 .board-view{margin: auto auto; padding:10px;}
@@ -273,13 +273,7 @@ button.mfp-close {position:fixed;color:#fff !important}
                     <span class="color-red"><i class="fas fa-comment-alt"></i>댓글 미구현</span>
                 </div>
             </div>
-			<div class="view-member-progress hidden-xs">
-                <span class="progress-info-left"><small>LV.<strong>2</strong></small></span>
-                <span class="progress-info-right"><small>28%</small></span>
-                <div class="progress progress-e progress-xs rounded progress-striped active">
-                    <div class="progress-bar progress-bar-indigo" role="progressbar" aria-valuenow="28" aria-valuemin="0" aria-valuemax="100" style="width:28%"></div>
-                </div>
-            </div>
+			
 		</div>
         <div class="view-post-info-rating">
             <div class="board-view-info-label">
@@ -1149,9 +1143,7 @@ function excute_good(href, $el, $tx, $good) {
 </script>
             
                                     
-<aside class="basic-body-side right-side col-md-3">
-   
-</aside>
+
 
 <script type="text/javascript" src="/resources/tourist/js/vendor_plugins.min.js"></script>
 <script type="text/javascript" src="/resources/tourist/js/sly.min.js"></script>
@@ -1199,100 +1191,7 @@ $(function() {
 <div class="sidebar-right-mask sidebar-right-trigger" data-action="toggle" data-side="right"></div>
 
 
-<div class="modal fade all-search-modal eb-search-modal" aria-hidden="true">
-    <div class="modal-dialog modal-sm">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">×</button>
-                <h4 class="modal-title"><i class="fas fa-search color-grey"></i> <strong>전체 게시판 검색</strong></h4>
-            </div>
-            <div class="modal-body margin-bottom-20">
-                <form name="fsearchbox" method="get" action="http://theme4.eyoom.net/bbs/search.php" onsubmit="return fsearchbox_submit(this);" class="eyoom-form">
-                <input type="hidden" name="sfl" value="wr_subject||wr_content">
-                <input type="hidden" name="sop" value="and">
-                <label for="modal_sch_stx" class="sound_only"><strong>검색어 입력 필수</strong></label>
-                <div class="input input-button">
-                    <input type="text" name="stx" id="modal_sch_stx" class="sch_stx" maxlength="20" placeholder="검색어 입력">
-                    <div class="button"><input type="submit">검색</div>
-                </div>
-                </form>
-                <script>
-                function fsearchbox_submit(f) {
-                    if (f.stx.value.length < 2 || f.stx.value == $(".sch_stx").attr("placeholder")) {
-                        alert("검색어는 두글자 이상 입력하십시오.");
-                        f.stx.select();
-                        f.stx.focus();
-                        return false;
-                    }
-                    var cnt = 0;
-                    for (var i=0; i<f.stx.value.length; i++) {
-                        if (f.stx.value.charAt(i) == ' ') cnt++;
-                    }
-                    if (cnt > 1) {
-                        alert("빠른 검색을 위하여 검색어에 공백은 한개만 입력할 수 있습니다.");
-                        f.stx.select();
-                        f.stx.focus();
-                        return false;
-                    }
-                    return true;
-                }
-                </script>
-            </div>
-        </div>
-    </div>
-</div>
 
-
-<div class="modal fade itemuse-iframe-modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                <h4 class="modal-title"><i class="fas fa-edit color-grey"></i> <strong>사용후기 작성하기</strong></h4>
-            </div>
-            <div class="modal-body">
-                <iframe id="itemuse-iframe" width="100%" frameborder="0"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade itemqa-iframe-modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                <h4 class="modal-title"><i class="fas fa-question-circle color-grey"></i> <strong>상품문의 작성하기</strong></h4>
-            </div>
-            <div class="modal-body">
-                <iframe id="itemqa-iframe" width="100%" frameborder="0"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="modal fade coupon-iframe-modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                <h4 class="modal-title"><i class="fas fa-ticket-alt color-grey"></i> <strong>쿠폰 내역</strong></h4>
-            </div>
-            <div class="modal-body">
-                <iframe id="coupon-iframe" width="100%" frameborder="0"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-times"></i> 닫기</button>
-            </div>
-        </div>
-    </div>
-</div>
 <div class="modal fade search-modal" aria-hidden="true">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
@@ -1338,198 +1237,358 @@ $(function() {
     </div>
 </div>
 <script>
-function itemuse_modal(href) {
-    $('.itemuse-iframe-modal').modal('show').on('hidden.bs.modal', function() {
-        $("#itemuse-iframe").attr("src", "");
-        $('html').css({overflow: ''});
-    });
-    $('.itemuse-iframe-modal').modal('show').on('shown.bs.modal', function() {
-        $("#itemuse-iframe").attr("src", href);
-        $('#itemuse-iframe').height(parseInt($(window).height() * 0.7));
-        $('html').css({overflow: 'hidden'});
-    });
-    return false;
-}
+			function itemuse_modal(href) {
+				$('.itemuse-iframe-modal').modal('show').on('hidden.bs.modal',
+						function() {
+							$("#itemuse-iframe").attr("src", "");
+							$('html').css({
+								overflow : ''
+							});
+						});
+				$('.itemuse-iframe-modal').modal('show').on(
+						'shown.bs.modal',
+						function() {
+							$("#itemuse-iframe").attr("src", href);
+							$('#itemuse-iframe').height(
+									parseInt($(window).height() * 0.7));
+							$('html').css({
+								overflow : 'hidden'
+							});
+						});
+				return false;
+			}
 
-function itemqa_modal(href) {
-    $('.itemqa-iframe-modal').modal('show').on('hidden.bs.modal', function() {
-        $("#itemqa-iframe").attr("src", "");
-        $('html').css({overflow: ''});
-    });
-    $('.itemqa-iframe-modal').modal('show').on('shown.bs.modal', function() {
-        $("#itemqa-iframe").attr("src", href);
-        $('#itemqa-iframe').height(parseInt($(window).height() * 0.7));
-        $('html').css({overflow: 'hidden'});
-    });
-    return false;
-}
+			function itemqa_modal(href) {
+				$('.itemqa-iframe-modal').modal('show').on('hidden.bs.modal',
+						function() {
+							$("#itemqa-iframe").attr("src", "");
+							$('html').css({
+								overflow : ''
+							});
+						});
+				$('.itemqa-iframe-modal').modal('show').on(
+						'shown.bs.modal',
+						function() {
+							$("#itemqa-iframe").attr("src", href);
+							$('#itemqa-iframe').height(
+									parseInt($(window).height() * 0.7));
+							$('html').css({
+								overflow : 'hidden'
+							});
+						});
+				return false;
+			}
 
-function coupon_modal(href) {
-    $('.coupon-iframe-modal').modal('show').on('hidden.bs.modal', function() {
-        $("#coupon-iframe").attr("src", "");
-        $('html').css({overflow: ''});
-    });
-    $('.coupon-iframe-modal').modal('show').on('shown.bs.modal', function() {
-        $("#coupon-iframe").attr("src", "http://theme4.eyoom.net/shop/coupon.php");
-        $('#coupon-iframe').height(parseInt($(window).height() * 0.7));
-        $('html').css({overflow: 'hidden'});
-    });
-    return false;
-}
+			function coupon_modal(href) {
+				$('.coupon-iframe-modal').modal('show').on('hidden.bs.modal',
+						function() {
+							$("#coupon-iframe").attr("src", "");
+							$('html').css({
+								overflow : ''
+							});
+						});
+				$('.coupon-iframe-modal').modal('show').on(
+						'shown.bs.modal',
+						function() {
+							$("#coupon-iframe").attr("src",
+									"https://theme4.eyoom.net/shop/coupon.php");
+							$('#coupon-iframe').height(
+									parseInt($(window).height() * 0.7));
+							$('html').css({
+								overflow : 'hidden'
+							});
+						});
+				return false;
+			}
 
-// 모달창을 닫은 후 리로드
-function close_modal_and_reload() {
-    close_modal();
-    document.location.reload();
-}
-function close_modal() {
-    $('.modal').modal('hide');
-}
-</script>
+			// 모달창을 닫은 후 리로드
+			function close_modal_and_reload() {
+				close_modal();
+				document.location.reload();
+			}
+			function close_modal() {
+				$('.modal').modal('hide');
+			}
+		</script>
 
-<div class="modal fade poll-result-iframe-modal" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button aria-hidden="true" data-dismiss="modal" class="close" type="button">×</button>
-                <h4 class="modal-title"><strong>투표 결과 보기</strong></h4>
-            </div>
-            <div class="modal-body">
-                <iframe id="poll-result-iframe" width="100%" frameborder="0"></iframe>
-            </div>
-            <div class="modal-footer">
-                <button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" type="button"><i class="fas fa-close"></i> 닫기</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<script>
-function poll_result(url) {
-        $('.poll-result-iframe-modal').modal('show').on('hidden.bs.modal', function () {
-        $("#poll-result-iframe").attr("src", "");
-        $('html').css({overflow: ''});
-    });
-    $('.poll-result-iframe-modal').modal('show').on('shown.bs.modal', function () {
-        $("#poll-result-iframe").attr("src", url);
-        $('#poll-result-iframe').height(parseInt($(window).height() * 0.7));
-        $('html').css({overflow: 'hidden'});
-    });
-    return false;
-}
-</script>
-
-
-
-<script src="http://theme4.eyoom.net/theme/eb4_basic/js/app.js?ver=191202"></script>
-<script>
-$(document).ready(function() {
-    App.init();
-});
-
-</script>
+		<script>
+			function poll_result(url) {
+				$('.poll-result-iframe-modal').modal('show').on(
+						'hidden.bs.modal', function() {
+							$("#poll-result-iframe").attr("src", "");
+							$('html').css({
+								overflow : ''
+							});
+						});
+				$('.poll-result-iframe-modal').modal('show').on(
+						'shown.bs.modal',
+						function() {
+							$("#poll-result-iframe").attr("src", url);
+							$('#poll-result-iframe').height(
+									parseInt($(window).height() * 0.7));
+							$('html').css({
+								overflow : 'hidden'
+							});
+						});
+				return false;
+			}
+		</script>
 
 
+
+		<script>var App = function() {
+
+		    function handleLayout() {
+		        (function($,sr){
+		            var debounce = function (func, threshold, execAsap) {
+		                var timeout;
+
+		                return function debounced() {
+		                    var obj = this, args = arguments;
+		                    function delayed () {
+		                        if (!execAsap)
+		                            func.apply(obj, args);
+		                        timeout = null;
+		                    }
+
+		                    if (timeout)
+		                        clearTimeout(timeout);
+		                    else if (execAsap)
+		                        func.apply(obj, args);
+
+		                    timeout = setTimeout(delayed, threshold || 100);
+		                };
+		            };
+		            jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+		        })(jQuery,'smartresize');
+
+		        var $WRAPPER = $('.wrapper'),
+		            $TOPBAR = $('.header-topbar'),
+		            $TITLE = $('.header-title'),
+		            $NAV = $('.header-nav');
+		            $FOOTER = $('.footer');
+		            $FOOTERTOP = $('.footer-top');
+		            $SIDE = $('.basic-body-side');
+		            $BODYMAIN = $('.basic-body-main');
+
+		        $(document).ready(function() {
+		            var setContentHeight = function() {
+		                var wrapperHeight = $WRAPPER.outerHeight(),
+		                    topbarHeight = $TOPBAR.height(),
+		                    titleHeight = $TITLE.height(),
+		                    navHeight = $NAV.height(),
+		                    footerHeight = $FOOTER.height(),
+		                    footertopHeight = $FOOTERTOP.height(),
+		                    sideHeight = $SIDE.height();
+
+		                contentHeight = $(window).height() - topbarHeight - titleHeight - navHeight - (footertopHeight + 32);
+		                $BODYMAIN.css('min-height', contentHeight);
+
+		                if (contentHeight < sideHeight) {
+		                    $BODYMAIN.css('min-height', sideHeight + 50);
+		                } else {
+		                    $BODYMAIN.css('min-height', contentHeight);
+		                }
+		            };
+
+		            $(window).smartresize(function() {
+		                setContentHeight();
+		            });
+		            setContentHeight();
+		        });
+		    }
+
+		    function handleViewport() {
+		        $("input, textarea, select, button, i, div.note-editing-area, span.select2-selection, .calendar-time, ul.tag-editor, div.asSpinner-control").on({ 'touchstart' : function() {
+		            zoomDisable();
+		        }});
+		        $("input, textarea, select, button, i, div.note-editing-area, span.select2-selection, .calendar-time, ul.tag-editor, div.asSpinner-control").on({ 'touchend' : function() {
+		            setTimeout(zoomEnable, 500);
+		        }});
+		        function zoomDisable() {
+		            $('head meta[name=viewport]').remove();
+		            $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">');
+		        }
+		        function zoomEnable() {
+		            $('head meta[name=viewport]').remove();
+		            $('head').prepend('<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=1">');
+		        }
+		    }
+
+		    function handleIEFixes() {
+		        //fix html5 placeholder attribute for ie7 & ie8
+		        if (jQuery.browser.msie && jQuery.browser.version.substr(0, 1) < 9) { // ie7&ie8
+		            $('input[placeholder], textarea[placeholder]').each(function () {
+		                var input = jQuery(this);
+		                $(input).val(input.attr('placeholder'));
+		                $(input).focus(function() {
+		                    if (input.val() == input.attr('placeholder')) {
+		                        input.val('');
+		                    }
+		                });
+		                $(input).blur(function() {
+		                    if (input.val() == '' || input.val() == input.attr('placeholder')) {
+		                        input.val(input.attr('placeholder'));
+		                    }
+		                });
+		            });
+		        }
+		    }
+
+		    function handleBootstrap() {
+		        /*Bootstrap Carousel*/
+		        $('.carousel').carousel({
+		            interval: 15000,
+		            pause: 'hover'
+		        });
+		        /*Tooltips*/
+		        $('.tooltips').tooltip();
+		        $('.tooltips-show').tooltip('show');
+		        $('.tooltips-hide').tooltip('hide');
+		        $('.tooltips-toggle').tooltip('toggle');
+		        $('.tooltips-destroy').tooltip('destroy');
+		        /*Popovers*/
+		        $('.popovers').popover();
+		        $('.popovers-show').popover('show');
+		        $('.popovers-hide').popover('hide');
+		        $('.popovers-toggle').popover('toggle');
+		        $('.popovers-destroy').popover('destroy');
+		    }
+
+		    function handleToggle() {
+		        $('.list-toggle').on('click', function() {
+		            $(this).toggleClass('active');
+		        });
+		    }
+
+		    function handleSticky() {
+		        var stickyAddClass = function() {
+		            $("#header-fixed .header-sticky").addClass("header-fixed-trans");
+		            $("#header-fixed .header-sticky-space").addClass("header-fixed-space-trans");
+		        }
+		        var stickyRemoveClass = function() {
+		            $("#header-fixed .header-sticky").removeClass("header-fixed-trans");
+		            $("#header-fixed .header-sticky-space").removeClass("header-fixed-space-trans");
+		        }
+		        $(window).scroll(function() {
+		            if ($("#header-fixed").hasClass("fixed-main")) {
+		                if ($(window).scrollTop()>100){ stickyAddClass(); } else { stickyRemoveClass(); }
+		            } else {
+		                if ($(window).scrollTop()>100){ stickyAddClass(); } else { stickyRemoveClass(); }
+		            }
+		        });
+		    }
+
+		    function handleSidebar() {
+		        var sides = ["left", "top", "right", "bottom"];
+		        for (var i = 0; i < sides.length; ++i) {
+		            var cSide = sides[i];
+		            $(".sidebar." + cSide).sidebar({side: cSide});
+		        }
+		        $(".sidebar-left-trigger[data-action]").on("click", function() {
+		            var $this = $(this);
+		            var action = $this.attr("data-action");
+		            var side = $this.attr("data-side");
+		            $(".sidebar." + side).trigger("sidebar:" + action);
+		            $("html").toggleClass("overflow-hidden");
+		            $(".sidebar-left-mask, .sidebar-left-content").toggleClass("active");
+		            return false;
+		        });
+		        $(".sidebar-right-trigger[data-action]").on("click", function() {
+		            var $this = $(this);
+		            var action = $this.attr("data-action");
+		            var side = $this.attr("data-side");
+		            $(".sidebar." + side).trigger("sidebar:" + action);
+		            $("html").toggleClass("overflow-hidden");
+		            $(".sidebar-right-mask").toggleClass("active");
+		            $("#admset-sidebar-iframe").attr("src", "");
+		            return false;
+		        });
+		        setTimeout(function() {
+		            $(".sidebar").show();
+		        }, 500);
+		        $(window).resize(function() {
+		            $(".sidebar").show();
+		        });
+		    }
+
+		    function handleBackToTop() {
+		        $(document).ready(function() {
+		            $(".back-to-top").addClass("hidden-top");
+		                $(window).scroll(function() {
+		                if ($(this).scrollTop() === 0) {
+		                    $(".back-to-top").addClass("hidden-top")
+		                } else {
+		                    $(".back-to-top").removeClass("hidden-top")
+		                }
+		            });
+
+		            $('.back-to-top').click(function() {
+		                $('body,html').animate({scrollTop:0}, 500);
+		                return false;
+		            });
+
+		            $('.quick-scroll-btn.top-btn').click(function() {
+		                $('body,html').animate({scrollTop:0}, 500);
+		                return false;
+		            });
+
+		            $('.quick-scroll-btn.down-btn').click(function() {
+		                $('body,html').animate({scrollTop:$(document).height()}, 500);
+		                return false;
+		            });
+		        });
+		    }
+
+		    return {
+		        init: function() {
+		            handleLayout();
+		            handleViewport();
+		            handleBootstrap();
+		            handleIEFixes();
+		            handleToggle();
+		            handleSticky();
+		            handleSidebar();
+		            handleBackToTop();
+		        }
+		    };
+
+		}();</script>
+		<script>
+			$(document).ready(function() {
+				App.init();
+			});
+		</script>
+
+
+		<script>
+			$(function() {
+				// 폰트 리사이즈 쿠키있으면 실행
+				font_resize("container",
+						get_cookie("ck_font_resize_rmv_class"),
+						get_cookie("ck_font_resize_add_class"));
+			});
+		</script>
+
+		<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+		<!--[if lte IE 7]>
 <script>
 $(function() {
-    // 폰트 리사이즈 쿠키있으면 실행
-    font_resize("container", get_cookie("ck_font_resize_rmv_class"), get_cookie("ck_font_resize_add_class"));
+    var $sv_use = $(".sv_use");
+    var count = $sv_use.length;
+
+    $sv_use.each(function() {
+        $(this).css("z-index", count);
+        $(this).css("position", "relative");
+        count = count - 1;
+    });
 });
 </script>
-<script>
-$(function(){
-    // 팔로우
-    $("#follow button").click(function(){
-        var action = $(this).attr('value');
-        var target = $(this).attr('name');
-
-        var url = "http://theme4.eyoom.net/eyoom/core/mypage/follow.ajax.php";
-        $.post(url, {'action':action,'user':target}, function(data) {
-            if(data.result == 'yes') {
-                var botton = $(".follow_"+target);
-                if (action == 'follow') {
-                    botton.removeClass('btn-e-yellow');
-                    botton.addClass('btn-e-dark');
-                    botton.attr('title','친구관계를 해제합니다.');
-                    botton.html('언팔로우 <i class="fas fa-times color-white"></i>');
-                    botton.attr('value','unfollow');
-                    swal({
-                        title: "알림",
-                        text: '해당 회원을 팔로우하였습니다.',
-                        confirmButtonColor: "#FF4848",
-                        type: "warning",
-                        confirmButtonText: "확인"
-                    });
-                }
-                if (action == 'unfollow') {
-                    botton.removeClass('btn-e-dark');
-                    botton.addClass('btn-e-yellow');
-                    botton.attr('title','친구관계를 신청합니다.');
-                    botton.html('팔로우 <i class="fas fa-smile color-white"></i>');
-                    botton.attr('value','follow');
-                    swal({
-                        title: "알림",
-                        text: '해당 회원을 팔로우 해제하였습니다.',
-                        confirmButtonColor: "#FF4848",
-                        type: "warning",
-                        confirmButtonText: "확인"
-                    });
-                }
-            } else if (data.result == 'no'){
-                swal({
-                    title: "알림",
-                    text: '소셜기능을 Off 시켜놓은 회원입니다.',
-                    confirmButtonColor: "#FF4848",
-                    type: "warning",
-                    confirmButtonText: "확인"
-                });
-            }
-        },"json");
-    });
-
-    // 구독
-    $("#subscribe button").click(function(){
-        var action = $(this).attr('value');
-        var target = $(this).attr('name');
-
-        var url = "http://theme4.eyoom.net/eyoom/core/mypage/subscribe.ajax.php";
-        $.post(url, {'action':action,'user':target}, function(data) {
-            if(data.result == 'yes') {
-                var botton = $(".subscribe_"+target);
-                if (action == 'subscribe') {
-                    botton.removeClass('btn-e-orange');
-                    botton.addClass('btn-e-dark');
-                    botton.attr('title','구독을 해제합니다.');
-                    botton.html('구독해제 <i class="fas fa-times color-white"></i>');
-                    botton.attr('value','unsubscribe');
-                    swal({
-                        title: "알림",
-                        text: '해당 회원의 글을 구독신청 하였습니다.',
-                        confirmButtonColor: "#FF4848",
-                        type: "warning",
-                        confirmButtonText: "확인"
-                    });
-                }
-                if (action == 'unsubscribe') {
-                    botton.removeClass('btn-e-dark');
-                    botton.addClass('btn-e-yellow');
-                    botton.attr('title','구독을 신청합니다.');
-                    botton.html('구독하기 <i class="far fa-address-book color-white"></i>');
-                    botton.attr('value','subscribe');
-                    swal({
-                        title: "알림",
-                        text: '해당 회원의 글을 구독해제 하였습니다.',
-                        confirmButtonColor: "#FF4848",
-                        type: "warning",
-                        confirmButtonText: "확인"
-                    });
-                }
-            }
-        },"json");
-    });
-
-});
-</script>
+<![endif]-->
+</body>
+</html>
+<%@include file="../footer.jsp"%>
+<!-- 사용스킨 : basic -->
 
 
 <!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
