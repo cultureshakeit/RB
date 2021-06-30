@@ -103,15 +103,15 @@
 			<secure>true</secure>
 		</cookie-config>
 	</session-config>
-	<security-constraint>
+<!-- 	<security-constraint> -->
 <!--  		<web-resource-collection> -->
 <!--  			<web-resource-name>SSL Redirect</web-resource-name> -->
 <!--  			<url-pattern>/*</url-pattern> -->
 <!--  		</web-resource-collection> -->
-		<user-data-constraint>
-			<transport-guarantee>CONFIDENTIAL</transport-guarantee>
-		</user-data-constraint>
-	</security-constraint>
+<!-- 		<user-data-constraint> -->
+<!-- 			<transport-guarantee>CONFIDENTIAL</transport-guarantee> -->
+<!-- 		</user-data-constraint> -->
+<!-- 	</security-constraint> -->
 <!-- 	REST HTTP METHOD FILTER    -->
 		<filter>
 	    <filter-name>httpMethodFilter</filter-name>

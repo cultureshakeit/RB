@@ -853,7 +853,10 @@ p {
     font-size: 16px;
 }
 body {
-    line-height: 1.25;
+    line-height: 1.5;
+}
+#favorStar > .fa-star {
+    font-size: 22px;
 }
 </style>
 					<div id="fakeloader"></div>
@@ -1098,13 +1101,14 @@ body {
 													<span>${fn:length(place.tag.split(","))}.</span>
 													<span>${fn:substring(place.tag,0,45)}${ place.tag.length() > 45 ? "...":""}</span>
 													<div class="multi-ratings">
-														<ul class="list-unstyled star-ratings-list">
-															<li><i class="rating far fa-star"></i></li>
-															<li><i class="rating far fa-star"></i></li>
-															<li><i class="rating far fa-star"></i></li>
-															<li><i class="rating far fa-star"></i></li>
-															<li><i class="rating far fa-star"></i></li>
-														</ul>
+<!-- 													별점 -->
+<!-- 														<ul class="list-unstyled star-ratings-list"> -->
+<!-- 															<li><i class="rating far fa-star"></i></li> -->
+<!-- 															<li><i class="rating far fa-star"></i></li> -->
+<!-- 															<li><i class="rating far fa-star"></i></li> -->
+<!-- 															<li><i class="rating far fa-star"></i></li> -->
+<!-- 															<li><i class="rating far fa-star"></i></li> -->
+<!-- 														</ul> -->
 														
 													</div>
 												</div>
