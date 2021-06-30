@@ -7,7 +7,7 @@ import lombok.ToString;
 @Getter
 @Setter
 @ToString
-public class AuthVO {
-//	private int id;
-	private String auth;
+public class AuthVO2 {
+
+	private String id,username, auth;
 }

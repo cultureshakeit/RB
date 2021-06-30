@@ -120,4 +120,14 @@
     <a class="text-white" href="https://www.lovejeju.shop/">jejudodot</a>
   </div>
   <!-- Copyright -->
+  <script type="text/javascript">
+		$(function() {
+			var csrfHeaderName = "${_csrf.headerName}";
+			var csrfTokenValue = "${_csrf.token}";
+			$(document).ajaxSend(function(e, xhr, options) {
+				xhr.setRequestHeader(csrfHeaderName, csrfTokenValue);
+			})
+
+		})
+	</script>
 </footer>

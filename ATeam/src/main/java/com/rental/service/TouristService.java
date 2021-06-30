@@ -14,5 +14,9 @@ public interface TouristService {
 	public int countAll();
 	public String[] getTags(String sid);
 	public void addViews(String sid);
+	public void addLike(String userid, String sid);
+	public void deleteLike(String userid, String sid);
+	public void addFavor(String userid, String sid);
+	public void rmFavor(String userid, String sid);
 
 }

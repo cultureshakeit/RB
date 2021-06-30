@@ -6,10 +6,10 @@
 
 	<resultMap type="com.rental.domain.MemberVO" id="memberMap">
 		<id property="userid" column="userid" />
-		<result property="userid" column="userid" />
 		<result property="userpw" column="userpw" />
 		<result property="userName" column="username" />
 		<result property="nickname" column="nickname"/>
+		<result property="auth" column="auth"/>
 		<result property="enabled" column="enabled" />
 		<result property="regDate" column="regdate" />
 		<result property="updateDate" column="updatedate" />
@@ -17,18 +17,24 @@
 		<result property="ip" column="ip"/>
 		<collection property="authList" resultMap="authMap"></collection>
 	</resultMap>
-
 	<resultMap type="com.rental.domain.AuthVO" id="authMap">
-		<result property="userid" column="userid" />
+<!-- 		<id property="id" column="id" /> -->
 		<result property="auth" column="auth" />
+<!-- 		<result property="username" column="username" /> -->
 	</resultMap>
-
+<!-- 	<resultMap type="com.rental.domain.AuthVO2" id="authMap2"> -->
+<!-- 		<id property="id" column="id" /> -->
+<!-- 		<result property="id" column="id" /> -->
+<!-- 		<result property="username" column="username" /> -->
+<!-- 		<result property="auth" column="auth" /> -->
+<!-- 	</resultMap> -->
+	
 	<select id="read" resultMap="memberMap">
 		select
-			mem.userid, userpw, username,nickname,
+            userid, userpw, a.username, nickname ,
 			ENABLED, regdate, updatedate, useremail, auth, ip
 		from
-			tbl_member mem left outer join tbl_member_auth auth on mem.userid = auth.userid
+			tbl_member mem join test_auth a on mem.role = a.id
 		where
 			mem.userid = #{userid}
 	</select>

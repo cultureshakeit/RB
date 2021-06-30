@@ -59,5 +59,37 @@ public class TouristServiceImpl implements TouristService {
 		mapper.addViews(sid);
 	}
 
+
+
+	@Override
+	public void addLike(String userid, String sid) {
+		// TODO Auto-generated method stub
+		mapper.addLike(userid,sid);
+	}
+
+
+
+	@Override
+	public void deleteLike(String userid, String sid) {
+		// TODO Auto-generated method stub
+		mapper.deleteLike(userid,sid);
+	}
+
+
+
+	@Override
+	public void addFavor(String userid, String sid) {
+		// TODO Auto-generated method stub
+		mapper.addFavor(userid,sid);
+	}
+
+
+
+	@Override
+	public void rmFavor(String userid, String sid) {
+		// TODO Auto-generated method stub
+		mapper.rmFavor(userid,sid);
+	}
+
 	
 }

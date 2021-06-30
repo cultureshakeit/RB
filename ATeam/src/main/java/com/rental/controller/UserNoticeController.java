@@ -51,14 +51,20 @@ public class UserNoticeController {
 		model.addAttribute("pageMaker", new PageDTO(cri, service.NoticeCount()));
 		return "board/user/usernotice";
 	}
-
+	
+	@GetMapping("/userw")
+	public String userw(Model model) {
+		return "board/user/userwrite";
+	}
+	
 	@GetMapping("/UserWrite")
 	public String userwrite(Model model,String userid) {
-			if(userid==null) {
-				model.addAttribute("user","false");
-			}else {
-				model.addAttribute("user",mem.read(userid));
-			}
+			System.out.println("userid 는 "+userid);
+//			if(userid==null) {
+//				model.addAttribute("user","false");
+//			}else {
+//				model.addAttribute("user",mem.read(userid));
+//			}
 		return "board/user/userwrite";
 	}
 

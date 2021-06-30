@@ -2,6 +2,7 @@ package com.rental.controller;
 
 import java.io.File;
 import java.io.UnsupportedEncodingException;
+import java.security.Principal;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.List;
@@ -15,14 +16,17 @@ import org.apache.ibatis.transaction.Transaction;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PostAuthorize;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.annotation.AuthenticationPrincipal;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
@@ -36,6 +40,7 @@ import com.rental.domain.ConTactVO;
 import com.rental.domain.CourseVO;
 import com.rental.domain.Criteria;
 import com.rental.domain.Criteria_c;
+import com.rental.domain.CustomUser;
 import com.rental.domain.MemberVO;
 import com.rental.domain.NoticeVO;
 import com.rental.domain.PageDTO;
@@ -44,6 +49,7 @@ import com.rental.domain.QnAVO;
 import com.rental.domain.ReplyVO;
 import com.rental.domain.ReviewVO;
 import com.rental.domain.TouristVO;
+import com.rental.security.CustomUserDetailsService;
 import com.rental.service.ConTactService;
 import com.rental.service.MemberService;
 import com.rental.service.NoticeService;
@@ -82,7 +88,7 @@ public class CommonController {
 	private ConTactService cs;
 	@Setter(onMethod_ = { @Autowired })
 	private ProductService ps;
-
+	
 	
 	@GetMapping("/login")
 	public void loginInput(String error, String logout, Model model) {
@@ -107,10 +113,10 @@ public class CommonController {
 	public void signup() {
 
 	}
-
+	
 	@PostMapping("/signup")
 	public String signup(MemberVO memvo, HttpServletRequest request) throws UnsupportedEncodingException, SQLException {
-
+		
 		memvo.setIp(Utility.ip(request));
 		
 		if (service.signup(memvo)) {
@@ -415,9 +421,11 @@ public class CommonController {
 	private TouristService tourService;
 	
 	@GetMapping("/tourist")
-	public String tourist(Model model,@ModelAttribute("cri") Criteria cri) {
-		
+	public String tourist(Model model,@ModelAttribute("cri") Criteria cri,Principal prin) {
+		String userid = null;
+		if (prin !=null) {userid = prin.getName();}
 		int countall = tourService.countAll();
+		cri.setUserid(userid);
 		List<TouristVO> tlist = tourService.List(cri);
 		PageDTO pd = new PageDTO(cri, countall);
 //		int ilen = (int)document.read("$.length()");
@@ -427,21 +435,23 @@ public class CommonController {
 		
 	}
 	@GetMapping("/tourist/{sid}")
-	public String tourist_detail(Model model,@PathVariable("sid") String sid, HttpServletRequest request, HttpServletResponse response) {
+	public String tourist_detail(Model model,@PathVariable("sid") String sid,HttpServletRequest request, HttpServletResponse response,Principal prin) {
+//		System.out.println("customUser :" +customUser);
+		String userid = null;
+		if (prin !=null) {userid = prin.getName();}
+		
 		TouristVO tourInfo = tourService.getOne(sid);
 		String[] tags = tourService.getTags(sid);
 //		System.out.println(tourInfo.toString());
 		model.addAttribute("tags", tags);
 		model.addAttribute("tourInfo",tourInfo);
-		
 		//cookie 추가
-		BoardCookie addCookie = new BoardCookie();
-		boolean cookie_result = addCookie.check_cookie("placeviews", sid, request, response);
-		
-		if(!cookie_result) {
-			tourService.addViews(sid);
-		}
-		
+				BoardCookie addCookie = new BoardCookie();
+				boolean cookie_result = addCookie.check_cookie("placeviews", sid, request, response);
+
+				if(!cookie_result) {
+					tourService.addViews(sid);
+				}
 		return "tourist/tourist_view";
 	}
 	
@@ -451,5 +461,36 @@ public class CommonController {
 		return "tourist/tourist_view";
 		
 	}
-
+	@ResponseBody
+	@PostMapping("/tourist/like/{sid}")
+	public void tourist_addLike(@PathVariable("sid") String sid,Principal prin) {
+		String userid = null;
+//		System.out.println("POST MAPPING : ");
+		if (prin !=null) {userid = prin.getName();}
+//		System.out.println(userid+" : " + sid);
+		tourService.addLike(userid,sid);
+	}
+	@ResponseBody
+	@DeleteMapping("/tourist/like/{sid}")
+	public void tourist_deleteLike(@PathVariable("sid") String sid, Principal prin) {
+		String userid = null;
+//		System.out.println("DELETE MAPPING : ");
+		if (prin !=null) {userid = prin.getName();}
+//		System.out.println( userid+" : " + sid);
+		tourService.deleteLike(userid,sid);
+	}
+	@ResponseBody
+	@PostMapping("/tourist/favor/{sid}")
+	public void tourist_addFavor(@PathVariable("sid") String sid, Principal prin) {
+		String userid = null;
+		if (prin != null) {userid = prin.getName();}
+		tourService.addFavor(userid,sid);
+	}
+	@ResponseBody
+	@DeleteMapping("/tourist/favor/{sid}")
+	public void tourist_rmFavor(@PathVariable("sid") String sid, Principal prin) {
+		String userid = null;
+		if (prin != null) {userid = prin.getName();}
+		tourService.rmFavor(userid,sid);
+	}
 }

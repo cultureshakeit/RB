@@ -31,10 +31,13 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 		List<String> roleNames = new ArrayList<>();
 	
 		auth.getAuthorities().forEach(authority -> {
-			roleNames.add(authority.getAuthority());
+			String getauth = authority.getAuthority();
+			System.out.println("Authentication.getAuthorities().forEach getauth : "+getauth);
+			roleNames.add(getauth);
 		});
 
 		log.warn("ROLE NAMES : " + roleNames);
+		System.out.println("auth.getName() : "+auth.getName());
 		service.UserLoginSuccess(auth.getName());
 		if (roleNames.contains("ROLE_ADMIN")) {
 			response.sendRedirect("/admin/index?userid=" + auth.getName());

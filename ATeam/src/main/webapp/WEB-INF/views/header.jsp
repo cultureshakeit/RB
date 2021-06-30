@@ -102,7 +102,7 @@
 												</ul>
                         --> 
                         </li>
-                        <li class="nav-item"><a class="nav-link" href="#projects">SingUp</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/login">LogIn</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Info</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Site</a></li>
                         <li class="nav-item"><a class="nav-link" href="#signup">Service</a></li>
@@ -154,3 +154,4 @@
                 </div>
             </div>
         </nav>
+        

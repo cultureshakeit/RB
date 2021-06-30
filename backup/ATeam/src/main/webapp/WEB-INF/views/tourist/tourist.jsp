@@ -69,7 +69,6 @@
 
 <body>
 
-	<div class=headerempty></div>
 	<div class="wrapper">
 
 
@@ -79,11 +78,7 @@
 				<div class="row1">
 
 
-<style>
-.headerempty{
-	 position: relative;
-	 height: 150px;
-	}
+					<style>
 .board-list .board-setup {
 	position: relative;
 	border: 1px solid #d5d5d5;
@@ -842,19 +837,6 @@ span#nowTimes {
     padding: 60px 0px 0px 12px;
     border-bottom: 1px solid #e5e5e5;
 } */
-.board-multi .multi-item-in .multi-cont {
-    position: relative;
-    height: 36px;
-    font-weight: 300;
-    color: #757575;
-    margin-bottom: 23px;
-}
-p {
-    font-size: 16px;
-}
-body {
-    line-height: 1.25;
-}
 </style>
 					<div id="fakeloader"></div>
 
@@ -1681,7 +1663,6 @@ body {
 							<i class="fas fa-times"></i> 닫기
 						</button>
 					</div>
-				</div>
 				</div>
 			</div>
 		</div>

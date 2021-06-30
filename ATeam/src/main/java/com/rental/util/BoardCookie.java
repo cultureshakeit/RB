@@ -18,9 +18,7 @@ public class BoardCookie {
 		for(String id : ids) {
 			
 			cookie.setValue(cookie.getValue() + id + "_");
-			
 		}
-		
 		cookie.setMaxAge(1 * 24 * 60 * 60);
 		
 		response.addCookie(cookie);
