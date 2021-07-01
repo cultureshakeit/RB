@@ -284,11 +284,12 @@ button.mfp-close {position:fixed;color:#fff !important}
             <div class="board-view-info-label">
             	<div class="board-view-good-nogood">
                 	<div class="board-view-good no-member-gng" title="좋\n아\n요">
-                            <span id='handleLike'><i class="fa${tourInfo.like_true ? '': 'r'} fa-heart" style="color:red"></i>
-                            <strong>${tourInfo.likes}</strong></span>
+                            <div id='handleLike'><i class="fa${tourInfo.like_true ? '': 'r'} fa-heart" style="color:red"></i>
+                            <strong>${tourInfo.likes}</strong></div>
                     </div>
                     <div class="board-view-good no-member-gng" title="즐겨찾기"><!-- #ffd700 -->
-                    <span><i id='favorStar' class="fa${tourInfo.favor_true ? '':'r'} fa-star" style='color:${tourInfo.favor_true ? "yellow":"white"}'></i></span>
+                    <div id='favorStar'><i class="fa${tourInfo.favor_true ? '':'r'} fa-star" style='color:${tourInfo.favor_true ? "yellow":"white"}'></i>
+                    </div>
                     
                     </div>
                    <script>
@@ -335,8 +336,9 @@ button.mfp-close {position:fixed;color:#fff !important}
        			
        		    $(document).on('click','#favorStar',function(){
 //        				var content_id = $(this).attr('content_id')
-       				var flag = $(this)
+       				var flag = $(this).children('i')
        				var target = 'class'
+       				var self = $(this)
        				if(flag.attr(target).includes('far')){
        					
        					$.ajax({
