@@ -423,6 +423,9 @@ public class CommonController {
 	@GetMapping("/tourist")
 	public String tourist(Model model,@ModelAttribute("cri") Criteria cri,Principal prin) {
 		String userid = null;
+		String TagName,Title;
+		TagName = cri.getTagName();
+		Title = cri.getTitle();
 		if (prin !=null) {userid = prin.getName();}
 		int countall = tourService.countAll();
 		cri.setUserid(userid);

@@ -16,7 +16,11 @@ public class Criteria {
 	private String type;
 	
 	private String keyword;
+	//유저의 좋아요와 즐겨찾기 논리값
 	private String userid;
+	//검색옵션
+	private String TagName;
+	private String Title;
 	public Criteria() {
 		this(1, 10);
 	}
