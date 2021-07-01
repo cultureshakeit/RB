@@ -28,8 +28,8 @@ ${uri = uri.substring(0,uri.lastIndexOf("/"));''}
         
 <title>${tourInfo.title}</title>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
-<!-- <link type="text/css" rel="stylesheet" href="/resources/tourist/css/default.css"> -->
-<!-- <link type="text/css" rel="stylesheet" href="/resources/css/bootstrap.min.css"> -->
+ <link type="text/css" rel="stylesheet" href="/resources/tourist/css/default.css"> 
+ <link type="text/css" rel="stylesheet" href="/resources/css/bootstrap.min.css"> 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/eyoom-form.min.css">
 <link type="text/css" rel="stylesheet" href="/resources/tourist/css/common.css">
