@@ -276,6 +276,11 @@ button.mfp-close {position:fixed;color:#fff !important}
                 	<span class="color-black"><i class="fas fa-clock"></i>CreatedAt</span>
                     <span><i class="fas fa-eye"></i>조회수 ${tourInfo.views}</span>
                     <span class="color-red"><i class="fas fa-comment-alt"></i>댓글 미구현</span>
+<!--                     <div style='postion:absolute'> -->
+    	<sec:authorize access="isAnonymous()">
+    	<span class="color-grey font-size-11 margin-left-5" style='float:right;'><i class="fas fa-exclamation-circle"></i> 로그인 후 좋아요 / 즐겨찾기 가능</span>
+    	</sec:authorize>
+<!--     </div>    -->
                 </div>
             </div>
 			
@@ -283,15 +288,46 @@ button.mfp-close {position:fixed;color:#fff !important}
         <div class="view-post-info-rating">
             <div class="board-view-info-label">
             	<div class="board-view-good-nogood">
+            	<style>
+            	.far {
+            	font-size:30px;
+            	}
+            	.fa {
+            	font-size:30px;
+            	}
+            	strong {
+            	font-size:30px;
+            	}
+            	.board-view-good{
+            	height:41px;
+            	}
+            	.board-view .board-view-info .board-view-good {
+    			display: inline-block;
+			    width: 100px;
+ 			    height: 41px; 
+			    line-height: inherit;}
+			    .board-view .board-view-info .view-post-info-rating {
+				    position: relative;
+				    padding-top: 8px;
+				}
+            	</style>
+<!--             	class="board-view-good-view" -->
+<!--      <div style='postion:absolute'> -->
+<!--     	<span class="color-grey font-size-11 margin-left-5"><i class="fas fa-exclamation-circle"></i> 로그인 후 좋아요 / 즐겨찾기 가능</span> -->
+<!--     </div>    -->
+            	<div id='heart_container' style='margin-bottom:30px;'>
                 	<div class="board-view-good no-member-gng" title="좋\n아\n요">
                             <div id='<sec:authorize access="isAuthenticated()">handle</sec:authorize>Like'><i class="fa${tourInfo.like_true ? '': 'r'} fa-heart" style="color:red"></i>
                             <strong>${tourInfo.likes}</strong></div>
                     </div>
                     <div class="board-view-good no-member-gng" title="즐겨찾기"><!-- #ffd700 -->
-                    <div id='favor<sec:authorize access="isAuthenticated()" />'><i class="fa${tourInfo.favor_true ? '':'r'} fa-star" style='color:${tourInfo.favor_true ? "yellow":"white"}'></i>
+                    <div id='favor<sec:authorize access="isAuthenticated()" >Star</sec:authorize>'><i class="fa${tourInfo.favor_true ? '':'r'} fa-star" style='color:${tourInfo.favor_true ? "yellow":"white"}'></i>
+                    <strong></strong>
                     </div>
-                    
+               
                     </div>
+                 </div>
+            
                    <script>
                    var content_id = '<c:out value="${tourInfo.contentsid}" />'
                    
@@ -389,7 +425,7 @@ button.mfp-close {position:fixed;color:#fff !important}
         </div>
     </div>
     <div class="board-view-good-view">
-    	<span class="color-grey font-size-11 margin-left-5"><i class="fas fa-exclamation-circle"></i> 로그인 후 추천 / 비추천 가능</span>
+<!--     	<span class="color-grey font-size-11 margin-left-5"><i class="fas fa-exclamation-circle"></i> 로그인 후 추천 / 비추천 가능</span> -->
     </div>   
     <div class="view-top-btn">
         <ul class="top-btn-right list-unstyled pull-right">
