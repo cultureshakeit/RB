@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper 
+	PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rental.mapper.MemberMapper">
+
+	<resultMap type="com.rental.domain.MemberVO" id="memberMap">
+		<id property="userid" column="userid" />
+		<result property="userpw" column="userpw" />
+		<result property="userName" column="username" />
+		<result property="nickname" column="nickname"/>
+		<result property="auth" column="auth"/>
+		<result property="enabled" column="enabled" />
+		<result property="regDate" column="regdate" />
+		<result property="updateDate" column="updatedate" />
+		<result property="useremail" column="useremail" />
+		<result property="ip" column="ip"/>
+		<collection property="authList" resultMap="authMap"></collection>
+	</resultMap>
+	<resultMap type="com.rental.domain.AuthVO" id="authMap">
+<!-- 		<id property="id" column="id" /> -->
+		<result property="auth" column="auth" />
+<!-- 		<result property="username" column="username" /> -->
+	</resultMap>
+<!-- 	<resultMap type="com.rental.domain.AuthVO2" id="authMap2"> -->
+<!-- 		<id property="id" column="id" /> -->
+<!-- 		<result property="id" column="id" /> -->
+<!-- 		<result property="username" column="username" /> -->
+<!-- 		<result property="auth" column="auth" /> -->
+<!-- 	</resultMap> -->
+	
+	<select id="read" resultMap="memberMap">
+		select
+            userid, userpw, a.username, nickname ,
+			ENABLED, regdate, updatedate, useremail, auth, ip
+		from
+			tbl_member mem join test_auth a on mem.role = a.id
+		where
+			mem.userid = #{userid}
+	</select>
+
+	<insert id="insert">
+		insert into tbl_member 
+		(
+			userid, userpw, username,nickname,
+			regdate, enabled, useremail, ip
+		)
+		values
+		(
+			#{userid}, #{userpw}, '일반사용자', #{nickname},
+			sysdate,0, #{useremail}, #{ip}
+		)
+	</insert>
+	
+	<insert id="insert_auth">
+		insert into tbl_member_auth (userid, auth ) 
+		values (#{userid} , 'ROLE_USER')
+	</insert>
+
+	<update id="Enabled">
+		update tbl_member
+		set enabled = #{enabled} where
+		userid = #{userid}
+	</update>
+
+	<update id="DisEnabled">
+		update tbl_member
+		set enabled = 0
+		where userid = #{userid}
+	</update>
+
+	<select id="EmailCheck" resultType="String">
+		select useremail
+		from tbl_member
+		where useremail = #{useremail}
+	</select>
+	
+	<select id="IdCheck" resultType="String">
+		select userid
+		from tbl_member
+		where userid = #{userid}
+	</select>
+	
+	<resultMap type="com.rental.domain.MemberVO" id="DOA">
+		<id property="userid" column="userid" />
+		<result property="userid" column="userid" />
+		<result property="redgate" column="regdate" />
+	</resultMap>
+	
+	<delete id="IdDelete">
+		delete from tbl_member
+		where userid = #{userid}
+	</delete>
+	
+	<update id="revitailze">
+		update tbl_member
+		set enabled = #{enabled}
+		where userid = #{userid}
+	</update>
+	
+	<update id="Reset" parameterType="com.rental.domain.MemberVO" >
+		update tbl_member
+		set userpw = #{userpw}
+		where userid = #{userid}
+	</update>
+	
+	<select id="FindId" resultType="com.rental.domain.MemberVO">
+		select userid
+		from tbl_member
+		where useremail = #{useremail}
+	</select>
+	
+	<update id="updatedate">
+		update tbl_member
+		set updatedate = sysdate
+		where userid = #{userid}
+	</update>
+	
+</mapper>
