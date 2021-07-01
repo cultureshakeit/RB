@@ -443,18 +443,20 @@ public class CommonController {
 		String userid = null;
 		if (prin !=null) {userid = prin.getName();}
 		
+		//cookie 추가
+		BoardCookie addCookie = new BoardCookie();
+		boolean cookie_result = addCookie.check_cookie("placeviews", sid, request, response);
+
+		if(!cookie_result) {
+			tourService.addViews(sid);
+		}
+		
 		TouristVO tourInfo = tourService.getOne(sid,userid);
 		String[] tags = tourService.getTags(sid);
+		
 //		System.out.println(tourInfo.toString());
 		model.addAttribute("tags", tags);
 		model.addAttribute("tourInfo",tourInfo);
-		//cookie 추가
-				BoardCookie addCookie = new BoardCookie();
-				boolean cookie_result = addCookie.check_cookie("placeviews", sid, request, response);
-
-				if(!cookie_result) {
-					tourService.addViews(sid);
-				}
 		return "tourist/tourist_view";
 	}
 	
@@ -464,6 +466,7 @@ public class CommonController {
 		return "tourist/tourist_view";
 		
 	}
+	
 	@ResponseBody
 	@PostMapping("/tourist/like/{sid}")
 	public void tourist_addLike(@PathVariable("sid") String sid,Principal prin) {
