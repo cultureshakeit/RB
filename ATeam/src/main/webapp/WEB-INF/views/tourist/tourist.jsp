@@ -876,8 +876,9 @@ body {
 								type="button" data-toggle="modal" data-target=".search-modal">
 									<i class="fas fa-search"></i>
 							</a>
+							${tagname = pageMaker.cri.tagName;''}
 							</span>
-							
+<%-- 							<span>${ tagname != null ? tagname: } </span> --%>
 							<ul class="list-unstyled multi-type-btn-wrap pull-right">
 							
 								<li><button type="button"

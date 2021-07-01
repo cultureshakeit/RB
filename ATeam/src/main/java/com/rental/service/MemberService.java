@@ -23,4 +23,6 @@ public interface MemberService {
 	public MemberVO FindId(MemberVO mvo);
 	
 	public MemberVO read(String username);
+	
+	public String MailSendMethod(MemberVO mvo);
 }

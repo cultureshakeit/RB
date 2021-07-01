@@ -9,13 +9,21 @@
 			(select listagg(t.name,',') from place_tag_table c join tag t on c.tag_id = t.id where content_id = contentsid) as tag,
 			region1, region2, address, roadaddress, latitude, longitude, postcode, phoneno, photo, views,
 			(select count(*) from content_like where content_id = contentsid ) as likes
+		
 		<choose>
         	<when test="userid != null">,(select count(*) from content_like where content_id = contentsid and user_id = #{userid}) as like_true
         	,(select count(*) from content_favor where content_id = contentsid and user_id = #{userid}) as favor_true
         	</when>
         	<otherwise></otherwise>
    		</choose>
-		from place
+   		
+		from place  
+		<choose>
+        	<when test="TagName != null">
+        	join place_tag_table jt on jt.content_id = place.contentsid   where tag_id = (select tag.id from tag where name = #{TagName})
+        	</when>
+        	<otherwise></otherwise>
+   		</choose>
 		OFFSET (#{pageNum} - 1) * #{amount}
 		ROWS FETCH NEXT #{amount} ROWS ONLY
 	</select>
@@ -38,6 +46,12 @@
 	<select id ="countAll"  resultType="int">
 		select count(*)
 		from place
+		<choose>
+        	<when test="TagName != null">
+        	join place_tag_table jt on jt.content_id = place.contentsid   where tag_id = (select tag.id from tag where name = #{TagName})
+        	</when>
+        	<otherwise></otherwise>
+   		</choose>
 	</select>
 
 	<select id ="getTags"  resultType="String">

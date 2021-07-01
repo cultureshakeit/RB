@@ -111,7 +111,7 @@ public class CommonController {
 	
 	@GetMapping("/signup")
 	public void signup() {
-
+		
 	}
 	
 	@PostMapping("/signup")
@@ -122,9 +122,9 @@ public class CommonController {
 		if (service.signup(memvo)) {
 			service.Account_loginto(memvo.getUserid());
 			log.info("sign up success");
+			service.MailSendMethod(memvo);
 			return "redirect:/login";
 		}
-
 		return "redirect:/signup";
 	}
 
@@ -427,7 +427,7 @@ public class CommonController {
 		TagName = cri.getTagName();
 		Title = cri.getTitle();
 		if (prin !=null) {userid = prin.getName();}
-		int countall = tourService.countAll();
+		int countall = tourService.countAll(TagName);
 		cri.setUserid(userid);
 		List<TouristVO> tlist = tourService.List(cri);
 		PageDTO pd = new PageDTO(cri, countall);

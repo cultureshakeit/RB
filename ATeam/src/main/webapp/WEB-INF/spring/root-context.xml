@@ -23,12 +23,12 @@
 		base-package="com.rental.service" />
 
 	<!-- Gmail 설정 -->
-	<!-- <bean id="mailSender"
+	 <bean id="mailSender"
 		class="org.springframework.mail.javamail.JavaMailSenderImpl">
 		<property name="host" value="smtp.gmail.com" />
 		<property name="port" value="587" />
-		<property name="username" value="althsuwpfl@gmail.com" />
-		<property name="password" value="magese0n@!" />
+		<property name="username" value="lovejeju.chan@gmail.com" />
+		<property name="password" value="Lovejeju#" />
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.transport.protocol">smtp</prop>
@@ -37,7 +37,7 @@
 				<prop key="mail.debug">true</prop>
 			</props>
 		</property>
-	</bean> -->
+	</bean> 
 	
 	<jee:jndi-lookup 
 			id="dataSource"

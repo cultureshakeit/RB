@@ -499,12 +499,16 @@ $(document).ready(function() {
     margin: 5px 0 5px;
     border-radius: 50px;
     color: #fff;
+    pointer-events:auto;
+    opacity:0.8;
+    cursor:pointer;
 }
 </style>
+<a href="/hello">12321asdaseq32edasfd</a>
 <div id='tag_area'>
 	<h5> <i class="fas fa-tags icon_tag" style='line-height: 1.5;'> TAG </i> 
 	<c:forEach items="${tags}" var="tag">
-	 <div class='icon_tag' style='font-weight:bold'><a href="${uri}?TagName=${tag}"></a> #${tag}</div>    
+	 <div class='icon_tag' style='font-weight:bold'><a href="${uri}?TagName=${tag}" style='color:white'>#${tag}</a> </div>    
 	</c:forEach></h5>
 </div>
     <div class="view-area-divider">

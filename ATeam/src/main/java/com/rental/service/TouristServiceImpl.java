@@ -37,9 +37,9 @@ public class TouristServiceImpl implements TouristService {
 
 
 	@Override
-	public int countAll() {
+	public int countAll(String TagName) {
 		// TODO Auto-generated method stub
-		return mapper.countAll();
+		return mapper.countAll(TagName);
 	}
 
 

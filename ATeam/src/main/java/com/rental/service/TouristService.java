@@ -11,7 +11,7 @@ public interface TouristService {
 	
 	public List<TouristVO> List(Criteria cri);
 	public TouristVO getOne(String sid, String userid);
-	public int countAll();
+	public int countAll(String TagName);
 	public String[] getTags(String sid);
 	public void addViews(String sid);
 	public void addLike(String userid, String sid);

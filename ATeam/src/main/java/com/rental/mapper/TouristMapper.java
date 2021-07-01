@@ -12,7 +12,7 @@ public interface TouristMapper {
 	
 	public List<TouristVO> List(Criteria cri);
 	public TouristVO getOne(@Param("sid") String sid,@Param("userid") String userid);
-	public int countAll();
+	public int countAll(@Param("TagName") String TagName);
 	public String[] getTags(String sid);
 	public void addViews(String sid);
 //	좋아요 LIKE
