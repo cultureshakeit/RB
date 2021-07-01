@@ -446,10 +446,23 @@ $(document).ready(function() {
 	    <li><a href="http://theme4.eyoom.net/bbs/sns_send.php?longurl=http%3A%2F%2Ftheme4.eyoom.net%2Fdmap%2F9%3Fsca%3D%25EC%25A0%259C%25EC%25A3%25BC&amp;title=%5B%EC%83%98%ED%94%8C%5D+50%EB%85%84+%EC%A0%84%ED%86%B5%EC%9D%98+%ED%95%B4%EC%82%B0%EB%AC%BC+%EC%A0%84%EB%AC%B8%EC%A0%90%2C+%EC%A0%9C%EC%A3%BC+%EA%B0%90%EC%88%98+%ED%95%B4%EC%82%B0%EB%AC%BC&amp;sns=band" target="_blank" title="Band" class="social_band"></a></li>
 	</ul>        
 <!-- 	태그 -->
-	<h1> TAG : 
+<style>
+.icon_tag {
+    display: inline-block;
+    background-color: #337ab7;
+    padding: 3px 10px;
+    font-size: 1.2em;
+    margin: 5px 0 5px;
+    border-radius: 50px;
+    color: #fff;
+}
+</style>
+<div id='tag_area'>
+	<h3> <i class="fas fa-tags icon_tag" style='line-height: 1.5;'> TAG </i> 
 	<c:forEach items="${tags}" var="tag">
-	  ${tag},   
-	</c:forEach></h1>
+	 <div class='icon_tag'>#${tag}</div>    
+	</c:forEach></h3>
+</div>
     <div class="view-area-divider">
     
     <span class="divider-circle"></span></div>
@@ -628,7 +641,7 @@ function set_map_daum_address(map_type, map_addr1, map_addr2, map_name) {
     var mapContainer = document.getElementById('map_canvas'), // 지도를 표시할 div
         mapOption = {
             center: new daum.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표
-            level: 3 // 지도의 확대 레벨
+            level: 8 // 지도의 확대 레벨
         };
 
     // 지도를 생성합니다
@@ -993,7 +1006,7 @@ console.log(lat,lng)
 var mapContainer = document.getElementById('dmap_view_canvas'),
     mapOption = {
         center: new daum.maps.LatLng(lat, lng),
-        level: 4
+        level: 6
     };
 
 var map = new daum.maps.Map(mapContainer, mapOption);
