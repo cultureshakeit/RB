@@ -2,6 +2,8 @@
 <%@page import="com.jayway.jsonpath.DocumentContext"%>
 <%@include file="../header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<c:set var="uri"><%=request.getAttribute("javax.servlet.forward.request_uri") %></c:set>
+${uri = uri.substring(0,uri.lastIndexOf("/"));''}
 <%! public String getPhoto(String json){
 	if (json == null)return "";
 	DocumentContext document = JsonPath.parse(json);
@@ -87,7 +89,7 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 	                    <div class="page-category-list">
 <!-- 	                      <span ><a href="#" target="_self">공유자료실</a></span> -->
 <!-- 	                      <span ><a href="#" target="_self">이벤트</a></span> -->
-<span>관광명소</span>
+<span style='font-size:24px;'>관광명소</span>
 	                      <span class="fake-span"></span>
 	                    </div>
 	                    <div class="controls">
@@ -240,10 +242,16 @@ button.mfp-close {position:fixed;color:#fff !important}
 <div id="fakeloader"></div>
 <c:set var="region1" value="${tourInfo.region1}" />
 <c:set var="region2" value="${tourInfo.region2}" />
+<style>
+
+strong.title{
+font-size:24px;
+}
+</style>
 <article class="board-view">
-    <h4>
+    <h4 style='font-size: 22px;'>
 		<span class="color-grey margin-right-5">[<%= getRegion((String)(pageContext.getAttribute("region2"))) %>]</span>
-		<strong>${tourInfo.title}</strong>
+		<strong class='title'>${tourInfo.title}</strong>
     </h4>
     <div class="board-view-info">
         <div class="view-post-info">
@@ -290,21 +298,21 @@ button.mfp-close {position:fixed;color:#fff !important}
             	<div class="board-view-good-nogood">
             	<style>
             	.far {
-            	font-size:30px;
+            	font-size:25px;
             	}
             	.fa {
-            	font-size:30px;
+            	font-size:25px;
             	}
-            	strong {
-            	font-size:30px;
+            	strong.heart_click {
+            	font-size:25px;
             	}
             	.board-view-good{
-            	height:41px;
+            	height:34px;
             	}
             	.board-view .board-view-info .board-view-good {
     			display: inline-block;
 			    width: 100px;
- 			    height: 41px; 
+ 			    height: 34px; 
 			    line-height: inherit;}
 			    .board-view .board-view-info .view-post-info-rating {
 				    position: relative;
@@ -318,11 +326,11 @@ button.mfp-close {position:fixed;color:#fff !important}
             	<div id='heart_container' style='margin-bottom:30px;'>
                 	<div class="board-view-good no-member-gng" title="좋\n아\n요">
                             <div id='<sec:authorize access="isAuthenticated()">handle</sec:authorize>Like'><i class="fa${tourInfo.like_true ? '': 'r'} fa-heart" style="color:red"></i>
-                            <strong>${tourInfo.likes}</strong></div>
+                            <strong class='heart_click'>${tourInfo.likes}</strong></div>
                     </div>
                     <div class="board-view-good no-member-gng" title="즐겨찾기"><!-- #ffd700 -->
                     <div id='favor<sec:authorize access="isAuthenticated()" >Star</sec:authorize>'><i class="fa${tourInfo.favor_true ? '':'r'} fa-star" style='color:${tourInfo.favor_true ? "yellow":"white"}'></i>
-                    <strong></strong>
+                    <strong class='heart_click'></strong>
                     </div>
                
                     </div>
@@ -494,12 +502,13 @@ $(document).ready(function() {
 }
 </style>
 <div id='tag_area'>
-	<h3> <i class="fas fa-tags icon_tag" style='line-height: 1.5;'> TAG </i> 
+	<h5> <i class="fas fa-tags icon_tag" style='line-height: 1.5;'> TAG </i> 
 	<c:forEach items="${tags}" var="tag">
-	 <div class='icon_tag'>#${tag}</div>    
-	</c:forEach></h3>
+	 <div class='icon_tag' style='font-weight:bold'><a href="${uri}?TagName=${tag}"></a> #${tag}</div>    
+	</c:forEach></h5>
 </div>
     <div class="view-area-divider">
+    
     
     <span class="divider-circle"></span></div>
 
