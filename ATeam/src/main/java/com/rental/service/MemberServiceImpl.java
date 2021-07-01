@@ -131,16 +131,17 @@ public class MemberServiceImpl implements MemberService {
 	  helper.setFrom("althsuwpfl@gmail.com");
 	  helper.setTo(mvo.getUseremail());
 	  
-	  helper.setSubject(mvo.getNickname() + " 様の会員登録を歓迎いたします。"); 
-	  String body = new StringBuffer().append("<html>").append("<body>").append("<h2>おはようございます。</h2>")
-	  .append("<p>メール認証でございます。</p>")
-	  .append("<p>認証するボタンを押すとアカウントが使用できます。</p>")
-	  .append("<b><a href='http://localhost:8080/emailauth?userid=")
+	  helper.setSubject(mvo.getNickname() + " 님의 회원가입을 환영합니다."); 
+	  String body = new StringBuffer().append("<html>").append("<body>")
+			  .append("<h2> 안녕하세요 !</h2>")
+	  .append("<p>www.lovejeju.shop 이메일 인증용 메일입니다..</p>")
+	  .append("<p>인증 버튼을 눌러 계정을 활성화 할 수 있습니다.</p>")
+	  .append("<b><a href='https://www.lovejeju.shop/emailauth?userid=")
 	  .append(mvo.getUserid()) 
 	  .append("&enabled=").append(true)
 	  .append("&target='_blank")
-	  .append("'><button type='button' style='border:1px solid green; background-color:transparent;padding:10px; border-radius:4px;'>メール認証</button></a></b><br>"
-	  ).append("<br><p>もし、間違って送られたメールならば無視してください。</p></body></html>").toString();
+	  .append("'><button type='button' style='border:1px solid green; background-color:transparent;padding:10px; border-radius:4px;'>메일인증</button></a></b><br>"
+	  ).append("<br><p>스팸메일은 아니오니 잘못 보내진 이메일이라면 지나가세요.</p></body></html>").toString();
 	  
 	  helper.setText(body); // 여기에 이메일 쓸 컨텐츠 부분. 
 	  
