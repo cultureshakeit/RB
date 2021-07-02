@@ -504,7 +504,6 @@ $(document).ready(function() {
     cursor:pointer;
 }
 </style>
-<a href="/hello">12321asdaseq32edasfd</a>
 <div id='tag_area'>
 	<h5> <i class="fas fa-tags icon_tag" style='line-height: 1.5;'> TAG </i> 
 	<c:forEach items="${tags}" var="tag">

@@ -30,6 +30,6 @@ public class PageDTO {
 		}
 		this.prev = this.startPage > 1;
 		this.next = this.endPage < realEnd;
-		this.lastPage = (int)Math.ceil(total / cri.getAmount());
+		this.lastPage = (int)Math.ceil(total /(double) cri.getAmount());
 	}
 }

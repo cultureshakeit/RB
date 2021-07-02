@@ -2,8 +2,9 @@
 <%@page import="com.jayway.jsonpath.DocumentContext"%>
 <%@include file="../header.jsp"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
-<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="sec"
+	uri="http://www.springframework.org/security/tags"%>
 <%!public String getPhoto(String json) {
 		if (json == null)
 			return "";
@@ -12,12 +13,12 @@
 		return imgpath;
 	}%>
 <%!public String getRegion(String json) {
-	if (json == null)
-		return "";
-	DocumentContext document = JsonPath.parse(json);
-	String str = document.read("$['label']", String.class);
-	return str;
-}%>
+		if (json == null)
+			return "";
+		DocumentContext document = JsonPath.parse(json);
+		String str = document.read("$['label']", String.class);
+		return str;
+	}%>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -25,8 +26,9 @@
 <meta http-equiv="imagetoolbar" content="no">
 <meta http-equiv="X-UA-Compatible" content="IE=Edge">
 
-<title> 관광지 </title>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
+<title>관광지</title>
+<script
+	src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
 <link rel="stylesheet"
 	href="https://use.fontawesome.com/releases/v5.14.0/css/all.css"
 	integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc"
@@ -39,7 +41,7 @@
 	href="/resources/tourist/css/common.css">
 <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/fontawesome-all.min.css">
- <link type="text/css" rel="stylesheet"
+<link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/style.css">
 <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/tab_scroll_category.css" type="text/css"
@@ -47,7 +49,8 @@
 <link type="text/css" rel="stylesheet"
 	href="/resources/tourist/css/sweetalert.min.css" type="text/css"
 	media="screen">
- <link type="text/css" rel="stylesheet"	href="/resources/tourist/css/style.css"> 
+<link type="text/css" rel="stylesheet"
+	href="/resources/tourist/css/style.css">
 
 <script type="text/javascript"
 	src="/resources/tourist/js/jquery-1.12.4.min.js"></script>
@@ -79,11 +82,12 @@
 				<div class="row1">
 
 
-<style>
-.headerempty{
-	 position: relative;
-	 height: 150px;
-	}
+					<style>
+.headerempty {
+	position: relative;
+	height: 150px;
+}
+
 .board-list .board-setup {
 	position: relative;
 	border: 1px solid #d5d5d5;
@@ -358,7 +362,7 @@
 
 .board-multi .multi-item-in .multi-cont {
 	position: relative;
-/* 	overflow: hidden;  introduction 2번째 줄도 보이게*/
+	/* 	overflow: hidden;  introduction 2번째 줄도 보이게*/
 	height: 36px;
 	font-weight: 300;
 	color: #757575;
@@ -783,58 +787,62 @@
 	}
 }
 </style>
-<style>
-.board-multi .multi-item-in{
-    position: relative;
-    padding: 10px 0;
-    min-height: 144px;
-    box-sizing: border-box;
+					<style>
+.board-multi .multi-item-in {
+	position: relative;
+	padding: 10px 0;
+	min-height: 144px;
+	box-sizing: border-box;
 }
 
 .board-multi .multi-item {
-    position: relative;
-    font-size: 14px;
+	position: relative;
+	font-size: 14px;
 }
+
 body {
-    color: #353535;
-/*     font-size: 13px; */
-/*     line-height: 1.2; */
-/*     font-family: "Roboto",Dotum,Arial,sans-serif; */}
+	color: #353535;
+	/*     font-size: 13px; */
+	/*     line-height: 1.2; */
+	/*     font-family: "Roboto",Dotum,Arial,sans-serif; */
+}
+
 .board-multi .multi-item-in h4 {
-    position: relative;
-    overflow: hidden;
-    font-size: 18px;
-    color: #000;
-    height: 28px;
-/*     margin-top: 12px; */
-    margin-bottom: 5px;
+	position: relative;
+	overflow: hidden;
+	font-size: 18px;
+	color: #000;
+	height: 28px;
+	/*     margin-top: 12px; */
+	margin-bottom: 5px;
 }
 /* header.css */
 .fa {
-    display: inline-block;
-    font: normal normal normal 14px/1 FontAwesome;
-    font-size: inherit;
-    text-rendering: auto;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	font: normal normal normal 14px/1 FontAwesome;
+	font-size: inherit;
+	text-rendering: auto;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
+
 p {
-/*     font-size: 16px; */
-/*     font-weight: 400; */
-/*     line-height: 28px; */
-    color: #7A838B;
-    margin-bottom: 0px;
-/*     font-family: "Rubik", sans-serif; */
+	/*     font-size: 16px; */
+	/*     font-weight: 400; */
+	/*     line-height: 28px; */
+	color: #7A838B;
+	margin-bottom: 0px;
+	/*     font-family: "Rubik", sans-serif; */
 }
+
 b, sup, sub, u, del {
-    color: #ff5e13;
+	color: #ff5e13;
 }
+
 span#nowTimes {
-
-    font-family: 'Roboto', sans-serif;
-    font-size: 16px;
-    line-height: 24px;
-
+	font-family: 'Roboto', sans-serif;
+	font-size: 16px;
+	line-height: 24px;
 }
 
 /* .modal-header {
@@ -843,44 +851,46 @@ span#nowTimes {
     border-bottom: 1px solid #e5e5e5;
 } */
 .board-multi .multi-item-in .multi-cont {
-    position: relative;
-    height: 36px;
-    font-weight: 300;
-    color: #757575;
-    margin-bottom: 23px;
+	position: relative;
+	height: 36px;
+	font-weight: 300;
+	color: #757575;
+	margin-bottom: 23px;
 }
+
 p {
-    font-size: 16px;
+	font-size: 16px;
 }
+
 body {
-    line-height: 1.5;
+	line-height: 1.5;
 }
-#favorStar > .fa-star {
-    font-size: 22px;
+
+#favorStar>.fa-star {
+	font-size: 22px;
 }
 </style>
 					<div id="fakeloader"></div>
 
 					<div class="board-list">
-<!-- 						<div class="board-info margin-bottom-20"></div> -->
-							
-							<div class="clearfix"></div>
-							
-							<script>"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"</script>
-							<script>"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</script>
+						<!-- 						<div class="board-info margin-bottom-20"></div> -->
+
+						<div class="clearfix"></div>
+
+						<script>"https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"</script>
+						<script>"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"</script>
 						<script>"https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"</script>
-						
+
 
 						<div class="multi-btn-wrap">
 							<span class="pull-left"> <a class="btn-e btn-e-dark"
 								type="button" data-toggle="modal" data-target=".search-modal">
 									<i class="fas fa-search"></i>
-							</a>
-							${tagname = pageMaker.cri.tagName;''}
+							</a> ${tagname = pageMaker.cri.tagName;''}
 							</span>
-<%-- 							<span>${ tagname != null ? tagname: } </span> --%>
+							<%-- 							<span>${ tagname != null ? tagname: } </span> --%>
 							<ul class="list-unstyled multi-type-btn-wrap pull-right">
-							
+
 								<li><button type="button"
 										class="multi-type-btn multi-type-list-btn" title="리스트뷰">
 										<span class="sound_only">리스트뷰</span><i
@@ -992,7 +1002,28 @@ body {
 							</div>
 							<div class="clearfix"></div>
 						</div>
-						
+<style>
+		.tooltip1 {
+			position: relative;
+			display: inline-block;
+		}
+		.tooltip1 .tooltip-content1 {
+			visibility: hidden;
+			
+			background-color: #ffcc41;
+			padding: 5px 10px !important;
+			font-weight : bold;
+          	line-height:1.5;
+			color: white !important;
+			text-align: center !important;
+			position: absolute;
+			z-index: 3;
+		}
+		.tooltip1:hover .tooltip-content1 { visibility: visible; }
+		pre {
+    		font-size: 1em !important;
+		}
+	</style>
 						<div class="board-multi">
 							<div id="multi_item_type" class="multi-type-webzine">
 								<c:set var="uri"><%=request.getAttribute("javax.servlet.forward.request_uri")%></c:set>
@@ -1001,16 +1032,15 @@ body {
 								<c:set var="pnum" value="${pnum<1? 1 :pnum}" />
 								<c:set var="amount" value="${pageMaker.cri.amount}" />
 								<c:set var="seq_no" value="${(pnum-1)*amount}" />
-								
+
 								<!-- FOR Start 시작 -->
 								<c:forEach items="${tlist}" var="place">
-								<c:set var="seq_no" value="${seq_no+1}" />
+									<c:set var="seq_no" value="${seq_no+1}" />
 
 									<div class="multi-item">
 										<div class="multi-item-in">
 											<div class="multi-img">
-												<a href="${uri}/${place.contentsid}">
-													<!-- 첫번째 사진 연결 -->
+												<a href="${uri}/${place.contentsid}"> <!-- 첫번째 사진 연결 -->
 													<div class="multi-img-box">
 														<div class="multi-img-box-in">
 															<!--                                 	getPhoto(place.photo) -->
@@ -1027,18 +1057,16 @@ body {
 											<c:set var="region2" value="${place.region2}" />
 											<div class="multi-desc">
 												<div class="multi-desc-ymd">
-								<%-- 	<%=getRegion((String) (pageContext.getAttribute("region1")))%>	--%>		
-								<style>
-								.board-multi .multi-item-in .multi-desc-ym {
-										    font-size: 16px;
-										    color: #959595;
-										    margin: 12px 0 0px;
-										    line-height: 1;
-										}
-								</style>		
-													<div class="multi-desc-ym">
-																${seq_no}
-													</div>
+													<%-- 	<%=getRegion((String) (pageContext.getAttribute("region1")))%>	--%>
+													<style>
+.board-multi .multi-item-in .multi-desc-ym {
+	font-size: 16px;
+	color: #959595;
+	margin: 12px 0 0px;
+	line-height: 1;
+}
+</style>
+													<div class="multi-desc-ym">${seq_no}</div>
 													<br>
 													<div class="multi-desc-md">
 														<%=getRegion((String) (pageContext.getAttribute("region2")))%>
@@ -1046,71 +1074,57 @@ body {
 												</div>
 												<div class="multi-subj-cont">
 													<h4>
-														<a href="${uri}/${place.contentsid}">
-															<!-- 첫번째 글 연결 --> <strong>${place.title}</strong>
-														</a><a id='favor<sec:authorize access="isAuthenticated()">Star</sec:authorize>' content_id=${place.contentsid } style='float:right' class="btn">
-														<!-- #ffd700 -->
-														<i class="fas fa-star" style="color:${place.favor_true ? '#ffd700':'gray'}"></i></a>
+														<a href="${uri}/${place.contentsid}"> <!-- 첫번째 글 연결 -->
+															<strong>${place.title}</strong>
+														</a><a
+															id='favor<sec:authorize access="isAuthenticated()">Star</sec:authorize>'
+															content_id=${place.contentsid } style='float: right'
+															class="btn"> <!-- #ffd700 --> <i class="fas fa-star"
+															style="color:${place.favor_true ? '#ffd700':'gray'}"></i></a>
 													</h4>
-													
+
 													<p class="multi-cont">${place.introduction}</p>
 												</div>
 												<div class="multi-info multi-info-rating">
 													<span class="multi-photo"> <img class="user-photo"
-														src="/resources/tourist/image/admin.png"
-														alt="회원사진">
+														src="/resources/tourist/image/admin.png" alt="회원사진">
 													</span> <span class="multi-nick"> <span class="sv_wrap">
 															<a
 															href="http://theme4.eyoom.net/bbs/profile.php?mb_id=admin"
 															data-toggle="dropdown" title="최고관리자 자기소개" target="_blank"
 															rel="nofollow" onclick="return false;"> 최고관리자</a> <!-- <ul class="sv dropdown-menu" role="menu">
-								<li><a href="http://theme4.eyoom.net/?admin"><strong>최고관리자</strong>님의 홈</a></li>
-								<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=admin">전체게시물</a></li>
-								<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=admin">아이디로 검색</a></li>
-								</ul>
-								
-								<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
-								<li><a href="http://theme4.eyoom.net/?admin"><strong>최고관리자</strong>님의 홈</a></li>
-								<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=admin">전체게시물</a></li>
-								<li><a href="http://theme4.eyoom.net/magazine_it?sca=&amp;sfl=mb_id,1&amp;stx=admin">아이디로 검색</a></li>
-								</ul> 
-								</noscript>-->
-													</span>
-													</span> 
-<!-- 													<span class="multi-lv-icon"> <img -->
-<!-- 														src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/admin.gif" -->
-<!-- 														alt="레벨"> -->
-<!-- 													</span> -->
-													<!--레벨 아이콘-->
+	
 													<span> <i class="far fa-clock"></i> <!-- 								<strong class="color-black">17시 31분</strong> -->
 													</span> <span> <i class="fas fa-eye"></i> <strong
 														class="color-black">${place.views }</strong>
 													</span>
-												<!-- 좋아요 구현 chan  -->
-													<span> 
-<!-- 													<i class="far fa-thumbs-up"></i> 하트로 변경  -->
-								
-								<a id="<sec:authorize access="isAuthenticated()">handle</sec:authorize>Like" content_id="${ place.contentsid }" class="btn btn-link btn-like active" >
-								
-														<i class="fa${ place.like_true ? '' :'r'} fa-heart" aria-hidden="true" style="color:red"></i>
-													<strong class="color-green">${place.likes}</strong>
-													</span></a>
-													<script>
+													<!-- 좋아요 구현 chan  -->
+													<span> <!-- 													<i class="far fa-thumbs-up"></i> 하트로 변경  -->
+
+	
+
+<div class="tooltip1">
+<a id="<sec:authorize access="isAuthenticated()">handle</sec:authorize>Like" content_id="${ place.contentsid }"	class="btn btn-link btn-like active"> 
+<i class="fa${ place.like_true ? '' :'r'} fa-heart"	aria-hidden="true" style="color: red"></i> 
+<strong class="color-green">${place.likes}</strong></span></a>
+
+<div class="tooltip-content1">
+<pre>${place.likes_list }</pre>
+</div>
+</div>
 													
-													</script>
-													<i class="fas fa-tags" style="color:gray"></i>
-													<span>${fn:length(place.tag.split(","))}.</span>
+													<i class="fas fa-tags" style="color: gray"></i> <span>${fn:length(place.tag.split(","))}.</span>
 													<span>${fn:substring(place.tag,0,45)}${ place.tag.length() > 45 ? "...":""}</span>
 													<div class="multi-ratings">
-<!-- 													별점 -->
-<!-- 														<ul class="list-unstyled star-ratings-list"> -->
-<!-- 															<li><i class="rating far fa-star"></i></li> -->
-<!-- 															<li><i class="rating far fa-star"></i></li> -->
-<!-- 															<li><i class="rating far fa-star"></i></li> -->
-<!-- 															<li><i class="rating far fa-star"></i></li> -->
-<!-- 															<li><i class="rating far fa-star"></i></li> -->
-<!-- 														</ul> -->
-														
+														<!-- 													별점 -->
+														<!-- 														<ul class="list-unstyled star-ratings-list"> -->
+														<!-- 															<li><i class="rating far fa-star"></i></li> -->
+														<!-- 															<li><i class="rating far fa-star"></i></li> -->
+														<!-- 															<li><i class="rating far fa-star"></i></li> -->
+														<!-- 															<li><i class="rating far fa-star"></i></li> -->
+														<!-- 															<li><i class="rating far fa-star"></i></li> -->
+														<!-- 														</ul> -->
+
 													</div>
 												</div>
 											</div>
@@ -1161,19 +1175,19 @@ body {
 }
 
 .eb-pagination a {
-    display: inline-block;
-    font-size: 18px;
-    text-decoration: none;
-    min-width: 28px;
-    height: 30px;
-    padding: 0 8px;
-    color: #fff;
-    border: 1px solid transparent;
-    line-height: 24px;
-    text-align: center;
-    color: #757575;
-    position: relative;
-    z-index: 1;
+	display: inline-block;
+	font-size: 18px;
+	text-decoration: none;
+	min-width: 28px;
+	height: 30px;
+	padding: 0 8px;
+	color: #fff;
+	border: 1px solid transparent;
+	line-height: 24px;
+	text-align: center;
+	color: #757575;
+	position: relative;
+	z-index: 1;
 }
 
 .eb-pagination a:active {
@@ -1208,16 +1222,11 @@ body {
 					<div class="eb-pagination-wrap">
 						<ul class="eb-pagination">
 							<c:if test="${pageMaker.prev }">
-								<li><a href="1"><i class="fas fa-angle-double-left"></i></a></li>
-								<!--  -->
-								<li><a href="${pageMaker.startPage - 1 }" class="prev"><i
-										class="fas fa-angle-left"></i></a></li>
-								<!-- 이전페이지 -->
+				<!--  1 페이지 --><li><a href="1"><i class="fas fa-angle-double-left"></i></a></li>
+				<!-- 이전페이지 --><li><a href="${pageMaker.startPage - 1 }" class="prev"><i class="fas fa-angle-left"></i></a></li>
 							</c:if>
-							<c:forEach var="num" begin="${pageMaker.startPage }"
-								end="${pageMaker.endPage }">
-								<li><a href="${num}"
-									class="${pageMaker.cri.pageNum == num ? 'active':''  }">
+							<c:forEach var="num" begin="${pageMaker.startPage }" end="${pageMaker.endPage }">
+								<li><a href="${num}" class="${pageMaker.cri.pageNum == num ? 'active':''  }">
 										${num}<span class="sound_only">페이지</span>
 								</a></li>
 							</c:forEach>
@@ -1235,22 +1244,21 @@ body {
 
 				<form id="actionForm" action="/tourist" method="get"></form>
 				<script type="text/javascript">
-					$(".eb-pagination li  a")
-							.on(
-									"click",
-									function(e) {
+					$(".eb-pagination li  a").on("click",function(e) {
+						
 										e.preventDefault();
 										var numh = $(this).attr("href");
 										var amount = <c:out value="${pageMaker.cri.amount}" />
-										console.log(numh);
+										//검색옵션 add
+										var tagn =	 '<c:out value="${tagname}" />'
+										
 										var form = $("#actionForm");
-										form
-												.append("<input name='pageNum' value='"+numh+"'>");
-										form
-												.append("<input name='amount' value='"+ amount +"'>");
-
+										form.append("<input name='pageNum' value='"+numh+"'>");
+										form.append("<input name='amount' value='"+ amount +"'>");
+										if(tagn != ''){form.append("<input name='TagName' value='"+ tagn +"'>");}
+										
+										
 										form.submit();
-
 									})
 				</script>
 				<script>!function(i){function s(){var s=i(window).width(),c=i(window).height(),d=i(".fl").outerWidth(),e=i(".fl").outerHeight();i(".fl").css({position:"absolute",left:s/2-d/2,top:c/2-e/2})}i.fn.fakeLoader=function(c){var d=i.extend({timeToHide:1200,pos:"fixed",top:"0px",left:"0px",width:"100%",height:"100%",zIndex:"999",bgColor:"#2ecc71",spinner:"spinner7",imagePath:""},c),e='<div class="fl spinner1"><div class="double-bounce1"></div><div class="double-bounce2"></div></div>',l='<div class="fl spinner2"><div class="spinner-container container1"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container2"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div><div class="spinner-container container3"><div class="circle1"></div><div class="circle2"></div><div class="circle3"></div><div class="circle4"></div></div></div>',n='<div class="fl spinner3"><div class="dot1"></div><div class="dot2"></div></div>',v='<div class="fl spinner4"></div>',a='<div class="fl spinner5"><div class="cube1"></div><div class="cube2"></div></div>',r='<div class="fl spinner6"><div class="rect1"></div><div class="rect2"></div><div class="rect3"></div><div class="rect4"></div><div class="rect5"></div></div>',t='<div class="fl spinner7"><div class="circ1"></div><div class="circ2"></div><div class="circ3"></div><div class="circ4"></div></div>',o=i(this),h={position:d.pos,width:d.width,height:d.height,top:d.top,left:d.left};return o.css(h),o.each(function(){var i=d.spinner;switch(i){case"spinner1":o.html(e);break;case"spinner2":o.html(l);break;case"spinner3":o.html(n);break;case"spinner4":o.html(v);break;case"spinner5":o.html(a);break;case"spinner6":o.html(r);break;case"spinner7":o.html(t);break;default:o.html(e)}""!=d.imagePath&&o.html('<div class="fl"><img src="'+d.imagePath+'"></div>'),s()}),setTimeout(function(){i(o).fadeOut()},d.timeToHide),this.css({backgroundColor:d.bgColor,zIndex:d.zIndex})},i(window).load(function(){s(),i(window).resize(function(){s()})})}(jQuery);</script>
@@ -1439,6 +1447,7 @@ body {
 				}
 				return true;
 			}
+			
 		</script>
 
 
@@ -1687,114 +1696,130 @@ body {
 						</button>
 					</div>
 				</div>
-				</div>
 			</div>
 		</div>
+	</div>
 
-		<div class="modal fade itemqa-iframe-modal" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button aria-hidden="true" data-dismiss="modal" class="close"
-							type="button">×</button>
-						<h4 class="modal-title">
-							<i class="fas fa-question-circle color-grey"></i> <strong>상품문의
-								작성하기</strong>
-						</h4>
-					</div>
-					<div class="modal-body">
-						<iframe id="itemqa-iframe" width="100%" frameborder="0"></iframe>
-					</div>
-					<div class="modal-footer">
-						<button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark"
-							type="button">
-							<i class="fas fa-times"></i> 닫기
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
+<!-- 	<div class="modal fade itemqa-iframe-modal" aria-hidden="true"> -->
+<!-- 		<div class="modal-dialog"> -->
+<!-- 			<div class="modal-content"> -->
+<!-- 				<div class="modal-header"> -->
+<!-- 					<button aria-hidden="true" data-dismiss="modal" class="close" -->
+<!-- 						type="button">×</button> -->
+<!-- 					<h4 class="modal-title"> -->
+<!-- 						<i class="fas fa-question-circle color-grey"></i> <strong>상품문의 -->
+<!-- 							작성하기</strong> -->
+<!-- 					</h4> -->
+<!-- 				</div> -->
+<!-- 				<div class="modal-body"> -->
+<!-- 					<iframe id="itemqa-iframe" width="100%" frameborder="0"></iframe> -->
+<!-- 				</div> -->
+<!-- 				<div class="modal-footer"> -->
+<!-- 					<button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" -->
+<!-- 						type="button"> -->
+<!-- 						<i class="fas fa-times"></i> 닫기 -->
+<!-- 					</button> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
 
-		<div class="modal fade coupon-iframe-modal" aria-hidden="true">
-			<div class="modal-dialog">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button aria-hidden="true" data-dismiss="modal" class="close"
-							type="button">×</button>
-						<h4 class="modal-title">
-							<i class="fas fa-ticket-alt color-grey"></i> <strong>쿠폰
-								내역</strong>
-						</h4>
-					</div>
-					<div class="modal-body">
-						<iframe id="coupon-iframe" width="100%" frameborder="0"></iframe>
-					</div>
-					<div class="modal-footer">
-						<button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark"
-							type="button">
-							<i class="fas fa-times"></i> 닫기
-						</button>
-					</div>
+<!-- 	<div class="modal fade coupon-iframe-modal" aria-hidden="true"> -->
+<!-- 		<div class="modal-dialog"> -->
+<!-- 			<div class="modal-content"> -->
+<!-- 				<div class="modal-header"> -->
+<!-- 					<button aria-hidden="true" data-dismiss="modal" class="close" -->
+<!-- 						type="button">×</button> -->
+<!-- 					<h4 class="modal-title"> -->
+<!-- 						<i class="fas fa-ticket-alt color-grey"></i> <strong>쿠폰 -->
+<!-- 							내역</strong> -->
+<!-- 					</h4> -->
+<!-- 				</div> -->
+<!-- 				<div class="modal-body"> -->
+<!-- 					<iframe id="coupon-iframe" width="100%" frameborder="0"></iframe> -->
+<!-- 				</div> -->
+<!-- 				<div class="modal-footer"> -->
+<!-- 					<button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark" -->
+<!-- 						type="button"> -->
+<!-- 						<i class="fas fa-times"></i> 닫기 -->
+<!-- 					</button> -->
+<!-- 				</div> -->
+<!-- 			</div> -->
+<!-- 		</div> -->
+<!-- 	</div> -->
+	<div class="modal fade search-modal" aria-hidden="true">
+		<div class="modal-dialog modal-sm">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button aria-hidden="true" data-dismiss="modal" class="close"
+						type="button">×</button>
+					<style>
+.modal-title {
+	line-height: 1.82857143;
+}
+
+h5.modal-title {
+	font-size: 18px;
+}
+</style>
+					<h5 class="modal-title">
+						<i class="fas fa-search color-grey"></i> <strong> 검색 </strong>
+					</h5>
+				</div>
+				<div class="modal-body">
+					<fieldset id="bo_sch" class="eyoom-form">
+						<form name="fsearch" method="get">
+							<input type="hidden" name="bo_table" value="magazine_it">
+							<input type="hidden" name="sca" value=""> <input
+								type="hidden" name="sop" value="and"> <label for="sfl"
+								class="sound_only">검색대상</label>
+							<section class="margin-top-10">
+								<label class="select"> <select name="sfl" id="sfl"
+									class="form-control">
+										<option value="TagName">태그</option>
+										<option value="wr_subject">제목</option>
+										<option value="wr_content">내용</option>
+										<option value="wr_subject||wr_content">제목+내용</option>
+										<option value="mb_id,1">작성자</option>
+										<option value="mb_id,0">회원아이디</option>
+										<option value="wr_name,1">글쓴이</option>
+								</select> <i></i>
+								</label>
+							</section>
+							<section>
+								<label for="stx" class="sound_only">검색어<strong
+									class="sound_only"> 필수</strong></label>
+								<div class="input input-button">
+									<input type="text" name="stx" value="" required id="stx" onKeyPress="if( event.keyCode==13 ){addFunc();}">
+									<div class="button">
+										<input id='searchc' type="text" value="검색">검색</div>
+								</div>
+								
+							</section>
+						</form>
+						<form id="searchForm" action="/tourist" method="get"></form>
+								<script>
+									$('#searchc').click(function(){
+										var sch = $('#sfl').val()
+										var stx = $('#stx')
+										if (stx.val().length < 2) {return  alert("검색어는 두글자 이상 입력하십시오.");}
+										var form = $("#actionForm");
+										form.append("<input name='" + sch + "' value='" + stx.val() + "' />")
+										form.submit()
+									})
+								</script>
+					</fieldset>
+				</div>
+				<div class="modal-footer">
+					<button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark"
+						type="button">
+						<i class="fas fa-times"></i> 닫기
+					</button>
 				</div>
 			</div>
 		</div>
-		<div class="modal fade search-modal" aria-hidden="true">
-			<div class="modal-dialog modal-sm">
-				<div class="modal-content">
-					<div class="modal-header">
-						<button aria-hidden="true" data-dismiss="modal" class="close"
-							type="button">×</button>
-							<style>
-							.modal-title {line-height: 1.82857143;}
-							h5.modal-title {font-size: 18px;}
-							</style>
-						<h5 class="modal-title">
-							<i class="fas fa-search color-grey"></i> <strong> 검색 </strong>
-						</h5>
-					</div>
-					<div class="modal-body">
-						<fieldset id="bo_sch" class="eyoom-form">
-							<form name="fsearch" method="get">
-								<input type="hidden" name="bo_table" value="magazine_it">
-								<input type="hidden" name="sca" value=""> <input
-									type="hidden" name="sop" value="and"> <label for="sfl"
-									class="sound_only">검색대상</label>
-								<section class="margin-top-10">
-									<label class="select"> <select name="sfl" id="sfl"
-										class="form-control">
-											<option value="wr_subject">제목</option>
-											<option value="wr_content">내용</option>
-											<option value="wr_subject||wr_content">제목+내용</option>
-											<option value="mb_id,1">회원아이디</option>
-											<option value="mb_id,0">회원아이디(코)</option>
-											<option value="wr_name,1">글쓴이</option>
-											<option value="wr_name,0">글쓴이(코)</option>
-									</select> <i></i>
-									</label>
-								</section>
-								<section>
-									<label for="stx" class="sound_only">검색어<strong
-										class="sound_only"> 필수</strong></label>
-									<div class="input input-button">
-										<input type="text" name="stx" value="" required id="stx">
-										<div class="button">
-											<input type="submit" value="검색">검색
-										</div>
-									</div>
-								</section>
-							</form>
-						</fieldset>
-					</div>
-					<div class="modal-footer">
-						<button data-dismiss="modal" class="btn-e btn-e-lg btn-e-dark"
-							type="button">
-							<i class="fas fa-times"></i> 닫기
-						</button>
-					</div>
-				</div>
-			</div>
-		</div>
-		<script>
+	</div>
+	<script>
 			function itemuse_modal(href) {
 				$('.itemuse-iframe-modal').modal('show').on('hidden.bs.modal',
 						function() {
@@ -1869,7 +1894,7 @@ body {
 			}
 		</script>
 
-		<script>
+	<script>
 			function poll_result(url) {
 				$('.poll-result-iframe-modal').modal('show').on(
 						'hidden.bs.modal', function() {
@@ -1894,7 +1919,7 @@ body {
 
 
 
-		<script>var App = function() {
+	<script>var App = function() {
 
 		    function handleLayout() {
 		        (function($,sr){
@@ -2112,14 +2137,14 @@ body {
 		    };
 
 		}();</script>
-		<script>
+	<script>
 			$(document).ready(function() {
 				App.init();
 			});
 		</script>
 
 
-		<script>
+	<script>
 			$(function() {
 				// 폰트 리사이즈 쿠키있으면 실행
 				font_resize("container",
@@ -2127,9 +2152,9 @@ body {
 						get_cookie("ck_font_resize_add_class"));
 			});
 		</script>
-		
-		<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
-		<!--[if lte IE 7]>
+
+	<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->
+	<!--[if lte IE 7]>
 <script>
 $(function() {
     var $sv_use = $(".sv_use");

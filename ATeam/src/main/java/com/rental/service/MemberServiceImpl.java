@@ -141,7 +141,7 @@ public class MemberServiceImpl implements MemberService {
 	  .append("&enabled=").append(true)
 	  .append("&target='_blank")
 	  .append("'><button type='button' style='border:1px solid green; background-color:transparent;padding:10px; border-radius:4px;'>메일인증</button></a></b><br>"
-	  ).append("<br><p>스팸메일은 아니오니 잘못 보내진 이메일이라면 지나가세요.</p></body></html>").toString();
+	  ).append("<br><p>스팸메일은 아니오니 잘못 보내진거라면 지나쳐주세요. :D</p></body></html>").toString();
 	  
 	  helper.setText(body); // 여기에 이메일 쓸 컨텐츠 부분. 
 	  

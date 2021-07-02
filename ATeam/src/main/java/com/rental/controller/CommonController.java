@@ -442,19 +442,17 @@ public class CommonController {
 //		System.out.println("customUser :" +customUser);
 		String userid = null;
 		if (prin !=null) {userid = prin.getName();}
-		
+		//cookie 추가
+		BoardCookie addCookie = new BoardCookie();
+		boolean cookie_result = addCookie.check_cookie("placeviews", sid, request, response);
+		if(!cookie_result) {tourService.addViews(sid);}
+		//model getOne detail Info
 		TouristVO tourInfo = tourService.getOne(sid,userid);
 		String[] tags = tourService.getTags(sid);
 //		System.out.println(tourInfo.toString());
 		model.addAttribute("tags", tags);
 		model.addAttribute("tourInfo",tourInfo);
-		//cookie 추가
-				BoardCookie addCookie = new BoardCookie();
-				boolean cookie_result = addCookie.check_cookie("placeviews", sid, request, response);
-
-				if(!cookie_result) {
-					tourService.addViews(sid);
-				}
+		
 		return "tourist/tourist_view";
 	}
 	
