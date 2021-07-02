@@ -442,6 +442,7 @@ public class CommonController {
 //		System.out.println("customUser :" +customUser);
 		String userid = null;
 		if (prin !=null) {userid = prin.getName();}
+		
 		//cookie 추가
 		BoardCookie addCookie = new BoardCookie();
 		boolean cookie_result = addCookie.check_cookie("placeviews", sid, request, response);
