@@ -1011,7 +1011,7 @@ body {
 			visibility: hidden;
 			
 			background-color: #ffcc41;
-			padding: 5px 10px !important;
+/* 			padding: 5px 10px !important; */
 			font-weight : bold;
           	line-height:1.5;
 			color: white !important;
@@ -1107,9 +1107,13 @@ body {
 <a id="<sec:authorize access="isAuthenticated()">handle</sec:authorize>Like" content_id="${ place.contentsid }"	class="btn btn-link btn-like active"> 
 <i class="fa${ place.like_true ? '' :'r'} fa-heart"	aria-hidden="true" style="color: red"></i> 
 <strong class="color-green">${place.likes}</strong></span></a>
-
+<%-- ${ place.likes_list != null ?   : null} --%>
 <div class="tooltip-content1">
-<pre>${place.likes_list }</pre>
+${place.likes_list != null ? '<div style="width:100px;">최근의 좋아요 :</div>':''}
+<c:forEach var="li" items="${place.likes_list.split(\",\")}">
+<div>${li}</div>
+</c:forEach>
+  
 </div>
 </div>
 													
