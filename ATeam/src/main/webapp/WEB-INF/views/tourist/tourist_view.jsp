@@ -505,7 +505,7 @@ $(document).ready(function() {
 }
 </style>
 <div id='tag_area'>
-	<h5> <i class="fas fa-tags icon_tag" style='line-height: 1.5;'> TAG </i> 
+	<h5> <i class="fas fa-tags icon_tag" style='line-height: 1.5;cursor:auto'> TAG </i> 
 	<c:forEach items="${tags}" var="tag">
 	 <div class='icon_tag' style='font-weight:bold'><a href="${uri}?TagName=${tag}" style='color:white'>#${tag}</a> </div>    
 	</c:forEach></h5>

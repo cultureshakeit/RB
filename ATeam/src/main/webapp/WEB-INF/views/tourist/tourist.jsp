@@ -888,7 +888,14 @@ body {
 									<i class="fas fa-search"></i>
 							</a> ${tagname = pageMaker.cri.tagName;''}
 							</span>
-							<%-- 							<span>${ tagname != null ? tagname: } </span> --%>
+							<c:choose>
+
+							    <c:when test="${tagname !=null}">
+							        <div style='margin: 0 0px 0px 48px;'> TAG 검색결과(${tagname }) :  </div>
+							    </c:when>
+							    
+							</c:choose>
+														
 							<ul class="list-unstyled multi-type-btn-wrap pull-right">
 
 								<li><button type="button"
@@ -1018,6 +1025,7 @@ body {
 			text-align: center !important;
 			position: absolute;
 			z-index: 3;
+/* 			opacity:0.9; */
 		}
 		.tooltip1:hover .tooltip-content1 { visibility: visible; }
 		pre {
