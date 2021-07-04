@@ -211,7 +211,7 @@
 .board-multi .multi-item {
 	position: relative;
 	font-size: 12px;
-	margin-bottom: 10px;
+/* 	margin-bottom: 10px; */
 	border-top: 1px solid #e5e5e5;
 	background: #fff;
 	width: 100%
@@ -306,7 +306,7 @@
 
 .board-multi .multi-item-in .multi-desc-ymd {
 	position: absolute;
-	top: 6px;
+	top: 10px;
 	left: 215px;
 	overflow: hidden;
 	width: 80px;
@@ -366,7 +366,7 @@
 	height: 36px;
 	font-weight: 300;
 	color: #757575;
-	margin-bottom: 22px
+	margin-bottom: 36px !important;
 }
 
 .board-multi .multi-item-in .multi-info {
