@@ -1119,9 +1119,8 @@ body {
 <div class="tooltip-content1">
 ${place.likes_list != null ? '<div style="width:100px;">최근의 좋아요 :</div>':''}
 <c:forEach var="li" items="${place.likes_list.split(\",\")}">
-<div>${li}</div>
+<div>${li} 님</div>
 </c:forEach>
-  
 </div>
 </div>
 													
