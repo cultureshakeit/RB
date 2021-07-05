@@ -13,6 +13,6 @@ public class TouristVO {
 	
 	private String contentsid, title, tag, address, roadaddress, postcode, phoneno, introduction, region1, region2, photo,likes_list;
 	private float latitude, longitude;
-	private int views,likes;
+	private int views,likes,comments_num;
 	private boolean like_true,favor_true;
 }

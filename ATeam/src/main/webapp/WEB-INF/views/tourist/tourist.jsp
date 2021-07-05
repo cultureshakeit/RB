@@ -1108,7 +1108,7 @@ body {
 													</span>
 													<!-- 댓글 구현 -->
 													</span> <span style='padding: 0px 0px 0px 7px;'> <i class="fas fa-comment-alt"></i> <strong
-														class="color-black">0</strong>
+														class="color-black"> ${place.comments_num }</strong>
 													</span>
 													<!-- 좋아요 구현 chan  -->
 													<span> <!-- 													<i class="far fa-thumbs-up"></i> 하트로 변경  -->

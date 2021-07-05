@@ -283,7 +283,7 @@ font-size:24px;
                 <div class="info-box-bottom">
                 	<span class="color-black"><i class="fas fa-clock"></i>CreatedAt</span>
                     <span><i class="fas fa-eye"></i>조회수 ${tourInfo.views}</span>
-                    <span class="color-red"><i class="fas fa-comment-alt"></i>댓글 미구현</span>
+                    <span class="color-red"><i class="fas fa-comment-alt"></i>${tourInfo.comments_num }</span>
 <!--                     <div style='postion:absolute'> -->
     	<sec:authorize access="isAnonymous()">
     	<span class="color-grey font-size-11 margin-left-5" style='float:right;'><i class="fas fa-exclamation-circle"></i> 로그인 후 좋아요 / 즐겨찾기 가능</span>
@@ -617,10 +617,16 @@ var char_max = parseInt(0); // 최대
 
 	<div class="comment-area">
         <div class="view-comment">
-        	<h4 class="view-comment-heading"><strong>댓글목록 <span class="color-red">0</span></strong></h4>
-            <div class="view-comment-no-item">
+        	<h4 class="view-comment-heading"><strong>댓글목록 <span class="color-red">${tourInfo.comments_num}</span></strong></h4>
+        <c:choose>
+			<c:when test="${tourInfo.comments_num ==0}">
+				 <div class="view-comment-no-item">
             	<span id="bo_vc_empty" class="no-comment"><i class="fas fa-exclamation-circle"></i> 등록된 댓글이 없습니다.</span>
         	</div>
+			</c:when>
+		</c:choose>
+            
+        	
 		</div>
 	</div>
 
