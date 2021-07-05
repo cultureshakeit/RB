@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rental.mapper.CommentMapper">
+
+	<select id ="getComments"  resultType="com.rental.domain.CommentVO">
+	select ry.*,(select count(*) from rereply where ref_group = ry.id) as reply_num  from rereply ry where ref_group is null  OFFSET (#{pageNum} - 1) * #{amount} ROWS FETCH NEXT #{amount} ROWS ONLY
+		</select>
+</mapper>

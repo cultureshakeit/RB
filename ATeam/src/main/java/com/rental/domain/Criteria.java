@@ -21,7 +21,7 @@ public class Criteria {
 	// 검색옵션
 	private String TagName;
 	private String Title;
-
+	private String sid;
 	public Criteria() {
 		this(1, 10);
 	}

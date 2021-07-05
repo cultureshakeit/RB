@@ -373,6 +373,7 @@
 	position: relative;
 	border-top: 1px solid #f2f2f2;
 	padding-top: 7px;
+	padding-bottom: 16px;
 	margin-left: 215px
 }
 
@@ -1100,14 +1101,14 @@ body {
 															<a
 															href="http://theme4.eyoom.net/bbs/profile.php?mb_id=admin"
 															data-toggle="dropdown" title="최고관리자 자기소개" target="_blank"
-															rel="nofollow" onclick="return false;"> 최고관리자</a> <!-- <ul class="sv dropdown-menu" role="menu">
+															rel="nofollow" onclick="return false;"> 최고관리자</a></span> <!-- <ul class="sv dropdown-menu" role="menu">
 	
 													<span> <i class="far fa-clock"></i> <!-- 								<strong class="color-black">17시 31분</strong> -->
-													</span> <span> <i class="fas fa-eye"></i> <strong
-														class="color-black">${place.views }</strong>
-													</span>
+													</span> <div style='width:51px;display:inline-block;font-size:11px;'> <span > <i class="fas fa-eye" style='color:#959595;'></i> 
+													<div style='text-align:center;width:25px;display:inline-block;font-weight:bold;' class='color-black'>${place.views }</div> 
+													</span></div>
 													<!-- 댓글 구현 -->
-													</span> <span style='padding: 0px 0px 0px 7px;'> <i class="fas fa-comment-alt"></i> <strong
+													 <span style=''> <i class="fas fa-comment-alt"></i> <strong
 														class="color-black"> ${place.comments_num }</strong>
 													</span>
 													<!-- 좋아요 구현 chan  -->

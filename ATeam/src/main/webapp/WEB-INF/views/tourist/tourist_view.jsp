@@ -618,6 +618,10 @@ var char_max = parseInt(0); // 최대
 	<div class="comment-area">
         <div class="view-comment">
         	<h4 class="view-comment-heading"><strong>댓글목록 <span class="color-red">${tourInfo.comments_num}</span></strong></h4>
+        	
+        	<c:forEach var="comment" items="${comments}">
+        	<div>name : ${comment.name} 내용 : ${comment.content} createdat ${comment.createdat }</div>
+        	</c:forEach>
         <c:choose>
 			<c:when test="${tourInfo.comments_num ==0}">
 				 <div class="view-comment-no-item">

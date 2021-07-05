@@ -36,6 +36,7 @@ import com.google.gson.JsonObject;
 import com.jayway.jsonpath.Configuration;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
+import com.rental.domain.CommentVO;
 import com.rental.domain.ConTactVO;
 import com.rental.domain.CourseVO;
 import com.rental.domain.Criteria;
@@ -50,6 +51,7 @@ import com.rental.domain.ReplyVO;
 import com.rental.domain.ReviewVO;
 import com.rental.domain.TouristVO;
 import com.rental.security.CustomUserDetailsService;
+import com.rental.service.CommentService;
 import com.rental.service.ConTactService;
 import com.rental.service.MemberService;
 import com.rental.service.NoticeService;
@@ -437,6 +439,9 @@ public class CommonController {
 		return "tourist/tourist";
 		
 	}
+	@Setter(onMethod_ = {@Autowired})
+	private CommentService commentService;
+	
 	@GetMapping("/tourist/{sid}")
 	public String tourist_detail(Model model,@PathVariable("sid") String sid,HttpServletRequest request, HttpServletResponse response,Principal prin) {
 //		System.out.println("customUser :" +customUser);
@@ -450,19 +455,20 @@ public class CommonController {
 		//model getOne detail Info
 		TouristVO tourInfo = tourService.getOne(sid,userid);
 		String[] tags = tourService.getTags(sid);
-//		System.out.println(tourInfo.toString());
+		
+		// Comments List
+		Criteria cri = new Criteria();
+		cri.setSid(sid);
+		List<CommentVO> comments = commentService.getComments(cri);
+		System.out.println(comments.get(0).toString()); 
+		model.addAttribute("comments", comments);
 		model.addAttribute("tags", tags);
 		model.addAttribute("tourInfo",tourInfo);
 		
 		return "tourist/tourist_view";
 	}
 	
-	@GetMapping("/tourist_view")
-	public String touristview() {
-		
-		return "tourist/tourist_view";
-		
-	}
+	
 	@ResponseBody
 	@PostMapping("/tourist/like/{sid}")
 	public void tourist_addLike(@PathVariable("sid") String sid,Principal prin) {
@@ -495,4 +501,6 @@ public class CommonController {
 		if (prin != null) {userid = prin.getName();}
 		tourService.rmFavor(userid,sid);
 	}
+	
+	
 }
