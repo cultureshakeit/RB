@@ -1106,14 +1106,18 @@ body {
 													</span> <span> <i class="fas fa-eye"></i> <strong
 														class="color-black">${place.views }</strong>
 													</span>
+													<!-- 댓글 구현 -->
+													</span> <span style='padding: 0px 0px 0px 7px;'> <i class="fas fa-comment-alt"></i> <strong
+														class="color-black">0</strong>
+													</span>
 													<!-- 좋아요 구현 chan  -->
 													<span> <!-- 													<i class="far fa-thumbs-up"></i> 하트로 변경  -->
 
 	
 
 <div class="tooltip1">
-<a id="<sec:authorize access="isAuthenticated()">handle</sec:authorize>Like" content_id="${ place.contentsid }"	class="btn btn-link btn-like active"> 
-<i class="fa${ place.like_true ? '' :'r'} fa-heart"	aria-hidden="true" style="color: red"></i> 
+<a id="<sec:authorize access="isAuthenticated()">handle</sec:authorize>Like" content_id="${ place.contentsid }"	class="btn btn-link btn-like active" style='padding: 0px 12px 3px 0px;'> 
+<i class="fa${ place.like_true ? '' :'r'} fa-heart"	aria-hidden="true" style="color: red;"></i> 
 <strong class="color-green">${place.likes}</strong></span></a>
 <%-- ${ place.likes_list != null ?   : null} --%>
 <div class="tooltip-content1">
