@@ -520,7 +520,7 @@ $(document).ready(function() {
 .view-comment {position:relative;margin-bottom:40px}
 .view-comment h2 {position:absolute;font-size:0;line-height:0;overflow:hidden}
 .view-comment .view-comment-heading {border-bottom:2px solid #757575;padding:10px 0;margin-bottom:30px}
-.view-comment .view-comment-item {position:relative;padding:15px 0 20px;border-top:1px solid #e5e5e5}
+.view-comment .view-comment-item {position:relative;padding:15px 0px 0px 20px;border-top:1px solid #e5e5e5}
 .view-comment .view-comment-item .no-comment {text-align:center;padding:10px 0 20px}
 .view-comment .view-comment-no-item {position:relative;padding:20px 0;border-top:1px solid #e5e5e5;border-bottom:1px solid #e5e5e5;text-align:center}
 .view-comment .view-comment-no-item .no-comment {color:#959595;font-size:13px}
@@ -618,11 +618,229 @@ var char_max = parseInt(0); // 최대
 	<div class="comment-area">
         <div class="view-comment">
         	<h4 class="view-comment-heading"><strong>댓글목록 <span class="color-red">${tourInfo.comments_num}</span></strong></h4>
+        	<div class="comment-area">
+        
+                <h2>백마탄환자님의  댓글</h2>
+        <div id="c_12_0" class="view-comment-item cmt-best" style="">
+                        <div class="view-cmtgo-btn cmtgo-btn-1 tooltips" data-toggle="tooltip" data-placement="top" data-original-title="원글 위치로 이동"><i class="fa fa-arrow-down"></i></div>
+            <div class="view-comment-best-label best-label-0">베스트 1</div>
+                                                <div class="view-comment-photo no-depth-photo">
+                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/iiii.png" alt="회원사진">                            </div>
+            <div class="comment-item-body">
+                            <div class="comment-item-info">
+                    <span class="comment-name"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=iiii" data-toggle="dropdown" title="백마탄환자 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 백마탄환자</a>
+<ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?iiii"><strong>백마탄환자</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=iiii">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=iiii">아이디로 검색</a></li>
+</ul>
+
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?iiii"><strong>백마탄환자</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=iiii">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=iiii">아이디로 검색</a></li>
+</ul>
+</noscript></span></span>
+                                                            <span class="comment-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" align="absmiddle" alt="레벨"></span>
+                                                            <span class="badge badge-yellow">베스트 댓글 1</span>
+                                                            <span class="comment-time">
+                                                <i class="far fa-clock color-grey"></i> 2018.08.12 18:35                                            </span>
+                                    </div>
+                <div class="comment-item-content">
+                                                            <div class="comment-cont-wrap">
+                                                                        
+                                                <div class="comment-cont-txt">
+                                                        새롭게 출시되는 iMac은 완전히 새로운 프로세서, 최신 그래픽 기술, 혁신적인 저장 장치, 보다 넓은 대역폭을 지원하는 통신 기술을 갖췄습니다.                                                    </div>
+                    </div>
+                                        <div class="margin-bottom-10"></div>
+                                                                            </div>
+                <div class="comment-btn-wrap">
+                                        <div class="comment-btn-right">
+                                                                                                                        <a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=12&amp;good=good" id="goodcmt_button_12" class="goodcmt_button comment-btn" title="추천"><i class="far fa-thumbs-up"></i> <strong class="board-cmt-act-good"><span class="color-yellow">3</span></strong></a>
+                                                                        <a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=12&amp;good=nogood" id="nogoodcmt_button_12" class="nogoodcmt_button comment-btn" title="비추천"><i class="far fa-thumbs-down"></i> <strong class="board-cmt-act-nogood"><span class="color-light-grey">0</span></strong></a>
+                                            </div>
+                                    </div>
+                <div class="clearfix"></div>
+
+                <span id="edit_12_0"></span>                <span id="reply_12_0"></span>
+                <input type="hidden" value="" id="secret_comment_12">
+                <input type="hidden" value="" id="anonymous_id_12">
+                <input type="hidden" value="" id="cmt_attach_12">
+                <textarea id="save_comment_12_0" style="display:none">새롭게 출시되는 iMac은 완전히 새로운 프로세서, 최신 그래픽 기술, 혁신적인 저장 장치, 보다 넓은 대역폭을 지원하는 통신 기술을 갖췄습니다.</textarea>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+                <h2>레인보우님의  댓글</h2>
+        <div id="c_11_0" class="view-comment-item cmt-best" style="">
+                        <div class="view-cmtgo-btn cmtgo-btn-2 tooltips" data-toggle="tooltip" data-placement="top" data-original-title="원글 위치로 이동"><i class="fa fa-arrow-down"></i></div>
+            <div class="view-comment-best-label best-label-1">베스트 2</div>
+                                                <div class="view-comment-photo no-depth-photo">
+                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/gggg.png" alt="회원사진">                            </div>
+            <div class="comment-item-body">
+                            <div class="comment-item-info">
+                    <span class="comment-name"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=gggg" data-toggle="dropdown" title="레인보우 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 레인보우</a>
+<ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?gggg"><strong>레인보우</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=gggg">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=gggg">아이디로 검색</a></li>
+</ul>
+
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?gggg"><strong>레인보우</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=gggg">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=gggg">아이디로 검색</a></li>
+</ul>
+</noscript></span></span>
+                                                            <span class="comment-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" align="absmiddle" alt="레벨"></span>
+                                                            <span class="badge badge-yellow">베스트 댓글 2</span>
+                                                            <span class="comment-time">
+                                                <i class="far fa-clock color-grey"></i> 2018.08.12 18:33                                            </span>
+                                    </div>
+                <div class="comment-item-content">
+                                                            <div class="comment-cont-wrap">
+                                                                        
+                                                <div class="comment-cont-txt">
+<br/>Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.                                                    </div>
+                    </div>
+                                        <div class="margin-bottom-10"></div>
+                                                                            </div>
+                <div class="comment-btn-wrap">
+                                        <div class="comment-btn-right">
+                                                                                                                        <a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=11&amp;good=good" id="goodcmt_button_11" class="goodcmt_button comment-btn" title="추천"><i class="far fa-thumbs-up"></i> <strong class="board-cmt-act-good"><span class="color-yellow">2</span></strong></a>
+                                                                        <a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=11&amp;good=nogood" id="nogoodcmt_button_11" class="nogoodcmt_button comment-btn" title="비추천"><i class="far fa-thumbs-down"></i> <strong class="board-cmt-act-nogood"><span class="color-light-grey">0</span></strong></a>
+                                            </div>
+                                    </div>
+                <div class="clearfix"></div>
+
+                <span id="edit_11_0"></span>                <span id="reply_11_0"></span>
+                <input type="hidden" value="" id="secret_comment_11">
+                <input type="hidden" value="" id="anonymous_id_11">
+                <input type="hidden" value="" id="cmt_attach_11">
+                <textarea id="save_comment_11_0" style="display:none">이제 그 비전이 그 어느 때보다 더 강력한 모습으로 다가옵니다. {이모티콘:rabbit_25}
+Maecenas sed diam eget risus varius blandit sit amet non magna. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec ullamcorper nulla non metus auctor fringilla. Maecenas sed diam eget risus varius blandit sit amet non magna. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet.</textarea>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+<!--        댓글시작 -->
+        <c:forEach var="comment" items="${comments}">
+                <h2>${comment.name}님의  댓글</h2>
+        <div id="c_9" class="view-comment-item " style="">
+                                                <div class="view-comment-photo no-depth-photo">
+                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/eeee.png" alt="회원사진">                            </div>
+            <div class="comment-item-body">
+                            <div class="comment-item-info">
+                    <span class="comment-name"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=eeee" data-toggle="dropdown" title="${comment.name} 자기소개" target="_blank" rel="nofollow" onclick="return false;"> ${comment.name}</a>
+<ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?eeee"><strong>${comment.name}</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=eeee">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=eeee">아이디로 검색</a></li>
+</ul>
+
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?eeee"><strong>${comment.name}</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=eeee">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=eeee">아이디로 검색</a></li>
+</ul>
+</noscript></span></span>
+                                                            <span class="comment-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" align="absmiddle" alt="레벨"></span>
+                                                                                <span class="comment-time">
+                                                <i class="far fa-clock color-grey"></i> ${comment.createdat }                                           </span>
+                                    </div>
+                <div class="comment-item-content">
+                                                            <div class="comment-cont-wrap">
+                                                                        
+                                                <div class="comment-cont-txt">
+${comment.content}</div>
+                    </div>
+                                        <div class="margin-bottom-10"></div>
+                                        
+<!--                                         <strong class="color-red"></strong> -->
+<button class="alert alert-warning first-comment" style='display:inline-block'>
+                        <i class="far fa-comments font-size-18 margin-right-10"></i>답변 ${comment.reply_num != 0 ? comment.reply_num:''}
+                    </button>
+                    
+                     <div class="comment-btn-right" style='display:inline-block;float:right;'>
+                     <a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=9&amp;good=good" id="goodcmt_button_9" class="goodcmt_button comment-btn" title="추천"><i class="far fa-thumbs-up"></i> <strong class="board-cmt-act-good"><span class="color-light-grey">0</span></strong></a>
+                     <a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=9&amp;good=nogood" id="nogoodcmt_button_9" class="nogoodcmt_button comment-btn" title="비추천"><i class="far fa-thumbs-down"></i> <strong class="board-cmt-act-nogood"><span class="color-light-grey">0</span></strong></a>
+                     </div>
+                                                                            </div>
+                
+                                    
+                                    
+               
+            </div>
+            
+            <div class='sub_comments'>            
+                <h2>할인의추억님의 <span class="sound_only">댓글의</span> 댓글</h2>
+        <div id="c_10" class="view-comment-item " style="margin-left:15px;">
+                                    <div class="view-comment-depth"><i class="fas fa-caret-right"></i></div>
+                                    <div class="view-comment-photo ">
+                                <img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/ffff.png" alt="회원사진">                            </div>
+            <div class="comment-item-body">
+                            <div class="comment-item-info">
+                    <span class="comment-name"><span class="sv_wrap">
+<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="할인의추억 자기소개" target="_blank" rel="nofollow" onclick="return false;"> 할인의추억</a>
+<ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
+</ul>
+
+<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu">
+<li><a href="http://theme4.eyoom.net/?ffff"><strong>할인의추억</strong>님의 홈</a></li>
+<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li>
+<li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li>
+</ul>
+</noscript></span></span>
+                                                            <span class="comment-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" align="absmiddle" alt="레벨"></span>
+                                                                                <span class="comment-time">
+                                                <i class="far fa-clock color-grey"></i> 2018.08.12 18:32                                            </span>
+                                    </div>
+                <div class="comment-item-content">
+                                                            <div class="comment-cont-wrap">
+                                                                        
+                                                <div class="comment-cont-txt">
+                                                        오늘날의 iMac은 그런 비전을 바탕으로 만들어져왔죠.                                                    </div>
+                    </div>
+                                        <div class="margin-bottom-10"></div>
+                                                                            </div>
+                <div class="comment-btn-wrap">
+                                        <div class="comment-btn-right">
+                                                                                                                        <a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=10&amp;good=good" id="goodcmt_button_10" class="goodcmt_button comment-btn" title="추천"><i class="far fa-thumbs-up"></i> <strong class="board-cmt-act-good"><span class="color-light-grey">0</span></strong></a>
+                                                                        <a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=10&amp;good=nogood" id="nogoodcmt_button_10" class="nogoodcmt_button comment-btn" title="비추천"><i class="far fa-thumbs-down"></i> <strong class="board-cmt-act-nogood"><span class="color-light-grey">0</span></strong></a>
+                                            </div>
+                                    </div>
+                <div class="clearfix"></div>
+
+                <span id="edit_10"></span>                <span id="reply_10"></span>
+                <input type="hidden" value="" id="secret_comment_10">
+                <input type="hidden" value="" id="anonymous_id_10">
+                <input type="hidden" value="" id="cmt_attach_10">
+                <textarea id="save_comment_10" style="display:none">오늘날의 iMac은 그런 비전을 바탕으로 만들어져왔죠.</textarea>
+                <div class="clearfix"></div>
+            </div>
+        </div></div>  
+        
+        
+        
+        
+        
+        </div>
+        
+        
+               
+             </c:forEach>
+              
+            </div>
+        </div>
+                  
         	
-        	<c:forEach var="comment" items="${comments}">
-        	<div>name : ${comment.name} 내용 : ${comment.content} createdat ${comment.createdat }</div>
-        	</c:forEach>
+        	
         <c:choose>
+        
 			<c:when test="${tourInfo.comments_num ==0}">
 				 <div class="view-comment-no-item">
             	<span id="bo_vc_empty" class="no-comment"><i class="fas fa-exclamation-circle"></i> 등록된 댓글이 없습니다.</span>
@@ -1737,6 +1955,10 @@ $(function() {
 						get_cookie("ck_font_resize_rmv_class"),
 						get_cookie("ck_font_resize_add_class"));
 			});
+			$(document).on('click','.alert',function(){
+
+	            $(this).closest('.view-comment-item ').find('.sub_comments').fadeToggle(0);
+	        })
 		</script>
 
 		<!-- ie6,7에서 사이드뷰가 게시판 목록에서 아래 사이드뷰에 가려지는 현상 수정 -->

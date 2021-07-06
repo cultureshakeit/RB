@@ -3,6 +3,6 @@
 <mapper namespace="com.rental.mapper.CommentMapper">
 
 	<select id ="getComments"  resultType="com.rental.domain.CommentVO">
-	select ry.*,(select count(*) from rereply where ref_group = ry.id) as reply_num  from rereply ry where ref_group is null  OFFSET (#{pageNum} - 1) * #{amount} ROWS FETCH NEXT #{amount} ROWS ONLY
+	select id,ref_id,ref_group,name,content,indent,TO_CHAR( createdat+9/24,'YYYY-MM-DD HH24:MI:SS') as createdat,TO_CHAR( updatedat+9/24,'YYYY-MM-DD HH24:MI:SS')  as updatedat, user_id, content_id ,(select count(*) from rereply where ref_group = ry.id) as reply_num  from rereply ry where ref_group is null  OFFSET (#{pageNum} - 1) * #{amount} ROWS FETCH NEXT #{amount} ROWS ONLY
 		</select>
 </mapper>
