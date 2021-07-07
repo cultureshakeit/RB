@@ -502,5 +502,16 @@ public class CommonController {
 		tourService.rmFavor(userid,sid);
 	}
 	
+	@ResponseBody
+	@GetMapping("/tourist/reply")
+	public List<CommentVO> tourist_comment_reply(@RequestParam("cgp") int cgp ,@RequestParam("cid") int cid,@RequestParam("sid") String sid, Principal prin) {
+		String userid = null;
+		if (prin != null) {userid = prin.getName();}
+		System.out.println("cgp : "+cgp+", cid : "+cid+", sid : "+sid);
+		List<CommentVO> cmo = commentService.getReplys(sid, cid, cgp);
+		System.out.println(cmo.get(0).toString());
+		return cmo;
+	}
+	
 	
 }

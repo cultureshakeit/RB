@@ -21,5 +21,10 @@ public class CommentServiceImpl implements CommentService {
 		// TODO Auto-generated method stub
 		return mapper.getComments(cri);
 	}
+	@Override
+	public List<CommentVO> getReplys(String sid, int cid, int cgp) {
+		// TODO Auto-generated method stub
+		return mapper.getReplys(sid, cid, cgp);
+	}
 
 }
