@@ -100,7 +100,6 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 </head>
 
 <body>
-<<<<<<< HEAD
 	<h1>${uri }</h1>
 	<div class=headerempty></div>
 	<div class="wrapper">
@@ -134,42 +133,11 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 				</div>
 				<div class="row1">
 
-					<style>
-.headerempty {
-	position: relative;
-	height: 150px;
-=======
-<div class=headerempty></div>
-<div class="wrapper">
-	<div class="basic-body container page-padding ft-padding">
-		<div class="basic-body-page">
-        	<div class="category-mobile-area">
-            	<div class="tab-scroll-page-category">
-                	<div class="scrollbar">
-                    	<div class="handle">
-                        	<div class="mousearea"></div>
-                        </div>
-                    </div>
-                    <div id="tab-page-category">
-	                    <div class="page-category-list">
-							<span style='font-size:24px;'>관광명소</span>
-	                    	<span class="fake-span"></span>
-	                    </div>
-	                    <div class="controls">
-	                        <button class="btn prev"><i class="fas fa-caret-left"></i></button>
-	                        <button class="btn next"><i class="fas fa-caret-right"></i></button>
-	                    </div>
-                    </div>
-                    <div class="tab-page-category-divider"></div>
-                </div>
-            </div>
-			<div class="row1">
-			
+
 <style>
 .headerempty{
  position: relative;
- height: 150px;
->>>>>>> branch 'master' of https://github.com/cultureshakeit/RB.git
+ height: 63px ! important;
 }
 
 .board-view {
