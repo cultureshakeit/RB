@@ -34,7 +34,7 @@
 				<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token }">
 				<span class="login100-form-title p-b-34"> 
 					로그인 페이지 
-					<c:if	test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
+					<c:if test="${not empty SPRING_SECURITY_LAST_EXCEPTION}">
 						<br>
 						<font color="red" style="font-size:1rem;">
 							${sessionScope["SPRING_SECURITY_LAST_EXCEPTION"].message}
@@ -65,7 +65,8 @@
 				</div>
 
 				<div class="w-full text-center p-t-27">
-					<span class="txt1"> ID/PW　Search </span>
+					<hr>
+					<a href="/signup" class="txt2">회원 가입</a>
 					<hr>
 					<a href="javascript:void(0)" onClick="window.open('/forgot/forgotid','','width=100px,heigth=100px, resize=none')"
 						class="txt2"> 아이디를 잊으셨습니까? </a>

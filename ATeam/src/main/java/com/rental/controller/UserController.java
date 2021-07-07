@@ -1,10 +1,12 @@
 package com.rental.controller;
 
 import java.io.File;
+import java.security.Principal;
 import java.util.HashMap;
 import java.util.UUID;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -34,6 +36,7 @@ import lombok.extern.log4j.Log4j2;
 
 @Controller
 @Log4j2
+@PreAuthorize("isAuthenticated()")
 @RequestMapping(value = "/users/*", method = { RequestMethod.GET, RequestMethod.POST })
 public class UserController {
 
@@ -54,11 +57,13 @@ public class UserController {
 
 	@Setter(onMethod_ = { @Autowired })
 	private ApplyService service;
+	
 
 	@GetMapping("/index")
-	public void index(@RequestParam("userid") String userid, Model model, Criteria cri) {
+	public void index(Model model, Criteria cri, Principal principal) {
 		
 		HashMap<String, Object> map = new HashMap<String, Object>();
+		String userid = principal.getName();
 		map.put("userid", userid);
 
 		Gson gson = new Gson();
@@ -73,14 +78,15 @@ public class UserController {
 	}
 
 	@GetMapping("/profile")
-	public void profile(String userid, Model model) {
+	public void profile(Model model, Principal principal) {
+		String userid = principal.getName();
 		model.addAttribute("user", logser.users(userid));
 		model.addAttribute("userid", userid);
 
 	}
 
 	@GetMapping("/Reservation")
-	public void Reservation(String userid, Model model, Criteria cri) {
+	public void Reservation(Model model, Criteria cri, Principal principal) {
 		if (ps.AllList() != null) {
 			for (ProductVO pvo : ps.AllList()) {
 				if (pvo.getMany() == 0 && pvo.getStatus() == 1) {
@@ -90,6 +96,7 @@ public class UserController {
 		}
 		// 다중 파라미터를 mybatis로 보낼떄
 		HashMap<String, Object> map = new HashMap<String, Object>();
+		String userid = principal.getName();
 		map.put("userid", userid);
 		map.put("pageNum", cri.getPageNum());
 		map.put("amount", cri.getAmount());
@@ -106,7 +113,7 @@ public class UserController {
 
 	}
 	@GetMapping("/searchDate")
-	public String Reservation(@RequestParam("userid") String userid, ResTableVO rvo,Model model, Criteria cri) {
+	public String Reservation(ResTableVO rvo,Model model, Criteria cri, Principal principal) {
 		for (ProductVO pvo : ps.AllList()) {
 			if (pvo.getMany() == 0 && pvo.getStatus() == 1) {
 				ps.statusminus(pvo.getNum());
@@ -147,6 +154,7 @@ public class UserController {
 		System.out.println("날짜 입니다 한번 조십시오"+Fullday);
 		// 다중 파라미터를 mybatis로 보낼떄
 		HashMap<String, Object> map = new HashMap<String, Object>();
+		String userid = principal.getName();
 		map.put("days", Fullday);
 
 		map.put("userid", userid);
@@ -162,8 +170,10 @@ public class UserController {
 		}
 		return "users/Reservation";
 	}
+	
 	@GetMapping("/Apply")
-	public void Apply(Model model, String userid) {
+	public void Apply(Model model, Principal principal) {
+		String userid = principal.getName();
 		model.addAttribute("userid", userid);
 		model.addAttribute("nickname", logser.users(userid).getNickname());
 	}

@@ -87,10 +87,8 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
                     </div>
                     <div id="tab-page-category">
 	                    <div class="page-category-list">
-<!-- 	                      <span ><a href="#" target="_self">공유자료실</a></span> -->
-<!-- 	                      <span ><a href="#" target="_self">이벤트</a></span> -->
-<span style='font-size:24px;'>관광명소</span>
-	                      <span class="fake-span"></span>
+							<span style='font-size:24px;'>관광명소</span>
+	                    	<span class="fake-span"></span>
 	                    </div>
 	                    <div class="controls">
 	                        <button class="btn prev"><i class="fas fa-caret-left"></i></button>

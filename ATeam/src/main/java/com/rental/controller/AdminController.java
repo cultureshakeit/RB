@@ -1,8 +1,10 @@
 package com.rental.controller;
 
+import java.security.Principal;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -30,6 +32,7 @@ import lombok.extern.log4j.Log4j;
 
 @Controller
 @Log4j
+@PreAuthorize("hasRole('ROLE_ADMIN')")
 @RequestMapping(value = "/admin/*")
 public class AdminController {
 
@@ -59,7 +62,7 @@ public class AdminController {
 	Gson gson = new Gson();
 
 	@GetMapping("/index")
-	public void index(String userid, Model model, @ModelAttribute("cri") Criteria cri) {
+	public void index(Model model, @ModelAttribute("cri") Criteria cri, Principal principal) {
 		log.info("welcome admin dashboard");
 
 		List<MemberVO> mvo = service.getListWithPaging(cri);
@@ -79,10 +82,10 @@ public class AdminController {
 		String DataToJson = gson.toJson(Chart.JsonData());
 		System.out.println(DataToJson);
 		model.addAttribute("JsonData", DataToJson);
-		model.addAttribute("userid", userid);
+		model.addAttribute("userid", principal.getName());
 		model.addAttribute("reply", rs.list());
 		model.addAttribute("users", service.PureAllUser());
-		model.addAttribute("loginfo", service.UserLogInfo(userid));
+		model.addAttribute("loginfo", service.UserLogInfo(principal.getName()));
 		model.addAttribute("UserList", mvo);
 		;
 		model.addAttribute("pageMaker", new PageDTO(cri, service.AllUser(cri)));
@@ -90,30 +93,30 @@ public class AdminController {
 	}
 
 	@GetMapping("/CommunityManager")
-	public void Manager(Model model, String userid, @ModelAttribute("cri") Criteria cri) {
-		model.addAttribute("userid", userid);
+	public void Manager(Model model, Principal principal, @ModelAttribute("cri") Criteria cri) {
+		model.addAttribute("userid", principal.getName());
 	}
 
 	@GetMapping("/product_manager")
-	public void product(String userid, Model model, @ModelAttribute("cri") Criteria cri) {
+	public void product(Model model, @ModelAttribute("cri") Criteria cri, Principal principal) {
 		
-		model.addAttribute("userid", userid);
+		model.addAttribute("userid", principal.getName());
 		model.addAttribute("product", ps.getList(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri, ps.count()));
 
 	}
 
 	@GetMapping("/notice")
-	public void notice(String userid, Model model, @ModelAttribute("cri") Criteria cri) {
-		model.addAttribute("userid", userid);
+	public void notice(Model model, @ModelAttribute("cri") Criteria cri, Principal principal) {
+		model.addAttribute("userid", principal.getName());
 
 		model.addAttribute("list", ns.List(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri, ns.NoticeCount()));
 	}
 
 	@GetMapping("/QnA")
-	public void Qna(String userid, Model model, @ModelAttribute("cri") Criteria cri, Criteria_c cri_c) {
-		model.addAttribute("userid", userid);
+	public void Qna(Model model, @ModelAttribute("cri") Criteria cri, Criteria_c cri_c, Principal principal) {
+		model.addAttribute("userid", principal.getName());
 		model.addAttribute("qa", qs.list(cri));
 		model.addAttribute("pageMaker", new PageDTO(cri, qs.count()));
 		// Contact

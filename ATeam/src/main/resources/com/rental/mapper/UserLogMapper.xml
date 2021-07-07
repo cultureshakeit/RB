@@ -35,7 +35,6 @@
 	
 	<select id="UserLogInfo" resultMap="LogInfo">
 		select
-			/*+index_desc (tbl_member tbl_member_pk ) */
 			userid, login_count, fail_count, fullfail_count
 		from inlog where userid = #{userid}
 	</select>
@@ -47,21 +46,24 @@
 	
 	<select id="UserAllCount" resultType="int">
 		<![CDATA[
-			select count(*) as count from tbl_member  
+			select count(*) as count from member  
 			where
 		]]>
 		<include refid="criteria"></include> <![CDATA[rownum > 0]]>
 	</select>
+	
 	<select id="UserCount" resultType="int">
-		select count(*) as count from
-		tbl_member NATURAL join tbl_member_auth
-		where tbl_member_auth.auth not like 'ROLE_ADMIN'
+		select count(*) as count 
+		from member
+		NATURAL join auth
+		where auth.authority not like 'ROLE_ADMIN'
 	</select>
+	
 	<select id="UserList" resultType="com.rental.domain.MemberVO">
 		<![CDATA[	
 			select *
-			from tbl_member
-			order by  regdate desc, enabled desc
+			from member
+			order by regdate desc, enable desc
 		]]>
 	</select>
 
@@ -85,26 +87,27 @@
 
 	<select id="getListWithPaging" resultType="com.rental.domain.MemberVO">
 		<![CDATA[	
-			select /*+ index_desc (tbl_member tbl_member_pk )*/	*
+			select *
 			from 
 			(
-				select /*+ index_desc (tbl_member tbl_member_pk )*/
+				select
 					rownum rn, userid, userpw, username, nickname, regdate,
-					updatedate, enabled, useremail, au.auth, ip
-				from tbl_member tm
-				NATURAL join tbl_member_auth au
+					m_update, enable, useremail, au.authority, ip
+				from member tm
+				INNER join auth au
+				ON tm.authno = au.authno
 				where 
 		]]>
 		<include refid="criteria"></include>
 		<![CDATA[
 					rownum <= #{pageNum} * #{amount} order by regdate desc
 			)
-			where rn > (#{pageNum} - 1) * #{amount} and auth != 'ROLE_ADMIN'  
+			where rn > (#{pageNum} - 1) * #{amount} and authority != 'ROLE_ADMIN'  
 		]]>
 	</select>
 	
 	<select id="users" resultType="com.rental.domain.MemberVO">
-		select * from tbl_member where userid = #{userid}
+		select * from member where userid = #{userid}
 	</select>
 
 </mapper>
