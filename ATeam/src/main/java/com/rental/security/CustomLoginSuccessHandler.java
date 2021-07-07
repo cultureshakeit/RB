@@ -39,16 +39,6 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 		log.warn("ROLE NAMES : " + roleNames);
 		System.out.println("auth.getName() : "+auth.getName());
 		service.UserLoginSuccess(auth.getName());
-		if (roleNames.contains("ROLE_ADMIN")) {
-			response.sendRedirect("/admin/index?userid=" + auth.getName());
-			return;
-		}
-
-		if (roleNames.contains("ROLE_USER")) {
-			service.UserLoginSuccess(auth.getName());
-			response.sendRedirect("/"+auth.getName());
-			return;
-		}
 
 		response.sendRedirect("/");
 	}

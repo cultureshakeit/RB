@@ -3,6 +3,7 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions"%>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -324,16 +325,15 @@ tml, body {
 								</div>
 							</div>
 							<!-- // .my-calendar -->
-
 							<form name="searchDate" action="/users/searchDate" method="get">
 								<div class="col-md-12"
 									style="position: relative; height: 100px;">
-									<button class="button"
-										style="vertical-align: middle; position: absolute; top: 0; z-index: 11; left: 50%; transform: translateX(-50%);">
-										<input type="hidden" name="userid"
-											value="<%=request.getParameter("userid")%>"> <input
-											type="hidden" name="day" value=""> <input
-											type="hidden" name="month" value=""> <span>검색</span>
+									<button class="button" style="vertical-align: middle; position: absolute;
+																  top: 0; z-index: 11; left: 50%; transform: translateX(-50%);">
+										<input type="hidden" name="userid" value="<sec:authentication property='principal.member.userid'/>">
+										<input type="hidden" name="day" value="">
+										<input type="hidden" name="month" value="">
+										<span>검색</span>
 									</button>
 								</div>
 							</form>
@@ -356,27 +356,20 @@ tml, body {
 									<thead>
 										<tr>
 											<th>#</th>
-											<th>예약 상품</th>
-											<th>구입 날짜</th>
-											<th>예약 가격</th>
-											<th>임대 기간</th>
-											<th>금액</th>
+											<th>예약 장소</th>
+											<th>예약 날짜</th>
+											<th>예약 기간</th>
 										</tr>
 									</thead>
 									<tbody>
-										<c:set
-											value="${pageMaker.total - (pageMaker.cri.pageNum - 1) * pageMaker.cri.amount}"
-											var="bno" />
+										<c:set value="${pageMaker.total - (pageMaker.cri.pageNum - 1) * pageMaker.cri.amount}" var="bno" />
 										<c:forEach items="${res }" var="res">
 
 											<tr>
 												<td>${bno }</td>
-												<td><img style="max-width: 150px;"
-													src="/upload/${res.goodsphoto }"></td>
+												<td><img style="max-width: 150px;" src="/upload/${res.goodsphoto }"></td>
 												<td>${res.resdate }</td>
 												<td>${fn:substring(res.startdate,0,10)}~${fn:substring(res.lastdate,0,10)}</td>
-												<td>7일</td>
-												<td id="prices">${res.price }</td>
 											</tr>
 											<c:set var="bno" value="${bno-1 }" />
 										</c:forEach>
@@ -593,7 +586,7 @@ tml, body {
 				function(e) {
 					e.preventDefault();
 					var num = $(this).attr("href");
-					var userid = '<%=request.getParameter("userid")%>';
+					var userid = "<sec:authentication property='principal.member.userid'/>";
 			var form = $("#actionForm");
 			form.append("<input name='pageNum' value='"+num+"'>");
 			form.append("<input name='userid' value='"+userid+"'>");

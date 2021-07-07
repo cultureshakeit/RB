@@ -66,8 +66,6 @@
 				<a class="navbar-toggle hidden-sm hidden-md hidden-lg "
 					href="javascript:void(0)" data-toggle="collapse"
 					data-target=".navbar-collapse"><i class="fa fa-bars"></i></a>
-
-
 				<ul class="nav navbar-top-links navbar-right pull-right">
 					<li><a class="profile-pic" href="#"> </a></li>
 				</ul>
@@ -82,7 +80,7 @@
 			<div class="container-fluid">
 				<div class="row bg-title">
 					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						<h4 class="page-title">관리자 페이지</h4>
+						<h4 class="page-title">유저 로그 페이지</h4>
 					</div>
 
 					<!-- /.col-lg-12 -->
@@ -120,7 +118,8 @@
 								<div class="col-md-6 col-sm-6 col-xs-6">
 									<i class="linea-icon linea-basic" data-icon="&#xe01b;"></i>
 									<h5 class="text-muted vb">
-										누적로그인<br> 실패 횟수
+										누적로그인<br>
+										실패 횟수
 									</h5>
 								</div>
 								<div class="col-md-6 col-sm-6 col-xs-6">
@@ -212,8 +211,7 @@
 				<!-- /.row -->
 			</div>
 			<!-- /.container-fluid -->
-			<footer class="footer text-center"> 2017 &copy; Pixel Admin
-				brought to you by wrappixel.com </footer>
+			<footer class="footer text-center"> 2017 &copy; Pixel Admin	brought to you by wrappixel.com </footer>
 		</div>
 		<!-- /#page-wrapper -->
 	</div>

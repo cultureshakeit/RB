@@ -8,7 +8,7 @@
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
-                        <h1 class="mx-auto my-1 text-uppercase">Jeju doda</h1>
+                        <h1 class="mx-auto my-1 text-uppercase">Love Jeju</h1>
                         <h6 class="text-white-50 mx-auto mt-2 mb-5">제주는 자연의 공간입니다. <br>
                         제주를 사랑하는 분들 그리고 <br>
                         방문하시는 모든 분들께서 아름다운 
@@ -29,7 +29,6 @@
                           유명한 관광지도 좋고 곳곳의 숨은 공간들도 찾아 즐기는 방법도 좋겠죠? 저희와 함께 제주여행을 떠나봐요.
                
                <br> <br>
-                            <a href="https://www.lovejeju.shop/"> 이전 이미지로 </a>
                             
                         </p>
                     </div>
@@ -76,6 +75,22 @@
                                     <br>
                                     <p class="mb-0 text-white-50">제주도는 한반도의 최남단에 위치하고 있다. 수리적으로 북위 33°10′∼ 33°34′, 동경 126°10′∼127°에 해당된다.</p>
                                     <hr class="d-none d-lg-block mb-0 me-0" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project One Row-->
+                <div class="row gx-0 mb-5 mb-lg-0 justify-content-center">
+                    <div class="col-lg-6"><div title="어디론가 고고"><a hred ="#about"><img class="img-fluid" src="resources/assets/img/a1.jpg" alt="..." /></div></div></a>
+                    <div class="col-lg-6">
+                        <div class="bg-black text-center h-100 project">
+                            <div class="d-flex h-100">
+                                <div class="project-text w-100 my-auto text-center text-lg-left">
+                                    <h4 class="text-white">지형적 특징</h4>
+                                    <br>
+                                    <p class="mb-0 text-white-50">제주도는 하나의 한라산체로 이루어진 섬이다. 평면도상의 형태는 장축이 단축보다 2.4배 긴 타원에 가까운 형태이다.  </p>
+                                    <hr class="d-none d-lg-block mb-0 ms-0" />
                                 </div>
                             </div>
                         </div>
@@ -148,4 +163,3 @@
         <script src="js/scripts.js"></script>
     </body>
 </html>
-<%@include file="footer.jsp"%>

@@ -53,7 +53,7 @@ public class CustomAuthenticationProvider implements AuthenticationProvider {
 		log.debug("AuthenticationProvider :::::: 1");
 		HashMap<String, String> ip = new HashMap<String, String>();
 		CustomUser user = (CustomUser) service.loadUserByUsername(username);
-		ip.put("ip",user.getMember().getIp());
+		ip.put("ip", user.getMember().getIp());
 		ip.put("userid", user.getMember().getUserid());
 		if (ips.isBlock(ip) != null) {
 			if (!ips.isBlock(ip).isEnabled()) {

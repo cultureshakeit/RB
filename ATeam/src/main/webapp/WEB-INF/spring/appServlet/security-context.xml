@@ -60,7 +60,7 @@
 			data-source-ref="dataSource" token-validity-seconds="604800" />
 
 		<!-- 로그아웃 -->
-		<security:logout logout-success-url="/login?logout"
+		<security:logout logout-success-url="/login"
 			delete-cookies="JSESSIONID,remember-me,JSESSION_ID"
 			invalidate-session="true" />
 
@@ -86,12 +86,10 @@
 		<security:authentication-provider
 			ref="CustomAuthenticationProvider">
 		</security:authentication-provider>
-		<security:authentication-provider
-			user-service-ref="CustomUserDetailsService">
+		<security:authentication-provider user-service-ref="CustomUserDetailsService">
 
 			<!-- 비밀번호 bcrypt암호화 -->
-			<security:password-encoder
-				ref="bcryptPasswordEncoder" />
+			<security:password-encoder ref="bcryptPasswordEncoder" />
 		</security:authentication-provider>
 	</security:authentication-manager>
 
