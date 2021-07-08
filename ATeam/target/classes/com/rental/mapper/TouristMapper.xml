@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.rental.mapper.TouristMapper">
+
+	<select id ="List"  resultType="com.rental.domain.TouristVO">
+	
+		select
+			contentsid,title,introduction,
+			(select listagg(t.name,',') from place_tag_table c join tag t on c.tag_id = t.id where content_id = contentsid) as tag,
+			region1, region2, address, roadaddress, latitude, longitude, postcode, phoneno, photo, views,
+			(select count(*) from content_like where content_id = contentsid ) as likes,
+			(select listagg(nickname,',') from  (select nickname from content_like c1 right join tbl_member tm on tm.userid = c1.user_id where c1.content_id = contentsid order by createdat desc FETCH NEXT 5 rows only)) as likes_list,
+			(select count(*) from rereply where content_id = contentsid) as comments_num
+		
+		<choose>
+        	<when test="userid != null">,(select count(*) from content_like where content_id = contentsid and user_id = #{userid}) as like_true
+        	,(select count(*) from content_favor where content_id = contentsid and user_id = #{userid}) as favor_true
+        	</when>
+        	<otherwise></otherwise>
+   		</choose>
+   		
+		from place  
+		<choose>
+        	<when test="TagName != null">
+        	join place_tag_table jt on jt.content_id = place.contentsid   where tag_id = (select tag.id from tag where name = #{TagName})
+        	</when>
+        	<otherwise></otherwise>
+   		</choose>
+		OFFSET (#{pageNum} - 1) * #{amount}
+		ROWS FETCH NEXT #{amount} ROWS ONLY
+	</select>
+
+	<select id ="getOne"  resultType="com.rental.domain.TouristVO">
+		select contentsid,title,introduction,region1,region2,address,roadaddress,latitude,longitude,postcode,phoneno,photo,views
+		,(select count(*) from content_like where content_id = #{sid} ) as likes
+		,(select count(*) from rereply where content_id = #{sid}) as comments_num
+		
+		<choose>
+        	<when test="userid != null">,(select count(*) from content_like where content_id = #{sid} and user_id = #{userid}) as like_true
+        	,(select count(*) from content_favor where content_id = contentsid and user_id = #{userid}) as favor_true
+        	</when>
+        	<otherwise></otherwise>
+        </choose>
+        from place
+        where contentsid = #{sid}
+   		
+	</select>
+
+	<select id ="countAll"  resultType="int">
+		select count(*)
+		from place
+		<choose>
+        	<when test="TagName != null">
+        	join place_tag_table jt on jt.content_id = place.contentsid   where tag_id = (select tag.id from tag where name = #{TagName})
+        	</when>
+        	<otherwise></otherwise>
+   		</choose>
+	</select>
+
+	<select id ="getTags"  resultType="String">
+		select name
+		from place_tag_table c
+		join tag t on c.tag_id = t.id
+		where content_id = #{sid}
+	</select>
+
+	<update id="addViews">
+		UPDATE place
+		SET views = views + 1
+		WHERE contentsid = #{sid}
+	</update>
+<!-- 	select count(*) from content_like where content_id = #{sid} and user_id = #{userid} -->
+	<insert id="addLike" >
+		insert into content_like (content_id, user_id ) values(#{sid},#{userid})
+	</insert>
+	<delete id="deleteLike" >
+		delete from content_like where content_id = #{sid} and user_id = #{userid}
+	</delete>
+	<insert id="addFavor" >
+		insert into content_favor (content_id, user_id ) values(#{sid},#{userid})
+	</insert>
+	<delete id="rmFavor" >
+		delete from content_favor where content_id = #{sid} and user_id = #{userid}
+	</delete>
+	
+</mapper>

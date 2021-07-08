@@ -31,6 +31,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.jayway.jsonpath.Configuration;
@@ -504,13 +505,22 @@ public class CommonController {
 	
 	@ResponseBody
 	@GetMapping("/tourist/reply")
-	public List<CommentVO> tourist_comment_reply(@RequestParam("cgp") int cgp ,@RequestParam("cid") int cid,@RequestParam("sid") String sid, Principal prin) {
+	public String tourist_comment_reply(@RequestParam("cgp") int cgp ,@RequestParam("cid") int cid,@RequestParam("sid") String sid, Principal prin) {
 		String userid = null;
 		if (prin != null) {userid = prin.getName();}
 		System.out.println("cgp : "+cgp+", cid : "+cid+", sid : "+sid);
 		List<CommentVO> cmo = commentService.getReplys(sid, cid, cgp);
 		System.out.println(cmo.get(0).toString());
-		return cmo;
+		
+		String str = "";
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			str = mapper.writeValueAsString(cmo);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return str;
 	}
 	
 	
