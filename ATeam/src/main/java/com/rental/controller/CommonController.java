@@ -24,6 +24,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -49,6 +50,7 @@ import com.rental.domain.PageDTO;
 import com.rental.domain.PageDTO_c;
 import com.rental.domain.QnAVO;
 import com.rental.domain.ReplyVO;
+import com.rental.domain.RereplyVO;
 import com.rental.domain.ReviewVO;
 import com.rental.domain.TouristVO;
 import com.rental.security.CustomUserDetailsService;
@@ -522,6 +524,39 @@ public class CommonController {
 		
 		return str;
 	}
-	
-	
+//	List<CommentVO> comments = commentService.getComments(cri);
+//	List<CommentVO> cmo = commentService.getReplys(sid, cid, cgp);
+	@ResponseBody
+	@PostMapping("/tourist/reply")
+	public String tourist_comment_append(@ModelAttribute("ry") RereplyVO ry, Principal prin) {
+		String userid = null;
+		if (prin != null) {userid = prin.getName();}
+		System.out.println(ry.toString());
+		commentService.add_reply(ry);
+		
+		List<CommentVO> cmo = commentService.getReplys(ry.getSid(), ry.getCid(), ry.getCgp());
+		String str = "";
+		ObjectMapper mapper = new ObjectMapper();
+		try {
+			str = mapper.writeValueAsString(cmo);
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return str;
+	}
+	@ResponseBody
+	@PutMapping("/tourist/reply")
+	public void tourist_comment_update(@RequestParam("cgp") int cgp ,@RequestParam("cid") int cid,@RequestParam("sid") String sid, Principal prin) {
+		String userid = null;
+		if (prin != null) {userid = prin.getName();}
+		tourService.rmFavor(userid,sid);
+	}
+	@ResponseBody
+	@DeleteMapping("/tourist/reply")
+	public void tourist_comment_delete(@RequestParam("cgp") int cgp ,@RequestParam("cid") int cid,@RequestParam("sid") String sid, Principal prin) {
+		String userid = null;
+		if (prin != null) {userid = prin.getName();}
+		tourService.rmFavor(userid,sid);
+	}
 }

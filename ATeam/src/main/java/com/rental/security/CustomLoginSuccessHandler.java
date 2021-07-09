@@ -7,6 +7,7 @@ import java.util.List;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -39,7 +40,8 @@ public class CustomLoginSuccessHandler implements AuthenticationSuccessHandler {
 		log.warn("ROLE NAMES : " + roleNames);
 		System.out.println("auth.getName() : "+auth.getName());
 		service.UserLoginSuccess(auth.getName());
-
+		HttpSession httpSession = request.getSession(true);
+		httpSession.setAttribute("USER", service.users(auth.getName())); 
 		response.sendRedirect("/");
 	}
 

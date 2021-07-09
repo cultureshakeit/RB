@@ -1,3 +1,4 @@
+<%@page import="com.rental.domain.CommentVO"%>
 <%@page import="com.jayway.jsonpath.JsonPath"%>
 <%@page import="com.jayway.jsonpath.DocumentContext"%>
 <%@include file="../header.jsp"%>
@@ -100,7 +101,6 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 </head>
 
 <body>
-	<h1>${uri }</h1>
 	<div class=headerempty></div>
 	<div class="wrapper">
 		<div class="basic-body container page-padding ft-padding">
@@ -137,7 +137,7 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 <style>
 .headerempty{
  position: relative;
- height: 63px ! important;
+ height: 120px ! important;
 }
 
 .board-view {
@@ -1082,12 +1082,7 @@ strong.heart_click {
 													<i class="fa${tourInfo.favor_true ? '':'r'} fa-star"
 														style='color:${tourInfo.favor_true ? "yellow":"white"}'></i>
 													<strong class='heart_click'></strong>
-												</div>
-
-											</div>
-										</div>
-
-										<script>
+													<script>
                    var content_id = '<c:out value="${tourInfo.contentsid}" />'
                    
                    $(document).on('click','#handleLike',function(){
@@ -1166,41 +1161,15 @@ strong.heart_click {
        			}
        				})
        				
-       				$(document).on('click','#Like',function(){
-       				let True =  confirm('로그인을 해주세요~!')
-       				if(True){
-       					window.location.href ='/login'
-       				}
-       			})
-       			$(document).on('click','#favor',function(){
-       				let True =  confirm('로그인을 해주세요~!')
-       				if(True){
-       					window.location.href ='/login'
-       				}
-       			})
-       			$(document).on('click','#handleLike',function(){
-//        				var content_id = $(this).attr('content_id')
-       				var flag = $(this).children('i')
-       				var self = $(this)
-       				var target = 'class'
-       				if(flag.attr(target).includes('far')){
-       					$.ajax({
-       						url : '/tourist/like/' + content_id,
-       						type: 'post',
-       					})
-       					.done(function(result){
-       						
-       			            flag.attr(target,'fa fa-heart')
-       			            var count = parseInt(self.children('strong').text());
-       			            self.children('strong').text(count+1);
-       			            
-       					})
-       					.fail(function(){
-       						console.log("에러 발생!")
-       					})
        				
-       			}
+       			
                    </script>
+												</div>
+
+											</div>
+										</div>
+
+										
 									</div>
 								</div>
 							</div>
@@ -1578,7 +1547,7 @@ $(document).ready(function() {
 
 .view-comment .comment-item-content .comment-cont-txt {
 	position: relative;
-	flex-grow: 4
+/* 	flex-grow: 4 */
 }
 
 .view-comment .comment-item-content .comment-image {
@@ -1884,6 +1853,11 @@ $(document).ready(function() {
 .sub_comments {
 	display: none;
 }
+
+.form-control {
+	width: 100% !important;
+    resize: none;
+}
 </style>
 
 						<script>
@@ -1958,10 +1932,7 @@ var char_max = parseInt(0); // 최대
 
 															<!--                                         <strong class="color-red"></strong> -->
 															<button class="alert alert-warning first-comment"
-																style='display: inline-block'>
-																<i class="far fa-comments font-size-18 margin-right-10"></i>답변
-																${comment.reply_num != 0 ? comment.reply_num:''}
-															</button>
+																style='display: inline-block'><i class="far fa-comments font-size-18 margin-right-10"></i>댓글 ${comment.reply_num != 0 ? comment.reply_num:''}</button>
 
 															<div class="comment-btn-right"
 																style='display: inline-block; float: right;'>
@@ -1996,6 +1967,14 @@ var char_max = parseInt(0); // 최대
 												<img class="user-photo"
 													src="/resources/tourist/image/admin.png" alt="회원사진">
 											</div>
+											<% CommentVO cvo =(CommentVO)  pageContext.getAttribute("comment");
+												String user_id_ = cvo.getUser_id();
+											if(user_id_.length() > 4){
+												user_id_ = user_id_.substring(0, 4) + new String(new char[4]).replace("\0", "*");
+											}else{
+												user_id_ = user_id_.substring(0,user_id_.length()-1)+new String(new char[5]).replace("\0", "*");
+											}
+											%>
 											<div class="comment-item-body">
 												<div class="comment-item-info">
 													<span class="comment-name"><span class="sv_wrap">
@@ -2003,7 +1982,7 @@ var char_max = parseInt(0); // 최대
 															href="http://theme4.eyoom.net/bbs/profile.php?mb_id=eeee"
 															data-toggle="dropdown" title="${comment.name} 자기소개"
 															target="_blank" rel="nofollow" onclick="return false;">
-																${comment.name}</a>
+																${comment.name}(<%= user_id_ %>)</a>
 															<ul class="sv dropdown-menu" role="menu">
 																<li><a href="http://theme4.eyoom.net/?eeee"><strong>${comment.name}</strong>님의
 																		홈</a></li>
@@ -2041,10 +2020,7 @@ var char_max = parseInt(0); // 최대
 
 													<!--                                         <strong class="color-red"></strong> -->
 													<button class="alert alert-warning first-comment"
-														style='display: inline-block'>
-														<i class="far fa-comments font-size-18 margin-right-10"></i>답변
-														${comment.reply_num != 0 ? comment.reply_num:''}
-													</button>
+														style='display: inline-block'><i class="far fa-comments font-size-18 margin-right-10"></i>댓글 ${comment.reply_num != 0 ? comment.reply_num:''}</button>
 
 													<div class="comment-btn-right"
 														style='display: inline-block; float: right;'>
@@ -3313,13 +3289,85 @@ $(function() {
 						get_cookie("ck_font_resize_rmv_class"),
 						get_cookie("ck_font_resize_add_class"));
 			});
-			$(document).on('click','.alert',function(){
+			$(document).on('click','#Like',function(){
+   				let True =  confirm('로그인을 해주세요~!')
+   				if(True){
+   					window.location.href ='/login'
+   				}
+   			})
+   			$(document).on('click','#favor',function(){
+   				let True =  confirm('로그인을 해주세요~!')
+   				if(True){
+   					window.location.href ='/login'
+   				}
+   			})
+			//////////////////////////댓글 작성하기
+			var commentAdd = function(htmls,sub_comment){
+				var id = '<sec:authentication property="name"/>'
+				var temp = '<textarea class="form-control" style="border-radius: 5px;"></textarea>'
+						if (id== 'anonymousUser'){id = '로그인이 필요합니다' }
+						else{
+							if (id.length>4){id=id.substring(0,4)+'*'.repeat(4)}
+							else{id = id.substring(0,id.length-1)+'*'.repeat(5)}
+							id = '${USER.nickname}('+id+')'}
+						htmls +='<h2 class="writing">'+id+'님의 <span class="sound_only">댓글의</span> 댓글</h2>'
+		            htmls +='<div id="c_10" class="view-comment-item writing" style="margin-left:15px;"><div class="view-comment-depth"><i class="fas fa-caret-right"></i></div>'
+		            htmls +='<div class="view-comment-photo "><img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/ffff.png" alt="회원사진"></div>'
+		            htmls +='<div class="comment-item-body"><div class="comment-item-info"><span class="comment-name"><span class="sv_wrap">'
+		            htmls +='<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="'+id+' 자기소개" target="_blank" rel="nofollow" onclick="return false;"> '+id+'</a>'
+		            htmls +='<ul class="sv dropdown-menu" role="menu"><li><a href="http://theme4.eyoom.net/?ffff"><strong>'+id+'</strong>님의 홈</a></li>'
+		            htmls +='<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li><li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li></ul>'
+		            htmls +='<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu"><li><a href="http://theme4.eyoom.net/?ffff"><strong>'+id+'</strong>님의 홈</a></li>'
+		            htmls +='<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li><li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li></ul>'
+		            htmls +='</noscript></span></span><span class="comment-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" align="absmiddle" alt="레벨"></span>'
+		            htmls +='</div><div class="comment-item-content"><div class="comment-cont-wrap">'
+		            htmls +='<div class="comment-cont-txt" style="width:70%;">'+temp+'</div><button id="write" style="background-color: #337ab7;border-radius: 5px;opacity:0.8;color: white;font-weight:bold;margin-left:6px;"> 작성하기 </button></div><div class="margin-bottom-10"></div>'
+		            htmls +='<div class="sub_comments" comment_id='+'temp'+' comment_group='+'temp'+'></div></div>'
+				sub_comment.append(htmls)
+			}
+			$(document).on('click','#write',function(){
 				var self = $(this)
-				sub_comment = $(this).closest('.view-comment-item ').find('.sub_comments')
+				var id = '<sec:authentication property="name"/>'
+					if (id== 'anonymousUser'){ 
+					let True =  confirm('로그인을 해주세요~!')
+					if(True){window.location.href ='/login';return;	}
+					}
+				comment_id = sub_comment.attr('comment_id')
+				comment_group = sub_comment.attr('comment_group')
+				var name = '${USER.nickname}'
+				$.ajax({
+						url : '/tourist/reply' ,
+						type: 'post',
+						contentType:'application/json',
+						data : {"cid": comment_id,"sid":sid,"cgp":comment_group,'name':name},
+						dataType:'json',
+					})
+					.done(function(result){
+						
+			            alert('요청 성공')
+			            
+					})
+					.fail(function(){
+						console.log("에러 발생!")
+					})
+			})
+			$(document).on('click','.alert',function(){
+				
+				
+				var self = $(this)
+				var flag = self.text().trim()
+				sub_comment = $(this).closest('.view-comment-item ').find('.sub_comments:first')
 				comment_id = sub_comment.attr('comment_id')
 				comment_group = sub_comment.attr('comment_group')
 				
-				if(!self.hasClass('done')){
+				if(flag=='댓글'){
+					sub_comment.fadeIn(0)
+					document.querySelectorAll('.writing').forEach((i)=>{i.remove()})
+					var htmls=''
+						commentAdd(htmls,sub_comment)
+				}
+				else if(!self.hasClass('done')){
+					document.querySelectorAll('.writing').forEach((i)=>{i.remove()})					
 					self.addClass('done')
 					sub_comment.fadeIn(0)
 					var htmls = "";
@@ -3334,23 +3382,27 @@ $(function() {
        						
 							$.each(result,function(idx,i){
 								var a = ''
+								var id = i.user_id
 								if(i.reply_num>0){a = i.reply_num}
-						        htmls +='<h2>'+i.name+'님의 <span class="sound_only">댓글의</span> 댓글</h2>'
+									if (id.length>4){id=id.substring(0,4)+'*'.repeat(4)}
+									else{id = id.substring(0,id.length-1)+'*'.repeat(5)}
+									id = i.name+'('+id+')'
+						        htmls +='<h2>'+id+'님의 <span class="sound_only">댓글의</span> 댓글</h2>'
 						            htmls +='<div id="c_10" class="view-comment-item " style="margin-left:15px;"><div class="view-comment-depth"><i class="fas fa-caret-right"></i></div>'
 						            htmls +='<div class="view-comment-photo "><img class="user-photo" src="http://theme4.eyoom.net/data/member/profile/ffff.png" alt="회원사진"></div>'
 						            htmls +='<div class="comment-item-body"><div class="comment-item-info"><span class="comment-name"><span class="sv_wrap">'
-						            htmls +='<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="'+i.name+' 자기소개" target="_blank" rel="nofollow" onclick="return false;"> '+i.name+'</a>'
-						            htmls +='<ul class="sv dropdown-menu" role="menu"><li><a href="http://theme4.eyoom.net/?ffff"><strong>'+i.name+'</strong>님의 홈</a></li>'
+						            htmls +='<a href="http://theme4.eyoom.net/bbs/profile.php?mb_id=ffff" data-toggle="dropdown" title="'+id+' 자기소개" target="_blank" rel="nofollow" onclick="return false;"> '+id+'</a>'
+						            htmls +='<ul class="sv dropdown-menu" role="menu"><li><a href="http://theme4.eyoom.net/?ffff"><strong>'+id+'</strong>님의 홈</a></li>'
 						            htmls +='<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li><li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li></ul>'
-						            htmls +='<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu"><li><a href="http://theme4.eyoom.net/?ffff"><strong>'+i.name+'</strong>님의 홈</a></li>'
+						            htmls +='<noscript class="sv_nojs"><ul class="sv dropdown-menu" role="menu"><li><a href="http://theme4.eyoom.net/?ffff"><strong>'+id+'</strong>님의 홈</a></li>'
 						            htmls +='<li><a href="http://theme4.eyoom.net/bbs/new.php?mb_id=ffff">전체게시물</a></li><li><a href="http://theme4.eyoom.net/blog?sca=&amp;sfl=mb_id,1&amp;stx=ffff">아이디로 검색</a></li></ul>'
 						            htmls +='</noscript></span></span><span class="comment-lv-icon"><img src="http://theme4.eyoom.net/theme/eb4_basic/image/level_icon/eyoom/basic/1.gif" align="absmiddle" alt="레벨"></span>'
 						            htmls +='<span class="comment-time"><i class="far fa-clock color-grey"></i> '+i.createdat+' </span></div><div class="comment-item-content"><div class="comment-cont-wrap">'
 						            htmls +='<div class="comment-cont-txt">'+i.content+'</div></div><div class="margin-bottom-10"></div><button class="alert alert-warning first-comment" style="display:inline-block">'
-						            htmls +='<i class="far fa-comments font-size-18 margin-right-10"></i>답변 '+a+'</button><div class="comment-btn-right" style="display:inline-block;float:right;">'
+						            htmls +='<i class="far fa-comments font-size-18 margin-right-10"></i>댓글 '+a+'</button><div class="comment-btn-right" style="display:inline-block;float:right;">'
 						            htmls +='<a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=9&amp;good=good" id="goodcmt_button_9" class="goodcmt_button comment-btn" title="추천"><i class="far fa-thumbs-up"></i> '
 						            htmls +='<strong class="board-cmt-act-good"><span class="color-light-grey">0</span></strong></a><a href="http://theme4.eyoom.net/eyoom/core/board/goodcmt.php?&amp;c_id=9&amp;good=nogood" id="nogoodcmt_button_9" class="nogoodcmt_button comment-btn" title="비추천">'
-						            htmls +='<i class="far fa-thumbs-down"></i> <strong class="board-cmt-act-nogood"><span class="color-light-grey">0</span></strong></a></div></div></div><div class="sub_comments"><div>hello world!</div></div></div>'
+						            htmls +='<i class="far fa-thumbs-down"></i> <strong class="board-cmt-act-nogood"><span class="color-light-grey">0</span></strong></a></div></div></div><div class="sub_comments" comment_id='+i.id+' comment_group='+i.ref_group+'></div></div>'
 							})
 							
        						
@@ -3358,15 +3410,19 @@ $(function() {
        			            
        					})
        					.fail(function(){
-       						htmls += ("등록된 댓글이 없습니다.")
+//        						htmls += ("등록된 댓글이 없습니다.")
        					})
        					.always(function(){
-       						sub_comment.html(htmls)
+       						commentAdd(htmls,sub_comment)
        					})
        					
 					}else{
+						if(sub_comment.css("display") == 'none'){
+							document.querySelectorAll('.writing').forEach((i)=>{i.remove()})
+							commentAdd('',sub_comment)
+						}
 						sub_comment.fadeToggle(0);
-					
+						
 						}
 					
 				

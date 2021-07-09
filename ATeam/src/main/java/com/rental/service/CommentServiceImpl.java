@@ -7,6 +7,7 @@ import org.springframework.stereotype.Service;
 
 import com.rental.domain.CommentVO;
 import com.rental.domain.Criteria;
+import com.rental.domain.RereplyVO;
 import com.rental.mapper.CommentMapper;
 
 import lombok.Setter;
@@ -25,6 +26,11 @@ public class CommentServiceImpl implements CommentService {
 	public List<CommentVO> getReplys(String sid, int cid, int cgp) {
 		// TODO Auto-generated method stub
 		return mapper.getReplys(sid, cid, cgp);
+	}
+	@Override
+	public void add_reply(RereplyVO ry) {
+		// TODO Auto-generated method stub
+		mapper.add_reply(ry);
 	}
 
 }
