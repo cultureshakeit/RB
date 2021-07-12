@@ -463,7 +463,6 @@ public class CommonController {
 		Criteria cri = new Criteria();
 		cri.setSid(sid);
 		List<CommentVO> comments = commentService.getComments(cri);
-		System.out.println(comments.get(0).toString()); 
 		model.addAttribute("comments", comments);
 		model.addAttribute("tags", tags);
 		model.addAttribute("tourInfo",tourInfo);
@@ -545,6 +544,7 @@ public class CommonController {
 		
 		return str;
 	}
+	
 	@ResponseBody
 	@PutMapping("/tourist/reply")
 	public void tourist_comment_update(@RequestParam("cgp") int cgp ,@RequestParam("cid") int cid,@RequestParam("sid") String sid, Principal prin) {
@@ -552,6 +552,7 @@ public class CommonController {
 		if (prin != null) {userid = prin.getName();}
 		tourService.rmFavor(userid,sid);
 	}
+	
 	@ResponseBody
 	@DeleteMapping("/tourist/reply")
 	public void tourist_comment_delete(@RequestParam("cgp") int cgp ,@RequestParam("cid") int cid,@RequestParam("sid") String sid, Principal prin) {

@@ -5,6 +5,7 @@
 	uri="http://java.sun.com/jsp/jstl/core"
 	prefix="c"
 %>
+
 <%@ taglib
 	prefix="fn"
 	uri="http://java.sun.com/jsp/jstl/functions"
@@ -27,6 +28,7 @@
 		String str = document.read("$['label']", String.class);
 		return str;
 	}%>
+<c:set var="uri"><%=request.getAttribute("javax.servlet.forward.request_uri")%></c:set>
 <!doctype html>
 <html lang="ko">
 <head>
@@ -69,6 +71,10 @@
 </head>
 
 <body>
+<c:set var="len" value="${uri.length() }" />
+<c:if test="${uri.substring(len-1,len) == '/'}">
+   ${uri = uri.substring(0,len-1);''}
+</c:if>
 
 	<div class=headerempty></div>
 	<div class="wrapper">
@@ -250,7 +256,7 @@
 								id="multi_item_type"
 								class="multi-type-webzine"
 							>
-								<c:set var="uri"><%=request.getAttribute("javax.servlet.forward.request_uri")%></c:set>
+								
 								<!-- sequnce no -->
 								<c:set
 									var="pnum"
