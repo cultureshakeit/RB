@@ -84,6 +84,11 @@ public class UserController {
 		model.addAttribute("userid", userid);
 
 	}
+	
+	@PostMapping("/Reservatioin")
+	public void addReservation(Model model, Criteria cri, Principal principal) {
+		
+	}
 
 	@GetMapping("/Reservation")
 	public void Reservation(Model model, Criteria cri, Principal principal) {

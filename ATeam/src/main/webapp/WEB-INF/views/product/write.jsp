@@ -126,9 +126,9 @@ body {
 
 					</tr>
 					<tr>
-						<th style="vertical-align: middle;"><label for="cont">コンテンツ</label></th>
+						<th style="vertical-align: middle;"><label for="cont">내용</label></th>
 						<td colspan="4"><textarea type="cont" name="content"
-								id="cont" class="cont" placeholder="内容入力"></textarea>
+								id="cont" class="cont" placeholder="내용"></textarea>
 					</tr>
 
 
@@ -145,50 +145,50 @@ body {
 	<script
 		src="https://cdn.ckeditor.com/ckeditor5/19.0.0/classic/ckeditor.js"></script>
 	<script type="text/javascript">
-	ClassicEditor
-    .create( document.querySelector( '#cont' ), {
-    	removePlugins: [  'Image', 'List' ],
-    } )
-    .catch( error => {
-        console.log( error );
-    } );
+		ClassicEditor
+	    .create( document.querySelector( '#cont' ), {
+	    	removePlugins: [  'Image', 'List' ],
+	    } )
+	    .catch( error => {
+	        console.log( error );
+	    } );
 	</script>
 	<script type="text/javascript">
-	$(function(){		
-	var today = new Date();
-	var Year = today.getFullYear();
-	var Month = today.getMonth() + 1;
-	var Day = today.getDate();
-	$("input[name='startdate']").val(Year + "/" + Month + "/" + Day);
-	$("input[name='lastdate']").flatpickr({
-		  enableTime: false,
-		  dateFormat: "Y/m/d",
-		  minDate:today
-		});
-	})
-	</script>
-	<script type="text/javascript">
-	function confirm(){		
-		if(!$("input[name='title']").val()){
-		alert("제목을 적어주십쇼.");
-		return false;
+		$(function(){		
+			var today = new Date();
+			var Year = today.getFullYear();
+			var Month = today.getMonth() + 1;
+			var Day = today.getDate();
+			$("input[name='startdate']").val(Year + "/" + Month + "/" + Day);
+			$("input[name='lastdate']").flatpickr({
+				  enableTime: false,
+				  dateFormat: "Y/m/d",
+				  minDate:today
+				});
+			})
+			</script>
+			<script type="text/javascript">
+			function confirm(){		
+				if(!$("input[name='title']").val()){
+				alert("제목을 적어주십쇼.");
+				return false;
+				}
+			if(!$("input[name='lastdate']").val()){
+				alert("임대 종료 날짜를 지정하십시오.");
+				return false;
+			}
+			if(!$("input[name='price']").val()){
+				alert("가격을 작성합니다.");
+				return false;
+			}
+			if(!$("input[name='category']").val()){
+				alert("카테고리를 작성 해주세요.");
+				return false;
+			}
+			if(!$("input[name='goods']").val()){
+				alert("제품의 종류를 적어주십시오.");
+				return false;
+			}
 		}
-	if(!$("input[name='lastdate']").val()){
-		alert("임대 종료 날짜를 지정하십시오.");
-		return false;
-	}
-	if(!$("input[name='price']").val()){
-		alert("가격을 작성합니다.");
-		return false;
-	}
-	if(!$("input[name='category']").val()){
-		alert("카테고리를 작성 해주세요.");
-		return false;
-	}
-	if(!$("input[name='goods']").val()){
-		alert("제품의 종류를 적어주십시오.");
-		return false;
-	}
-	}
 	</script>
 	<%@include file="../footer.jsp"%>

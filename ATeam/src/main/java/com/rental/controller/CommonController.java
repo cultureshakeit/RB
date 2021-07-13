@@ -177,9 +177,9 @@ public class CommonController {
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@GetMapping("/QnA/write")
-	public void QnaWrite(String userid, Model model) {
-
-		model.addAttribute("userid", userid);
+	public void QnaWrite(Model model, Principal principal) {
+		
+		model.addAttribute("userid", principal.getName());
 	}
 
 	@PreAuthorize("hasRole('ROLE_ADMIN')")

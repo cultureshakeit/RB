@@ -25,20 +25,18 @@
 <%@include file="../header.jsp"%>
 <link href="/resources/QNA.css" rel="stylesheet">
 <link rel="stylesheet" href="/resources/noticenav.css">
-</head>
 
 
-<div class="action" onclick="actionToggle();">
+<!-- <div class="action" onclick="actionToggle();">
 	<span>+</span>
 	<ul>
 		<li><i class="fa fa-paper-plane-o fa-fw" aria-hidden="true"><a
 				href="/board/notice">&nbsp;&nbsp;&nbsp;Notice</a></i></li>
-		<li><i class="fa fa-commenting-o fa-fw" aria-hidden="true"><a
-				href="/review/photo">&nbsp;&nbsp;&nbsp;PhotoView</a></i></li>
 		<li><i class="fa fa-question-circle-o fa-fw" aria-hidden="true"><a
 				href="/QnA/QnA">&nbsp;&nbsp;&nbsp;QnA</a></i></li>
 	</ul>
-</div>
+</div> -->
+<br><br><br><br><br>
 <div class="container" style="min-height: 100vh;">
 	<div class="col-md-12 col-xl-12 col-lg-12 col-xm-12">
 		<h1 class="heading-primary" style="font-size: 3em;">FAQ</h1>

@@ -20,7 +20,7 @@
 	th:content="${_csrf.headerName}" />
 <link rel="icon" type="image/png" sizes="16x16"
 	href="/resources/admin/plugins/images/favicon.png">
-<title>RENTAL BYCICLE COMPANY</title>
+<title>Love jeju mypage</title>
 <!-- Bootstrap Core CSS -->
 <link href="/resources/admin/bootstrap/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -177,7 +177,7 @@
 
 				<!-- /.row -->
 				<!-- row -->
-				<div class="row">
+				<%-- <div class="row">
 					<c:forEach items="${reply }" var="re">
 						<div class="col-md-6 col-lg-6 col-sm-6">
 							<div class="white-box">
@@ -207,7 +207,7 @@
 							</div>
 						</div>
 					</c:forEach>
-				</div>
+				</div> --%>
 				<!-- /.row -->
 			</div>
 			<!-- /.container-fluid -->

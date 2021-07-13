@@ -96,7 +96,7 @@
                         <sec:authorize access="isAuthenticated()">
                         	<li class="nav-item"><a href="javascript:logout();" class="nav-link" id="logout">로그아웃</a></li>
                         </sec:authorize>
-                        <li class="nav-item"><a class="nav-link" href="#signup">Q&A</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/QnA/QnA">Q&A</a></li>
                         <sec:authorize access="hasRole('ROLE_USER')">
 							<li class="nav-item"><a class="nav-link" href="/users/index">마이페이지</a></li>
 						</sec:authorize>
@@ -139,7 +139,7 @@
                     src="https://forecast.io/embed/#lat=33.5&lon=126.5309&name=Jeju&color=&font=arial&units=si"
                      frameborder="3"></iframe> --> 
                     
-                    &nbsp &nbsp &nbsp
+                    &nbsp; &nbsp; &nbsp;
                     
                     <!-- weather widget start -->
                     <div id="m-booked-prime-14033"> 

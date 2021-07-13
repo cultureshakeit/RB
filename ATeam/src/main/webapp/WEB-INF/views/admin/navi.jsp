@@ -3,21 +3,19 @@
 <div class="navbar-default sidebar" role="navigation">
 	<div class="sidebar-nav navbar-collapse slimscrollsidebar">
 		<ul class="nav" id="side-menu">
+			<li><a href="/" class="waves-effect"><i
+					class="fa fa-home fa-fw" aria-hidden="true"></i><span
+					class="hide-menu">HOME</span></a></li>
 			<li style="padding: 10px 0 0;"><a
-				href="/admin/index?userid=${userid }" class="waves-effect"><i
+				href="/admin/index" class="waves-effect"><i
 					class="fa fa-clock-o fa-fw" aria-hidden="true"></i><span
 					class="hide-menu">Dashboard</span></a></li>
-			<li><a href="/admin/notice?userid=${userid }"
+			<!-- <li><a href="/admin/notice"
 				class="waves-effect"><i class="fa fa-leaf fa-fw"
-					aria-hidden="true"></i></i><span class="hide-menu">Notice</span></a></li>
-			<li><a href="/admin/product_manager?userid=${userid }"
-				class="waves-effect"><i class="fa fa-cart-plus fa-fw"
-					aria-hidden="true"></i><span class="hide-menu">Product
-						Manage</span></a></li>
-			<li><a href="/admin/QnA?userid=${userid }"
+					aria-hidden="true"></i></i><span class="hide-menu">Notice</span></a></li> -->
+			<li><a href="/admin/QnA"
 				class="waves-effect"><i class="fa fa-check fa-fw"
-					aria-hidden="true"></i><span class="hide-menu">Q&A *
-						Contactus</span></a></li>
+					aria-hidden="true"></i><span class="hide-menu">Q&A</span></a></li>
 			<li><a href="javascript:void(0);" class="waves-effect"
 				id="logout"><i class="fa fa-unlock fa-fw" aria-hidden="true"></i><span
 					class="hide-menu">Logout</span></a></li>

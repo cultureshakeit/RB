@@ -70,12 +70,12 @@
 			<div class="container-fluid">
 				<div class="row bg-title">
 					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						<h4 class="page-title">Q&A / ConTact Us TableSheet</h4>
+						<h4 class="page-title">Q&A TableSheet</h4>
 					</div>
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 						<ol class="breadcrumb">
 							<li><a href="#">Dashboard</a></li>
-							<li class="active">Q&A / ConTact Us</li>
+							<li class="active">Q&A</li>
 						</ol>
 					</div>
 					<!-- /.col-lg-12 -->
@@ -145,7 +145,7 @@
 
 				<!-- Contact Us  -->
 				<!-- /row -->
-				<div class="row">
+				<%-- <div class="row">
 					<div class="col-sm-12">
 						<div class="white-box">
 							<h3 class="box-title">ConTactUs 테이블</h3>
@@ -204,7 +204,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --%>
 				<!-- /.row -->
 			</div>
 			<!-- /.container-fluid -->

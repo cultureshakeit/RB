@@ -12,9 +12,9 @@
 			<li><a href="/users/profile"
 				class="waves-effect"><i class="fa fa-user fa-fw"
 					aria-hidden="true"></i><span class="hide-menu">Profile</span></a></li>
-			<li><a href="/users/Apply"
+			<!-- <li><a href="/users/Apply"
 				class="waves-effect"><i class="fa fa-usd fa-fw"
-					aria-hidden="true"></i><span class="hide-menu">Apply Rental</span></a></li>
+					aria-hidden="true"></i><span class="hide-menu">Apply Rental</span></a></li> -->
 			<li><a href="/users/Reservation"
 				class="waves-effect"><i class="fa fa-table fa-fw"
 					aria-hidden="true"></i><span class="hide-menu">Reservation</span></a></li>

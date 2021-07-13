@@ -68,15 +68,18 @@ public class AdminController {
 		List<MemberVO> mvo = service.getListWithPaging(cri);
 
 		List<IPBanList> ib = ips.find_ip_ban_list();
-		for (int i = 0; i < mvo.size(); i++) { // i = 1 ~ 6
-			for (int j = 0; j < ib.size(); j++) { // j = 1
+		for (int i = 0; i < mvo.size(); i++) {
+			for (int j = 0; j < ib.size(); j++) {
 				if (mvo.get(i).getUserid().equals(ib.get(j).getUserid())
 						&& mvo.get(i).getIp().equals(ib.get(j).getIp())) {
-					mvo.get(i).setThisip(!ib.get(j).isEnabled());
+					mvo.get(i).setThisip(true);
 				} else {
-					mvo.get(i).setThisip(ib.get(j).isEnabled());
+					mvo.get(i).setThisip(false);
 				}
 			}
+		}
+		for(int i = 0; i < mvo.size(); i++) {
+			log.info(mvo.get(i).isEnabled());
 		}
 
 		String DataToJson = gson.toJson(Chart.JsonData());

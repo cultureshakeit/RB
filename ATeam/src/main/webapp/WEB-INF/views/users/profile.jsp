@@ -15,7 +15,7 @@
 <meta name="author" content="">
 <link rel="icon" type="image/png" sizes="16x16"
 	href="../plugins/images/favicon.png">
-<title>RENTAL BYCICLE COMPANY</title>
+<title>Love jeju mypage</title>
 <!-- Bootstrap Core CSS -->
 <link href="/resources/admin/bootstrap/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -120,7 +120,7 @@
 			</div>
 			<!-- /.container-fluid -->
 			<footer class="footer text-center"> 2020 &copy;
-				www.rental.bike </footer>
+				www.lovejeju.shop </footer>
 		</div>
 		<!-- /#page-wrapper -->
 	</div>

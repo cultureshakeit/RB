@@ -2,8 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<%@taglib prefix="sec"
-	uri="http://www.springframework.org/security/tags"%>
+<%@taglib prefix="sec" uri="http://www.springframework.org/security/tags"%>
 <%@taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -217,16 +216,14 @@
 											<th colspan="1"
 												style="text-align: center; justify-content: center;">IP</th>
 											<th colspan="1"
-												style="text-align: center; justify-content: center;">계정</th>
-											<th colspan="3" 
-												style="text-align: center; justify-content: center; padding-bottom: 0 !important;"><table class="table table-striped" id="intable" >
-													<tr >
-														<th style="text-align: center;">계정 상황</th>
-														<th style="text-align: center;width:155px; ">IP 차단 가능</th>
-														<th style="text-align: center; width: 75px;">㉿</th>
-													</tr>
-												</table>
-											</th>
+												style="text-align: center; justify-content: center;">상태</th>
+											<th colspan="1"
+												style="text-align: center; justify-content: center;">상태 변경</th>
+											<th colspan="1"
+												style="text-align: center; justify-content: center;">IP 설정</th>
+											<th colspan="1"
+												style="text-align: center; justify-content: center;">강제 탈퇴</th>
+											
 										</tr>
 									</thead>
 									<tbody>
@@ -237,7 +234,8 @@
 												<td class="txt-oflo">${list.regDate }</td>
 												<td class="ip">${list.ip }</td>
 												<td><span class="text-success"
-													id="${list.enabled == true && list.thisip == false ? 'enabled' : 'disenabled'}">${list.enabled == true && list.thisip == false ? '사용 가능' : '사용 불가' }</span></td>
+													id="${list.enabled == false ? 'enabled' : 'disenabled'}">${list.enabled == false ? '사용 가능' : '사용 불가' }</span></td>
+													<%-- id="${list.enabled == true && list.thisip == false ? 'enabled' : 'disenabled'}">${list.enabled == true && list.thisip == false ? '사용 가능' : '사용 불가' } --%>
 												<td class="input-group-addon"
 													style="background-color: #fff;"><select name="select"
 													id="select" style="text-align: center;">
@@ -288,7 +286,7 @@
 				</div>
 				<!-- /.row -->
 				<!-- row -->
-				<div class="row" id="comment_block">
+				<%-- <div class="row" id="comment_block">
 					<c:forEach items="${reply }" var="re">
 						<div class="col-md-6 col-lg-6 col-sm-6">
 							<div class="white-box">
@@ -319,7 +317,7 @@
 							</div>
 						</div>
 					</c:forEach>
-				</div>
+				</div> --%>
 				<!-- /.row -->
 			</div>
 			<!-- /.container-fluid -->

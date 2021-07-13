@@ -93,10 +93,9 @@ var g5_shop_url  = "http://theme4.eyoom.net/shop";
 	src="/resources/tourist/js/jquery.bootstrap-hover-dropdown.min.js"></script>
 <script type="text/javascript"
 	src="/resources/tourist/js/jquery.sidebar.min.js"></script>
-<!--[if lt IE 9]>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/respond.min.js"></script>
-<script src="http://theme4.eyoom.net/theme/eb4_basic/plugins/eyoom-form/js/eyoom-form-ie8.js"></script>
-<![endif]-->
+<script type="text/javascript"
+	 src="/resources/js/gijgo.min.js" ></script>
+<link type="text/css" rel="stylesheet" href="/resources/css/gijgo.css" ></link>
 <script src="http://dmaps.daum.net/map_js_init/postcode.v2.js"></script>
 </head>
 
@@ -1235,6 +1234,28 @@ strong.heart_click {
 								<p>${tourInfo.introduction}</p>
 							</div>
 							<div class="clearfix"></div>
+							
+							
+							<sec:authorize access="isAuthenticated()">
+							<div class="row">
+								<form class="row" name="reservation" action="/reservation" method="post">
+									<div id="res_date">
+										<span class="col-lg-3">Reservation start</span> 
+										<input id="datepicker1" width="276" />
+								    	<script>
+								        	$('#datepicker1').datepicker();
+								    	</script>
+										<span class="col-lg-3">Reservation end</span>
+										<input id="datepicker2" width="276"/>
+								    	<script>
+								        	$('#datepicker2').datepicker();
+								    	</script>
+							    	</div>
+							    	<input class="col-lg-1 ml-3 mt-3" id="submit" type="submit" value="예약" />
+						    	</form>
+					    	</div>
+					    	<hr>
+					    	</sec:authorize>
 
 							<script>
 $(document).ready(function() {
@@ -1905,14 +1926,14 @@ var char_max = parseInt(0); // 최대
 										        <div class="comment-cont-txt" style="width:88%;"><textarea name="" id="" style="width: 100%;margin-bottom: 36px;height: 100%;"></textarea> </div><button id="write" style="background-color: #337ab7;border-radius: 5px;opacity:0.8;color: white;font-weight:bold;margin-left:6px;width:120px;font-size: large;"> 작성하기 </button></div><div class="margin-bottom-10"></div>
 										        <div class="sub_comments" comment_id='+'temp'+' comment_group='+'temp'+'></div></div></div></div>
 										        
-								</c:when>
+										</c:when>
 											<c:when test="${tourInfo.comments_num ==0}">
 												<div class="view-comment-no-item">
 													<span id="bo_vc_empty" class="no-comment">
 														<i class="fas fa-exclamation-circle"></i> 등록된 댓글이 없습니다.
 													</span>
 												</div>
-								</c:when>
+										</c:when>
 										</c:choose>
 									<h2>백마탄환자님의 댓글</h2>
 									<div id="c_12_0" class="view-comment-item cmt-best" style="">

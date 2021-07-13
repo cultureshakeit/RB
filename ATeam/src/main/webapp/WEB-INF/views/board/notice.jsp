@@ -37,7 +37,6 @@
 	<span>+</span>
 	<ul>
 		<li><i class="fa fa-paper-plane-o fa-fw" aria-hidden="true"><a href="/board/notice">&nbsp;&nbsp;&nbsp;Notice</a></i></li>
-		<li><i class="fa fa-commenting-o fa-fw" aria-hidden="true"><a href="/review/photo">&nbsp;&nbsp;&nbsp;PhotoView</a></i></li>
 		<li><i class="fa fa-question-circle-o fa-fw" aria-hidden="true"><a href="/QnA/QnA">&nbsp;&nbsp;&nbsp;QnA</a></i></li>
 	</ul>
 </div>
@@ -45,6 +44,7 @@
 	<div class="row">
 		<div class="col-12">
 			<div class="card">
+				<br><br><br><br><br><br>
 				<div class="card-body text-center">
 					<h3 class="card-title m-b-0">공지 사항</h3>
 				</div>

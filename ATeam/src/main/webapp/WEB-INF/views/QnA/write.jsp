@@ -64,6 +64,7 @@ body {
 <!-- sub page start -->
 <div class="notice">
 	<div class="sub-notice">
+		<br><br><br><br><br><br>
 		<h2>
 			<span><i class="fas fa-edit"></i> Q&A 작성</span>
 		</h2>

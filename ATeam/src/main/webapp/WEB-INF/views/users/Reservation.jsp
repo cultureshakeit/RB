@@ -15,7 +15,7 @@
 <meta name="author" content="">
 <link rel="icon" type="image/png" sizes="16x16"
 	href="../plugins/images/favicon.png">
-<title>RENTAL BYCICLE COMPANY</title>
+<title>Love jeju mypage</title>
 <!-- Bootstrap Core CSS -->
 <link href="/resources/admin/bootstrap/dist/css/bootstrap.min.css"
 	rel="stylesheet">
@@ -280,12 +280,12 @@ tml, body {
 			<div class="container-fluid">
 				<div class="row bg-title">
 					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
-						<h4 class="page-title">상품 관리 페이지</h4>
+						<h4 class="page-title">예약 목록</h4>
 					</div>
 					<div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
 						<ol class="breadcrumb">
 							<li><a href="#">Dashboard</a></li>
-							<li class="active">제품 테이블</li>
+							<li class="active">예약 목록</li>
 						</ol>
 					</div>
 					<!-- /.col-lg-12 -->
@@ -357,8 +357,8 @@ tml, body {
 										<tr>
 											<th>#</th>
 											<th>예약 장소</th>
-											<th>예약 날짜</th>
-											<th>예약 기간</th>
+											<th>시작 날자</th>
+											<th>종료 날자</th>
 										</tr>
 									</thead>
 									<tbody>
@@ -373,16 +373,6 @@ tml, body {
 											</tr>
 											<c:set var="bno" value="${bno-1 }" />
 										</c:forEach>
-
-										<!--<tr style="border-top: 4px double black;">
-											<td>렌탈 총 횟수 :</td>
-											<td colspan="2" id="count">${count.count }회</td>
-											<td>총 금액 :</td>
-											<td id="price"><fmt:formatNumber value="${count.price }"
-													type="currency" pattern="###,###원" /></td>
-
-										</tr>
- -->
 									</tbody>
 
 								</table>
@@ -412,8 +402,7 @@ tml, body {
 				<!-- /.row -->
 			</div>
 			<!-- /.container-fluid -->
-			<footer class="footer text-center"> 2017 &copy; Pixel Admin
-				brought to you by wrappixel.com </footer>
+			<footer class="footer text-center"> 2020 &copy; www.lovejeju.shop </footer>
 		</div>
 		<!-- /#page-wrapper -->
 	</div>

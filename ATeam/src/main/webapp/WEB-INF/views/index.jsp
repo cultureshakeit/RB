@@ -1,19 +1,21 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@include file="header.jsp"%>
 
 <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+
       <header class="masthead">
             <div class="container px-4 px-lg-5 d-flex h-100 align-items-center justify-content-center">
                 <div class="d-flex justify-content-center">
                     <div class="text-center">
                         <h1 class="mx-auto my-1 text-uppercase">Love Jeju</h1>
-                        <h6 class="text-white-50 mx-auto mt-2 mb-5">제주는 자연의 공간입니다. <br>
-                        제주를 사랑하는 분들 그리고 <br>
-                        방문하시는 모든 분들께서 아름다운 
-                        <br>제주도를 담아가셨으면 좋겠습니다.</h6>
-                        <a class="btn btn-primary" href="#about">▼ Jeju Dodot ▼</a>
+                        <h6 class="text-white-50 mx-auto mt-2 mb-5">
+	                        제주를 사랑하는 분들<br>
+	                        방문하시는 모든 분들께서 <br>
+	                        아름다운 제주도를 담아가셨으면 좋겠습니다.
+                        </h6>
+                        <a class="btn btn-primary" href="#about">▼ INFO ▼</a>
                     </div>
                 </div>
             </div>
@@ -23,7 +25,7 @@
             <div class="container px-4 px-lg-5">
                 <div class="row gx-4 gx-lg-5 justify-content-center">
                     <div class="col-lg-8">
-                        <h2 class="text-white mb-4">| Jeju Dodat |</h2>
+                        <h2 class="text-white mb-4">| ABOUT JEJU |</h2>
                         <p class="text-white-50">
                           제주는 계절과 장소에 따라서 새로운 마음으로 다시 시작할 수 있는 신선한 매력들로 변하는 곳입니다.
                           유명한 관광지도 좋고 곳곳의 숨은 공간들도 찾아 즐기는 방법도 좋겠죠? 저희와 함께 제주여행을 떠나봐요.
@@ -156,10 +158,12 @@
             </div>
         </section>
         <!-- Footer-->
-        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; Your Website 2021</div></footer>
+        <footer class="footer bg-black small text-center text-white-50"><div class="container px-4 px-lg-5">Copyright &copy; LOVE JEJU 2021</div></footer>
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
+        
+        
     </body>
 </html>
