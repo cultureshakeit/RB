@@ -13,4 +13,5 @@ public interface CommentMapper {
 	public List<CommentVO> getComments(Criteria cri);
 	public List<CommentVO> getReplys(@Param("sid") String sid,@Param("cid") int cid,@Param("cgp") int cgp);
 	public void add_reply(RereplyVO ry);
+	
 }

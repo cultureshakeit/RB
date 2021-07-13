@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -525,11 +526,15 @@ public class CommonController {
 	}
 //	List<CommentVO> comments = commentService.getComments(cri);
 //	List<CommentVO> cmo = commentService.getReplys(sid, cid, cgp);
+//	@RequestParam("cgp") int cgp ,@RequestParam("cid") int cid,@RequestParam("sid") String sid,@RequestParam("name") String name
 	@ResponseBody
 	@PostMapping("/tourist/reply")
 	public String tourist_comment_append(@ModelAttribute("ry") RereplyVO ry, Principal prin) {
 		String userid = null;
 		if (prin != null) {userid = prin.getName();}
+//		RereplyVO ry = new RereplyVO();
+//		ry.setCgp(cgp );ry.setCid(cid);ry.setSid(sid);ry.setName(name);ry.setUser_id(userid);
+		ry.setUser_id(userid);
 		System.out.println(ry.toString());
 		commentService.add_reply(ry);
 		

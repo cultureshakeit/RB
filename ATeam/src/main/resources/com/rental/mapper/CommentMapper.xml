@@ -9,7 +9,7 @@
 	<select id ="getReplys"  resultType="com.rental.domain.CommentVO">
 	select (select count(*) from rereply where ref_id= ry.id) as reply_num ,id,ref_id,ref_group,name,content,indent,TO_CHAR( createdat+9/24,'YYYY-MM-DD HH24:MI:SS') as createdat,TO_CHAR( updatedat+9/24,'YYYY-MM-DD HH24:MI:SS')  as updatedat, user_id, content_id from rereply ry where ref_id = #{cid}
 		</select>
-	<select id="add_reply">
-	select * from rereply
-	</select>
+	<insert id="add_reply">
+	insert into rereply(ref_id,ref_group,name,content,user_id,content_id) values(#{cid},#{cgp},#{name},#{content},#{user_id},#{sid})
+	</insert>
 </mapper>
